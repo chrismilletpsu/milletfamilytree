@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Millet Genealogy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #ECEEF0;
+    --surface: #FAFBFB;
+    --surface-2: #E1E5E9;
+    --line: #C9CFD5;
+    --ink: #1B232D;
+    --ink-2: #4E5A67;
+    --ink-3: #7C8793;
+    --mickley: #9C6C2E;
+    --mickley-soft: #E8D9C3;
+    --millet: #3E6D8B;
+    --millet-soft: #CFDEE8;
+    --moyer: #6E6A3C;
+    --nick: #8A4A60;
+    --chr: #2E7A78;
+    --direct: #1B232D;
+    --probable: #A0A8B0;
+    --focus: #D18A2B;
+    --band-a: rgba(27,35,45,0.035);
+    --shadow: 0 1px 2px rgba(27,35,45,0.08), 0 8px 24px rgba(27,35,45,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #12171D;
+      --surface: #1A2129;
+      --surface-2: #232C36;
+      --line: #313B46;
+      --ink: #E7EAED;
+      --ink-2: #AEB7C0;
+      --ink-3: #7E8994;
+      --mickley: #D4A45A;
+      --mickley-soft: #3A2E1C;
+      --millet: #7FB2D0;
+      --millet-soft: #1F3442;
+      --moyer: #B8B26A;
+      --nick: #D48CA6;
+      --chr: #7CC8C4;
+      --direct: #E7EAED;
+      --probable: #56616C;
+      --focus: #E9A94C;
+      --band-a: rgba(231,234,237,0.035);
+      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #12171D;
+    --surface: #1A2129;
+    --surface-2: #232C36;
+    --line: #313B46;
+    --ink: #E7EAED;
+    --ink-2: #AEB7C0;
+    --ink-3: #7E8994;
+    --mickley: #D4A45A;
+    --mickley-soft: #3A2E1C;
+    --millet: #7FB2D0;
+    --millet-soft: #1F3442;
+    --moyer: #B8B26A;
+    --nick: #D48CA6;
+    --chr: #7CC8C4;
+    --direct: #E7EAED;
+    --probable: #56616C;
+    --focus: #E9A94C;
+    --band-a: rgba(231,234,237,0.035);
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+    overflow: hidden;
+  }
+  .app {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 360px 1fr;
+    grid-template-areas: "head head" "side stage";
+    height: 100vh;
+  }
+  header {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  header h1 {
+    font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 21px;
+    margin: 0;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  header h1 em { font-style: italic; color: var(--mickley); }
+  .controls { display: flex; align-items: center; gap: 14px; margin-left: auto; flex-wrap: wrap; }
+  .legend { display: flex; gap: 14px; align-items: center; font-size: 12px; color: var(--ink-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 2px solid currentColor; }
+  .sw.fill { background: currentColor; }
+  .sw.mick { color: var(--mickley); }
+  .sw.mill { color: var(--millet); }
+  .sw.moy { color: var(--moyer); }
+  .sw.nick { color: var(--nick); }
+  .sw.chr { color: var(--chr); }
+  .ln { width: 22px; height: 0; border-top: 2px solid var(--direct); display: inline-block; }
+  .ln.dash { border-top-style: dashed; border-color: var(--ink-3); }
+  .ln.dot { border-top: 2px dotted var(--probable); }
+  label.toggle { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-2); cursor: pointer; }
+  label.toggle input { accent-color: var(--mickley); width: 15px; height: 15px; margin: 0; }
+  .search { position: relative; }
+  .search input {
+    font: inherit; font-size: 13px; color: var(--ink);
+    background: var(--ground); border: 1px solid var(--line); border-radius: 4px;
+    padding: 6px 10px; width: 200px;
+  }
+  .search input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .search ul {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0; margin: 0; padding: 4px 0;
+    list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+    box-shadow: var(--shadow); z-index: 20; max-height: 260px; overflow: auto;
+  }
+  .search ul[hidden] { display: none; }
+  .search li { padding: 6px 10px; cursor: pointer; font-size: 13px; }
+  .search li:hover, .search li.active { background: var(--surface-2); }
+  .search li small { color: var(--ink-3); margin-left: 6px; font-family: "IBM Plex Mono", monospace; font-size: 11px; }
+  button.reset {
+    font: inherit; font-size: 12px; color: var(--ink-2); background: transparent;
+    border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; cursor: pointer;
+  }
+  button.reset:hover { background: var(--surface-2); }
+  button.reset:focus-visible, .search li:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+  aside {
+    grid-area: side;
+    border-right: 1px solid var(--line);
+    background: var(--surface);
+    overflow-y: auto;
+    padding: 22px 22px 32px;
+  }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3);
+    font-weight: 500; margin: 0 0 6px;
+  }
+  .eyebrow.mick { color: var(--mickley); }
+  .eyebrow.mill { color: var(--millet); }
+  .eyebrow.moy { color: var(--moyer); }
+  .eyebrow.nick { color: var(--nick); }
+  .eyebrow.chr { color: var(--chr); }
+  aside h2 {
+    font-family: "Libre Caslon Text", Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.15;
+    margin: 0 0 6px; text-wrap: balance;
+  }
+  .dates { font-family: "IBM Plex Mono", "Menlo", monospace; font-size: 12.5px; color: var(--ink-2); margin: 0 0 14px; }
+  .role {
+    display: inline-block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px; background: var(--surface-2); color: var(--ink-2); margin: 0 6px 14px 0;
+  }
+  .role.direct { background: var(--ink); color: var(--surface); }
+  .role.probable { background: transparent; border: 1px dotted var(--ink-3); }
+  aside p { margin: 0 0 12px; max-width: 46ch; color: var(--ink); }
+  aside p.lede { font-family: "Libre Caslon Text", Georgia, serif; font-size: 15.5px; line-height: 1.5; }
+  dl { margin: 0 0 16px; display: grid; grid-template-columns: 92px 1fr; gap: 6px 12px; font-size: 13px; }
+  dt { color: var(--ink-3); }
+  dd { margin: 0; }
+  dd a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); cursor: pointer; }
+  dd a:hover { text-decoration-color: var(--ink); }
+  .rel { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line);
+    background: var(--ground); color: var(--ink); cursor: pointer;
+  }
+  .chip:hover { border-color: var(--ink-2); }
+  .chip:focus-visible { outline: 2px solid var(--focus); }
+  h3.src { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin: 18px 0 8px; font-weight: 500; }
+  ul.sources { list-style: none; margin: 0; padding: 0; font-size: 12.5px; }
+  ul.sources li { padding: 6px 0; border-top: 1px solid var(--line); color: var(--ink-2); }
+  ul.sources li a { color: var(--ink); }
+  .empty p { color: var(--ink-2); max-width: 44ch; }
+  .empty .stat { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 16px; }
+  .empty .stat div { padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: var(--ground); }
+  .empty .stat b { display: block; font-family: "Libre Caslon Text", Georgia, serif; font-size: 22px; font-weight: 400; font-variant-numeric: tabular-nums; }
+  .empty .stat small { color: var(--ink-3); font-size: 11.5px; }
+
+  .stage { grid-area: stage; position: relative; overflow: hidden; }
+  svg { width: 100%; height: 100%; display: block; cursor: grab; }
+  svg:active { cursor: grabbing; }
+  .band-label {
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: var(--ink-3); letter-spacing: 0.06em;
+  }
+  .band-title { font-family: "Libre Caslon Text", Georgia, serif; font-size: 12.5px; fill: var(--ink-2); }
+  .band { fill: var(--band-a); }
+  .band-line { stroke: var(--line); stroke-width: 1; }
+  .edge { fill: none; stroke: var(--ink-3); stroke-width: 1.2; stroke-opacity: 0.55; }
+  .edge.direct { stroke: var(--direct); stroke-width: 2.4; stroke-opacity: 0.95; }
+  .edge.spouse { stroke-dasharray: 4 4; }
+  .edge.probable { stroke-dasharray: 2 5; stroke: var(--probable); stroke-width: 2; stroke-linecap: round; }
+  .edge.grand { stroke-dasharray: 8 5; }
+  .node { cursor: pointer; }
+  .node circle { stroke-width: 2; }
+  .node.line-mick circle { stroke: var(--mickley); fill: var(--surface); }
+  .node.line-mill circle { stroke: var(--millet); fill: var(--surface); }
+  .node.line-moy circle { stroke: var(--moyer); fill: var(--surface); }
+  .node.line-nick circle { stroke: var(--nick); fill: var(--surface); }
+  .node.line-chr circle { stroke: var(--chr); fill: var(--surface); }
+  .node.line-other circle { stroke: var(--ink-3); fill: var(--surface); }
+  .node.direct.line-mick circle { fill: var(--mickley); }
+  .node.direct.line-mill circle { fill: var(--millet); }
+  .node.direct.line-moy circle { fill: var(--moyer); }
+  .node.direct.line-nick circle { fill: var(--nick); }
+  .node.direct.line-chr circle { fill: var(--chr); }
+  .node.direct.line-other circle { fill: var(--ink-2); }
+  .node.probable circle { stroke-dasharray: 3 3; }
+  .node text { font-family: "IBM Plex Sans", sans-serif; font-size: 11.5px; fill: var(--ink); paint-order: stroke; stroke: var(--ground); stroke-width: 3px; stroke-linejoin: round; }
+  .node text.years { font-family: "IBM Plex Mono", monospace; font-size: 10px; fill: var(--ink-2); }
+  .node.direct text { font-weight: 600; }
+  .node.selected circle { stroke: var(--focus); stroke-width: 4; }
+  .node.dim, .edge.dim { opacity: 0.18; }
+  .node.hidden, .edge.hidden { display: none; }
+  .node.hit circle { stroke: var(--focus); stroke-width: 3.5; }
+  .hint {
+    position: absolute; left: 16px; bottom: 12px; font-size: 11.5px; color: var(--ink-3);
+    background: color-mix(in srgb, var(--ground) 80%, transparent); padding: 4px 8px; border-radius: 3px;
+  }
+  @media (max-width: 860px) {
+    .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr 42vh; grid-template-areas: "head" "stage" "side"; }
+    aside { border-right: 0; border-top: 1px solid var(--line); }
+    .search input { width: 140px; }
+    body { overflow: hidden; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+
+<div class="app">
+  <header>
+    <h1>Millet <em>Genealogy</em></h1>
+    <div class="controls">
+      <div class="legend">
+        <span><i class="sw fill mick"></i>Michelet / Mickley</span>
+        <span><i class="sw fill moy"></i>Moyer</span>
+        <span><i class="sw fill mill"></i>Millet</span>
+        <span><i class="sw fill nick"></i>Nickerson</span>
+        <span><i class="sw fill chr"></i>Christoffersen / Olsen</span>
+        <span><i class="ln"></i>direct line</span>
+        <span><i class="ln dash"></i>marriage</span>
+        <span><i class="ln dot"></i>probable</span>
+      </div>
+      <label class="toggle"><input type="checkbox" id="directOnly"> Direct line only</label>
+      <div class="search">
+        <input id="q" type="search" placeholder="Find a person" aria-label="Find a person" autocomplete="off">
+        <ul id="qlist" hidden></ul>
+      </div>
+      <button class="reset" id="reset" type="button">Reset view</button>
+    </div>
+  </header>
+
+  <aside id="panel"></aside>
+
+  <div class="stage">
+    <svg id="svg" role="img" aria-label="Family network diagram"></svg>
+    <div class="hint">Click a person for records. Drag to pan, scroll to zoom, drag a circle to move it.</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+(function () {
+  // ---------- Data ----------
+  // gen: generations above Chris (0). line: mick | moy | mill | other. direct: on Chris's ancestral line.
+  const S = {
+    gbEngage1948:["Jersey Journal, 31 Jul 1948, p. 5 (Greenville Social): engagement of Evelyn Christoffersen to Willard S. Nickerson (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A1243C89DEE4DC187%40GB3NEWS-161AF27225BB4B5C%402432764-1616B5FEE01E14E7%404-1616B5FEE01E14E7%40"],
+    gbEngage1954:["Jersey Journal, 22 Jan 1954, p. 6 (Engagements Announced): Ethel Paul to Willard Nickerson (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A1243C89DEE4DC187%40GB3NEWS-161D9FBA8B668CD0%402434765-1616AEDFCF3C21B6%405-1616AEDFCF3C21B6%40"],
+    gbWedding1954:["Jersey Journal, 18 Jun 1954, p. 6 (Week-End Weddings): “Miss Paul to Be Married at Old Bergen Church” (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A1243C89DEE4DC187%40GB3NEWS-161AF1D373CBBA0A%402434912-1616AEBF43577520%405-1616AEBF43577520%40"],
+    gbSheriff1818b:["Berks and Schuylkill Journal, 12 Sep 1818, p. 4: sheriff's sale notice repeated, three acres in Brunswick Twp., property of John Millot (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A11A09A55B22E34E8%40GB3NEWS-11A83679477BCD50%402385325-11A8367965C39A40%403-11A83679D7D7AEF8%40Advertisement"],
+    gbJuly1819:["Berks and Schuylkill Journal, 10 Jul 1819, p. 2: “Orwigsburg, July 5th, 1819,” Independent Republican celebration, toast by Mr. Millot (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A11A09A55B22E34E8%40GB3NEWS-11A83670CCCFB190%402385626-11A83670DE9E7870%401-11A836710BDF7D60%40Orwigsburg%252C%2BJuly%2B5th%252C%2B1819"],
+    gbSheriff1820mar:["Berks and Schuylkill Journal, 4 Mar 1820, p. 3: sheriff's sale of John Dell's lot on the Centre turnpike, Orwigsburg, adjoining John Millot (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A11A09A55B22E34E8%40GB3NEWS-11A8363B79A391C8%402385864-11A8363B9691F440%402-11A8363BC971F418%40Advertisement"],
+    gbSheriff1820may:["Berks and Schuylkill Journal, 27 May 1820, p. 3: sheriff's sale, 19 Jun 1820, half lot on the Centre turnpike, Orwigsburg, “late the estate of John Millot” (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A11A09A55B22E34E8%40GB3NEWS-11A83699103C72C8%402385948-11A836992C480F40%402-11A83699A426CE78%40Advertisement"],
+    gbMeeting1820:["Berks and Schuylkill Journal, 26 Aug 1820, p. 2: Independent Republican meeting, Orwigsburg, 19 Aug 1820 — John Kolb and John Millot, committee of vigilance for the borough (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A11A09A55B22E34E8%40GB3NEWS-11A836A6BB4CB5B8%402386039-11A836A6D31FA140%401-11A836A709377F40%40Independent%2BRepublican%2BMeeting"],
+    gbSheriff1818:["Berks and Schuylkill Journal (Reading), 29 Aug 1818, p. 3: Sheriff's sale, Schuylkill County — three-acre tract in Brunswick Twp., property of John Millot (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A11A09A55B22E34E8%40GB3NEWS-11A836573B16E848%402385311-11A836575DD12DC0%402-11A83657D9E9CA00%40Advertisement"],
+    gbVoters1942:["Jersey Journal, 22 Oct 1942, p. 26: registered voters, Bayonne — Julia and Stephen Nickerson, 100 W. 33rd St. (GenealogyBank)","https://www.genealogybank.com/doc/newspapers/image/v2%3A1243C89DEE4DC187%40GB3NEWS-161B4711D62CF27D%402430655-161711B7E3D90D3A%4025-161711B7E3D90D3A%40"],
+    paArch1782:["Pennsylvania Archives, 5th Series, vol. 5, p. 287: Sgt. Frederick Miloth, Capt. Abraham Keefer's Company, Berks County Militia, 10 Sep 1782 (index entry)","https://www.familysearch.org/ark:/61903/1:1:QG2M-7Y7R"],
+    paArch1782img:["Pennsylvania Archives, 5th Series, vol. 5, p. 287 (page image: Keefer's company, 1782)","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSHS-PSKQ-D"],
+    paArch1780p243:["Pennsylvania Archives, 5th Series, vol. 5, p. 243 (privates of Capt. Strouch's company, 1780)","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSHS-PSJ2-4"],
+    berksTax:["Pennsylvania Archives, 3rd Series, vol. 18: Berks County tax lists 1767–1785 (Colebrookdale Twp., 1781: “Mylot, Fred'k, taylor”)","https://archive.org/details/proprietaryands00pagoog"],
+    paArchIdx3:["Pennsylvania Archives, 3rd Series, general index to vols. XI–XXVI (“Mylot, Fred'k, xviii, 474”)","https://archive.org/details/pennsylvania0000unse_f5n5"],
+    deedMartin1817:["Schuylkill County deed book, 1811–1818: Martin Millot and Catharine his wife to Frederick Brintzinghoffer, lot 201, Orwigsburg, 18 Nov 1817","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJ9-1LJL"],
+    deedRecital1873:["Schuylkill County deed book, 1873: recital of title to lot 201 (Fidler and John Millot to Martin Millot, 21 Sep 1816)","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJ9-V9Y3"],
+    deedWitness1816:["Schuylkill County deed book, 1811–1818: Jacob Orwig to James Price, 28 Mar 1816, witnessed by Martin Millot","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJ9-1P4W"],
+    deedJohnLot74:["Schuylkill County deed book, 1825–1829: sheriff's deed to John Millot, lot 74, Orwigsburg","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJS-WRCH"],
+    deedRecital1833:["Schuylkill County deed book, 1833–1836: recital of John Millot and Elizabeth's 1815 conveyance to F. G. Fidler","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJS-H944-W"],
+    fgGeorgeMilot:["Find a Grave: George Milot (1782–1862), Friedens Church Cemetery, Oley","https://www.findagrave.com/memorial/8515655/george-milot"],
+    fgMariaLiess:["Find a Grave: Maria Milot Liess (1777–1859), Hunter Burial Grounds, Oley","https://www.findagrave.com/memorial/71825819/maria-liess"],
+    fsMariaCem:["Pennsylvania Cemetery Records: Maria Milot Liss or Lease (1777–1859), wife of John Lease","https://www.familysearch.org/ark:/61903/1:1:Z5DW-V2N2"],
+    c1820oley:["1820 census, Oley Township, Berks: George Melott","https://www.familysearch.org/ark:/61903/1:1:XHLF-DVW"],
+    c1830oley:["1830 census, Oley Township, Berks: George Melot","https://www.familysearch.org/ark:/61903/1:1:XHPK-WWP"],
+    c1850oley:["1850 census, Oley Township, Berks: George Milot","https://www.familysearch.org/ark:/61903/1:1:M44K-2J4"],
+    c1860oley:["1860 census, Oley Township, Berks: George Melot","https://www.familysearch.org/ark:/61903/1:1:MXP7-BLJ"],
+    hamburgObit:["Hamburg, Berks County, newspaper death notices 1825–1850: Susanna Millot, daughter of George Millot, “cattledriver,” of Oley Twp.","https://www.familysearch.org/ark:/61903/3:1:3QS7-99FL-STYP"],
+    berksWillsIdx:["Berks County index of wills and administrations, 1752–1850 (Daniel Seyer; Geo. Millot)","https://www.familysearch.org/library/books/records/item/778776-berks-county-pennsylvania-index-of-wills-and-administration-records-1752-1850"],
+    fsJJ1:["FamilySearch tree: John Jacob Mickley (1697–1769)","https://www.familysearch.org/tree/person/details/L18M-Z2M"],
+    fsJacques:["FamilySearch tree: Jacques Michelet (1623–1685), with 16 attached Metz records","https://www.familysearch.org/tree/person/details/L9CN-X13"],
+    fsLouisM:["FamilySearch tree: Louis Michelet (1675–1750)","https://www.familysearch.org/tree/person/details/L18X-XY9"],
+    fsAnnePhilpin:["FamilySearch tree: Anne Philpin (c. 1630–1681)","https://www.familysearch.org/tree/person/details/LWJ9-Y4T"],
+    metzColl:["France, Protestant Church Records, 1536–1902 (FamilySearch collection incl. the Reformed registers of Metz)","https://www.familysearch.org/search/collection/1582585"],
+    metzLouisBapt:["Metz Reformed register: baptism of Louis Michelet, 17 Dec 1675, son of Jacq. Michelet and A. Philpin","https://www.familysearch.org/ark:/61903/1:1:2HJF-39F"],
+    metzJacquesMarr:["Metz Reformed register: marriage of Jacques Michelet, son of Daniel, to Anne Philpin, 30 Oct 1646","https://www.familysearch.org/ark:/61903/1:1:2HJX-TGZ"],
+    metzJacquesDeath:["Metz Reformed register: burial of Jacques Michelet, 8 Oct 1685","https://www.familysearch.org/ark:/61903/1:1:2HJX-TR8"],
+    metzJacques1657:["Metz Reformed register: baptism of Jacques, son of Jacq. Michelet and A. Philpin, 10 Jun 1657","https://www.familysearch.org/ark:/61903/1:1:2HJX-LZL"],
+    metzDanielBapt:["Metz Reformed register: baptism of Daniel Michelet, son of Jacq., 20 Sep 1592","https://www.familysearch.org/ark:/61903/1:1:2HJX-LSL"],
+    metzDanielMarr:["Metz Reformed register: marriage of Daniel Michelet, son of Jacq., to Marie Colin, 8 Feb 1615","https://www.familysearch.org/ark:/61903/1:1:2HJX-PJ2"],
+    metzDaniel1615:["Metz Reformed register: marriage of Daniel Michelet (b. 1615), son of Daniel, to Judith De La Cloche, 30 Apr 1645","https://www.familysearch.org/ark:/61903/1:1:2HJX-2JP"],
+    metzJacqueminMarr:["Metz Reformed register: marriage of Jacques Michelet to Suzanne Wiriot, 28 Jul 1591","https://www.familysearch.org/ark:/61903/1:1:2HJX-N2V"],
+    metzJacques1576:["Metz Reformed register: baptism of Jacques, son of Jacques Michelet, 14 Oct 1576","https://www.familysearch.org/ark:/61903/1:1:2HJX-N71"],
+    metzJacques1619:["Metz Reformed register: baptism of Jacques, son of Paul Michelet and Anne Pilon, 7 Apr 1619","https://www.familysearch.org/ark:/61903/1:1:2HJX-KMW"],
+    archion:["Archion: Zweibrücken church books (Zentralarchiv der Evangelischen Kirche der Pfalz, Speyer)","https://www.archion.de/de/alle-archive/rheinland-pfalz/zentralarchiv-der-evangelischen-kirche-der-pfalz/zweibruecken"],
+    wikiKarl:["Wikipedia: Karl Ludwig Michelet","https://en.wikipedia.org/wiki/Karl_Ludwig_Michelet"],
+    britKarl:["1911 Encyclopædia Britannica: Michelet, Karl Ludwig","https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Michelet,_Karl_Ludwig"],
+    fsLouisG:["FamilySearch tree: Louis Guillaume Michelet (1775–1841) of Berlin","https://www.familysearch.org/tree/person/details/LJJN-3ZK"],
+    wikiCFM:["Wikipedia: Christian Frederik Michelet (1792–1874), Norwegian major general","https://en.wikipedia.org/wiki/Christian_Frederik_Michelet"],
+    wikiMichelet:["Wikipedia: Michelet (surname), Norwegian and French bearers","https://en.wikipedia.org/wiki/Michelet"],
+    hspMickley:["Historical Society of Pennsylvania: Joseph J. Mickley collection (biographical note)","https://www2.hsp.org/collections/manuscripts/m/Mickley0647.html"],
+    ansMickley:["American Numismatic Society: Mickley, Joseph J. (1799–1878)","http://numismatics.org/authority/mickley"],
+    fsJosephJ:["FamilySearch tree: Joseph Jacob Mickley (1799–1878)","https://www.familysearch.org/tree/person/details/L1HB-ZVV"],
+    fsJohnMartin:["FamilySearch tree: John Martin Mickley (1745–1828)","https://www.familysearch.org/tree/person/details/GQPH-LGH"],
+    fsJohnPeter:["FamilySearch tree: John Peter Mickley (1752–1827)","https://www.familysearch.org/tree/person/details/KLY1-V4N"],
+    fsHenry1754:["FamilySearch tree: John Henry Mickley (1754–1763)","https://www.familysearch.org/tree/person/details/273D-8PX"],
+    fsBarbara1756:["FamilySearch tree: Barbara Mickley (1756–1763)","https://www.familysearch.org/tree/person/details/L1R8-32V"],
+    fsJJ3:["FamilySearch tree: John Jacob Mickley (1766–1857)","https://www.familysearch.org/tree/person/details/L7YK-V44"],
+    fsChristian1767:["FamilySearch tree: Christian Mickley (1767–1817)","https://www.familysearch.org/tree/person/details/LHBR-CY4"],
+    fsSarah1786:["FamilySearch tree: Sarah Mickley (1786–1859)","https://www.familysearch.org/tree/person/details/L7YK-GF4"],
+    fsJacob1794:["FamilySearch tree: John Jacob Mickley (1794–1888)","https://www.familysearch.org/tree/person/details/27JG-TK6"],
+    fsEdwin:["FamilySearch tree: Edwin Mickley (1830–1898)","https://www.familysearch.org/tree/person/details/27JG-1M6"],
+    werelate:["WeRelate: Louis Michelet","https://www.werelate.org/wiki/Person:Louis_Michelet_(1)"],
+    mick1893:["Genealogy of the Mickley Family of America (1893)","https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt"],
+    wikiSettler:["Wikipedia: John Jacob Mickley (settler)","https://en.wikipedia.org/wiki/John_Jacob_Mickley_(settler)"],
+    wikiSoldier:["Wikipedia: John Jacob Mickley (soldier)","https://en.wikipedia.org/wiki/John_Jacob_Mickley_(soldier)"],
+    lvpress:["Lehigh Valley Press: Mickley family comes to America in 1733","https://www.lvpnews.com/20140501/mickley-family-comes-to-america-in-1733/"],
+    rcus:["RCUS: Liberty Bell hidden at Zion Reformed, Allentown","https://rcus.org/tricentennial/liberty-bell/"],
+    leaser:["Wikipedia: Frederick Leaser","https://en.wikipedia.org/wiki/Frederick_Leaser"],
+    ushistory:["ushistory.org: Liberty Bell timeline","https://www.ushistory.org/libertybell/timeline.html"],
+    fgPeter:["Find a Grave: Johann Peter Mickley","https://www.findagrave.com/memorial/84941873/johann_peter-mickley"],
+    fsPeter:["FamilySearch tree: Johann Peter Mueckli","https://www.familysearch.org/tree/person/details/L4PS-Q4N"],
+    fsJJ2:["FamilySearch tree: Johann Jacob Mickley Jr.","https://www.familysearch.org/tree/person/details/MQ16-P7D"],
+    fgSusan:["Find a Grave: Susan Mickley Moyer","https://www.findagrave.com/memorial/143592161/susan-moyer"],
+    fsSusanna:["FamilySearch tree: Susanna Mickley","https://www.familysearch.org/tree/person/details/L5LH-P3D"],
+    fsThomasMoyer:["FamilySearch tree: Thomas Moyer","https://www.familysearch.org/tree/person/details/GM6Z-VDY"],
+    fsCatharine:["FamilySearch tree: Catharine Moyer","https://www.familysearch.org/tree/person/details/GH1F-MHC"],
+    fgCatharine:["Find a Grave: Catharine A. Moyer Millet","https://www.findagrave.com/memorial/143591936/catharine-a-millet"],
+    fgEmma:["Find a Grave: Emma E. Moyer Hinkley","https://www.findagrave.com/memorial/218100741/emma_e-hinkley"],
+    c1870:["1870 census, Tamaqua","https://www.familysearch.org/ark:/61903/1:1:MZT3-FNW"],
+    c1880:["1880 census, Tamaqua","https://www.familysearch.org/ark:/61903/1:1:MWVC-R96"],
+    c1900tam:["1900, 1910, 1920 censuses, Tamaqua (Millet households)","https://www.familysearch.org/search/record/results?q.surname=Millet&q.residencePlace=Tamaqua%2C%20Schuylkill%2C%20Pennsylvania&q.residenceDate.from=1860&q.residenceDate.to=1900"],
+    letters:["Letters of administration, Schuylkill County, July 18, 1864","https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9S9-ZCCZ"],
+    deeds:["Schuylkill County deeds and probate, full-text search","https://www.familysearch.org/search/full-text/results?q.text=%22Frederick%20Millet%22&q.place=Schuylkill%2C%20Pennsylvania"],
+    paArch:["Pennsylvania Archives, 5th Series, vol. 5, p. 242 (Capt. Strouch's Company, 1780)","https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSHS-PS64-J"],
+    paArchIdx:["Revolutionary War rosters index: Frederick Millet","https://www.familysearch.org/ark:/61903/1:1:QG29-QW8T"],
+    berks1777:["Sixth Battalion, Berks County Militia, 1777 (officers)","https://www.pagenweb.org/~berks/oldberkssite/Military/RevolutionaryWar/AssociatorsAndMilitia/BerksCountyMilitia1777SixthBattalion.html"],
+    c1820martin:["1820 census, Orwigsburg: Martin Millot","https://www.familysearch.org/ark:/61903/1:1:XHGX-LPM"],
+    c1820john:["1820 census, Orwigsburg: John Millot","https://www.familysearch.org/ark:/61903/1:1:XHGX-L23"],
+    c1830martin:["1830 census, Orwigsburg: Martin Millott","https://www.familysearch.org/ark:/61903/1:1:XHP7-BVY"],
+    fsMartinMillet:["FamilySearch tree: Martin Millet","https://www.familysearch.org/tree/person/details/PMZS-2JZ"],
+    fsJohnMillot:["FamilySearch tree: John Millot","https://www.familysearch.org/tree/person/details/GQ5W-W4G"],
+    fsNoaker:["FamilySearch tree: Elizabeth Noaker","https://www.familysearch.org/tree/person/details/LDQB-9NP"],
+    fsJoseph:["FamilySearch tree: Joseph Millet","https://www.familysearch.org/tree/person/details/K8D2-MB7"],
+    fgJoseph:["Find a Grave: Joseph Millet","https://www.findagrave.com/memorial/155155561/joseph-millet"],
+    stjohns:["St. John's Reformed Church, Orwigsburg: register 1833–1920 (DAR transcription)","https://www.familysearch.org/library/books/viewer/1029801/?offset=0#page=25&viewer=picture&o=search&n=0&q=Millet"],
+    c1850:["1850 census, Tamaqua","https://www.familysearch.org/ark:/61903/1:1:M4CB-39J"],
+    c1860:["1860 census, Tamaqua (indexed as Miller)","https://www.familysearch.org/ark:/61903/1:1:MXR3-LTS"],
+    fsFredrick:["FamilySearch tree: Fredrick Millet","https://www.familysearch.org/tree/person/details/MTQV-YMS"],
+    fsSophia:["FamilySearch tree: Sophia Brock","https://www.familysearch.org/tree/person/details/9NP9-2DW"],
+    fsCharlesSr:["FamilySearch tree: Charles A. Millet Sr.","https://www.familysearch.org/tree/person/details/G2NP-SB1"],
+    fgCharlesA:["Find a Grave: Charles A. Millet","https://www.findagrave.com/memorial/275487551/charles-a-millet"],
+    fgMaryC:["Find a Grave: Mary C. Martin Millet","https://www.findagrave.com/memorial/275488474/mary-c-millet"],
+    charlesCensus:["Censuses 1870–1940 and 1911 marriage: Charles Millet, b. 1863","https://www.familysearch.org/search/record/results?q.givenName=Charles&q.surname=Millet&q.birthLikeDate.from=1860&q.birthLikeDate.to=1866&q.birthLikePlace=Pennsylvania%2C%20United%20States"],
+    fgCharlesAdolph:["Find a Grave: Charles Adolph Millet","https://www.findagrave.com/memorial/211048515/charles-adolph-millet"],
+    oddfellows:["Find a Grave: Millet burials, Odd Fellows Cemetery, Tamaqua","https://www.findagrave.com/cemetery/45677/memorial-search?lastname=Millet"],
+    loc:["Veterans History Project interview, Library of Congress, Dec. 3, 2002","https://www.loc.gov/item/afc2001001.05344/"],
+    fredObit:["Obituary of Frederick Millet, Branchburg Funeral Home, 2016","https://www.branchburgfuneralhome.com/obituaries/Frederick-Millet?obId=2147293"],
+    marieObit:["Obituary of Marie Violet Millet, Branchburg Funeral Home, 2004","https://www.branchburgfuneralhome.com/obituaries/Marie-Violet-Millet?obId=2147614"],
+    fgFred:["Find a Grave: Frederick Millet (1920–2016)","https://www.findagrave.com/memorial/236096100/frederick-millet"],
+    wwii:["WWII Army enlistment record, Oct. 26, 1942 (search)","https://www.familysearch.org/search/record/results?q.givenName=Frederick&q.surname=Millet&q.birthLikeDate.from=1919&q.birthLikeDate.to=1921"],
+    div79:["Wikipedia: 79th Infantry Division","https://en.wikipedia.org/wiki/79th_Infantry_Division_(United_States)"],
+    fredWObit:["Obituary of Frederick W. Millet, Citizens' Voice, March 2016","https://www.citizensvoice.com/obituaries/frederick-w-millet-mountain-top-pa/"],
+    willardObit:["Obituary of Willard S. Nickerson, MyCentralJersey, 2011","https://www.legacy.com/us/obituaries/mycentraljersey/name/willard-nickerson-obituary?id=22543876"],
+    c1950dun:["1950 census, Dunellen (indexed as William S. Nickerson)","https://www.familysearch.org/ark:/61903/1:1:6F9G-1GKG"],
+    c1930bay:["1930 census, Bayonne","https://www.familysearch.org/ark:/61903/1:1:X468-TXD"],
+    c1940bay:["1930 & 1940 censuses, Bayonne (Willard Nickerson)","https://www.familysearch.org/search/record/results?q.givenName=Willard&q.surname=Nickerson&q.birthLikeDate.from=1925&q.birthLikeDate.to=1931"],
+    stephenRecs:["Stephen Nickerson records, b. 1900 NY (censuses, WWI draft, VA index)","https://www.familysearch.org/search/record/results?q.givenName=Stephen&q.surname=Nickerson&q.birthLikeDate.from=1899&q.birthLikeDate.to=1903&q.birthLikePlace=New%20York&q.residenceDate.from=1905&q.residenceDate.to=1950"],
+    fsStephenJ:["FamilySearch tree: Stephen J Nickerson","https://www.familysearch.org/tree/person/details/LDB3-PX9"],
+    fsLevi1865:["FamilySearch tree: Levi Nickerson (1865–1926)","https://www.familysearch.org/tree/person/details/LDB9-84B"],
+    fsStephenSmith:["FamilySearch tree: Stephen Smith Nickerson","https://www.familysearch.org/tree/person/details/LY43-H4W"],
+    fsMelvina:["FamilySearch tree: Melvina Baumes","https://www.familysearch.org/tree/person/details/LYWW-X28"],
+    fsLevi1763:["FamilySearch tree: Levi Nickerson (1763–1847)","https://www.familysearch.org/tree/person/details/G99S-RWG"],
+    fsHuldah:["FamilySearch tree: Huldah Meech","https://www.familysearch.org/tree/person/details/9ZZH-P5Z"],
+    fsEliphaz:["FamilySearch tree: Eliphaz Nickerson","https://www.familysearch.org/tree/person/details/G7SG-NFS"],
+    fsSybil:["FamilySearch tree: Sybil Norris","https://www.familysearch.org/tree/person/details/271N-LSG"],
+    fsJames:["FamilySearch tree: James William Nickerson","https://www.familysearch.org/tree/person/details/LBHQ-84C"],
+    fsDorcas:["FamilySearch tree: Dorcas Hannah Covel","https://www.familysearch.org/tree/person/details/NTGM-HKG"],
+    fsEnsign:["FamilySearch tree: William Nickerson (1668–1742)","https://www.familysearch.org/tree/person/details/L7X8-QM4"],
+    fsDeliverance:["FamilySearch tree: Deliverance Lombard","https://www.familysearch.org/tree/person/details/LCV8-6QH"],
+    fsWmJr:["FamilySearch tree: William Nickerson (1646–1719)","https://www.familysearch.org/tree/person/details/GWJL-FF9"],
+    fsMercy:["FamilySearch tree: Mercy Williams","https://www.familysearch.org/tree/person/details/G792-RC8"],
+    fsWmSr:["FamilySearch tree: William Nickerson (1604–1690)","https://www.familysearch.org/tree/person/details/LB91-4HP"],
+    fsAnne:["FamilySearch tree: Anne Busby","https://www.familysearch.org/tree/person/details/LBL3-6V9"],
+    nfa:["Nickerson Family Association: William Nickerson, the settler","https://nickersonassoc.com/genealogy/william-nickerson/"],
+    nfaHist:["Nickerson Family Association: family history","https://nickersonassoc.com/about/nickerson-history/"],
+    c1940jc:["1940 census, Jersey City (Christoffersen household)","https://www.familysearch.org/ark:/61903/1:1:K4BM-HYN"],
+    fsEvelyn:["FamilySearch tree: Evelyn R Christoffersen","https://www.familysearch.org/tree/person/details/GV6X-JRZ"],
+    evelynNumident:["Social Security NUMIDENT: Evelyn Ruth Christoffersen","https://www.familysearch.org/search/record/results?q.givenName=Evelyn&q.surname=Christoffersen&q.surname.exact=off&q.birthLikeDate.from=1929&q.birthLikeDate.to=1933&q.anyPlace=New%20Jersey"],
+    fsWalter:["FamilySearch tree: Walter O Christoffersen","https://www.familysearch.org/tree/person/details/LB74-4VG"],
+    fsLouise:["FamilySearch tree: Louise S Mihm","https://www.familysearch.org/tree/person/details/LB74-WK6"],
+    walterRecs:["Walter Christoffersen records: 1900–1930 censuses, WWI draft","https://www.familysearch.org/search/record/results?q.givenName=Walter&q.surname=Christoffersen&q.surname.exact=off&q.birthLikeDate.from=1898&q.birthLikeDate.to=1902&q.birthLikePlace=Illinois&q.residenceDate.from=1900&q.residenceDate.to=1930"],
+    c1900chi:["1900 census, Jefferson Park, Chicago","https://www.familysearch.org/ark:/61903/1:1:MSQV-3MH"],
+    marriage1891:["Marriage, Chicago, Nov. 7, 1891 (Lutheran church record)","https://www.familysearch.org/ark:/61903/1:1:QVNY-7Q5T"],
+    martinNJ:["Martin Christoffersen in New Jersey: 1915 state census, 1920 & 1930 Jersey City","https://www.familysearch.org/search/record/results?q.givenName=Martin&q.surname=Christoffersen&q.surname.exact=off&q.birthLikeDate.from=1862&q.birthLikeDate.to=1866&q.birthLikePlace=Denmark&q.anyPlace=New%20Jersey"],
+    ingerBapt:["Baptism, Egersund, Jan. 3, 1869: Inger Mathilde (Norway Church Books)","https://www.familysearch.org/search/record/results?q.givenName=Inger&q.birthLikeDate.from=1866&q.birthLikeDate.to=1870&q.birthLikePlace=Norway&q.fatherGivenName=Otto&q.motherGivenName=Olava"],
+    ottoMarr:["Marriage, Egersund, Oct. 18, 1866: Otto Johan Olsen and Olava Olsen","https://www.familysearch.org/ark:/61903/1:1:68Q7-JXTF"],
+    ottoBapt:["Baptism, Egersund, Aug. 31, 1845: Otto Johan (Norway Baptisms)","https://www.familysearch.org/search/record/results?q.givenName=Otto%20Johan&q.birthLikeDate.from=1843&q.birthLikeDate.to=1846&q.birthLikePlace=Egersund&q.fatherGivenName=Ole%20Andreas"],
+    fsOtto:["FamilySearch tree: Otto Johan Olsen","https://www.familysearch.org/tree/person/details/K86R-SZG"],
+    fsOlava:["FamilySearch tree: Olava Olsdr","https://www.familysearch.org/tree/person/details/KCJ4-9HG"],
+    olavaBapt:["Egersund baptisms, Olava/Olave, 1846–1850 (Norway Church Books)","https://www.familysearch.org/search/record/results?q.givenName=Olava&q.birthLikeDate.from=1846&q.birthLikeDate.to=1850&q.birthLikePlace=Egersund&q.fatherGivenName=Ole"],
+    udvandrer:["Danish Emigration Archives (Copenhagen police emigration registers)","https://www.udvandrerarkivet.dk/udvandrerprotokollerne/"],
+  };
+  const P = [
+    // ---- Michelet / Mickley ----
+    { id:"jacques", name:"Jacques Michelet", b:"1623", d:"1685", gen:10, line:"mick", direct:true, place:"Metz, Lorraine", role:"Dyer and deacon of the Reformed church of Metz",
+      lede:"Born in Metz and baptized in its Reformed church on December 28, 1623, son of Daniel Michelet and Marie Colin. A dyer (teinturier) by trade and a deacon of the Protestant congregation. Married Anne Philpin at Metz on October 30, 1646; the family table compiled in Berlin carries an entry for an Anne, died 1681, “veuve Dubois,” which is probably how the name Du Bois came to be attached to her in some later trees. Metz had been a free city of the Holy Roman Empire until France seized it in 1552, and its large Reformed community kept its own registers from 1561 until the Revocation. Anne died in 1681. Jacques was buried on October 8, 1685, days before the Edict of Fontainebleau outlawed Protestant worship in France that same month. Of his children, Pierre became a mercer and deacon; the youngest, Louis, born when his father was fifty-two, carried the line to Zweibrücken and America.",
+      facts:{ Spouse:"Anne Philpin (c. 1630–1681), m. 30 Oct 1646", Children:"Anne (1649), Pierre (1652), Jacques (1657), Judith (1659), Louis (1675)" },
+      sources:[S.metzJacquesMarr, S.metzJacquesDeath, S.metzLouisBapt, S.metzJacques1657, S.fsJacques, S.fsAnnePhilpin, S.mick1893, S.werelate, S.metzColl] },
+    { id:"louis", name:"Louis Michelet", b:"1675", d:"1750", gen:9, line:"mick", direct:true, place:"Metz → Zweibrücken", role:"Merchant, later Protestant pastor",
+      lede:"Born in Metz on December 17, 1675, and baptized in the Reformed church there, the youngest child of Jacques Michelet and Anne Philpin; he was nine when the Revocation of the Edict of Nantes closed the Metz temple. A merchant. Because no Protestant marriage could be solemnized in French Metz, he married Suzanne Mangeot (born June 26, 1674) in 1697 at Zweibrücken (Deux-Ponts), the Palatine duchy just over the border, and the couple stayed there until their first son was born and baptized; Suzanne's own diary, still kept by the Berlin branch of the family in 1883, records this. The Metz archives list Louis and Suzanne in 1699 as “new converts” openly declaring for the Reformed faith, and in 1715 Louis, by then a widower, declaring his five surviving children Protestant. He later served as a Protestant pastor at Zweibrücken and died there on February 27, 1750. His children scattered with the Huguenot diaspora: Jean Jacques to Pennsylvania, Marie and Louis to Berlin, Jeanne out of Metz in 1708 in the household of the Countess of Nassau.",
+      facts:{ Spouse:"Suzanne Mangeot (1674–bef. 1715), m. 1697 at Zweibrücken", Children:"Jean Jacques (1697), Jeanne (1699), Barbe (1702), Marie (1703, to Berlin, m. Pierre Perrin), Louis (1705–1766, to Berlin), Pierre (1710)" },
+      sources:[S.metzLouisBapt, S.fsLouisM, S.mick1893, S.werelate, S.archion, S.metzColl] },
+    { id:"jj1", name:"Jean Jacques Michelet (John Jacob Mickley)", short:"John Jacob Mickley Sr.", b:"1697", d:"1769", gen:8, line:"mick", direct:true,
+      place:"Zweibrücken → Oley, Berks Co. → Egypt, Whitehall Twp., PA", role:"Immigrant, 1733",
+      lede:"Eldest son of Louis Michelet and Suzanne Mangeot, born at Zweibrücken in 1697 while his parents were there to marry; his baptism has never been found, and his Berlin cousin wrote in 1883 that the Palatinate's Protestant records were probably destroyed in the French devastations under Louis XIV. Sailed from Rotterdam on the ship Hope of London, Daniel Reid master, by way of Cowes, and landed at Philadelphia on August 28, 1733, one of 389 Palatine passengers; the list spells him Johan Jacob Mückli, and he took the oath of allegiance the same week. A single man on arrival, he lived several years with Jacob Levan, a Huguenot relative, in the Oley valley of Berks County, then settled at Egypt in Whitehall Township, now Lehigh County, buying land from Adam Deshler by deed of December 14, 1761, on a tract William Penn had first granted in 1681. The name passed through Michelet, Miquelet, Mückli, and Michley before settling as Mickley; the village of Mickleys stands on his original tract, 450 acres of which were still in the family in 1893. Two of his children, Henry and Barbara, were killed in a raid on October 8, 1763. Died August 18, 1769; his wife died the same month. Their slate stones having worn away, descendants reinterred them at St. John's Union (Mickleys) Cemetery under a monument raised by subscription in 1864.",
+      facts:{ Spouse:"Elizabeth Barbara Burkhalter (1719–1769)", Children:"John Jacob (1737), Mary Magdalena (1744), John Martin (1745), John Peter (1752), Henry (1754), Barbara (1756), Susanne" },
+      sources:[S.mick1893, S.fsJJ1, S.wikiSettler, S.lvpress] },
+    { id:"jj2", name:"Pvt. John Jacob Mickley Jr.", b:"1737", d:"1808", gen:7, line:"mick", direct:true,
+      place:"Egypt, Whitehall Twp., Lehigh Co., PA", role:"Hauled the Liberty Bell, 1777",
+      lede:"Born December 17, 1737. Married Susanne Margarethe Miller in 1760. Elected to the Northampton County Committee of the Revolution in November 1776, and gave the use of his horses and wagons to the Continental Army throughout the war. In September 1777, after the Battle of Brandywine, the Executive Council ordered Philadelphia's bells out of the city so the British could not melt them into cannon; the State House bell, the Christ Church chimes, and St. Peter's bell, eleven in all, were carried off at night under the appearance of farm wagons. The Liberty Bell rode on his wagon, drawn by his own horses, with his eleven-year-old son beside him. The Moravian diary at Bethlehem records on September 23, 1777, that “the wagon with the State House Bell broke down here, so it had to be unloaded,” and neighbor Frederick Leaser's wagon finished the haul to Zion Reformed Church in Allentown, where the bell lay under the floor until June 1778. Pastor Abraham Blumer, who helped hide it, later became father-in-law to his daughter Sarah. He was killed by a tree falling on him near his home at Mickleys, December 12, 1808. A plaque at Zion Reformed (1908) and a family memorial at St. John's Union Cemetery (1917) commemorate him.",
+      facts:{ Spouse:"Susanne Margarethe Miller (1743–1807), m. 1760", Children:"Catherine (1764), John Jacob (1766), Christian (1767), David (1769–1776), Peter (1773), Magdalena (1778), Daniel (1780), Henry (1782), Joseph (1784), Sarah (1786), Anna (1788), Magdalena" },
+      sources:[S.mick1893, S.wikiSoldier, S.rcus, S.leaser, S.ushistory, S.fgPeter, S.fsJJ2] },
+    { id:"jj3", name:"Pvt. John Jacob Mickley III", b:"1766", d:"1857", gen:6, line:"mick", direct:false, place:"Mickleys, Lehigh Co., PA", role:"Rode on the bell wagon, age 11",
+      lede:"Born April 13 (or 14), 1766, eldest son of John Jacob Jr. At eleven he rode on the wagon bearing the Liberty Bell from Philadelphia to Allentown in 1777 and was occasionally allowed to drive; the story of that first trip to the city, told to his grandchildren, was still repeated in the family in 1893. Marched with the state militia to western Pennsylvania in the Whiskey Rebellion of 1794. Married Eva Catherine Schreiber. Died in the homestead at Mickleys on April 1, 1857, at ninety. His sons included Jacob, who kept the homestead, and Joseph, the Philadelphia numismatist.",
+      facts:{ Spouse:"Eva Catherine Schreiber (1761–1846)", Children:"Mary Magdalena (1789, m. Daniel Moyer), Sarah (1790–1817), Jacob (1794–1888), Anna (1797–1890), Joseph J. (1799–1878)" },
+      sources:[S.mick1893, S.fsJJ3, S.fgPeter] },
+    { id:"peter", name:"Johann Peter Mickley", b:"1773", d:"1863", gen:6, line:"mick", direct:true, place:"Egypt, Whitehall Twp., Lehigh Co., PA", role:"Farmer near Hokendauqua",
+      lede:"Born January 17 or 18, 1773, at Egypt (the 1893 genealogy says 1772), baptized April 11, 1773, at Egypt Reformed Church, fourth son of the man who hauled the Liberty Bell. Married Maria Salome Biery (the 1893 genealogy says 1791; Find a Grave, October 14, 1794, at Catasauqua). Farmed at “Peter Mickley's place, near Hokendauqua.” Eleven children, whose marriages spread the family from Bloomsburg and Trexlertown to Clinton County, Indiana. Died May 19, 1863, at ninety; buried at St. John's Union (Mickley's) Cemetery.",
+      facts:{ Spouse:"Maria Salome Biery (1773–1868)", Children:"Mary Magdalena (1792, m. Daniel Snyder, Bloomsburg), Catherine (1795, m. Daniel Burkhalter, Indiana), John (1796, died in infancy), Salome (1798–1867, m. John Troxell), Hannah (1800–1881, m. Joseph Kern, then George Ludwig), Joseph (1802–1852, Trexlertown), Charles (1802–1878, Mechanicsville), Elizabeth (1805–1845, m. George Fahler), Christina (1808–1885, m. John Peter Byle), Susanna (1811/12, m. Thomas Moyer), Esther (1815, m. Stephen Troxell, Indiana)" },
+      sources:[S.fgPeter, S.fsPeter, S.mick1893] },
+    { id:"susanna", name:"Susanna Mickley Moyer", b:"1812", d:"1908", gen:5, line:"mick", direct:true, place:"Whitehall Twp. → Tamaqua, PA", role:"Lived to 96",
+      lede:"Born March 28, 1812, in Whitehall Township; baptized May 17, 1812, at Egypt Reformed Church. Married Thomas Moyer on August 6, 1833, in South Whitehall Township and moved with him to Tamaqua, in the coal region of Schuylkill County. Nine children. The 1893 Mickley genealogy lists her as “Susanna, born March, 1811; living in 1892. Married Thomas Moyer; Tamaqua, Pa.” In 1900, widowed, she was living with her daughter Catharine and grandson Charles. Died December 13, 1908; buried at Odd Fellows Cemetery, Tamaqua.",
+      facts:{ Spouse:"Thomas Moyer (1804–1869), m. Aug. 6, 1833", Children:"Nine, incl. Catharine (1833) and Emma (1850)" }, sources:[S.fgSusan, S.fsSusanna, S.mick1893, S.c1900tam] },
+    { id:"thomas", name:"Thomas Moyer", b:"1804", d:"1869", gen:5, line:"moy", direct:true, place:"South Whitehall Twp. → Tamaqua, PA", role:"",
+      lede:"Married Susanna Mickley on August 6, 1833, in South Whitehall Township, Lehigh County. The family was living in Tamaqua by 1850 and in its East Ward in 1860. Died 1869.",
+      facts:{ Children:"Nine" }, sources:[S.fsThomasMoyer, S.fsCatharine, S.mick1893] },
+    { id:"emma", name:"Emma E. Moyer Hinkley", b:"1850", d:"1930", gen:4, line:"moy", direct:false, place:"Tamaqua, PA", role:"",
+      lede:"Youngest of the Moyer daughters; buried at Odd Fellows Cemetery, Tamaqua.", facts:{}, sources:[S.fgEmma, S.fgSusan] },
+    { id:"catharine", name:"Catharine A. Moyer Millet", b:"1833", d:"1925", gen:4, line:"moy", direct:true, place:"South Whitehall Twp. → Tamaqua, PA", role:"Widowed at 30; never remarried",
+      lede:"Born November 21, 1833, in South Whitehall Township, Lehigh County, eldest child of Thomas Moyer and Susanna Mickley. Married the widower Frederick Millet in Tamaqua about 1861–62; their only child, Charles, was born in 1863, and Frederick died the following year. On July 18, 1864, the Register of Wills at Pottsville granted her letters of administration as “widow of Frederick Millet, late of the borough of Tamaqua.” Head of her own household in 1870 and 1880; in 1900 her mother was living with her; from 1910 she lived with her son, and was still with him at 86 in 1920. Died June 3, 1925, in Tamaqua; buried at Odd Fellows Cemetery.",
+      facts:{ Spouse:"Frederick Millet (1820–1864)", Child:"Charles A. Millet (1863–1950)" }, sources:[S.letters, S.c1870, S.c1880, S.c1900tam, S.fgCatharine, S.fsCatharine, S.deeds] },
+
+    // ---- Millet: Berks & Orwigsburg ----
+    { id:"sgtfred", name:"Sgt. Frederick Millet (Mylot, Miloth)", short:"Sgt. Frederick Millet", b:"fl. 1780–82", d:"", gen:6, line:"mill", direct:true, probable:true, place:"Colebrookdale Twp., Berks Co., PA", role:"Tailor; militia sergeant, 1780 and 1782",
+      lede:"A tailor taxed in Colebrookdale Township, Berks County, in 1781 (“Mylot, Fred'k, taylor”), the only person of the name in the county's surviving tax lists of 1767–1785. Served twice as a sergeant of the Berks County militia during the Revolution: in Captain Henry Strouch's company of Colonel Joseph Hiester's Sixth Battalion, on active duty from August 10 to September 9, 1780, and in Captain Abraham Keefer's company mustered September 10, 1782, where his fellow sergeants were Abraham Lesher of the Oley ironmaking family and Michael Kooser. Both companies were raised from the Colebrookdale and Oley district south-east of Reading: the Kussers, Eckerts, Mattes, and Yoxheimers on their rolls are his neighbors on the Colebrookdale list. Colebrookdale and Oley were settled in part by Huguenot families, and the Millot/Milot name is French. He is not found in the 1790 or 1800 census indexes under any spelling, and no Millot appears in the Brunswick Township (Orwigsburg) lists of 1779–1785, so the family's move north came later. Four people of this rare surname, born 1777 to about 1785 in the same county, fit as his children: Maria (1777) and George (1782), who stayed in Oley, and John (about 1781) and Martin, who were in Orwigsburg by 1815. None of these links is yet proved by a baptism or will.",
+      facts:{ "1780 company":"Capt. Henry Strouch; Lt. Jacob Kester; Ens. John Eckert; fellow sergeants Christopher Berninger, Andrew Haas", "1782 company":"Capt. Abraham Keefer; Lt. Charles Eckart; Ens. Christopher Wentz; fellow sergeants Abraham Lesher, Michael Kooser", "Probable children":"Maria (1777), John (c. 1781), George (1782), Martin" },
+      sources:[S.berksTax, S.paArchIdx3, S.paArch, S.paArch1780p243, S.paArchIdx, S.paArch1782, S.paArch1782img, S.berks1777] },
+    { id:"martin", name:"Martin Millot", b:"c. 1780s", d:"", gen:5, line:"mill", direct:true, probable:true, place:"Orwigsburg, Schuylkill Co., PA", role:"Lot-holder on Perry Street; head of household 1820–1830",
+      lede:"Married to Catharine. First seen in Orwigsburg on March 28, 1816, witnessing a deed of Jacob Orwig, of the family that founded the town. The Millots were Independent Republicans, the Hiester party: at the party's Fourth of July celebration at Christian Deibert's spring in 1819 a Mr. Millot, John or Martin, offered a toast that drew six cheers. On September 21, 1816, Frederick G. Fidler and John Millot, who had held it jointly since 1815, conveyed to him lot 201 on the general plan of the borough, on Perry Street between two alleys, 111 feet 9 inches by 45 feet 4½ inches; on November 18, 1817, Martin and Catharine sold it for thirty-five dollars to Frederick Brintzinghoffer, a coach-maker of Berks County, both signing (Martin by mark). Head of one of the two Millot households in Orwigsburg in the 1820 census, the other being John's, and of the only one left in 1830: a man and a woman in their forties, a young woman in her teens, and one boy aged 10 to 14, the bracket a son born in 1820 falls in. The FamilySearch tree names him as Frederick's father, but no baptism has been found; St. John's register begins only in 1833. After 1830 he does not appear in Schuylkill County under Millot or Millet, and may be indexed as Miller. An Irish-born Martin Millett who bought a lot in Mahanoy City in the 1860s is a different man.",
+      facts:{ Spouse:"Catharine", Households:"1820 (p. 31) and 1830 (p. 83), Orwigsburg", Property:"Lot 201, Perry Street, Orwigsburg, 1816–1817" },
+      sources:[S.deedMartin1817, S.deedRecital1873, S.deedWitness1816, S.c1820martin, S.c1830martin, S.fsMartinMillet, S.gbJuly1819] },
+    { id:"johnmillot", name:"John Millot", b:"c. 1781", d:"bef. 1830", gen:5, line:"mill", direct:false, probable:true, place:"Orwigsburg, Schuylkill Co., PA", role:"Independent Republican committeeman, 1820",
+      lede:"Married Elizabeth Noaker (Noecker) about 1810; their five children were baptized at Zion's “Old Red” Union Church near Orwigsburg between 1811 and 1817. Held lot 201 in Orwigsburg with Frederick G. Fidler from 1815, sold his share in June 1815, and joined Fidler in conveying the lot to Martin Millot in September 1816; bought lot 74 at a sheriff's sale for $2.25 as highest bidder about 1819. His own affairs went badly: a three-acre tract of his in Brunswick Township, adjoining Wendel Seib and John Featherman, was advertised for sheriff's sale in August and September 1818, and in May 1820 the sheriff advertised his half lot on the Centre turnpike in Orwigsburg, 52 feet 6 inches wide and 11 perches deep, with a two-story frame dwelling and stable, bounded by John Kelly and Jacob Reinheimer, to be sold at Michael Graeff's inn on June 19, 1820, “late the estate of John Millot”; the neighboring lot of John Dell had gone the same way that March. He was active in the Hiester party all the same: at the Independent Republicans' Fourth of July celebration at Christian Deibert's spring in 1819 a Mr. Millot, John or Martin, gave the toast “Independent Republicanism expects every man to do his duty in the moment of trial” to six cheers, and at the county meeting of August 19, 1820, held at the Orwigsburg court-house to back General Joseph Hiester for governor, John Millot and John Kolb were named the committee of vigilance for the borough. Head of a household in Orwigsburg in the 1820 census, gone by 1830. Elizabeth afterward married Joseph Snyder and died January 15, 1876, buried at St. John's, Orwigsburg. The lot transactions tie him to Martin, and the two are most likely brothers.",
+      facts:{ Spouse:"Elizabeth Noaker (1792–1876), b. Berks Co., dau. of Johannes Noecker and Catharina Elizabeth Grim", Children:"Carolina (1811), Johan Wilhelm (1812), Maria (1814), Sarah (1816), Joseph (1817)", Property:"Lot 201 (with Fidler, 1815–16); lot 74 (c. 1819); half lot on the Centre turnpike (sold by sheriff, 1820); 3 acres in Brunswick Twp. (sold by sheriff, 1818)" },
+      sources:[S.fsJohnMillot, S.fsNoaker, S.c1820john, S.deedMartin1817, S.deedRecital1873, S.deedRecital1833, S.deedJohnLot74, S.gbSheriff1818, S.gbSheriff1818b, S.gbSheriff1820mar, S.gbSheriff1820may, S.gbJuly1819, S.gbMeeting1820] },
+    { id:"joseph", name:"Joseph Millet", b:"1817", d:"1883", gen:4, line:"mill", direct:false, place:"Orwigsburg, Schuylkill Co., PA", role:"",
+      lede:"Born November 11, 1817, in Orwigsburg. Married Mary Derrick about 1840. The 1880 census records him as blind since the age of 44. Died January 16, 1883; buried at St. John's United Church of Christ Cemetery, Orwigsburg, Middle Section, Row 20.",
+      facts:{ Spouse:"Mary Derrick (1824–1875)", Children:"William A. (1841–1861), Joseph Dallas (1845–1921), John Robert (1851–1867), Albert (1864–1927)" }, sources:[S.fgJoseph, S.fsJoseph] },
+    { id:"fred1820", name:"Frederick Millet", b:"1820", d:"1864", gen:4, line:"mill", direct:true, place:"Orwigsburg → Tamaqua, PA", role:"Deacon, St. John's Reformed, Orwigsburg",
+      lede:"Born 1820 in Orwigsburg. Married Sophia Brock about 1845. Elected a deacon of St. John's Reformed Church in Orwigsburg “to serve 2 years,” under Pastor J. W. Hoffmeier, and a communicant there on July 7 and November 8, 1846; his daughter Mary Louisa was baptized there August 29, 1846. Moved to Tamaqua by 1850 (south ward, household 186). Sophia died in 1860, leaving him a widower with son William. He bought a lot in Tamaqua, married Catharine Moyer about 1861–62, and died intestate before July 18, 1864, when his widow took out letters of administration; two 1865 deeds settled his property. No Civil War service record has been found under Millet, Millett, or Miller. No baptismal record has been found; his descent from Martin Millot rests on the 1830 household and the FamilySearch tree.",
+      facts:{ "1st spouse":"Sophia Brock (1826–1860), m. c. 1845", "2nd spouse":"Catharine A. Moyer (1833–1925)", Children:"Mary Louisa (1846), George F. (1850), William C. (1851); Charles A. (1863)" },
+      sources:[S.stjohns, S.c1850, S.c1860, S.letters, S.deeds, S.fsFredrick] },
+    { id:"sophia", name:"Sophia Brock Millet", b:"1826", d:"1860", gen:4, line:"other", direct:false, place:"Orwigsburg → Tamaqua, PA", role:"",
+      lede:"Daughter of William Brock (b. 1792). Married Frederick Millet about 1845; mother of Mary Louisa, George F., and William C. Died 1860.",
+      facts:{}, sources:[S.fsSophia, S.c1850] },
+    { id:"marylouisa", name:"Mary Louisa Millet Shugg", b:"1846", d:"", gen:3, line:"mill", direct:false, place:"Orwigsburg, PA → Delaware", role:"",
+      lede:"Born March 7, 1846, and baptized August 29, 1846, at St. John's Reformed, Orwigsburg, sponsor William Brock. Married a Shugg; her Delaware death record names her parents Frederick Millet and Sophia.", facts:{}, sources:[S.stjohns, S.c1850, S.fsFredrick] },
+    { id:"georgef", name:"George F. Millet", b:"1850", d:"", gen:3, line:"mill", direct:false, place:"Tamaqua, PA", role:"", lede:"An infant in the 1850 census of Tamaqua.", facts:{}, sources:[S.c1850] },
+    { id:"williamc", name:"William C. Millet", b:"1851", d:"", gen:3, line:"mill", direct:false, place:"Tamaqua, PA → Indiana", role:"",
+      lede:"Age 9 with his widowed father in the 1860 census. Married in Indiana in 1896, naming his father as Fredrick Millet.", facts:{}, sources:[S.c1860, S.fsFredrick] },
+
+    // ---- Millet: Tamaqua ----
+    { id:"charles", name:"Charles A. Millet", b:"1863", d:"1950", gen:3, line:"mill", direct:true, place:"Tamaqua, Schuylkill Co., PA", role:"Store clerk; known as “Squire” Millet",
+      lede:"Born in Tamaqua in 1863 (January 1864 by the 1900 census), only child of Frederick Millet and Catharine Moyer. His father died in his first year; he was raised by his mother, who lived with him until her death in 1925. A store clerk at 17. Married Mary C. Martin on May 20, 1911, at 48; six children between 1913 and 1927. Died 1950; buried at Odd Fellows Cemetery, Tamaqua.",
+      facts:{ Spouse:"Mary C. Martin (1891–1971), m. May 20, 1911", Children:"Charles Adolph (1913), William Clement (1915), Katherine Mary (1918), Frederick (1920), Susan E. (1924), George Albert (1927)" },
+      sources:[S.c1870, S.c1880, S.charlesCensus, S.fsCharlesSr, S.fgCharlesA, S.fredObit] },
+    { id:"maryc", name:"Mary C. Martin Millet", b:"1891", d:"1971", gen:3, line:"other", direct:true, place:"Tamaqua, PA", role:"",
+      lede:"Born 1891 in Pennsylvania. Married Charles A. Millet May 20, 1911, in Schuylkill County, twenty-eight years his junior; six children. Buried at Odd Fellows Cemetery, Tamaqua.", facts:{}, sources:[S.fgMaryC, S.charlesCensus, S.fredObit] },
+    { id:"charlesa", name:"Charles Adolph Millet", b:"1913", d:"2001", gen:2, line:"mill", direct:false, place:"Tamaqua, PA", role:"",
+      lede:"Born April 23, 1913, in Tamaqua. Married Dorothy Mae Herring (1913–1976) in 1935. Died November 4, 2001, in Pottsville; buried at Odd Fellows Cemetery, Tamaqua.", facts:{ Spouse:"Dorothy Mae Herring, m. 1935" }, sources:[S.fgCharlesAdolph, S.fsCharlesSr] },
+    { id:"williamcl", name:"William Clement Millet", b:"1915", d:"1993", gen:2, line:"mill", direct:false, place:"Tamaqua, PA", role:"", lede:"Second son of Charles and Mary.", facts:{}, sources:[S.fsCharlesSr, S.fredObit] },
+    { id:"katherine", name:"Katherine Mary Millet Gerrity", b:"1918", d:"2005", gen:2, line:"mill", direct:false, place:"Tamaqua, PA", role:"",
+      lede:"Eldest daughter of Charles and Mary; married Bill Gerrity. In her brother Fred's 2002 interview, her husband's playful headlock on Fred's return from the war in November 1945 ended with Bill on the floor of their mother's house, a reflex Fred credited to his Ranger training.", facts:{ Spouse:"Bill Gerrity" }, sources:[S.fsCharlesSr, S.loc, S.fredObit] },
+    { id:"susan", name:"Susan E. Millet", b:"1924", d:"2004", gen:2, line:"mill", direct:false, place:"Tamaqua, PA", role:"", lede:"Born July 7, 1924; died July 12, 2004. Buried at Odd Fellows Cemetery, Tamaqua.", facts:{}, sources:[S.oddfellows, S.fsCharlesSr] },
+    { id:"george", name:"George Albert Millet", b:"1927", d:"2015", gen:2, line:"mill", direct:false, place:"Tamaqua, PA", role:"", lede:"Youngest of the six children of Charles and Mary.", facts:{}, sources:[S.fsCharlesSr, S.fredObit] },
+    { id:"fred1920", name:"Frederick “Butch” Millet", b:"1920", d:"2016", gen:2, line:"mill", direct:true, place:"Tamaqua, PA → South Bound Brook, NJ", role:"310th Field Artillery Bn., 79th Infantry Division",
+      lede:"Born April 26, 1920, in Tamaqua; graduated from Tamaqua High School. Attended Citizens' Military Training Camp for three summers at Fort Meade and Fort Hoyle, Maryland, in the last years of horse-drawn artillery. Worked at Abe Sherman's Army-Navy store in Tamaqua and then at American Cyanamid (Calco) in New Jersey; heard the news of Pearl Harbor at the Majestic Theater in Tamaqua, where his future wife was an usherette. Drafted October 1942, reported to Fort Meade November 9, 1942; Camp Blanding, where he was one of the few in his unit to finish the 79th Division's Ranger training; maneuvers in Tennessee, Arizona, and Kansas; overseas from Camp Myles Standish in 1944. Normandy (the 79th landed at Utah Beach June 12–14), Cherbourg, the Falaise pocket, a night crossing of the Seine on a catwalk with the 313th Infantry, Belgium and Holland, the Hatten-Rittershoffen battle in January 1945, the Rhine at Remagen, the Ruhr, Würzburg, Pilsen; treated at a general hospital in Verdun. Home November 1945. Married Marie Violet Williams; 62 years together in South Bound Brook. Chemical shop steward at American Cyanamid; VFW Posts 12 and 2290; Reformed Church of South Bound Brook. Recorded his war for the Library of Congress on December 3, 2002. Died January 7, 2016, at 95; buried at Lake Nelson Memorial Park, Piscataway.",
+      facts:{ Spouse:"Marie Violet Williams (1922–2004)", Children:"Frederick W., Diane, Marcia, Sharon Kay, Marianne" },
+      sources:[S.loc, S.fredObit, S.fgFred, S.wwii, S.div79, S.charlesCensus] },
+    { id:"marie", name:"Marie Violet Williams Millet", b:"1922", d:"2004", gen:2, line:"other", direct:true, place:"Tamaqua, PA → South Bound Brook, NJ", role:"",
+      lede:"Born January 17, 1922, in Tamaqua. Worked briefly on the assembly line at the Atlas Corporation in Tamaqua and as an usherette at the Majestic Theater, managed by her aunt; she was on shift with Fred Millet on December 7, 1941. Homemaker in South Bound Brook for 60 years; elder, deacon, and Women's Guild president at the Reformed Church of South Bound Brook; Girl Scouts and Cub Scout den mother; VFW Post 2290 auxiliary. Died December 5, 2004, at Somerset Medical Center, Somerville.",
+      facts:{ Children:"Frederick W., Diane, Marcia, Sharon Kay, Marianne" }, sources:[S.marieObit, S.fredObit, S.loc] },
+    { id:"diane", name:"Diane Millet Sladek", b:"", d:"", gen:1, line:"mill", direct:false, place:"South Bound Brook, NJ", role:"", lede:"Daughter of Frederick and Marie Millet; married George Sladek.", facts:{ Spouse:"George Sladek" }, sources:[S.fredObit, S.marieObit] },
+    { id:"marcia", name:"Marcia Millet Linico", b:"", d:"", gen:1, line:"mill", direct:false, place:"South Bound Brook, NJ", role:"", lede:"Daughter of Frederick and Marie Millet; married Robert Linico.", facts:{ Spouse:"Robert Linico" }, sources:[S.fredObit, S.marieObit] },
+    { id:"sharon", name:"Sharon Kay Millet Johnson", b:"", d:"", gen:1, line:"mill", direct:false, place:"Virginia", role:"", lede:"Daughter of Frederick and Marie Millet, living in Virginia at the time of her father's death.", facts:{}, sources:[S.fredObit, S.marieObit] },
+    { id:"marianne", name:"Marianne Millet Harris", b:"", d:"", gen:1, line:"mill", direct:false, place:"Marshalls Creek, PA", role:"", lede:"Daughter of Frederick and Marie Millet; married Jim Harris (earlier Wanner).", facts:{ Spouse:"Jim Harris" }, sources:[S.fredObit, S.marieObit] },
+    { id:"fredw", name:"Frederick W. Millet", b:"", d:"2016", gen:1, line:"mill", direct:true, place:"South Bound Brook, NJ → Mountain Top, Luzerne Co., PA", role:"",
+      lede:"Eldest child and only son of Frederick and Marie Millet, and the third Frederick in a row on this line. Kept the two German bayonets his father brought home from the Seine crossing. Married Christine Ruth Nickerson; four children. Later married Lynette Van Fleet. Died March 3, 2016, in Mountain Top, of injuries from a motor vehicle accident the day before, eight weeks after his father. At his request there was no viewing or funeral; family and friends gathered at III Guys in Mountain Top to remember him.",
+      facts:{ Spouses:"Christine Ruth Nickerson; Lynette Van Fleet", Sisters:"Diane Sladek, Marcia Linico, Sharon Johnson, Marianne Harris" },
+      sources:[S.fredWObit, S.fredObit, S.loc] },
+    { id:"lynette", name:"Lynette Van Fleet", b:"", d:"", gen:1, line:"other", direct:false, place:"Mountain Top, PA", role:"",
+      lede:"Named as Frederick W. Millet's wife in his 2016 obituary; mother of Damian Starkey Jr.", facts:{}, sources:[S.fredWObit] },
+    { id:"christine", name:"Christine Ruth Nickerson Millet", b:"", d:"", gen:1, line:"nick", direct:true, place:"Highland Park, NJ → Mountain Top & Dallas, PA → Milford, DE", role:"",
+      lede:"Daughter of Willard Nickerson and Evelyn Christoffersen. Raised in Highland Park, New Jersey, with her half-sisters Carol and Connie, daughters of her father's second wife, Ethel. Married Frederick W. Millet; four children. Lived in Mountain Top and Dallas, Pennsylvania (listed as Christine Kinney of Dallas in her father's 2011 obituary), and later Milford, Delaware.",
+      facts:{ Children:"Fred Jr., Heather, Christopher, Kyle", "Half-sisters":"Carol, Connie" }, sources:[S.willardObit, S.fredWObit] },
+
+    // ---- Chris's generation ----
+    { id:"fredjr", name:"Fred Millet Jr.", b:"", d:"", gen:0, line:"mill", direct:false, place:"", role:"", lede:"Eldest child of Frederick W. and Christine. Married to Julia; father of Byron.", facts:{}, sources:[S.fredWObit, S.willardObit] },
+    { id:"heather", name:"Heather Millet", b:"", d:"", gen:0, line:"mill", direct:false, place:"", role:"", lede:"Daughter of Frederick W. and Christine.", facts:{}, sources:[S.fredWObit, S.willardObit] },
+    { id:"kyle", name:"Kyle Millet", b:"", d:"", gen:0, line:"mill", direct:false, place:"", role:"", lede:"Youngest child of Frederick W. and Christine. Married to Sangeeta Koets.", facts:{}, sources:[S.fredWObit, S.willardObit] },
+    { id:"damian", name:"Damian Starkey Jr.", b:"", d:"", gen:0, line:"other", direct:false, place:"", role:"", lede:"Son of Lynette Van Fleet; stepson of Frederick W. Millet. Married to Lynn.", facts:{}, sources:[S.fredWObit] },
+    { id:"chris", name:"Chris Millet", b:"", d:"", gen:0, line:"mill", direct:true, place:"Pennsylvania", role:"",
+      lede:"Christopher Millet, son of Frederick W. Millet and Christine Ruth Nickerson; married to April; father of Zoe. Tenth generation from Jean Jacques Michelet, the Huguenot immigrant of 1733, and eleventh from William Nickerson, the founder of Chatham on Cape Cod.",
+      facts:{ Spouse:"April", Daughter:"Zoe" }, sources:[S.fredWObit, S.willardObit] },
+    { id:"april", name:"April Millet", b:"", d:"", gen:0, line:"other", direct:false, place:"", role:"", lede:"Wife of Chris Millet; mother of Zoe.", facts:{}, sources:[S.fredWObit] },
+    { id:"zoe", name:"Zoe Millet", b:"", d:"", gen:-1, line:"mill", direct:false, place:"", role:"", lede:"Daughter of Chris and April Millet. Twelfth generation from Jacques Michelet of Metz and from William Nickerson of Chatham.", facts:{}, sources:[S.fredWObit, S.willardObit] },
+    { id:"byron", name:"Byron Millet", b:"", d:"", gen:-1, line:"mill", direct:false, place:"", role:"", lede:"Son of Fred Millet Jr. and Julia.", facts:{}, sources:[S.fredWObit, S.willardObit] },
+
+    // ---- Nickerson ----
+    { id:"willard", name:"Willard Stephen Nickerson", b:"1927", d:"2011", gen:2, line:"nick", direct:true, place:"Coeymans Hollow, NY → Bayonne, Dunellen & Highland Park, NJ", role:"Master carpenter; U.S. Navy, WWII",
+      lede:"Born at Coeymans Hollow, New York, in the Albany County hamlet where four generations of his family had lived (July 1927 by a residence record, 1928 by the censuses). Grew up in Bayonne, New Jersey, with his sister Luella, and attended Bayonne High School. Served in the Navy in World War II and was honorably discharged. His engagement to Evelyn Christoffersen of 52 Bergen Avenue, Jersey City, was announced in the Jersey Journal on July 31, 1948, when his parents were at 830 Avenue C, Bayonne; in April 1950 he was a carpenter for a house builder, living in Dunellen with Evelyn. In January 1954 his engagement to Ethel E. Paul of Kearny was announced, and they were married at Old Bergen Church, Jersey City, at 4 p.m. on Saturday, June 19, 1954, with a reception at the Fairmount Hotel; Walter Garman was best man, Thomas Kerr and Alfred and Russell Paul ushered, and after a wedding trip to California the couple settled in Dunellen. He was then a contractor in Plainfield. With Ethel he had Connie and Carol, and raised the family in Highland Park. A master carpenter, builder, and painter; photographer, painter, and wood carver. Worshipful Master of Union Lodge No. 19, F&AM, and Patron of Allah Chapter 211, Order of the Eastern Star, New Brunswick. Died November 16, 2011, at Old Bridge; arrangements by Bronson & Guthlein, Milltown.",
+      facts:{ "1st spouse":"Evelyn Ruth Christoffersen (1930–2003), engaged Jul 1948", "2nd spouse":"Ethel E. Paul, m. 19 Jun 1954, Old Bergen Church, Jersey City", Children:"Christine, Connie, Carol", Siblings:"Luella Garman; half-brother Thomas Kerr", Grandchildren:"Brooke, Casey, Samantha, Luke, Fred, Christopher, Heather, Kyle" },
+      sources:[S.willardObit, S.c1950dun, S.c1930bay, S.c1940bay, S.gbEngage1948, S.gbEngage1954, S.gbWedding1954] },
+    { id:"evelyn", name:"Evelyn Ruth Christoffersen Nickerson", b:"1930", d:"2003", gen:2, line:"chr", direct:true, place:"Jersey City → Dunellen, NJ → Palm Beach Gardens, FL", role:"",
+      lede:"Born August 28, 1930, in Jersey City, third of the six children of Walter Christoffersen and Louise Mihm; age 9 in the family's Ward 7 apartment in 1940. Her engagement to Willard S. Nickerson of Bayonne was announced in the Jersey Journal's Greenville social column on July 31, 1948, when she was 17 and living with her mother at 52 Bergen Avenue, Jersey City. Married Willard and was living with him in Dunellen in April 1950, at 19. Mother of Christine. The marriage had ended by January 1954, when Willard's engagement to Ethel Paul was announced. Later known as Evelyn Ruth Hazel; lived in Palm Beach Gardens, Florida. Died March 12, 2003.",
+      facts:{ Siblings:"Inga, Raymond, Doris, Lucille, Barbara Jane" }, sources:[S.evelynNumident, S.c1940jc, S.gbEngage1948, S.c1950dun, S.fsEvelyn, S.gbEngage1954] },
+    { id:"ethel", name:"Ethel E. Paul Nickerson", b:"", d:"", gen:2, line:"other", direct:false, place:"Jersey City → Kearny → Dunellen & Highland Park, NJ", role:"Singer",
+      lede:"Daughter of Mr. and Mrs. Alfred Paul, formerly of Jersey City and by 1954 of 74 Davis Avenue, Kearny. A graduate of Dickinson High School, Jersey City, employed in 1954 by the M. W. Kellogg Company there; a singer who had appeared on television. Her engagement to Willard Nickerson was announced in January 1954 and they were married at Old Bergen Church, Jersey City, on June 19, 1954, her father giving her away, Mrs. Richard Haberlin as matron of honor and Sandra Paul and Louella Garman as bridesmaids. Mother of Connie and Carol; stepmother of Christine.",
+      facts:{ Parents:"Alfred Paul and wife, 74 Davis Ave., Kearny", Siblings:"Sandra, Alfred, Russell Paul" }, sources:[S.gbEngage1954, S.gbWedding1954, S.willardObit] },
+    { id:"connie", name:"Connie Nickerson Wright", b:"", d:"", gen:1, line:"nick", direct:false, place:"Highland Park, NJ → Westminster, MD", role:"", lede:"Daughter of Willard and Ethel Nickerson; of Westminster, Maryland, in 2011.", facts:{}, sources:[S.willardObit] },
+    { id:"carol", name:"Carol Nickerson", b:"", d:"", gen:1, line:"nick", direct:false, place:"Highland Park → Dayton, NJ", role:"", lede:"Daughter of Willard and Ethel Nickerson; of Dayton, New Jersey, in 2011.", facts:{}, sources:[S.willardObit] },
+    { id:"inga", name:"Inga Christoffersen", b:"c. 1924", d:"", gen:2, line:"chr", direct:false, place:"Jersey City, NJ", role:"", lede:"Eldest of the Christoffersen children, 16 in 1940; named for her Norwegian grandmother Inger.", facts:{}, sources:[S.c1940jc, S.walterRecs] },
+    { id:"luella", name:"Luella Mae Nickerson Garman", b:"c. 1926", d:"", gen:2, line:"nick", direct:false, place:"Bayonne, NJ", role:"", lede:"Born in New York; older sister of Willard. Her Social Security record gives her mother's maiden name as Baran. Married Walter Garman, who was best man at Willard's 1954 wedding, at which a Louella Garman was a bridesmaid.", facts:{ Spouse:"Walter Garman" }, sources:[S.c1930bay, S.stephenRecs, S.willardObit, S.gbWedding1954] },
+    { id:"stephenj", name:"Stephen John Nickerson", b:"1900", d:"", gen:3, line:"nick", direct:true, place:"Coeymans, NY → Bayonne, NJ", role:"",
+      lede:"Born April 15, 1900, in Coeymans, Albany County, New York, youngest of the three children of Levi and Orpha Nickerson; in Coeymans in the 1905 and 1910 censuses. Registered for the World War I draft at Albany in 1917–18 and appears in the Veterans Administration index. Married Julia Baran; by 1930 the family was in Bayonne, New Jersey, and in 1940 his mother Orpha was living with them. In 1942 he and Julia were registered voters at 100 West 33rd Street, Bayonne, and in 1948 the family was at 830 Avenue C. By January 1954 they had moved to Dunellen, and that June the wedding notice placed them at Warrenville, in Warren Township.",
+      facts:{ Spouse:"Julia T. Baran (b. c. 1907)", Children:"Luella Mae (c. 1926), Willard Stephen (1927/28)", Siblings:"Ethel M. (1893), Earl L. (1897)" },
+      sources:[S.c1930bay, S.stephenRecs, S.fsStephenJ, S.fsLevi1865, S.willardObit, S.gbVoters1942, S.gbEngage1948, S.gbEngage1954, S.gbWedding1954] },
+    { id:"julia", name:"Julia T. Baran Nickerson", b:"c. 1907", d:"", gen:3, line:"other", direct:true, place:"New Jersey", role:"",
+      lede:"Born about 1907 in New Jersey; 23 in the 1930 census. Her maiden name, Baran, is given in her daughter Luella's Social Security record. A registered voter with Stephen at 100 West 33rd Street, Bayonne, in 1942; at 830 Avenue C in 1948; in Dunellen and then Warrenville by 1954. Buried in the Dunellen–Plainfield area.", facts:{}, sources:[S.c1930bay, S.stephenRecs, S.willardObit, S.gbVoters1942, S.gbEngage1948, S.gbWedding1954] },
+    { id:"walter", name:"Walter Alvin Christoffersen", b:"1900", d:"", gen:3, line:"chr", direct:true, place:"Chicago → Jersey City, NJ", role:"",
+      lede:"Born April 20, 1900, at Jefferson Park on Chicago's northwest side, to a Danish father and a Norwegian mother, and enumerated in the 1900 census at zero days old. The family had moved to Jersey City by 1920, where he registered for the draft. Married Louise Mihm; by 1930 they had Inga, Raymond, and Doris, and by 1940 Evelyn, Lucille, and Barbara Jane as well.",
+      facts:{ Spouse:"Louise S. Mihm (b. c. 1890)", Children:"Inga (c. 1924), Raymond (c. 1929), Evelyn Ruth (1930), Doris, Lucille (c. 1933), Barbara Jane (c. 1937)" },
+      sources:[S.c1900chi, S.walterRecs, S.c1940jc, S.fsWalter] },
+    { id:"louise", name:"Louise S. Mihm Christoffersen", b:"c. 1890", d:"", gen:3, line:"other", direct:true, place:"Jersey City, NJ", role:"", lede:"Born about 1890 in New Jersey; 50 in the 1940 census, ten years older than her husband. Recorded as Lulu in 1930. In July 1948 the announcement of her daughter Evelyn's engagement named only “Mrs. Louise Christoffersen, 52 Bergen Av.,” Jersey City, as parent.", facts:{}, sources:[S.fsLouise, S.c1940jc, S.walterRecs, S.gbEngage1948] },
+    { id:"levi1865", name:"Levi Nickerson", b:"1865", d:"1926", gen:4, line:"nick", direct:true, place:"Coeymans, Albany Co., NY", role:"",
+      lede:"Born January 1865 in Albany County, son of Stephen Smith Nickerson and Melvina Baumes. Married Orpha (Castle or Caswell), born 1876. Farmed at Coeymans, where the family appears in the 1905, 1910, and 1920 censuses. Died 1926.",
+      facts:{ Spouse:"Orpha Castle/Caswell (b. 1876)", Children:"Ethel M. (1893), Earl L. (1897), Stephen J. (1900)" }, sources:[S.fsLevi1865, S.stephenRecs] },
+    { id:"orpha", name:"Orpha Castle Nickerson", b:"1876", d:"", gen:4, line:"other", direct:true, place:"Coeymans, NY → Bayonne, NJ", role:"", lede:"Born 1876; surname recorded as Castle or Caswell. Widowed in 1926; living with her son Stephen's family in Bayonne in 1940, where the census indexer recorded her as Orpha Kerr.", facts:{}, sources:[S.fsLevi1865, S.stephenRecs] },
+    { id:"stephensmith", name:"Stephen Smith Nickerson", b:"1833", d:"1908", gen:5, line:"nick", direct:true, place:"Coeymans & Ravena, Albany Co., NY", role:"",
+      lede:"Born September 23, 1833, in Coeymans, son of Levi Nickerson, then 70, and Levi's second wife Huldah Meech. Lived his whole life in Coeymans, appearing in every state and federal census from 1850 to 1905. Married Melvina Baumes. Died October 19, 1908, at Ravena.",
+      facts:{ Spouse:"Melvina Baumes (1843–1898)", Children:"Three, incl. Levi (1865)" }, sources:[S.fsStephenSmith, S.fsLevi1865] },
+    { id:"melvina", name:"Melvina Baumes Nickerson", b:"1843", d:"1898", gen:5, line:"other", direct:true, place:"Albany Co., NY", role:"", lede:"Born 1843; died 1898 in Albany County.", facts:{}, sources:[S.fsMelvina, S.fsStephenSmith] },
+    { id:"levi1763", name:"Levi Nickerson", b:"1763", d:"1847", gen:6, line:"nick", direct:true, place:"Ridgefield, CT → Coeymans, NY", role:"Settled Coeymans by 1800",
+      lede:"Born 1763 in Ridgefield, Connecticut, one of nine sons of Eliphaz Nickerson. Moved to Coeymans on the Hudson below Albany, where he appears in every census from 1800 to 1840. Married first Amy (1766–1816), then about 1819 Huldah Meech, 35 years younger; Stephen Smith was born of the second marriage when Levi was 70. Died May 9, 1847; buried at Onesquethaw Cemetery, Feura Bush.",
+      facts:{ Spouses:"Amy (1766–1816); Huldah Meech (1798–1860), m. c. 1819", Children:"Seven" }, sources:[S.fsLevi1763, S.fsEliphaz] },
+    { id:"huldah", name:"Huldah Meech Nickerson", b:"1798", d:"1860", gen:6, line:"other", direct:true, place:"Coeymans, NY", role:"", lede:"Second wife of Levi Nickerson, married about 1819; mother of Stephen Smith Nickerson. Died 1860.", facts:{}, sources:[S.fsHuldah, S.fsLevi1763] },
+    { id:"eliphaz", name:"Eliphaz Nickerson", b:"1739", d:"1794", gen:7, line:"nick", direct:true, place:"Chatham, MA → Ridgefield, CT", role:"",
+      lede:"Born 1739 in Chatham on Cape Cod. Moved with his father to Ridgefield, Connecticut, where he married Sybil Norris in April 1757 and raised nine sons, several with Old Testament names of the period: Joseph Norris, Eliphaz, Jonathan, Levi, Asahel, Abijah, Omri, Ezra, and James Allen. In Ridgefield in the 1790 census. Died 1794; buried at Titicus Cemetery, Ridgefield.",
+      facts:{ Spouse:"Sybil Norris (b. 1740), m. April 1757, Ridgefield" }, sources:[S.fsEliphaz, S.fsJames] },
+    { id:"sybil", name:"Sybil Norris Nickerson", b:"1740", d:"", gen:7, line:"other", direct:true, place:"Ridgefield, CT", role:"", lede:"Married Eliphaz Nickerson in April 1757 in Ridgefield (Connecticut vital records); mother of nine sons.", facts:{}, sources:[S.fsSybil, S.fsEliphaz] },
+    { id:"jamesn", name:"James Nickerson", b:"1704", d:"1757", gen:8, line:"nick", direct:true, place:"Chatham, MA → Ridgefield, CT", role:"Left Cape Cod for Connecticut",
+      lede:"Born July 28, 1704, in Chatham, son of Ensign William Nickerson. Married Dorcas Covel there in 1729; five sons and two daughters. Moved the family to Fairfield County, Connecticut, and died there in 1757, at Ridgefield or Danbury.",
+      facts:{ Spouse:"Dorcas Hannah Covel (1714–1803), m. 1729, Chatham", Children:"Marcy, Joseph, William, Eliphaz, Samuel, Ezra, Dorcas" }, sources:[S.fsJames, S.fsDorcas] },
+    { id:"dorcas", name:"Dorcas Covel Nickerson", b:"1714", d:"1803", gen:8, line:"other", direct:true, place:"Chatham, MA → Connecticut", role:"", lede:"Married James Nickerson in Chatham in 1729; lived to 89.", facts:{}, sources:[S.fsDorcas, S.fsJames] },
+    { id:"ensign", name:"Ensign William Nickerson", b:"1668", d:"1742", gen:9, line:"nick", direct:true, place:"Chatham, MA", role:"Tanner; militia ensign",
+      lede:"Born about 1668 in Chatham, grandson of the founder. Styled Ensign from about 1706 as leader of the town's militia company. A tanner at Cotchpinicut (Old Harbor), supplying the boots, shoes, and leather breeches nearly every man wore at work; he also held land at Monomessett (Nickerson's) Neck from his father, and left the tannery to his sons Caleb, Nathaniel, and Eldad. Married Deliverance Lombard before 1701 and, after her death, Hannah Atwood on October 24, 1717. Died November 15, 1742; buried at People's Cemetery, Chatham.",
+      facts:{ Spouses:"Deliverance Lombard (1680–1716); Anna Hannah Atwood (1688–1764), m. 1717", Children:"Twelve, incl. William, James, Nathaniel, Joshua, Elizabeth" }, sources:[S.fsEnsign, S.fsWmJr] },
+    { id:"deliverance", name:"Deliverance Lombard Nickerson", b:"1680", d:"1716", gen:9, line:"other", direct:true, place:"Chatham, MA", role:"", lede:"First wife of Ensign William Nickerson; mother of his first nine children. Died 1716.", facts:{}, sources:[S.fsDeliverance, S.fsEnsign] },
+    { id:"williamjr", name:"William Nickerson Jr.", b:"1646", d:"1719", gen:10, line:"nick", direct:true, place:"Yarmouth → Chatham, MA", role:"",
+      lede:"Born June 1, 1646, in Yarmouth on Cape Cod, son of the founder of Chatham. Married Mercy Williams on November 30, 1668, in Chatham; fourteen children. Died April 7, 1719, in Chatham.",
+      facts:{ Spouse:"Mercy Williams (1643–1739), m. Nov. 30, 1668" }, sources:[S.fsWmJr, S.fsMercy] },
+    { id:"mercy", name:"Mercy Williams Nickerson", b:"1643", d:"1739", gen:10, line:"other", direct:true, place:"Chatham, MA", role:"", lede:"Married William Nickerson Jr. in 1668; lived to 96.", facts:{}, sources:[S.fsMercy, S.fsWmJr] },
+    { id:"williamsr", name:"William Nickerson", b:"1604", d:"1690", gen:11, line:"nick", direct:true, place:"Norwich, England → Chatham, MA", role:"Founder of Chatham",
+      lede:"A weaver of Norwich, Norfolk. Married Anne Busby there on June 24, 1627. Sailed for New England with his family in 1637, landed at Salem, and moved to Yarmouth on Cape Cod. In the 1650s he bought land at Monomoyick from the sachem Mattaquason without the colony's permission, a dispute with Plymouth that ran for years before he was confirmed in his title; the settlement became Chatham. Died 1690. Most Nickersons in America descend from him.",
+      facts:{ Spouse:"Anne Busby (1607–1686), m. June 24, 1627, Norwich", Children:"Ten, incl. Nicholas, Elizabeth, Robert, Anne, William" }, sources:[S.fsWmSr, S.fsWmJr, S.nfa, S.nfaHist] },
+    { id:"anne", name:"Anne Busby Nickerson", b:"1607", d:"1686", gen:11, line:"other", direct:true, place:"Norwich, England → Chatham, MA", role:"", lede:"Married William Nickerson in Norwich in 1627 and crossed with him in 1637; mother of ten. Died 1686.", facts:{}, sources:[S.fsAnne, S.fsWmSr, S.nfaHist] },
+
+    // ---- Christoffersen / Olsen ----
+    { id:"martinc", name:"Martin Christoffersen", b:"1864", d:"", gen:4, line:"chr", direct:true, place:"Denmark → Chicago → Kearny & Jersey City, NJ", role:"Immigrant, 1885",
+      lede:"Born January 1864 in Denmark, son of Hans Jacob Christoffersen and Karen. Came to the United States in 1885. Married Inger Mathilde Olsen in a Lutheran church in Chicago on November 7, 1891. Living at Jefferson Park on Chicago's northwest side in 1900 with five children; in Kearny, New Jersey, by 1915 and Jersey City by 1920, where he and Inger, recorded as Christina, were still living in 1930. His son Charles died in New York City. His home parish in Denmark has not been identified; the Copenhagen police emigration registers for 1885 record last residence for every departing emigrant.",
+      facts:{ Spouse:"Inger Mathilde Olsen (1868–), m. Nov. 7, 1891, Chicago", Children:"Charles (1892), Olaf (1894), Inga (1897), Martin (1899), Walter (1900)" },
+      sources:[S.marriage1891, S.c1900chi, S.martinNJ, S.udvandrer] },
+    { id:"ingasr", name:"Inger Mathilde Olsen Christoffersen", b:"1868", d:"", gen:4, line:"chr", direct:true, place:"Egersund, Rogaland, Norway → Chicago → Jersey City", role:"",
+      lede:"Born December 25, 1868, in Egersund, a fishing and pottery town on the southwest coast of Norway, and baptized there January 3, 1869, daughter of Otto Johan Olsen and Olava Olsdatter. Emigrated to Chicago and married Martin Christoffersen there on November 7, 1891. Recorded as Enga, Inga, Cristena, and Christina in American censuses. Her granddaughter Inga carries her name.",
+      facts:{ Parents:"Otto Johan Olsen and Olava Olsdatter, Egersund", Children:"Charles, Olaf, Inga, Martin, Walter" }, sources:[S.ingerBapt, S.marriage1891, S.c1900chi, S.martinNJ] },
+    { id:"hansjacob", name:"Hans Jacob Christoffersen", b:"", d:"", gen:5, line:"chr", direct:true, place:"Denmark", role:"", lede:"Named, with his wife Karen, as Martin's parents in the 1891 Chicago marriage record. Under Danish naming custom of the 1860s a son of his would ordinarily have been baptized Martin Hansen, taking Christoffersen as a fixed surname later; his parish has not yet been identified.", facts:{ Spouse:"Karen" }, sources:[S.marriage1891] },
+    { id:"karen", name:"Karen Christoffersen", b:"", d:"", gen:5, line:"other", direct:true, place:"Denmark", role:"", lede:"Mother of Martin Christoffersen, per the 1891 marriage record; maiden name not recorded there.", facts:{}, sources:[S.marriage1891] },
+    { id:"otto", name:"Otto Johan Olsen", b:"1845", d:"", gen:5, line:"chr", direct:true, place:"Egersund, Rogaland, Norway", role:"",
+      lede:"Born July 8, 1845, in Egersund and baptized there August 31, son of Ole Andreas Olsen and Inger Marie Thorsdatter. Married Olava Olsdatter, 18, at Egersund church on October 18, 1866 (Eigersund parish book 1866–1878, p. 381, entry 28). Children include Inger Mathilde (1868), Marthe, and Ingeborg Andrea.",
+      facts:{ Spouse:"Olava Olsdatter (c. 1848–), m. Oct. 18, 1866" }, sources:[S.ottoMarr, S.ottoBapt, S.fsOtto] },
+    { id:"olava", name:"Olava Olsdatter Olsen", b:"c. 1848", d:"", gen:5, line:"other", direct:true, place:"Egersund, Rogaland, Norway", role:"", lede:"Eighteen at her marriage in October 1866, daughter of an Ole Olsen of Egersund. Probably the Olave born January 25, 1849, to Ole Olsen and Marthe Olsdatter and baptized at Egersund February 25, 1849.", facts:{ Children:"Inger Mathilde, Marthe, Ingeborg Andrea" }, sources:[S.ottoMarr, S.olavaBapt, S.fsOlava] },
+    { id:"oleandreas", name:"Ole Andreas Olsen", b:"", d:"", gen:6, line:"chr", direct:true, place:"Egersund, Rogaland, Norway", role:"", lede:"Father of Otto Johan Olsen, per the Egersund baptism register of 1845 and the marriage register of 1866.", facts:{ Spouse:"Inger Marie Thorsdatter" }, sources:[S.ottoBapt, S.ottoMarr] },
+    { id:"ingermarie", name:"Inger Marie Thorsdatter", b:"", d:"", gen:6, line:"other", direct:true, place:"Egersund, Rogaland, Norway", role:"", lede:"Mother of Otto Johan Olsen. Her name passed to her granddaughter Inger Mathilde and, two generations further on, to Inga Christoffersen of Jersey City.", facts:{}, sources:[S.ottoBapt] },
+    { id:"oleolsen", name:"Ole Olsen", b:"", d:"", gen:6, line:"chr", direct:true, probable:true, place:"Egersund, Rogaland, Norway", role:"", lede:"Father of Olava, per her 1866 marriage record; probably the Ole Olsen married to Marthe Olsdatter whose daughter Olave was born in January 1849.", facts:{ Spouse:"Marthe Olsdatter (probable)" }, sources:[S.ottoMarr, S.olavaBapt] },
+    { id:"jehan", name:"Jehan Michelet, “le Masson”", short:"Jehan Michelet", b:"fl. 1444", d:"", gen:13, line:"mick", direct:true, probable:true, place:"Metz", role:"Earliest recorded Michelet of Metz",
+      lede:"A mason (“le Masson”) of Metz recorded in 1444, the head of the genealogical table of the Michelet family of Metz that Prof. Karl Ludwig Michelet of Berlin compiled from city baptismal certificates, the researches of the Metz Protestant pastor, and family papers, and sent to Pennsylvania in 1883. Later generations of the table are borne out by the surviving Reformed registers; the earlier ones, in the words of the 1893 genealogy, are “more or less conjectural.” The same table names a Jean Michelet, butcher, invested with the Order of Saint Michael by Louis XI in 1471 and Seigneur de Beauval, and an Antoine Jacques Michelet, president of the Parlement of Rouen in 1596, bearing the same arms. The family's arms, as carried from Metz to Berlin, show a fortress tower topped by a cap of liberty with a stag leaping the moat, and the motto “War, the Chase and Liberty.”",
+      facts:{}, sources:[S.mick1893] },
+    { id:"jacquemin", name:"Jacques “Jacquemin” Michelet", short:"Jacquemin Michelet", b:"c. 1550", d:"1610", gen:12, line:"mick", direct:true, place:"Metz", role:"Clerk to the King's treasurer at Metz",
+      lede:"A scrivener (escripvain) of Metz in 1576, clerk in 1579, receiver (receveur) in 1587, and from 1593 clerk to the King's treasurer; died in 1610. Twice married in the Reformed church: first to Suzanne Joly, who died in 1584, and on July 28, 1591, to Suzanne Wiriot. By his first wife he had Jacques (1576–1651, an elder of the church), Susanne, Pierre (1582–1632, a pastor), Paul (1584, deacon and farmer of the city mills, whose sons went to Norway), and Daniel; by the second, Samuel and Esther, who married David de la Cloche.",
+      facts:{ Spouses:"Suzanne Joly (d. 1584); Suzanne Wiriot, m. 28 Jul 1591", Children:"Jacques (1576), Susanne (1579), Pierre (1582), Paul (1584), Daniel (1592), Samuel (1598), Esther (1603)" },
+      sources:[S.metzJacqueminMarr, S.metzJacques1576, S.metzDanielBapt, S.mick1893, S.metzColl] },
+    { id:"daniel1592", name:"Daniel Michelet", b:"1592", d:"", gen:11, line:"mick", direct:true, place:"Metz", role:"",
+      lede:"Baptized in the Reformed church of Metz on September 20, 1592, son of Jacquemin Michelet. Married Marie Colin, daughter of Daniel Collin, a practitioner at the law courts (praticien du palais), on February 8, 1615. His eldest son Daniel (1615–1659) married Judith de la Cloche; his daughter Esther died unmarried in 1684; his son Jacques, the dyer, was grandfather of the emigrant to Pennsylvania.",
+      facts:{ Spouse:"Marie Colin, m. 8 Feb 1615", Children:"Daniel (1615–1659), Esther (1619–1684), Jacques (1623–1685), Suzanne (1627–1668)" },
+      sources:[S.metzDanielBapt, S.metzDanielMarr, S.metzJacquesMarr, S.metzDaniel1615, S.mick1893, S.metzColl] },
+    { id:"paul1584", name:"Paul Michelet", b:"1584", d:"", gen:11, line:"mick", direct:false, place:"Metz → (sons to Norway, 1644)", role:"Ancestor of the Norwegian Michelets",
+      lede:"Baptized December 16, 1584, son of Jacquemin Michelet and Suzanne Joly; a deacon of the Reformed church and farmer of the city mills of Metz. Married Anne Pillon, daughter of Josué Pillon, receiver of the bullette tax. Two of his sons, Paul (baptized September 5, 1617) and Jacques (baptized April 7, 1619), emigrated to Norway in 1644 as officers in the Danish-Norwegian army; Paul was a lieutenant in 1644 and major by 1658, present at the siege of Trondheim, and died in 1659. Their descendants became the Norwegian Michelet family of soldiers, clergy, and jurists, among them Major General Jørgen Michelet (1742–1818) and Major General Christian Frederik Michelet (1792–1874), commandant of Fredriksten fortress; a Captain Michelet of Trondheim was corresponding with the Berlin branch in the 1880s.",
+      facts:{ Spouse:"Anne Pillon", Children:"Paul (1617–1659), Jacques (1619)" },
+      sources:[S.metzJacques1619, S.mick1893, S.wikiCFM, S.wikiMichelet, S.metzColl] },
+    { id:"louis1705", name:"Louis Michelet", short:"Louis Michelet (Berlin)", b:"1705", d:"1766", gen:8, line:"mick", direct:false, place:"Metz → Berlin", role:"Silk manufacturer in Berlin",
+      lede:"Born at Metz December 8, 1705, younger brother of the emigrant to Pennsylvania. Left Metz for Berlin in 1720, arriving with David Girard, a kinsman by marriage, to apprentice in the silk manufactory of Girard, Michelet & Compagnie, in which he later became a partner; the firm stayed in the family for three generations. Berlin's French colony, founded by Huguenot refugees after 1685, was where the Michelets of Prussia married only within the faith. Died 1766. His son Pierre (1741–1787) was an officer of hussars under Frederick the Great; his grandson Edouard a captain in the war of 1813–15; his great-grandson the philosopher Karl Ludwig Michelet.",
+      facts:{ Children:"Louis (1736–1800), Marie Françoise (1738–1796), Pierre (1741–1787), Robert David (1744–1802)" },
+      sources:[S.mick1893, S.fsLouisG] },
+    { id:"karl", name:"Prof. Karl Ludwig Michelet", b:"1801", d:"1893", gen:5, line:"mick", direct:false, place:"Berlin", role:"Hegelian philosopher; compiled the Metz family table",
+      lede:"Born in Berlin December 4, 1801, son of Louis Guillaume Michelet (1775–1841) and Wilhelmine Victoire Girard, of the Huguenot French colony. Doctor of philosophy at Berlin in 1824, professor from 1829 until his death; a pupil of Hegel who edited Hegel's collected works (1832–42), founded the Berlin Philosophical Society in 1845, and wrote on ethics, Aristotle, and the personality of God. In 1883, answering a letter from Minnie F. Mickley of Pennsylvania, he sent the genealogical table of the Michelets of Metz from 1444, reasoned out that her ancestor Jean Jacques must be the missing eldest son of Louis Michelet and Suzanne Mangeot born at Zweibrücken, and concluded that the American and Berlin families descended from two brothers. Her father visited him in Berlin in 1889. Died December 15, 1893, the year the Mickley genealogy was printed.",
+      facts:{ Spouses:"Marie Scholz (1813–1864); Jenny Vallon (1839–1886)", Children:"Paul, Jenny, Charles, Louisa, George, Helene, Eugene (1878–1883)" },
+      sources:[S.mick1893, S.wikiKarl, S.britKarl, S.fsLouisG] },
+    { id:"johnmartin", name:"John Martin Mickley", b:"1745", d:"1828", gen:7, line:"mick", direct:false, place:"Whitehall Twp. → Adams Co., PA", role:"Revolutionary soldier at Germantown",
+      lede:"Born March 3, 1745 (FamilySearch, 1744). A soldier of the Revolution, in the Battle of Germantown on October 4, 1777. Married Catherine Steckel about 1768 and in 1794 moved to Adams County, near Gettysburg, founding the large Adams County branch of the family at Fairfield, Cashtown, and Waynesboro. Died March 11, 1828.",
+      facts:{ Spouse:"Catherine Steckel (1749–1830)", Children:"John, Peter, Susan, Margaret, Julia and Daniel (twins, 1776), Catherine, Maria Magdalena, Jacob" },
+      sources:[S.mick1893, S.fsJohnMartin] },
+    { id:"johnpeter", name:"John Peter Mickley", b:"1752", d:"1827", gen:7, line:"mick", direct:false, place:"Whitehall Twp. → Bedminster Twp., Bucks Co., PA", role:"Fifer through the whole Revolution",
+      lede:"Born May 29, 1752. Escaped the raid of October 8, 1763, that killed his brother Henry and sister Barbara. Served against the Indians and then through the whole of the Revolutionary War as a fifer, including the Battle of Germantown. Married Eva Keck on May 28, 1782, and settled about 1784 in Bedminster Township, Bucks County. Died October 11, 1827 (the 1893 genealogy says 1828). His son Peter (1787–1854) served in the War of 1812.",
+      facts:{ Spouse:"Eva Keck", Children:"Mary, Catherine, Maria, Susanna, Jacob, Peter, Hannah, Elizabeth, Sarah, Barbara" },
+      sources:[S.mick1893, S.fsJohnPeter] },
+    { id:"henry1754", name:"Henry Mickley", b:"1754", d:"1763", gen:7, line:"mick", direct:false, place:"Whitehall Twp., PA", role:"Killed in the raid of 1763",
+      lede:"Born about 1754. Killed by Indians on October 8, 1763, while gathering chestnuts near Mickleys with his sister Barbara, during the frontier violence that followed Pontiac's War; their brother John Peter escaped. The raid on Whitehall Township that day also killed members of the neighboring Schneider and Mickley households.",
+      facts:{}, sources:[S.mick1893, S.fsHenry1754, S.wikiSettler] },
+    { id:"barbara1756", name:"Barbara Mickley", b:"1756", d:"1763", gen:7, line:"mick", direct:false, place:"Whitehall Twp., PA", role:"Killed in the raid of 1763",
+      lede:"Born about 1756. Killed with her brother Henry near the family farm on October 8, 1763, at about seven years old.",
+      facts:{}, sources:[S.mick1893, S.fsBarbara1756, S.wikiSettler] },
+    { id:"christian1767", name:"Christian Mickley", b:"1767", d:"1817", gen:6, line:"mick", direct:false, place:"Mickleys and Balliettsville, PA", role:"",
+      lede:"Born 1767, second son of the bell-hauler. Married Elizabeth Deshler (1773–1840) about 1791; after his death she married Paul Balliet of Balliettsville. Died in Whitehall Township in August 1817 (the 1893 genealogy says 1812). His son Peter (1797–1877) farmed at Mickleys.",
+      facts:{ Spouse:"Elizabeth Deshler (1773–1840)", Children:"Peter, Catherine, Elizabeth, Anna, Magdalena, Sarah" },
+      sources:[S.mick1893, S.fsChristian1767] },
+    { id:"sarah1786", name:"Sarah Mickley Blumer Stein", short:"Sarah Mickley", b:"1786", d:"1859", gen:6, line:"mick", direct:false, place:"Egypt → Allentown, PA", role:"Married the son of the pastor who hid the bell",
+      lede:"Born November 27, 1786, at Egypt. Married first Henry Blumer, son of the Rev. Abraham Blumer, pastor of Zion Reformed Church in Allentown when the Philadelphia bells arrived in 1777 and one of those who hid them under the floor; married second Jacob Stein (1778–1842). Died in Allentown January 25, 1859.",
+      facts:{ Spouses:"Henry Blumer; Jacob Stein (1778–1842)" },
+      sources:[S.mick1893, S.fsSarah1786, S.rcus] },
+    { id:"josephj", name:"Joseph J. Mickley", b:"1799", d:"1878", gen:5, line:"mick", direct:false, place:"Catasauqua → Philadelphia", role:"“Father of American numismatics”",
+      lede:"Joseph Jacob Mickley, born March 24, 1799, at Catasauqua, son of John Jacob III, the boy on the bell wagon. Went to Philadelphia in 1811, apprenticed as a piano maker, and built up his own instrument business, taking a Franklin Institute prize in 1831. From 1842 to 1869 his house at 927 Market Street was a gathering place for collectors, historians, and musicians. He assembled the finest coin collection in America of its day, with autographs of the signers of the Declaration and every president to Grant; a burglary on April 13, 1867, led him to sell most of the coins at auction that autumn. First president of the Numismatic and Antiquarian Society of Philadelphia, founded 1857. Fluent in French, German, and Swedish, he toured the mints of Europe from 1869 to 1872 gathering specimens for the United States Mint, and wrote on the Indian raids in Pennsylvania (1875). Died in Philadelphia February 15, 1878.",
+      facts:{ Spouses:"Cordelia Hopfeldt, m. 1825; Diana Blumer", Children:"Six, incl. Henry Joseph, Josephine, Hannah, John Jacob (1836–1892)" },
+      sources:[S.mick1893, S.hspMickley, S.ansMickley, S.fsJosephJ] },
+    { id:"jacob1794", name:"Lt. Jacob Mickley", b:"1794", d:"1888", gen:5, line:"mick", direct:false, place:"Mickleys, PA", role:"Kept the homestead",
+      lede:"Born March 27, 1794, son of John Jacob III. Served in Captain Ruhe's company at Marcus Hook in the War of 1812, and was commissioned second lieutenant of cavalry in the 68th Regiment of Pennsylvania militia by Governor Hiester in 1821. Married Anna Kern on May 17, 1817. Died June 2, 1888, at ninety-four. Two of his sons served in the Civil War; his daughter Eliza married the Rev. David Kuntz.",
+      facts:{ Spouse:"Anna Kern (1795–1879)", Children:"Mary, Rebecca, Ephraim, James W., Edwin, Catherine, Eliza, William Jacob, Jane, and two who died young" },
+      sources:[S.mick1893, S.fsJacob1794] },
+    { id:"edwin", name:"Lt. Edwin Mickley", b:"1830", d:"1898", gen:4, line:"mick", direct:false, place:"Mickleys, PA", role:"Raised the 1864 monument",
+      lede:"Born April 20, 1830, on the homestead at Mickleys, which he owned in 1893 with the original 1789 “Oczakow” tract. First lieutenant of Company B, 38th Pennsylvania Volunteer Militia, in the emergency of 1863. When the 1864 subscription to mark the graves of the immigrant John Jacob Mickley fell short, he made up the difference and had the couple reinterred under a new tomb at Mickleys' church. Married Matilda E. Fogel about 1854; visited the Michelet cousins in Berlin in 1889. Died September 5, 1898.",
+      facts:{ Spouse:"Matilda E. Fogel (1834–?)", Children:"Anna Ophelia Desdemona, Lillie Ellen Eva (m. Dr. Henry Martyn Chance), Minnie Fogel, John Jacob" },
+      sources:[S.mick1893, S.fsEdwin] },
+    { id:"minnie", name:"Minnie Fogel Mickley", b:"c. 1860", d:"", gen:3, line:"mick", direct:false, place:"Mickleys, PA", role:"Compiled the family genealogy, 1893",
+      lede:"Daughter of Edwin Mickley of the homestead. In 1883 she wrote to Prof. Karl Ludwig Michelet in Berlin and drew from him the Metz family table and the diary evidence that fixed her ancestor's birthplace at Zweibrücken. Her “Genealogy of the Mickley Family of America” (Newark, 1893), dedicated to Michelet and to the memory of John Jacob Mickley, records 503 American descendants, the family's war service, the Liberty Bell episode as told in the family, and the Michelets of Metz, Berlin, and Norway; she also wrote the account of the bell for the American Monthly Magazine.",
+      facts:{}, sources:[S.mick1893] },
+    { id:"georgemilot", name:"George Milot (Melot)", short:"George Milot", b:"1782", d:"1862", gen:5, line:"mill", direct:false, probable:true, place:"Oley Twp., Berks Co., PA", role:"Cattle drover of Oley",
+      lede:"Born April 24, 1782. A “cattledriver” of Oley Township, the Huguenot-settled valley next to Colebrookdale where the tailor Frederick Mylot was taxed the year before George's birth. Married Susanna Sayer (Seyer, 1791–1873) and named as executor in the estate of Daniel Seyer. Twelve children born 1812–1833; his daughter Susanna died at 22 in 1843 and his son Seyer as a Union private in 1863. Head of household in Oley in every census from 1820 to 1860. Died April 16, 1862; buried at Friedens Church Cemetery, Oley. The Berks family spelled the name Milot or Melot while the Orwigsburg branch wrote Millot and, later, Millet.",
+      facts:{ Spouse:"Susanna Sayer (1791–1873)", Children:"Rosina (1812), Elizabeth (1813), John S. (1816), Levy (1817), George S. (1818), Susanna (1820), Mary S. (1822), Amos S. (1824), Daniel (1827), Jacob (1829), Seyer (1830), Catharina (1833)" },
+      sources:[S.fgGeorgeMilot, S.hamburgObit, S.berksWillsIdx, S.c1820oley, S.c1830oley, S.c1850oley, S.c1860oley] },
+    { id:"mariamilot", name:"Maria Milot Liess", short:"Maria Milot", b:"1777", d:"1859", gen:5, line:"mill", direct:false, probable:true, place:"Oley Twp., Berks Co., PA", role:"",
+      lede:"Born December 7, 1777. Married John Liess (Lease, 1773–1854) of Oley; mother of John M. (1807) and Henry (1815). Died July 8, 1859; buried at Hunter Burial Grounds, Oley. The oldest of the four Berks County Millots of her generation, born three years before Frederick Mylot's first militia muster.",
+      facts:{ Spouse:"John Liess (1773–1854)", Children:"John M. (1807–1895), Henry (1815–1868)" },
+      sources:[S.fgMariaLiess, S.fsMariaCem] },
+  ];
+
+  // Edges: parent→child, spouse, grandparent (parent not identified). probable = inferred link.
+  const E = [
+    ["jehan","jacquemin","grand",true],["jacquemin","daniel1592","parent"],["jacquemin","paul1584","parent"],["daniel1592","jacques","parent"],
+    ["louis","louis1705","parent"],["louis1705","karl","grand"],
+    ["jj1","johnmartin","parent"],["jj1","johnpeter","parent"],["jj1","henry1754","parent"],["jj1","barbara1756","parent"],
+    ["jj2","christian1767","parent"],["jj2","sarah1786","parent"],
+    ["jj3","josephj","parent"],["jj3","jacob1794","parent"],["jacob1794","edwin","parent"],["edwin","minnie","parent"],
+    ["jacques","louis","parent"],["louis","jj1","parent"],["jj1","jj2","parent"],["jj2","peter","parent"],["jj2","jj3","parent"],
+    ["peter","susanna","parent"],["susanna","thomas","spouse"],["susanna","catharine","parent"],["thomas","catharine","parent"],
+    ["susanna","emma","parent"],["thomas","emma","parent"],
+    ["catharine","fred1820","spouse"],["catharine","charles","parent"],["fred1820","charles","parent"],
+    ["sgtfred","martin","parent",true],["sgtfred","johnmillot","parent",true],["sgtfred","georgemilot","parent",true],["sgtfred","mariamilot","parent",true],["martin","fred1820","parent",true],["martin","johnmillot","sibling",true],
+    ["johnmillot","joseph","parent"],
+    ["fred1820","sophia","spouse"],["fred1820","marylouisa","parent"],["fred1820","georgef","parent"],["fred1820","williamc","parent"],
+    ["sophia","marylouisa","parent"],["sophia","georgef","parent"],["sophia","williamc","parent"],
+    ["charles","maryc","spouse"],
+    ["charles","charlesa","parent"],["charles","williamcl","parent"],["charles","katherine","parent"],["charles","fred1920","parent"],["charles","susan","parent"],["charles","george","parent"],
+    ["maryc","fred1920","parent"],
+    ["fred1920","marie","spouse"],
+    ["fred1920","fredw","parent"],["fred1920","diane","parent"],["fred1920","marcia","parent"],["fred1920","sharon","parent"],["fred1920","marianne","parent"],
+    ["marie","fredw","parent"],["marie","diane","parent"],["marie","marcia","parent"],["marie","sharon","parent"],["marie","marianne","parent"],
+    ["fredw","christine","spouse"],["fredw","lynette","spouse"],
+    ["fredw","chris","parent"],["christine","chris","parent"],
+    ["fredw","fredjr","parent"],["fredw","heather","parent"],["fredw","kyle","parent"],
+    ["christine","fredjr","parent"],["christine","heather","parent"],["christine","kyle","parent"],
+    ["lynette","damian","parent"],
+    ["willard","evelyn","spouse"],["willard","ethel","spouse"],
+    ["willard","christine","parent"],["evelyn","christine","parent"],
+    ["willard","connie","parent"],["willard","carol","parent"],["ethel","connie","parent"],["ethel","carol","parent"],
+    ["stephenj","julia","spouse"],["stephenj","willard","parent"],["julia","willard","parent"],["stephenj","luella","parent"],["julia","luella","parent"],
+    ["walter","louise","spouse"],["walter","evelyn","parent"],["louise","evelyn","parent"],["walter","inga","parent"],["louise","inga","parent"],
+    ["martinc","ingasr","spouse"],["martinc","walter","parent"],["ingasr","walter","parent"],
+    ["hansjacob","karen","spouse"],["hansjacob","martinc","parent"],["karen","martinc","parent"],
+    ["otto","olava","spouse"],["otto","ingasr","parent"],["olava","ingasr","parent"],
+    ["oleandreas","ingermarie","spouse"],["oleandreas","otto","parent"],["ingermarie","otto","parent"],
+    ["oleolsen","olava","parent",true],
+    ["levi1865","orpha","spouse"],["levi1865","stephenj","parent"],["orpha","stephenj","parent"],
+    ["stephensmith","melvina","spouse"],["stephensmith","levi1865","parent"],["melvina","levi1865","parent"],
+    ["levi1763","huldah","spouse"],["levi1763","stephensmith","parent"],["huldah","stephensmith","parent"],
+    ["eliphaz","sybil","spouse"],["eliphaz","levi1763","parent"],["sybil","levi1763","parent"],
+    ["jamesn","dorcas","spouse"],["jamesn","eliphaz","parent"],["dorcas","eliphaz","parent"],
+    ["ensign","deliverance","spouse"],["ensign","jamesn","parent"],["deliverance","jamesn","parent"],
+    ["williamjr","mercy","spouse"],["williamjr","ensign","parent"],["mercy","ensign","parent"],
+    ["williamsr","anne","spouse"],["williamsr","williamjr","parent"],["anne","williamjr","parent"],
+    ["chris","april","spouse"],["chris","zoe","parent"],["april","zoe","parent"],
+    ["fredjr","byron","parent"],
+  ];
+
+  const byId = Object.fromEntries(P.map(p => [p.id, p]));
+  const nodes = P.map(p => Object.assign({}, p));
+  const links = E.map(([s,t,type,prob]) => {
+    const direct = byId[s].direct && byId[t].direct && type !== "sibling";
+    return { source:s, target:t, type, probable:!!prob, direct };
+  });
+
+  // ---------- Layout ----------
+  const GEN_LABELS = {
+    "-1":["Children",""],0:["Chris Millet & siblings",""],1:["Parents",""],2:["Grandparents","b. 1920s"],3:["Great-grandparents","b. 1860s–90s"],
+    4:["2nd great","b. 1820s–30s"],5:["3rd great","b. 1780s–1810s"],6:["4th great","b. 1770s"],7:["5th great","b. 1730s"],
+    8:["6th great","b. 1690s–1700s"],9:["7th great","b. 1660s–70s"],10:["8th great","b. 1620s"],11:["9th great","b. 1590s–1600s"],12:["10th great","b. 1550s"],13:["11th great","fl. 1444"]
+  };
+  const bandH = 118, top = 40, margin = 40;
+  const GEN_MIN = -1, GEN_MAX = 13, GEN_COUNT = GEN_MAX - GEN_MIN + 1;
+  const genY = g => top + (g - GEN_MIN) * bandH + bandH/2;
+  // x anchors: Mickley/Moyer side left, Millet side right, direct line near centre
+  const anchorX = (n, W) => {
+    const spouseOf = { karen:"chr", olava:"chr", ingermarie:"chr", helen:"nick", julia:"nick", orpha:"nick", melvina:"nick", huldah:"nick", sybil:"nick", dorcas:"nick", deliverance:"nick", mercy:"nick", anne:"nick", ethel:"nick", louise:"chr", ingasr:"chr" };
+    const line = spouseOf[n.id] || n.line;
+    if (line === "mick") return n.direct ? W * 0.10 : (n.gen <= 5 && ["louis1705","karl","paul1584"].includes(n.id) ? W * 0.05 : W * 0.16);
+    if (line === "moy") return W * 0.26;
+    if (line === "chr") return n.direct ? W * 0.88 : W * 0.95;
+    if (line === "nick") return n.direct ? W * 0.76 : W * 0.84;
+    if (n.id === "sgtfred" || n.id === "martin") return W * 0.57;
+    if (n.id === "johnmillot" || n.id === "joseph" || n.id === "georgemilot" || n.id === "mariamilot") return W * 0.66;
+    if (n.id === "sophia" || n.id === "marylouisa" || n.id === "georgef" || n.id === "williamc") return W * 0.61;
+    if (n.direct) return W * 0.44;
+    return W * 0.50;
+  };
+
+  const svg = d3.select("#svg");
+  const stage = document.querySelector(".stage");
+  let W = stage.clientWidth, H = stage.clientHeight;
+  const g = svg.append("g");
+  const gBands = g.append("g"), gLinks = g.append("g"), gNodes = g.append("g");
+
+  const zoom = d3.zoom().scaleExtent([0.35, 2.5]).on("zoom", ev => g.attr("transform", ev.transform));
+  svg.call(zoom);
+
+  const contentH = top + GEN_COUNT * bandH + margin;
+  // wide enough that fitting to the stage height also fills its width
+  // give the layout more horizontal room than the stage aspect ratio alone would allow, so
+  // siblings and cousins can spread instead of stacking on their line's anchor
+  const contentW = Math.max(1800, Math.round(1.05 * W * contentH / Math.max(H, 400)));
+
+  // bands
+  for (let gi = GEN_MIN; gi <= GEN_MAX; gi++) {
+    const y0 = top + (gi - GEN_MIN) * bandH;
+    if ((gi - GEN_MIN) % 2 === 0) gBands.append("rect").attr("class","band").attr("x",-2000).attr("y",y0).attr("width",6000).attr("height",bandH);
+    gBands.append("line").attr("class","band-line").attr("x1",-2000).attr("x2",6000).attr("y1",y0).attr("y2",y0);
+    const [t, sub] = GEN_LABELS[gi];
+    gBands.append("text").attr("class","band-title").attr("x",14).attr("y",y0+18).text(t);
+    gBands.append("text").attr("class","band-label").attr("x",14).attr("y",y0+34).text(sub);
+  }
+
+  nodes.forEach(n => { n.x = anchorX(n, contentW) + (Math.random()-0.5)*40; n.y = genY(n.gen); });
+
+  const sim = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id(d => d.id).distance(l => l.type==="spouse" ? Math.max(120, labelWidth(l.source.x <= l.target.x ? l.source : l.target) + 34) : 90).strength(l => l.type==="spouse" ? 1 : (l.direct ? 0.35 : 0.18)))
+    .force("x", d3.forceX(n => anchorX(n, contentW)).strength(n => n.direct ? 0.22 : 0.06))
+    .force("y", d3.forceY(n => genY(n.gen)).strength(1.2))
+    .force("collide", d3.forceCollide(n => n.direct ? 46 : 50).strength(0.9))
+    .force("labels", labelSeparation())
+    .alphaDecay(0.03);
+
+  // Labels hang to the right of each circle, so two nodes in the same generation band need
+  // horizontal clearance equal to the left node's label width; circles alone under-estimate it.
+  function labelWidth(n) { return 18 + (n.direct ? 7.2 : 6.6) * Math.max((n.short || labelOf(n)).length, yearsOf(n).length * 0.9); }
+  function labelSeparation() {
+    let ns = [];
+    function force(alpha) {
+      for (let i = 0; i < ns.length; i++) {
+        for (let j = i + 1; j < ns.length; j++) {
+          const a = ns[i], b = ns[j];
+          if (Math.abs(a.y - b.y) > 44) continue;
+          const left = a.x <= b.x ? a : b, right = left === a ? b : a;
+          const need = labelWidth(left) + 14;
+          const dx = right.x - left.x;
+          if (dx < need) {
+            const push = (need - dx) * 0.5 * alpha * 6;
+            left.vx -= push; right.vx += push;
+          }
+        }
+      }
+    }
+    force.initialize = (nodes) => { ns = nodes; };
+    return force;
+  }
+
+  const link = gLinks.selectAll("path").data(links).join("path")
+    .attr("class", l => "edge " + l.type + (l.direct ? " direct" : "") + (l.probable ? " probable" : ""));
+
+  const node = gNodes.selectAll("g.node").data(nodes).join("g")
+    .attr("class", n => "node line-" + n.line + (n.direct ? " direct" : "") + (n.probable ? " probable" : ""))
+    .attr("tabindex", 0)
+    .attr("role","button")
+    .attr("aria-label", n => n.name)
+    .call(d3.drag()
+      .on("start", (ev,d) => { if (!ev.active) sim.alphaTarget(0.12).restart(); d.fx=d.x; d.fy=d.y; })
+      .on("drag", (ev,d) => { d.fx=ev.x; d.fy=ev.y; })
+      .on("end", (ev,d) => { if (!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+
+  node.append("circle").attr("r", n => n.direct ? 11 : 8);
+  node.append("text").attr("x", 15).attr("y", -1).text(n => n.short || labelOf(n));
+  node.append("text").attr("class","years").attr("x", 15).attr("y", 13).text(n => yearsOf(n));
+
+  function labelOf(n) {
+    const parts = n.name.replace(/^(Pvt\.|Sgt\.)\s/, "").split(" ");
+    return parts.length > 3 ? parts.slice(0,3).join(" ") : n.name.replace(/^(Pvt\.|Sgt\.)\s/, "");
+  }
+  function yearsOf(n) { if (!n.b && !n.d) return ""; if (n.b && !n.d) return n.b; return n.b + "–" + n.d; }
+
+  function pathFor(l) {
+    const sx = l.source.x, sy = l.source.y, tx = l.target.x, ty = l.target.y;
+    if (l.type === "spouse" || l.type === "sibling") return `M${sx},${sy} L${tx},${ty}`;
+    const my = (sy + ty) / 2;
+    return `M${sx},${sy} C${sx},${my} ${tx},${my} ${tx},${ty}`;
+  }
+  sim.on("tick", () => {
+    link.attr("d", pathFor);
+    node.attr("transform", n => `translate(${n.x},${n.y})`);
+  });
+
+  // ---------- Interaction ----------
+  const panel = document.getElementById("panel");
+  let selected = null;
+
+  function neighborsOf(id) {
+    const s = new Set([id]);
+    links.forEach(l => { if (l.source.id === id) s.add(l.target.id); if (l.target.id === id) s.add(l.source.id); });
+    return s;
+  }
+  function select(id) {
+    selected = id;
+    const nb = id ? neighborsOf(id) : null;
+    node.classed("selected", n => n.id === id).classed("dim", n => nb ? !nb.has(n.id) : false);
+    link.classed("dim", l => nb ? !(l.source.id === id || l.target.id === id) : false);
+    renderPanel(id ? byId[id] : null);
+  }
+  node.on("click", (ev, n) => { ev.stopPropagation(); select(n.id === selected ? null : n.id); });
+  node.on("keydown", (ev, n) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(n.id); } });
+  svg.on("click", () => select(null));
+
+  const lineName = { mick:"Michelet / Mickley line", moy:"Moyer line", mill:"Millet line", nick:"Nickerson line", chr:"Christoffersen / Olsen line", other:"By marriage" };
+  const lineClass = { mick:"mick", moy:"moy", mill:"mill", nick:"nick", chr:"chr", other:"" };
+
+  function relations(p) {
+    const out = { Parents:[], Spouse:[], Children:[], Sibling:[], Grandchild:[], Grandparents:[] };
+    links.forEach(l => {
+      const s = l.source.id, t = l.target.id;
+      if (l.type === "parent") { if (t === p.id) out.Parents.push(s); if (s === p.id) out.Children.push(t); }
+      if (l.type === "spouse") { if (s === p.id) out.Spouse.push(t); if (t === p.id) out.Spouse.push(s); }
+      if (l.type === "sibling") { if (s === p.id) out.Sibling.push(t); if (t === p.id) out.Sibling.push(s); }
+      if (l.type === "grand") { if (s === p.id) out.Grandchild.push(t); if (t === p.id) out.Grandparents.push(s); }
+    });
+    return out;
+  }
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+  function renderPanel(p) {
+    if (!p) {
+      const direct = nodes.filter(n => n.direct).length;
+      panel.innerHTML = `
+        <div class="empty">
+          <p class="eyebrow">Four lines, one family</p>
+          <h2>From Metz, Norwich, and Denmark to Tamaqua and Highland Park</h2>
+          <p class="lede">The Michelet family left Metz as Huguenots, became the Mickleys of Lehigh County, and hid the Liberty Bell in 1777. Their line reaches the Millets through Susanna Mickley’s daughter Catharine, who married Frederick Millet of Orwigsburg in Tamaqua about 1862. On Christine Nickerson’s side, the Nickersons run back through Bayonne, the Hudson Valley, and Ridgefield to William Nickerson, who founded Chatham on Cape Cod in the 1660s; the Christoffersens came from Denmark, and the Olsens from Egersund in Norway, to Chicago in the 1880s.</p>
+          <div class="stat">
+            <div><b>${nodes.length}</b><small>people on record</small></div>
+            <div><b>${direct}</b><small>direct ancestors of Chris Millet</small></div>
+            <div><b>${GEN_COUNT}</b><small>generations</small></div>
+            <div><b>1733</b><small>Michelets land at Philadelphia</small></div>
+          </div>
+          <p>Filled circles are direct ancestors of Chris Millet; outlined circles are their siblings, cousins, and children. Solid edges are parent to child, dashed edges are marriages, and dotted edges are links the records make likely but do not yet prove.</p>
+          <p>Click any circle to see what the records say and where each fact came from.</p>
+        </div>`;
+      return;
+    }
+    const rel = relations(p);
+    const chips = (ids) => ids.map(id => `<button class="chip" data-id="${id}" type="button">${esc(labelOf(byId[id]))}</button>`).join("");
+    const relRows = Object.entries(rel).filter(([,v]) => v.length).map(([k,v]) => `<dt>${k}</dt><dd><div class="rel">${chips(v)}</div></dd>`).join("");
+    const factRows = Object.entries(p.facts || {}).map(([k,v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+    const roles = [
+      p.direct ? `<span class="role direct">Direct ancestor</span>` : "",
+      p.probable ? `<span class="role probable">Probable link</span>` : "",
+      p.role ? `<span class="role">${esc(p.role)}</span>` : ""
+    ].join("");
+    const dates = [yearsOf(p), p.place].filter(Boolean).join(" · ");
+    const sources = (p.sources || []).map(([t,u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join("");
+    panel.innerHTML = `
+      <p class="eyebrow ${lineClass[p.line]}">${lineName[p.line]}</p>
+      <h2>${esc(p.name)}</h2>
+      <p class="dates">${esc(dates)}</p>
+      <div>${roles}</div>
+      ${p.lede ? `<p class="lede">${esc(p.lede)}</p>` : ""}
+      <dl>${relRows}${factRows}</dl>
+      ${sources ? `<h3 class="src">Records</h3><ul class="sources">${sources}</ul>` : ""}`;
+    panel.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => focusOn(b.dataset.id)));
+    panel.scrollTop = 0;
+  }
+
+  function focusOn(id) {
+    select(id);
+    const n = byId[id];
+    const t = d3.zoomTransform(svg.node());
+    const target = d3.zoomIdentity.translate(W/2 - n.x * t.k, H/2 - n.y * t.k).scale(t.k);
+    svg.transition().duration(500).call(zoom.transform, target);
+  }
+
+  // direct-only filter
+  const directOnly = document.getElementById("directOnly");
+  directOnly.addEventListener("change", () => {
+    const on = directOnly.checked;
+    node.classed("hidden", n => on && !n.direct);
+    link.classed("hidden", l => on && !(l.source.direct && l.target.direct && l.type !== "sibling"));
+    sim.force("collide", d3.forceCollide(n => on ? 44 : (n.direct ? 52 : 60)).strength(0.95));
+    sim.alpha(0.3).restart();
+  });
+
+  // search
+  const q = document.getElementById("q"), ql = document.getElementById("qlist");
+  let active = -1, matches = [];
+  q.addEventListener("input", () => {
+    const v = q.value.trim().toLowerCase();
+    matches = v ? nodes.filter(n => n.name.toLowerCase().includes(v) || (n.place||"").toLowerCase().includes(v)).slice(0,8) : [];
+    active = -1;
+    ql.innerHTML = matches.map(n => `<li data-id="${n.id}" tabindex="-1">${esc(n.name)}<small>${esc(yearsOf(n))}</small></li>`).join("");
+    ql.hidden = matches.length === 0;
+    ql.querySelectorAll("li").forEach(li => li.addEventListener("mousedown", ev => { ev.preventDefault(); pick(li.dataset.id); }));
+  });
+  q.addEventListener("keydown", ev => {
+    if (ql.hidden) return;
+    if (ev.key === "ArrowDown") { active = Math.min(active+1, matches.length-1); mark(); ev.preventDefault(); }
+    else if (ev.key === "ArrowUp") { active = Math.max(active-1, 0); mark(); ev.preventDefault(); }
+    else if (ev.key === "Enter") { if (matches[Math.max(active,0)]) pick(matches[Math.max(active,0)].id); }
+    else if (ev.key === "Escape") { ql.hidden = true; }
+  });
+  q.addEventListener("blur", () => setTimeout(() => ql.hidden = true, 120));
+  function mark() { ql.querySelectorAll("li").forEach((li,i) => li.classList.toggle("active", i === active)); }
+  function pick(id) { ql.hidden = true; q.value = byId[id].name; focusOn(id); }
+
+  document.getElementById("reset").addEventListener("click", fit);
+
+  function fit() {
+    W = stage.clientWidth; H = stage.clientHeight;
+    // fit to the people actually drawn (plus their labels), not the whole canvas
+    const shown = nodes.filter(n => !(directOnly.checked && !n.direct));
+    const x0 = d3.min(shown, n => n.x) - 24, x1 = d3.max(shown, n => n.x + labelWidth(n)) + 12;
+    const y0 = d3.min(shown, n => n.y) - bandH * 0.6, y1 = d3.max(shown, n => n.y) + bandH * 0.6;
+    const bw = Math.max(600, x1 - x0), bh = Math.max(400, y1 - y0);
+    const k = Math.min(W / bw, H / bh) * 0.985;
+    const tx = (W - bw * k) / 2 - x0 * k, ty = (H - bh * k) / 2 - y0 * k;
+    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+  }
+  window.addEventListener("resize", () => { W = stage.clientWidth; H = stage.clientHeight; });
+
+  renderPanel(null);
+  // settle the layout off-screen, then let it breathe just slightly so it reads as live
+  sim.stop();
+  for (let i = 0; i < 400; i++) sim.tick();
+  link.attr("d", pathFor);
+  node.attr("transform", n => `translate(${n.x},${n.y})`);
+  sim.alpha(0.06).restart();
+  setTimeout(fit, 30);
+})();
+</script>
+
+</body>
+</html>
