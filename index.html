@@ -1197,20 +1197,42 @@
   function mark() { ql.querySelectorAll("li").forEach((li,i) => li.classList.toggle("active", i === active)); }
   function pick(id) { ql.hidden = true; q.value = byId[id].name; focusOn(id); }
 
-  document.getElementById("reset").addEventListener("click", fit);
+  document.getElementById("reset").addEventListener("click", () => fit(true));
 
-  function fit() {
-    W = stage.clientWidth; H = stage.clientHeight;
+  // A stage with no width or height yields scale(0), and empty bounds yield NaN; either
+  // one sticks and leaves the tree invisible. Measure first and defer the fit if the
+  // numbers are not usable yet.
+  let pendingFit = false;
+  function measure() {
+    const w = stage.clientWidth, h = stage.clientHeight;
+    if (w > 0 && h > 0) { W = w; H = h; return true; }
+    return false;
+  }
+
+  function fit(animate) {
+    if (!measure()) { pendingFit = true; return; }
     // fit to the people actually drawn (plus their labels), not the whole canvas
     const shown = nodes.filter(n => !(directOnly.checked && !n.direct));
     const x0 = d3.min(shown, n => n.x) - 24, x1 = d3.max(shown, n => n.x + labelWidth(n)) + 12;
     const y0 = d3.min(shown, n => n.y) - bandH * 0.6, y1 = d3.max(shown, n => n.y) + bandH * 0.6;
+    if (![x0, x1, y0, y1].every(Number.isFinite)) { pendingFit = true; return; }
+    pendingFit = false;
     const bw = Math.max(600, x1 - x0), bh = Math.max(400, y1 - y0);
     const k = Math.min(W / bw, H / bh) * 0.985;
     const tx = (W - bw * k) / 2 - x0 * k, ty = (H - bh * k) / 2 - y0 * k;
-    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+    const t = d3.zoomIdentity.translate(tx, ty).scale(k);
+    // Only the reader's own "Reset view" animates. An automatic fit applies at once: a
+    // transition needs animation frames, and a stage that is collapsed or a tab that is
+    // not being drawn may not be getting any, which would leave the fit silently unapplied.
+    if (animate) svg.transition().duration(500).call(zoom.transform, t);
+    else svg.call(zoom.transform, t);
   }
-  window.addEventListener("resize", () => { W = stage.clientWidth; H = stage.clientHeight; });
+
+  // Run only a deferred fit, never a fresh one: an ordinary resize must not throw away
+  // the pan and zoom the reader has set.
+  const refitIfPending = () => { measure(); if (pendingFit) fit(false); };
+  window.addEventListener("resize", refitIfPending);
+  if (window.ResizeObserver) new ResizeObserver(refitIfPending).observe(stage);
 
   renderPanel(null);
   // settle the layout off-screen, then let it breathe just slightly so it reads as live
@@ -1219,7 +1241,7 @@
   link.attr("d", pathFor);
   node.attr("transform", n => `translate(${n.x},${n.y})`);
   sim.alpha(0.06).restart();
-  setTimeout(fit, 30);
+  setTimeout(() => fit(false), 30);
 })();
 </script>
 
