@@ -225,6 +225,9 @@
   #map { width: 100%; height: 100%; display: block; }
   .land { fill: var(--surface-2); stroke: var(--line); stroke-width: 0.6; }
   .graticule { fill: none; stroke: var(--line); stroke-width: 0.4; opacity: 0.5; }
+  .geolabel { font-family: "IBM Plex Sans", sans-serif; text-anchor: middle; pointer-events: none; }
+  .geolabel.country { fill: var(--ink-3); opacity: 0.55; font-weight: 500; }
+  .geolabel.town { fill: var(--ink-3); opacity: 0.45; }
   .placedot { cursor: pointer; }
   .placedot circle.halo { fill: var(--ink); opacity: 0.06; }
   .placedot circle.core { stroke: var(--surface); stroke-width: 1.2; }
@@ -234,6 +237,23 @@
   .flight { fill: none; stroke: var(--focus); stroke-width: 1.6; }
   .flight.est { stroke-dasharray: 3 4; }
   .flightdot { fill: var(--focus); }
+  .eventcard {
+    position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+    width: min(430px, calc(100% - 40px));
+    background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--event);
+    border-radius: 5px; padding: 13px 16px 14px; box-shadow: var(--shadow);
+    opacity: 0; transition: opacity .45s ease; pointer-events: none; z-index: 3;
+  }
+  .eventcard.show { opacity: 1; }
+  .eventcard .eyebrow { color: var(--event); margin-bottom: 4px; }
+  .eventcard h3 {
+    font-family: "Libre Caslon Text", Georgia, serif; font-weight: 400; font-size: 17px;
+    line-height: 1.25; margin: 0 0 7px; text-wrap: balance; color: var(--ink);
+  }
+  .eventcard p { font-size: 13px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+  .eventcard .who {
+    margin-top: 8px; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--ink-3);
+  }
   .timeline {
     position: absolute; left: 14px; right: 14px; bottom: 12px; display: flex; align-items: center; gap: 10px;
     background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line);
@@ -339,6 +359,12 @@
     <svg id="svg" role="img" aria-label="Family network diagram"></svg>
     <svg id="map" role="img" aria-label="Migration map" hidden></svg>
     <div class="hint" id="hintTree">Click a person for records. Drag to pan, scroll to zoom, drag a circle to move it.</div>
+    <div class="eventcard" id="eventCard" hidden>
+      <p class="eyebrow" id="ecYear"></p>
+      <h3 id="ecTag"></h3>
+      <p id="ecText"></p>
+      <p class="who" id="ecWho"></p>
+    </div>
     <div class="timeline" id="timeline" hidden>
       <button id="playBtn" type="button" aria-label="Play">▶</button>
       <input id="scrub" type="range" min="1550" max="2030" step="1" value="2030" aria-label="Year">
@@ -1397,7 +1423,7 @@
     const btnTree = document.getElementById("viewTree"), btnMap = document.getElementById("viewMap");
 
     const gMap = mapSvg.append("g");
-    const gLand = gMap.append("g"), gArcs = gMap.append("g"), gDots = gMap.append("g");
+    const gLand = gMap.append("g"), gGeo = gMap.append("g"), gArcs = gMap.append("g"), gDots = gMap.append("g");
     // the family packs into a few square miles of Pennsylvania, so panning and zooming is
     // not a nicety here — at continental scale a dozen places sit on one pixel
     let k = 1;
@@ -1412,6 +1438,34 @@
     // direction makes it fit the whole globe instead of this corner of it
     const FRAME = { type:"MultiPoint", coordinates:[[-93,36],[22,36],[22,61],[-93,61]] };
 
+
+    // Basemap labels: context only. Countries are always drawn, towns appear once you zoom
+    // in. Any label sitting under a place bubble is suppressed, so people always win.
+    const GEOLABELS = [
+      { n:"UNITED STATES", la:37.4, lo:-84.6, t:"c" }, { n:"CANADA", la:49.5, lo:-74.0, t:"c" },
+      { n:"FRANCE", la:46.7, lo:1.6, t:"c" },        { n:"GERMANY", la:50.7, lo:10.6, t:"c" },
+      { n:"ENGLAND", la:52.5, lo:-2.6, t:"c" },      { n:"IRELAND", la:53.3, lo:-8.0, t:"c" },
+      { n:"SCOTLAND", la:56.8, lo:-4.2, t:"c" },     { n:"NORWAY", la:63.2, lo:11.5, t:"c" },
+      { n:"SWEDEN", la:60.5, lo:15.5, t:"c" },       { n:"DENMARK", la:56.1, lo:9.3, t:"c" },
+      { n:"NETHERLANDS", la:52.3, lo:5.6, t:"c" },   { n:"BELGIUM", la:50.6, lo:4.6, t:"c" },
+      { n:"POLAND", la:52.2, lo:19.5, t:"c" },       { n:"SWITZERLAND", la:46.8, lo:8.2, t:"c" },
+      { n:"SPAIN", la:40.4, lo:-3.7, t:"c" },        { n:"ICELAND", la:64.9, lo:-18.6, t:"c" },
+      { n:"London", la:51.51, lo:-0.13, t:"t" },     { n:"Paris", la:48.86, lo:2.35, t:"t" },
+      { n:"Rotterdam", la:51.92, lo:4.48, t:"t" },   { n:"Cowes", la:50.76, lo:-1.30, t:"t" },
+      { n:"Hamburg", la:53.55, lo:10.00, t:"t" },    { n:"Amsterdam", la:52.37, lo:4.90, t:"t" },
+      { n:"Strasbourg", la:48.57, lo:7.75, t:"t" },  { n:"Stavanger", la:58.97, lo:5.73, t:"t" },
+      { n:"Copenhagen", la:55.68, lo:12.57, t:"t" },
+      { n:"Salem", la:42.52, lo:-70.90, t:"t" },     { n:"Plymouth", la:41.96, lo:-70.67, t:"t" },
+      { n:"Providence", la:41.82, lo:-71.41, t:"t" },{ n:"Hartford", la:41.76, lo:-72.68, t:"t" },
+      { n:"Reading", la:40.34, lo:-75.93, t:"t" },   { n:"Pottsville", la:40.69, lo:-76.20, t:"t" },
+      { n:"Harrisburg", la:40.27, lo:-76.88, t:"t" },{ n:"Lancaster", la:40.04, lo:-76.31, t:"t" },
+      { n:"Scranton", la:41.41, lo:-75.66, t:"t" },  { n:"Trenton", la:40.22, lo:-74.76, t:"t" },
+      { n:"Newark", la:40.74, lo:-74.17, t:"t" },    { n:"Baltimore", la:39.29, lo:-76.61, t:"t" },
+      { n:"Washington", la:38.90, lo:-77.04, t:"t" },{ n:"Pittsburgh", la:40.44, lo:-79.996, t:"t" },
+      { n:"Buffalo", la:42.89, lo:-78.88, t:"t" },   { n:"Cleveland", la:41.50, lo:-81.69, t:"t" },
+      { n:"Detroit", la:42.33, lo:-83.05, t:"t" },   { n:"St Louis", la:38.63, lo:-90.20, t:"t" },
+      { n:"Indianapolis", la:39.77, lo:-86.16, t:"t" }
+    ];
     let mode = "all", year = 2030, timer = null, selected = null;
     const HAS_MAP = Object.keys(GEO);
 
@@ -1425,6 +1479,8 @@
     }
 
     gLand.selectAll("path").data(LAND.features).join("path").attr("class", "land");
+    gGeo.selectAll("text").data(GEOLABELS).join("text")
+        .attr("class", d => "geolabel " + (d.t === "c" ? "country" : "town")).text(d => d.n);
 
     // where a person is in a given year, and whether they are alive to be anywhere
     function locate(id, y) {
@@ -1496,6 +1552,23 @@
          .attr("display", (d.n >= 3 || k > 2.2 || d.key === selected) ? null : "none");
       });
       gArcs.selectAll("path.flight").style("stroke-width", (1.6 / k) + "px");
+
+      // where a bubble is, the basemap gets out of the way
+      const taken = [];
+      gDots.selectAll("g.placedot").each(function (d) {
+        const xy = proj([PLACES[d.key].lon, PLACES[d.key].lat]);
+        taken.push([xy[0], xy[1], rOf(d.n) * s]);
+      });
+      gGeo.selectAll("text").each(function (d) {
+        const xy = proj([d.lo, d.la]), el = d3.select(this);
+        const pad = (d.t === "c" ? 16 : 42) * s;
+        const clash = taken.some(([x, y, r]) => Math.hypot(xy[0] - x, xy[1] - y) < r + pad);
+        const wanted = d.t === "c" ? k < 5 : k > 2.4;
+        el.attr("x", xy[0]).attr("y", xy[1])
+          .style("font-size", ((d.t === "c" ? 11 : 9.5) * s) + "px")
+          .style("letter-spacing", (d.t === "c" ? 0.14 * 11 * s : 0) + "px")
+          .attr("display", (wanted && !clash) ? null : "none");
+      });
     }
 
     // an arc for every crossing that happens in the span just scrubbed past
@@ -1511,7 +1584,7 @@
           }
         }
       }
-      moves.slice(0, 24).forEach(m => {
+      moves.slice(0, 40).forEach(m => {
         const p0 = proj([m.a.lon, m.a.lat]), p1 = proj([m.b.lon, m.b.lat]);
         const dx = p1[0] - p0[0], dy = p1[1] - p0[1], dr = Math.hypot(dx, dy) * 1.6;
         if (dr < 6) return;
@@ -1520,14 +1593,14 @@
         const len = arc.node().getTotalLength();
         arc.attr("stroke-dasharray", m.est ? "3 4" : `${len} ${len}`)
            .attr("stroke-dashoffset", m.est ? 0 : len).attr("opacity", 0.95)
-           .transition().duration(900).ease(d3.easeCubicOut).attr("stroke-dashoffset", 0)
-           .transition().duration(700).attr("opacity", 0).remove();
+           .transition().duration(1500).ease(d3.easeCubicOut).attr("stroke-dashoffset", 0)
+           .transition().delay(2600).duration(1400).attr("opacity", 0).remove();
         const dot = gArcs.append("circle").attr("class", "flightdot").attr("r", 3);
-        dot.transition().duration(900).ease(d3.easeCubicOut)
+        dot.transition().duration(1500).ease(d3.easeCubicOut)
            .attrTween("transform", () => t2 => {
              const q = arc.node().getPointAtLength(t2 * len); return `translate(${q.x},${q.y})`;
            })
-           .transition().duration(300).attr("r", 0).remove();
+           .transition().duration(500).attr("r", 0).remove();
       });
     }
 
@@ -1552,20 +1625,76 @@
     }
     function setAll() {
       stop(); mode = "all"; year = 2030; scrub.value = 2030;
-      yearOut.textContent = "everyone"; selected = null; gArcs.selectAll("*").remove(); draw();
+      yearOut.textContent = "everyone"; selected = null; hideEventCard();
+      mapSvg.call(mapZoom.transform, d3.zoomIdentity);   // back to the whole Atlantic
+      gArcs.selectAll("*").remove(); draw();
     }
-    function stop() { if (timer) { timer.stop(); timer = null; } playBtn.textContent = "▶"; }
+    function stop() { if (timer) { timer.stop(); timer = null; } playBtn.textContent = "▶"; hideEventCard(); }
     function play() {
       if (timer) return stop();
       if (mode === "all" || year >= 2030) setYear(1550, false);
       playBtn.textContent = "❚❚";
-      let last = 0;
+      let last = 0, holdUntil = 0;
       timer = d3.timer(el => {
-        if (el - last < 90) return; last = el;
-        const next = year + 3;
+        if (el < holdUntil) return;              // dwelling on an event
+        if (el - last < 110) return; last = el;
+        const next = year + 1;
         if (next >= 2030) { setYear(2030, true); stop(); return; }
         setYear(next, true);
+        const evs = EVENT_AT.get(next);
+        if (evs) { showEventCard(evs, next); holdUntil = el + 5000 * evs.length; }
       });
+    }
+
+    // Notable events on the timeline. Most tags carry their own year; these seven do not,
+    // so the year is the one the research fixes the episode to.
+    const EVENT_YEAR = {
+      "Fifer through the Revolution": 1777, "Civil War": 1863,
+      "Father of American numismatics": 1857, "Editor of Hegel's collected works": 1837,
+      "Emigrant from Egersund": 1891, "World War II: Utah Beach to the Rhine": 1944,
+      "U.S. Navy, World War II": 1943, "Berks County militia, 1780 and 1782": 1780,
+      "Founding of Chatham, 1656–1712": 1656
+    };
+    const EVENT_AT = new Map();
+    (function buildEvents() {
+      const byTag = new Map();
+      for (const [id, e] of Object.entries(EVENTS)) {
+        if (!byTag.has(e.tag)) byTag.set(e.tag, { tag: e.tag, text: e.text, ids: [] });
+        byTag.get(e.tag).ids.push(id);
+      }
+      for (const e of byTag.values()) {
+        const y = EVENT_YEAR[e.tag] || (e.tag.match(/\b(1[5-9]\d\d)\b/) || [])[1];
+        if (!y) continue;
+        const yr = +y;
+        if (!EVENT_AT.has(yr)) EVENT_AT.set(yr, []);
+        EVENT_AT.get(yr).push(e);
+      }
+    })();
+
+    const card = document.getElementById("eventCard");
+    let cardTimer = null;
+    // 1777 carries three events and 1863 two, so a year can hold more than one card;
+    // show them in turn rather than dropping all but the first
+    function showEventCard(list, y) { cycleCard(list, y, 0); }
+    function cycleCard(list, y, i) {
+      const e = list[i];
+      const label = list.length > 1 ? `${y} · Notable event ${i + 1} of ${list.length}` : `${y} · Notable event`;
+      document.getElementById("ecYear").textContent = label;
+      document.getElementById("ecTag").textContent = e.tag;
+      document.getElementById("ecText").textContent = e.text;
+      const names = e.ids.map(id => byId[id] ? labelOf(byId[id]) : id);
+      document.getElementById("ecWho").textContent =
+        names.length > 1 ? names.slice(0, 6).join(" · ") + (names.length > 6 ? " · …" : "") : names[0];
+      card.removeAttribute("hidden"); requestAnimationFrame(() => card.classList.add("show"));
+      clearTimeout(cardTimer);
+      cardTimer = setTimeout(() => {
+        if (i + 1 < list.length) { cycleCard(list, y, i + 1); return; }
+        card.classList.remove("show");
+        setTimeout(() => card.setAttribute("hidden", ""), 500);
+      }, 5000);
+    }
+    function hideEventCard() {
+      clearTimeout(cardTimer); card.classList.remove("show"); card.setAttribute("hidden", "");
     }
 
     playBtn.addEventListener("click", play);
