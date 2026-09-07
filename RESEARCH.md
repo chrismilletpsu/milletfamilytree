@@ -1160,6 +1160,8 @@ Sources:
 
 Born in England in 1603 or 1604; a weaver of Norwich, Norfolk. Married Anne Busby there on June 24, 1627, and had four children in Norwich. Puritan Congregationalists, the family left to escape religious persecution: the Family Association's history has them sailing on April 15, 1637, with Anne's parents Nicholas and Bridget Busby and about a hundred others, on either the Rose or the John and Dorothy, two ships under a father and son, and landing at Salem on June 20. Five more children were born around Boston. By 1640 they were among the first settlers of Yarmouth on Cape Cod. In 1656 he bought about a thousand acres, four square miles of Monomoit, from the sachem Mattaquason for a shallop, ten coats, six kettles, twelve axes, twelve hoes, twelve knives, forty shillings in wampum, a hat, and twelve shillings in coin. He had not asked Plymouth Colony's leave, and sixteen years of dispute followed before he settled the matter in 1672 for ninety pounds. About 1664, aged about sixty, he built his homestead near the head of Ryder's Cove, deeded land to his grown children, who settled around the cove with their families in low cottages banked with dried seaweed, and held church services in his own house, the beginning of Chatham's Congregational church; in William Smith's phrase, for the next twenty-five years the place was “but little more than a Nickerson neighborhood.” He wanted the constablewick made a town, which required a resident minister and the population to support one; his children and grandchildren saw it done on June 11, 1712, when Monomoit was incorporated as Chatham. He and Anne lived in the homestead until their deaths in the late 1680s. By 1790 twenty of Chatham's 193 households were Nickersons; by 1915 his descendants were reckoned at fifty thousand.
 
+Savage, consulted in September 2026, adds detail to the crossing and conflicts with the Family Association on two points. He has William as a weaver of Norwich, aged 33 in 1637 — a birth about 1604, as the tree already carries — with his wife Ann, eldest daughter of Nicholas Busby, aged 28, and the four children who crossed with them now named: Nicholas, Robert, Elizabeth, and Ann. He says they embarked at Ipswich or Yarmouth on 8 April 1637, not 15 April, and landed on 20 June at Boston, not Salem; that they went first to Watertown with Nicholas Busby; that William was admitted freeman on 2 May 1638; and that at Yarmouth he had a son Joseph, born December 1647, and a daughter Elizabeth who married Robert Eldred in October 1649. Where Savage and the Association disagree, neither has been checked against a primary record here.
+
 - Spouse (linked in tree): Anne Busby Nickerson
 - Children (linked in tree): William Nickerson Jr.
 - Spouse: Anne Busby (1607–1686), m. June 24, 1627, Norwich
@@ -1176,6 +1178,43 @@ Sources:
 - [FamilySearch tree: William Nickerson (1646–1719)](https://www.familysearch.org/tree/person/details/GWJL-FF9)
 - [Nickerson Family Association: William Nickerson, the settler](https://nickersonassoc.com/genealogy/william-nickerson/)
 - [Nickerson Family Association: family history](https://nickersonassoc.com/about/nickerson-history/)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. III (1860), p. 284: William Nickerson, weaver, of Norwich and Boston](https://archive.org/details/genealogicaldic03savarich)
+
+### Elizabeth Nickerson Eldred (1637)
+
+**Place:** Norwich, England → Yarmouth, MA  
+**Role:** Crossed in 1637  
+**Generation:** 10  
+**Status:** relative
+
+One of the four Nickerson children born at Norwich who crossed with their parents and grandparents in 1637. She married Robert Eldred of Yarmouth in the last week of October 1649 and had a son Nicholas, born 18 August 1650, who became Chatham's first representative under the new charter in 1692 and died on 30 April 1702.
+
+- Parents: William Nickerson; Anne Busby Nickerson
+- Spouse: Robert Eldred of Yarmouth, m. Oct 1649
+- Children: Nicholas Eldred (1650–1702)
+
+Sources:
+
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. II (1860): Robert Eldred of Yarmouth; Tristram Hedges of Boston; John Grout of Sudbury](https://archive.org/details/genealogicaldic02savarich)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. III (1860), p. 284: William Nickerson, weaver, of Norwich and Boston](https://archive.org/details/genealogicaldic03savarich)
+
+### Ann Nickerson Hedges
+
+**Place:** Norwich, England → Boston  
+**Role:** Crossed in 1637  
+**Generation:** 10  
+**Status:** relative
+
+One of the four Nickerson children born at Norwich who crossed in 1637, named for her mother. She married Tristram Hedges of Boston on 20 December 1657 and had a daughter Grace, born 20 August 1659.
+
+- Parents: William Nickerson; Anne Busby Nickerson
+- Spouse: Tristram Hedges of Boston, m. 20 Dec 1657
+- Children: Grace (1659)
+
+Sources:
+
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. II (1860): Robert Eldred of Yarmouth; Tristram Hedges of Boston; John Grout of Sudbury](https://archive.org/details/genealogicaldic02savarich)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. III (1860), p. 284: William Nickerson, weaver, of Norwich and Boston](https://archive.org/details/genealogicaldic03savarich)
 
 ### William Nickerson Jr. (1646–1719)
 
@@ -1624,15 +1663,18 @@ Sources:
 **Generation:** 12  
 **Status:** direct ancestor of Chris Millet
 
-Mother of Anne Busby Nickerson. Crossed from Norwich to Salem in 1637 with her husband Nicholas and the Nickersons. Nothing further is recorded of her in the Family Association's histories.
+Mother of Anne Busby Nickerson. Savage gives her age as 53 when the family landed on 20 June 1637, which puts her birth about 1584 and makes her some three years older than her husband. She crossed from Norwich with Nicholas and the Nickersons, settled at Watertown, and moved with him to Boston in 1646. Savage says she survived him by three or four years, so she died about 1660 or 1661. The Family Association's histories record nothing further of her.
 
 - Spouse (linked in tree): Nicholas Busby
-- Children (linked in tree): Anne Busby Nickerson
+- Children (linked in tree): Anne Busby Nickerson; Nicholas Busby Jr.; John Busby; Abraham Busby; Catharine Busby Savory; Sarah Busby Grout
+- Born: about 1584, by her stated age of 53 in 1637
+- Died: about 1660–61
 
 Sources:
 
 - [Nickerson Family Association: “William and Anne (Busby) Nickerson Come to Town” (2013), drawing on William C. Smith, History of Chatham](https://nickersonassoc.com/2013/03/29/william-and-anne-busby-nickerson-come-to-town/)
 - [Nickerson Family Association: “Our Ancestors' Fascinating Journey, Part II” (Debra Lawless, 2017): the 1637 party, incl. Nicholas and Bridget Busby](https://nickersonassoc.com/2017/05/12/our-ancestors-fascinating-journey-part-ii/)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
 
 ### Nicholas Busby
 
@@ -1641,15 +1683,24 @@ Sources:
 **Generation:** 12  
 **Status:** direct ancestor of Chris Millet
 
-Father of Anne Busby Nickerson. With his wife Bridget he joined his daughter's family for the 1637 crossing from Norwich to Salem, on the Rose or the John and Dorothy, one of the eight in the Nickerson party. The Family Association's histories record no more of him; his later life in New England has not yet been traced here.
+A weaver of Norwich and father of Anne Busby Nickerson. With his wife Bridget he joined his daughter's family for the 1637 crossing, one of the eight in the Nickerson party. Savage, who had not been consulted before September 2026, carries the rest of his life: he came from old Norwich, landing 20 June 1637 aged 50 — a birth about 1587 — with Bridget, 53, and four children, Nicholas, John, Abraham, and Sarah. He settled first at Watertown, was made freeman in March 1638, served as selectman in 1640 and 1641, removed to Boston in 1646, was constable there in 1649, and died 28 August 1657.
+
+His will, dated 25 July 1657, gave “all his books of physic” to his eldest son John, then in England, and his books of divinity to Abraham. It names his eldest daughter Ann, wife of William Nickerson of Boston, weaver; his daughter Catharine Savory; his youngest daughter Sarah, wife of John Grout of Sudbury and before that of Capt. Thomas Cakebread; and his grandson Joseph, son of his son Nicholas, who had died before him. A man leaving separate libraries of physic and divinity was a reader of some means, which is the only sense of his standing the records give.
+
+The will itself has not been read here. Everything in the paragraph above rests on Savage's 1860 summary of it and should be checked against the Suffolk County probate record.
 
 - Spouse (linked in tree): Bridget Busby
-- Children (linked in tree): Anne Busby Nickerson
+- Children (linked in tree): Anne Busby Nickerson; Nicholas Busby Jr.; John Busby; Abraham Busby; Catharine Busby Savory; Sarah Busby Grout
+- Born: about 1587, by his stated age of 50 in 1637
+- Died: 28 Aug 1657, Boston; will dated 25 July 1657
+- Offices: freeman Mar 1638; selectman of Watertown 1640, 1641; constable of Boston 1649
+- Grandson named in the will: Joseph, son of Nicholas Busby Jr.
 
 Sources:
 
 - [Nickerson Family Association: “William and Anne (Busby) Nickerson Come to Town” (2013), drawing on William C. Smith, History of Chatham](https://nickersonassoc.com/2013/03/29/william-and-anne-busby-nickerson-come-to-town/)
 - [Nickerson Family Association: “Our Ancestors' Fascinating Journey, Part II” (Debra Lawless, 2017): the 1637 party, incl. Nicholas and Bridget Busby](https://nickersonassoc.com/2017/05/12/our-ancestors-fascinating-journey-part-ii/)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
 
 ### Anne Busby Nickerson (1607–1686)
 
@@ -1657,7 +1708,7 @@ Sources:
 **Generation:** 11  
 **Status:** direct ancestor of Chris Millet
 
-Daughter of Nicholas and Bridget Busby of Norwich, and about five years younger than her husband. Married William Nickerson in Norwich in 1627 and bore four children there. In 1637 she crossed to Salem with William, the four children, and both her parents, on the Rose or the John and Dorothy; five more children followed around Boston. She was in her mid-fifties when the family built its homestead at the head of Ryder's Cove about 1664, and lived there until her death in the late 1680s. Mother of ten.
+Eldest daughter of Nicholas and Bridget Busby of Norwich, so named in her father’s will, and about five years younger than her husband. Savage gives her age as 28 in 1637, putting her birth about 1609 rather than the 1607 the tree carries, which agrees with the Family Association’s estimate of 1608–09. Married William Nickerson in Norwich in 1627 and bore four children there. In 1637 she crossed to Salem with William, the four children, and both her parents, on the Rose or the John and Dorothy; five more children followed around Boston. She was in her mid-fifties when the family built its homestead at the head of Ryder's Cove about 1664, and lived there until her death in the late 1680s. Mother of ten.
 
 - Parents: Nicholas Busby; Bridget Busby
 - Spouse (linked in tree): William Nickerson
@@ -1670,6 +1721,90 @@ Sources:
 - [FamilySearch tree: Anne Busby](https://www.familysearch.org/tree/person/details/LBL3-6V9)
 - [FamilySearch tree: William Nickerson (1604–1690)](https://www.familysearch.org/tree/person/details/LB91-4HP)
 - [Nickerson Family Association: family history](https://nickersonassoc.com/about/nickerson-history/)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. III (1860), p. 284: William Nickerson, weaver, of Norwich and Boston](https://archive.org/details/genealogicaldic03savarich)
+
+### Nicholas Busby Jr.
+
+**Place:** Norwich, England → Boston  
+**Role:** Crossed in 1637  
+**Generation:** 11  
+**Status:** relative
+
+Eldest son, born in England and one of the four Busby children who crossed in 1637. Married in 1652 Martha, daughter of John Cheney and the young widow of Anthony Sadler, and had a son Joseph. He died before his father, who named the boy Joseph as a grandson in the will of 1657.
+
+- Parents: Nicholas Busby; Bridget Busby
+- Spouse: Martha Cheney, widow of Anthony Sadler, m. 1652
+- Children: Joseph
+
+Sources:
+
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
+
+### John Busby
+
+**Place:** Norwich, England → New England → England  
+**Role:** Crossed in 1637  
+**Generation:** 11  
+**Status:** relative
+
+One of the four Busby children who crossed in 1637, and his father's eldest surviving son by 1657, when the will left him “all his books of physic.” He was in England at the time the will was written, and nothing further about him has been looked for here.
+
+- Parents: Nicholas Busby; Bridget Busby
+- Legacy: his father's books of physic, 1657
+
+Sources:
+
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
+
+### Abraham Busby
+
+**Place:** Norwich, England → Boston  
+**Role:** Linen-weaver; crossed in 1637  
+**Generation:** 11  
+**Status:** relative
+
+One of the four Busby children who crossed in 1637. A linen-weaver of Boston, of the Artillery Company in 1647 and a freeman in 1650, he took his father's books of divinity under the 1657 will. He married on 23 September 1659, apparently as a second wife, Abigail, widow of Joseph Briscoe, and died on 20 March 1687.
+
+- Parents: Nicholas Busby; Bridget Busby
+- Spouse: Abigail, widow of Joseph Briscoe, m. 23 Sep 1659
+- Died: 20 Mar 1687
+
+Sources:
+
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
+
+### Catharine Busby Savory
+
+**Place:** New England  
+**Generation:** 11  
+**Status:** relative
+
+A daughter named in her father's will of 1657 as Catharine Savory, so married by then. She is not among the four children Savage lists as crossing in 1637, and whether she was born in England or in New England is not established here.
+
+- Parents: Nicholas Busby; Bridget Busby
+- Married name: Savory, by 1657
+
+Sources:
+
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
+
+### Sarah Busby Grout
+
+**Place:** Norwich, England → Sudbury, MA  
+**Role:** Crossed in 1637  
+**Generation:** 11  
+**Status:** relative
+
+The youngest Busby daughter, so called in her father's will, and one of the four children who crossed in 1637. She married first Capt. Thomas Cakebread and second John Grout of Sudbury — a selectman, town clerk, and captain who was seventy in 1689 and died on 25 July 1697 — and by Grout had John, Sarah, Joseph, Abigail, Jonathan, and Elizabeth.
+
+- Parents: Nicholas Busby; Bridget Busby
+- Spouses: Capt. Thomas Cakebread; John Grout of Sudbury
+- Children by Grout: John, Sarah, Joseph (1649), Abigail (1655), Jonathan (1658), Elizabeth
+
+Sources:
+
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. II (1860): Robert Eldred of Yarmouth; Tristram Hedges of Boston; John Grout of Sudbury](https://archive.org/details/genealogicaldic02savarich)
 
 ### Mercy Williams Nickerson (1643–1739)
 
@@ -2315,6 +2450,8 @@ These are as useful as the positive results; they say where not to look again.
 - **Martin Christoffersen's Danish parish.** Not found; the Danish emigration archives (udvandrerarkivet.dk) could not be reached from the research sessions and remain the best lead.
 - **Willard Nickerson's exact birth date.** July 1927 by a residence record, 1928 by the censuses.
 - **Jersey Journal "Nickerson" and "Christoffersen" hits of 1936–1937.** All belong to other families in the Lafayette section of Jersey City (Gertrude and Audrey Nickerson).
+- **Sgt. Frederick Millet in Savage.** Savage's *Genealogical Dictionary of the First Settlers of New England* covers only arrivals before May 1693 and only New England, so it cannot reach a Pennsylvania family of the 1780s. All four volumes were searched anyway in September 2026. Volume II carries a **Thomas Millet of Gloucester, Massachusetts**, whose wife Mary came in 1635 on the *Elizabeth*: an English Puritan family with no connection to this one, which wrote itself Millot, Mylot, and Miloth until the 1840s. Recorded here so the coincidence of surname is not mistaken for a lead a second time.
+- **Millot in the 1790 census of the whole state.** The 1790 Pennsylvania volume was searched end to end, not only its Berks entries: no Millot of any spelling in Berks, confirming the earlier finding. The only cluster in the state is in **Bedford County** — Jacob, Dory, Benjamin, and John Millott, with Joseph Melot nearby — unexamined, and probably an unrelated English family.
 - **Olava Olsdatter's twin.** The 1849 baptism calls her a twin, but no second baptism or burial for a twin appears in the Egersund register.
 
 ## The Jean-François Millet question
@@ -2323,23 +2460,25 @@ Family lore links the Millets to the painter Jean-François Millet (1814–1875)
 
 ## Open leads, in rough order of promise
 
-1. **Marie Violet Williams's birth mother.** A Schuylkill County marriage of William Earl Williams about 1920–21, and a death or divorce before April 1930; then the 1920 census of Gilberton or Tamaqua for the couple. This is the sharpest remaining gap close to the present.
-2. **The Zion (Red Church) register images, 1818–1822**, for Frederick Millet's baptism and Martin Millot's family; Ancestry's "Pennsylvania and New Jersey Church and Town Records" or FHL film. The single record that would prove or break Martin → Frederick.
-3. **St. John's Orwigsburg confirmation lists of the mid-1830s** (usgwarchives transcription, or the DAR register on FamilySearch), for a Frederick Millet confirmed at 14–16 with his parents' names.
-4. **F. Edward Wright's *Berks County Church Records of the 18th Century*** (Oley Reformed, Hill Church, Colebrookdale-area registers) for baptisms of Maria (1777) and George (1782) Milot naming Frederick as father.
-5. **Schuylkill County Orphans' Court dockets, 1830s–1840s**, for a guardianship of Martin's minor children if he died before 1841; **Berks County estate and Orphans' Court records** for a Frederick Millot/Mylot, c. 1785–1810.
-6. **Julia Baran Nickerson**: an Albany County, New York, marriage of 1924–25; her death (after August 1956) and burial in the Dunellen–Plainfield area; George Baran's village, through Bayonne's Slovak Catholic parish records and the 1889 passenger lists.
-7. **Louise Mihm and Walter Christoffersen**: their marriage (Hudson County, c. 1923) and Walter's death (between 1940 and 1950); the Jersey Journal death notice of 9 June 1949 for a "Miam" that names Louise S. Mihm and a sister Irene A. Rehbein, probably a parent's death.
-8. **Mary Catherine Martin's parents**: Adolph Martin's village in Baden-Württemberg (his 1881 arrival and any naturalization), and Catharine Herring's parents and first marriage, since Oscar and Emma were born before 1887.
-9. **The Moyer line above Jacob**: verify Peter Meyer Sr. and Catharina Kern from the Egypt Reformed and Jordan Lutheran registers, and Martin Meyer Sr. above them; and settle whether the Daniel Moyer appointed guardian in 1818 is the Daniel Moyer who married Mary Magdalena Mickley, which would connect the Moyers and Mickleys twice.
-10. **The Mickley wives** — Elizabeth Barbara Burkhalter, Susanne Margarethe Miller, Maria Salome Biery — and **the Cape Cod wives** — Mercy Williams, Deliverance Lombard, Dorcas Covel — all of whom belong to documented families and appear only in the facts fields.
-11. **Egersund**: which of the Ole Olsens of the town was Olava's father; the parents of Ole Andreas Olsen and Inger Marie Thorsdatter; the marriages of both couples. Digitalarkivet handles all of these.
-12. **Danish emigration records (1885)** for Martin Christoffersen's home parish.
-13. **The Pottsville Mining Register of 11 February 1860 and Weekly Miners' Journal of 25 December 1874**, both of which mention Millot and Orwigsburg (GenealogyBank), unread.
-14. **Zweibrücken church books on Archion** for a 1697 baptism of Jean Jacques Michelet.
-15. **The Jersey Journal of 24 June 1943 (Willard Nickerson) and the Newark Star-Ledger of 30 January 1977 and 15 April 1999 (Willard Nickerson)**, unread.
-16. **FamilySearch tree housekeeping**: Julia Baran exists twice (LY43-KRL and G6NQ-Y6R) and Louise Mihm twice (LB74-WK6 and 9Q29-BF9, the latter as Sophie L.); Thomas Moyer's death and burial have no attached source there.
-
+1. **Nicholas Busby's will, Suffolk County probate, 25 July 1657.** Everything now recorded of his life after 1637 comes from Savage's 1860 summary of this will. The original would confirm the six children, the two libraries, Sarah's two marriages, and the grandson Joseph — and is the single document that most repays being read.
+2. **Salem or Boston, and 8 or 15 April 1637.** Savage and the Nickerson Family Association disagree on both the port of arrival and the sailing date. The passenger list of the *Rose* or the *John and Dorothy*, or Winthrop's journal for June 1637, should settle it.
+3. **Nicholas Miloth, ship Lydia, 1749 — Sgt. Frederick's likely father.** Egle's oath-of-allegiance lists hold one `Nickolaus Miiloth` (OCR), last of 108 names on the Lydia, Capt. John Randolph, from Rotterdam, qualified 13 October 1749 — the only name of the kind in the volume, and matching Frederick's own spelling in the 1782 muster. An oath-taker was sixteen or older, so a birth by 1733, which fits a father for a man taxed as a tailor in 1781. To settle it: **Strassburger's *Pennsylvania German Pioneers* vol. II**, which reproduces the signatures for this list, and then **Berks County estate and Orphans' Court records for a Nicholas Miloth, c. 1750–1785**. Not entered in the tree until the signature is read.
+4. **Marie Violet Williams's birth mother.** A Schuylkill County marriage of William Earl Williams about 1920–21, and a death or divorce before April 1930; then the 1920 census of Gilberton or Tamaqua for the couple. This is the sharpest remaining gap close to the present.
+5. **The Zion (Red Church) register images, 1818–1822**, for Frederick Millet's baptism and Martin Millot's family; Ancestry's "Pennsylvania and New Jersey Church and Town Records" or FHL film. The single record that would prove or break Martin → Frederick.
+6. **St. John's Orwigsburg confirmation lists of the mid-1830s** (usgwarchives transcription, or the DAR register on FamilySearch), for a Frederick Millet confirmed at 14–16 with his parents' names.
+7. **F. Edward Wright's *Berks County Church Records of the 18th Century*** (Oley Reformed, Hill Church, Colebrookdale-area registers) for baptisms of Maria (1777) and George (1782) Milot naming Frederick as father.
+8. **Schuylkill County Orphans' Court dockets, 1830s–1840s**, for a guardianship of Martin's minor children if he died before 1841; **Berks County estate and Orphans' Court records** for a Frederick Millot/Mylot, c. 1785–1810.
+9. **Julia Baran Nickerson**: an Albany County, New York, marriage of 1924–25; her death (after August 1956) and burial in the Dunellen–Plainfield area; George Baran's village, through Bayonne's Slovak Catholic parish records and the 1889 passenger lists.
+10. **Louise Mihm and Walter Christoffersen**: their marriage (Hudson County, c. 1923) and Walter's death (between 1940 and 1950); the Jersey Journal death notice of 9 June 1949 for a "Miam" that names Louise S. Mihm and a sister Irene A. Rehbein, probably a parent's death.
+11. **Mary Catherine Martin's parents**: Adolph Martin's village in Baden-Württemberg (his 1881 arrival and any naturalization), and Catharine Herring's parents and first marriage, since Oscar and Emma were born before 1887.
+12. **The Moyer line above Jacob**: verify Peter Meyer Sr. and Catharina Kern from the Egypt Reformed and Jordan Lutheran registers, and Martin Meyer Sr. above them; and settle whether the Daniel Moyer appointed guardian in 1818 is the Daniel Moyer who married Mary Magdalena Mickley, which would connect the Moyers and Mickleys twice.
+13. **The Mickley wives** — Elizabeth Barbara Burkhalter, Susanne Margarethe Miller, Maria Salome Biery — and **the Cape Cod wives** — Mercy Williams, Deliverance Lombard, Dorcas Covel — all of whom belong to documented families and appear only in the facts fields.
+14. **Egersund**: which of the Ole Olsens of the town was Olava's father; the parents of Ole Andreas Olsen and Inger Marie Thorsdatter; the marriages of both couples. Digitalarkivet handles all of these.
+15. **Danish emigration records (1885)** for Martin Christoffersen's home parish.
+16. **The Pottsville Mining Register of 11 February 1860 and Weekly Miners' Journal of 25 December 1874**, both of which mention Millot and Orwigsburg (GenealogyBank), unread.
+17. **Zweibrücken church books on Archion** for a 1697 baptism of Jean Jacques Michelet.
+18. **The Jersey Journal of 24 June 1943 (Willard Nickerson) and the Newark Star-Ledger of 30 January 1977 and 15 April 1999 (Willard Nickerson)**, unread.
+19. **FamilySearch tree housekeeping**: Julia Baran exists twice (LY43-KRL and G6NQ-Y6R) and Louise Mihm twice (LB74-WK6 and 9Q29-BF9, the latter as Sophie L.); Thomas Moyer's death and burial have no attached source there.
 ## Method and tools
 
 Records were located through FamilySearch (indexed records, the shared tree, full-text search of deed, probate, and court books, record images, and the Digital Library), the Norwegian Digitalarkivet (transcribed parish registers and the 1865, 1870, and 1875 censuses), Find a Grave, archive.org (the 1893 Mickley genealogy and Pennsylvania Archives volumes), GenealogyBank (Berks and Schuylkill Journal, Miners' Journal, Jersey Journal), the Nickerson Family Association's website, and published references (Wikipedia, Britannica, the Historical Society of Pennsylvania, the American Numismatic Society). Newspaper pages were read from PDF clips and OCR; deed and docket transcriptions come from FamilySearch's full-text search and were checked against the page images. Where a fact came from a search-result summary or a FamilySearch tree profile rather than an opened record, the source line says so.
@@ -2353,16 +2492,25 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
 5. **Publication.** The interactive tree was republished after each step. The GitHub repository (chrismilletpsu/milletfamilytree) could not be pushed from the research session because the repository was not attached to it; the updated `index.html` and this document are delivered as files for a local commit.
 
 
+## Phase 3 log (September 7, 2026)
+
+1. **Sgt. Frederick Millet, deeper search.** *Pennsylvania Archives* Third Series vol. XVIII was read in full: it holds exactly one Millot of any spelling, `Mylot, Fred'k, taylor,` under Colebrookdale, Berks County, 1781, with no valuation against his name — a landless artisan. The 1790 census was then searched for the whole of Pennsylvania rather than Berks alone, confirming his absence and turning up an unrelated-looking Millott cluster in Bedford County. Egle's oath-of-allegiance lists yielded the one candidate above him: **Nickolaus Miiloth**, last of 108 names on the ship Lydia, Capt. John Randolph, from Rotterdam, qualified 13 October 1749. The spelling matches Frederick's own in the 1782 muster. It rests on a single OCR pass of a single scan, could not be corroborated in a second scan or in Strassburger, and is **not** entered in the tree; see Open leads.
+2. **Savage's *Genealogical Dictionary*.** All four volumes searched. Volume I gave Nicholas Busby's age, trade, offices, death, and the will of 25 July 1657 naming six children and a grandson — filling what had been the largest gap on that side. Volume III gave William Nickerson's age and trade, named the four children who crossed in 1637, and put the landing at Boston on 20 June rather than Salem, with embarkation on 8 April rather than 15. Volume II supplied the Eldred, Hedges, and Grout cross-references. Volume IV yielded nothing usable: Mercy Williams is unfindable among the Williamses, and Dorcas Covel (b. 1714) falls past Savage's 1693 cutoff.
+3. **People added.** Nicholas Busby Jr., John Busby, Abraham Busby, Catharine Busby Savory, and Sarah Busby Grout as Anne's siblings; Elizabeth Nickerson Eldred and Ann Nickerson Hedges as her daughters. Six of the seven crossed in 1637 and carry the event marker in the tree.
+4. **Source texts kept.** The OCR of every volume searched is now in `sources/` in the repository, with a README recording what each one settled.
+
 ## All sources
 
+- [*Heads of Families at the First Census … 1790: Pennsylvania*](https://archive.org/details/headsoffamiliesa08unit)
+- [*Pennsylvania Archives*, Third Series, vol. XVIII: Berks County tax lists — “Mylot, Fred'k, taylor,” Colebrookdale, 1781](https://archive.org/details/3rdpennsylvaniaarch18harruoft)
 - [1820 census, Oley Township, Berks: George Melott](https://www.familysearch.org/ark:/61903/1:1:XHLF-DVW)
 - [1820 census, Orwigsburg: John Millot](https://www.familysearch.org/ark:/61903/1:1:XHGX-L23)
 - [1820 census, Orwigsburg: Martin Millot](https://www.familysearch.org/ark:/61903/1:1:XHGX-LPM)
 - [1830 census, Oley Township, Berks: George Melot](https://www.familysearch.org/ark:/61903/1:1:XHPK-WWP)
 - [1830 census, Orwigsburg: Martin Millott](https://www.familysearch.org/ark:/61903/1:1:XHP7-BVY)
 - [1850 census, Oley Township, Berks: George Milot](https://www.familysearch.org/ark:/61903/1:1:M44K-2J4)
-- [1850 census, Tamaqua](https://www.familysearch.org/ark:/61903/1:1:M4CB-39J)
 - [1850 census, Tamaqua, east ward, household 80: Thomas Moyer, 37, potter; Susan, 37; Catharine, Allen, James, Ellemina, Albert, Lewis, Zachary T.](https://www.familysearch.org/ark:/61903/1:1:M4C1-SB4)
+- [1850 census, Tamaqua](https://www.familysearch.org/ark:/61903/1:1:M4CB-39J)
 - [1860 census, East Ward, Tamaqua, p. 125, household 944: Thomas Moyer, 48, high constable; Susan, 45; Catharin, James (moulder), Almira, Albert (moulder), Lewis, Zacharius, Emma, Elwood](https://www.familysearch.org/ark:/61903/1:1:MXR3-L1G)
 - [1860 census, Oley Township, Berks: George Melot](https://www.familysearch.org/ark:/61903/1:1:MXP7-BLJ)
 - [1860 census, Tamaqua (indexed as Miller)](https://www.familysearch.org/ark:/61903/1:1:MXR3-LTS)
@@ -2403,6 +2551,7 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
 - [Berks County index of wills and administrations, 1752–1850 (Daniel Seyer; Geo. Millot)](https://www.familysearch.org/library/books/records/item/778776-berks-county-pennsylvania-index-of-wills-and-administration-records-1752-1850)
 - [Censuses 1870–1940 and 1911 marriage: Charles Millet, b. 1863](https://www.familysearch.org/search/record/results?q.givenName=Charles&q.surname=Millet&q.birthLikeDate.from=1860&q.birthLikeDate.to=1866&q.birthLikePlace=Pennsylvania%2C%20United%20States)
 - [Danish Emigration Archives (Copenhagen police emigration registers)](https://www.udvandrerarkivet.dk/udvandrerprotokollerne/)
+- [Egle, *Names of Foreigners Who Took the Oath of Allegiance … 1727–1775* (1892): Nickolaus Miiloth, ship Lydia, qualified 13 Oct 1749](https://archive.org/details/namesofforeigner00egle)
 - [Egypt Reformed Church, Whitehall Twp.: Thomas Mayer, b. 19 Nov 1804, bapt. 26 Jan 1805, son of Jacob Mayer and Christina (Pennsylvania, Births and Christenings, 1709–1950)](https://www.familysearch.org/ark:/61903/1:1:HHPV-DYN2)
 - [Eigersund parish register 1827–1850, baptisms p. 184, no. 19: Olave, b. 25 Jan 1849, bapt. 25 Feb 1849, illegitimate twin; father Ole Olsen “i Egersund,” mother Marthe Olsdatter, Pige, “paa Dyrnæs” (Digitalarkivet)](https://www.digitalarkivet.no/en/view/255/pd00000002383100)
 - [Eigersund parish register 1850–1865, confirmations p. 318, no. 45: Olava Olsdatter, b. 25 Jan 1849 at Grastvedt, confirmed 4 Oct 1863; parents Ole Olsen, gårdmann, and Marthe Olsdatter (Digitalarkivet)](https://www.digitalarkivet.no/en/view/279/pk00000000143584)
@@ -2532,6 +2681,9 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
 - [Pennsylvania obituaries: Charles A. “Squire” Millet, 88, d. 4 Nov 2001, Pottsville, son of Charles Millet and Mary Martin Millet (Morning Call)](https://www.familysearch.org/ark:/61903/1:1:QVNM-3DYF)
 - [RCUS: Liberty Bell hidden at Zion Reformed, Allentown](https://rcus.org/tricentennial/liberty-bell/)
 - [Revolutionary War rosters index: Frederick Millet](https://www.familysearch.org/ark:/61903/1:1:QG29-QW8T)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. II (1860): Robert Eldred of Yarmouth; Tristram Hedges of Boston; John Grout of Sudbury](https://archive.org/details/genealogicaldic02savarich)
+- [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. III (1860), p. 284: William Nickerson, weaver, of Norwich and Boston](https://archive.org/details/genealogicaldic03savarich)
 - [Schuylkill County deed book, 1811–1818: Jacob Orwig to James Price, 28 Mar 1816, witnessed by Martin Millot](https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJ9-1P4W)
 - [Schuylkill County deed book, 1811–1818: Martin Millot and Catharine his wife to Frederick Brintzinghoffer, lot 201, Orwigsburg, 18 Nov 1817](https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJ9-1LJL)
 - [Schuylkill County deed book, 1825–1829: sheriff's deed to John Millot, lot 74, Orwigsburg](https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSJS-WRCH)
