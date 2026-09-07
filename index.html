@@ -1427,8 +1427,10 @@
     // the family packs into a few square miles of Pennsylvania, so panning and zooming is
     // not a nicety here — at continental scale a dozen places sit on one pixel
     let k = 1;
+    let userDrove = false, camK = 1, camC = [0, 0], camSide = null;
     const mapZoom = d3.zoom().scaleExtent([1, 14]).on("zoom", ev => {
       k = ev.transform.k; gMap.attr("transform", ev.transform); scaleMarks();
+      if (ev.sourceEvent) userDrove = true;   // a real gesture takes the camera off auto
     });
     mapSvg.call(mapZoom);
     const proj = d3.geoMercator(), path = d3.geoPath(proj);
@@ -1604,6 +1606,104 @@
       });
     }
 
+
+    // ---- Camera ----
+    // A fixed wide shot wastes the whole nineteenth century, when the family is packed into a
+    // few square miles of Schuylkill County. The camera frames where the living actually are,
+    // weighted by headcount so a lone emigrant in Illinois does not drag the whole view west,
+    // and opens out to the Atlantic on its own whenever a crossing puts people on both sides.
+    function cameraFor(y, mustSee) {
+      const w = stageEl.clientWidth, h = stageEl.clientHeight;
+      if (!w || !h) return null;
+      const side = lon => lon > -30 ? "eu" : "am";
+      const grp = { eu: [], am: [] };
+      for (const [key, list] of census(y)) {
+        const pl = PLACES[key], xy = proj([pl.lon, pl.lat]);
+        grp[side(pl.lon)].push([xy[0], xy[1], list.length]);
+      }
+      const wEu = d3.sum(grp.eu, q => q[2]), wAm = d3.sum(grp.am, q => q[2]);
+      if (!wEu && !wAm) return null;
+
+      // a crossing in flight has to be framed whole; otherwise follow whichever side of the
+      // Atlantic the family actually is, so the nineteenth century plays out over Pennsylvania
+      // rather than over an ocean nobody is crossing
+      const seeSides = new Set((mustSee || []).map(q => q[0] < proj([-30, 50])[0] ? "am" : "eu"));
+      const straddles = seeSides.size > 1;
+
+      // when the family is split with nobody crossing, do not sit on the ocean between them:
+      // follow the side where something is actually happening, and stay there until the other
+      // side clearly outweighs it, so the camera cuts rather than dithers
+      let pts;
+      if (straddles) { pts = grp.eu.concat(grp.am); camSide = null; }
+      else {
+        const recent = { eu: 0, am: 0 };
+        for (const id of HAS_MAP) {
+          const g2 = GEO[id];
+          if (g2.b > y - 18 && g2.b <= y) { const l = locate(id, y); if (l) recent[side(PLACES[l.place].lon)] += 1; }
+          for (const st of g2.stops) if (st.y > y - 18 && st.y <= y) recent[side(PLACES[st.p].lon)] += 2;
+        }
+        const score = { eu: wEu + recent.eu * 3, am: wAm + recent.am * 3 };
+        let want = score.am >= score.eu ? "am" : "eu";
+        if (camSide && want !== camSide && score[want] < score[camSide] * 1.35) want = camSide;
+        if (!grp[want].length) want = grp.eu.length ? "eu" : "am";
+        camSide = want; pts = grp[want];
+      }
+      if (!pts.length) pts = grp.eu.concat(grp.am);
+
+      const tot = d3.sum(pts, q => q[2]);
+      const cx = d3.sum(pts, q => q[0] * q[2]) / tot, cy = d3.sum(pts, q => q[1] * q[2]) / tot;
+      // a weighted spread, not a bounding box: one emigrant in Illinois is visible at the edge
+      // but does not get to drag the whole shot west
+      const sx = Math.sqrt(d3.sum(pts, q => q[2] * (q[0] - cx) ** 2) / tot);
+      const sy = Math.sqrt(d3.sum(pts, q => q[2] * (q[1] - cy) ** 2) / tot);
+      const spread = straddles ? 2.4 : 1.9;
+      let x0 = cx - sx * spread, x1 = cx + sx * spread;
+      let y0 = cy - sy * spread, y1 = cy + sy * spread;
+      (mustSee || []).forEach(q => {
+        x0 = Math.min(x0, q[0]); x1 = Math.max(x1, q[0]);
+        y0 = Math.min(y0, q[1]); y1 = Math.max(y1, q[1]);
+      });
+      const bw = Math.max(x1 - x0, 26), bh = Math.max(y1 - y0, 26);
+      const kk = Math.max(1, Math.min(9, Math.min((w - 120) / bw, (h - 170) / bh)));
+      return { k: kk, c: [(x0 + x1) / 2, (y0 + y1) / 2] };
+    }
+
+    function moveCamera(y, mustSee, dur) {
+      if (userDrove || mode === "all") return;
+      const t2 = cameraFor(y, mustSee); if (!t2) return;
+      const moved = Math.hypot(t2.c[0] - camC[0], t2.c[1] - camC[1]) * camK;
+      const zoomed = Math.abs(Math.log(t2.k / camK));
+      if (moved < 55 && zoomed < 0.14) return;      // hold the shot unless it has really changed
+      camK = t2.k; camC = t2.c;
+      const w = stageEl.clientWidth, h = stageEl.clientHeight;
+      const tr = d3.zoomIdentity.translate(w / 2, h / 2).scale(t2.k).translate(-t2.c[0], -t2.c[1]);
+      // a transition needs animation frames, and a hidden tab gets none — apply the shot
+      // outright in that case so the camera is never left behind the clock
+      if (document.hidden) mapSvg.call(mapZoom.transform, tr);
+      else mapSvg.transition().duration(dur == null ? 1700 : dur).ease(d3.easeCubicInOut)
+                 .call(mapZoom.transform, tr);
+    }
+
+    // the places a year's moves and events touch, which the camera must keep in frame
+    function focusPoints(from, to) {
+      const out = [];
+      for (const id of HAS_MAP) {
+        for (const s of GEO[id].stops) {
+          if (s.y > from && s.y <= to) {
+            const i = GEO[id].stops.indexOf(s);
+            const a = i > 0 ? PLACES[GEO[id].stops[i - 1].p] : null, b = PLACES[s.p];
+            if (a) out.push(proj([a.lon, a.lat]));
+            if (b) out.push(proj([b.lon, b.lat]));
+          }
+        }
+      }
+      const evs = EVENT_AT.get(to);
+      if (evs) evs.forEach(e => e.ids.forEach(id => {
+        const l = locate(id, to); if (l && PLACES[l.place]) out.push(proj([PLACES[l.place].lon, PLACES[l.place].lat]));
+      }));
+      return out;
+    }
+
     function showPlace(d) {
       const chips = d.list.map(p =>
         `<button class="chip" data-id="${p.id}" type="button">${esc(labelOf(byId[p.id]))}</button>`).join("");
@@ -1622,6 +1722,7 @@
       const from = year; mode = "year"; year = y;
       scrub.value = y; yearOut.textContent = y;
       draw(animate ? from : null);
+      if (animate) moveCamera(y, focusPoints(from, y));
     }
     function setAll() {
       stop(); mode = "all"; year = 2030; scrub.value = 2030;
@@ -1632,7 +1733,9 @@
     function stop() { if (timer) { timer.stop(); timer = null; } playBtn.textContent = "▶"; hideEventCard(); }
     function play() {
       if (timer) return stop();
+      userDrove = false;
       if (mode === "all" || year >= 2030) setYear(1550, false);
+      moveCamera(year, [], 900);
       playBtn.textContent = "❚❚";
       let last = 0, holdUntil = 0;
       timer = d3.timer(el => {
@@ -1642,7 +1745,10 @@
         if (next >= 2030) { setYear(2030, true); stop(); return; }
         setYear(next, true);
         const evs = EVENT_AT.get(next);
-        if (evs) { showEventCard(evs, next); holdUntil = el + 5000 * evs.length; }
+        if (evs) {
+          showEventCard(evs, next); holdUntil = el + 5000 * evs.length;
+          moveCamera(next, focusPoints(next - 1, next), 1200);   // settle on the scene
+        }
       });
     }
 
@@ -1699,7 +1805,10 @@
 
     playBtn.addEventListener("click", play);
     allBtn.addEventListener("click", setAll);
-    scrub.addEventListener("input", () => { stop(); setYear(+scrub.value, false); });
+    scrub.addEventListener("input", () => {
+      stop(); userDrove = false; setYear(+scrub.value, false);
+      moveCamera(+scrub.value, [], 600);
+    });
 
     function setView(v) {
       const isMap = v === "map";
