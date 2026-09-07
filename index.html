@@ -24,6 +24,7 @@
     --direct: #1B232D;
     --probable: #A0A8B0;
     --focus: #D18A2B;
+    --event: #6A51A6;
     --band-a: rgba(27,35,45,0.035);
     --shadow: 0 1px 2px rgba(27,35,45,0.08), 0 8px 24px rgba(27,35,45,0.08);
   }
@@ -46,6 +47,7 @@
       --direct: #E7EAED;
       --probable: #56616C;
       --focus: #E9A94C;
+      --event: #B49BE8;
       --band-a: rgba(231,234,237,0.035);
       --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
     }
@@ -68,6 +70,7 @@
     --direct: #E7EAED;
     --probable: #56616C;
     --focus: #E9A94C;
+    --event: #B49BE8;
     --band-a: rgba(231,234,237,0.035);
     --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
   }
@@ -121,6 +124,7 @@
   .ln { width: 22px; height: 0; border-top: 2px solid var(--direct); display: inline-block; }
   .ln.dash { border-top-style: dashed; border-color: var(--ink-3); }
   .ln.dot { border-top: 2px dotted var(--probable); }
+  .sw.ring { color: var(--event); background: transparent; }
   label.toggle { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-2); cursor: pointer; }
   label.toggle input { accent-color: var(--mickley); width: 15px; height: 15px; margin: 0; }
   .search { position: relative; }
@@ -173,6 +177,17 @@
   }
   .role.direct { background: var(--ink); color: var(--surface); }
   .role.probable { background: transparent; border: 1px dotted var(--ink-3); }
+  .role.event { background: transparent; border: 1px solid var(--event); color: var(--event); }
+  .event-note {
+    border: 1px solid var(--line); border-left: 3px solid var(--event); border-radius: 4px;
+    background: var(--ground); padding: 12px 14px; margin: 0 0 14px; max-width: 46ch;
+  }
+  .event-note .eyebrow { color: var(--event); }
+  .event-note h3 {
+    font-family: "Libre Caslon Text", Georgia, serif; font-weight: 400; font-size: 16px;
+    line-height: 1.25; margin: 0 0 6px; text-wrap: balance;
+  }
+  .event-note p { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin: 0; }
   aside p { margin: 0 0 12px; max-width: 46ch; color: var(--ink); }
   aside p.lede { font-family: "Libre Caslon Text", Georgia, serif; font-size: 15.5px; line-height: 1.5; }
   dl { margin: 0 0 16px; display: grid; grid-template-columns: 92px 1fr; gap: 6px 12px; font-size: 13px; }
@@ -212,27 +227,29 @@
   .edge.probable { stroke-dasharray: 2 5; stroke: var(--probable); stroke-width: 2; stroke-linecap: round; }
   .edge.grand { stroke-dasharray: 8 5; }
   .node { cursor: pointer; }
-  .node circle { stroke-width: 2; }
-  .node.line-mick circle { stroke: var(--mickley); fill: var(--surface); }
-  .node.line-mill circle { stroke: var(--millet); fill: var(--surface); }
-  .node.line-moy circle { stroke: var(--moyer); fill: var(--surface); }
-  .node.line-nick circle { stroke: var(--nick); fill: var(--surface); }
-  .node.line-chr circle { stroke: var(--chr); fill: var(--surface); }
-  .node.line-other circle { stroke: var(--ink-3); fill: var(--surface); }
-  .node.direct.line-mick circle { fill: var(--mickley); }
-  .node.direct.line-mill circle { fill: var(--millet); }
-  .node.direct.line-moy circle { fill: var(--moyer); }
-  .node.direct.line-nick circle { fill: var(--nick); }
-  .node.direct.line-chr circle { fill: var(--chr); }
-  .node.direct.line-other circle { fill: var(--ink-2); }
-  .node.probable circle { stroke-dasharray: 3 3; }
+  .node circle.dot { stroke-width: 2; }
+  .node.line-mick circle.dot { stroke: var(--mickley); fill: var(--surface); }
+  .node.line-mill circle.dot { stroke: var(--millet); fill: var(--surface); }
+  .node.line-moy circle.dot { stroke: var(--moyer); fill: var(--surface); }
+  .node.line-nick circle.dot { stroke: var(--nick); fill: var(--surface); }
+  .node.line-chr circle.dot { stroke: var(--chr); fill: var(--surface); }
+  .node.line-other circle.dot { stroke: var(--ink-3); fill: var(--surface); }
+  .node.direct.line-mick circle.dot { fill: var(--mickley); }
+  .node.direct.line-mill circle.dot { fill: var(--millet); }
+  .node.direct.line-moy circle.dot { fill: var(--moyer); }
+  .node.direct.line-nick circle.dot { fill: var(--nick); }
+  .node.direct.line-chr circle.dot { fill: var(--chr); }
+  .node.direct.line-other circle.dot { fill: var(--ink-2); }
+  .node.probable circle.dot { stroke-dasharray: 3 3; }
   .node text { font-family: "IBM Plex Sans", sans-serif; font-size: 11.5px; fill: var(--ink); paint-order: stroke; stroke: var(--ground); stroke-width: 3px; stroke-linejoin: round; }
   .node text.years { font-family: "IBM Plex Mono", monospace; font-size: 10px; fill: var(--ink-2); }
   .node.direct text { font-weight: 600; }
-  .node.selected circle { stroke: var(--focus); stroke-width: 4; }
+  .node.selected circle.dot { stroke: var(--focus); stroke-width: 4; }
   .node.dim, .edge.dim { opacity: 0.18; }
   .node.hidden, .edge.hidden { display: none; }
-  .node.hit circle { stroke: var(--focus); stroke-width: 3.5; }
+  .node.hit circle.dot { stroke: var(--focus); stroke-width: 3.5; }
+  .node circle.ring { fill: none; stroke: var(--event); stroke-width: 1.75; opacity: 0.9; }
+  .node.direct circle.ring { stroke-width: 2.25; }
   .hint {
     position: absolute; left: 16px; bottom: 12px; font-size: 11.5px; color: var(--ink-3);
     background: color-mix(in srgb, var(--ground) 80%, transparent); padding: 4px 8px; border-radius: 3px;
@@ -262,6 +279,7 @@
         <span><i class="ln"></i>direct line</span>
         <span><i class="ln dash"></i>marriage</span>
         <span><i class="ln dot"></i>probable</span>
+        <span><i class="sw ring"></i>notable event</span>
       </div>
       <label class="toggle"><input type="checkbox" id="directOnly"> Direct line only</label>
       <div class="search">
@@ -884,6 +902,39 @@
     ["fredjr","byron","parent"],
   ];
 
+  // ---------- Notable historical events ----------
+  // People whose lives touch an event outside the family's own story. Attached by id;
+  // drawn as a ring on the node and a callout on the card. Text follows RESEARCH.md.
+  const EVENTS = {
+    jacques:{ tag:"Revocation of the Edict of Nantes, 1685", text:"A dyer and a deacon of the Reformed church of Metz, he was buried on October 8, 1685, days before the Edict of Fontainebleau outlawed Protestant worship in France and scattered his family into the Huguenot diaspora." },
+    louis:{ tag:"Revocation of the Edict of Nantes, 1685", text:"He was nine when the Revocation closed the Metz temple. Because no Protestant marriage could be solemnized in French Metz, he crossed to Zweibrücken to wed in 1697; in 1715, a widower, he declared his five surviving children Protestant before the Metz authorities." },
+    jj1:{ tag:"Landing at Philadelphia, 1733", text:"Sailed from Rotterdam on the Hope of London, Daniel Reid master, by way of Cowes, and landed at Philadelphia on August 28, 1733, one of 389 Palatine passengers. The list spells him Johan Jacob Mückli; he took the oath of allegiance the same week." },
+    henry1754:{ tag:"The Whitehall raid, 1763", text:"Killed on October 8, 1763, while gathering chestnuts near Mickleys with his sister Barbara, in the frontier violence that followed Pontiac's War. The same raid struck the neighboring Schneider household; his brother John Peter escaped." },
+    barbara1756:{ tag:"The Whitehall raid, 1763", text:"Killed at about seven years old alongside her brother Henry on October 8, 1763, in the raid on Whitehall Township that followed Pontiac's War." },
+    jj2:{ tag:"The Liberty Bell hidden from the British, 1777", text:"After Brandywine, the Executive Council ordered Philadelphia's bells out of the city so the British could not melt them into cannon — eleven bells, moved at night under the appearance of farm wagons. The State House bell rode on his wagon, drawn by his own horses, with his eleven-year-old son beside him. The Moravian diary at Bethlehem records on September 23, 1777 that the wagon broke down under the weight and had to be unloaded." },
+    jj3:{ tag:"The Liberty Bell hidden from the British, 1777", text:"At eleven he rode the wagon carrying the State House bell out of Philadelphia, and was now and then allowed to drive. He told the story of that first trip to the city to his grandchildren, and it was still being repeated in the family in 1893. He later marched with the state militia to western Pennsylvania in the Whiskey Rebellion of 1794." },
+    sarah1786:{ tag:"The Liberty Bell hidden from the British, 1777", text:"She married a son of Pastor Abraham Blumer, who helped hide the bell beneath the floor of Zion Reformed Church in Allentown, where it lay until June 1778." },
+    johnmartin:{ tag:"Battle of Germantown, 1777", text:"A soldier of the Revolution, in the line at Germantown on October 4, 1777. In 1794 he moved to Adams County near Gettysburg and founded the family's large branch there." },
+    johnpeter:{ tag:"Fifer through the Revolution", text:"Escaped the raid of October 8, 1763 that killed his brother Henry and sister Barbara, then served against the Indians and through the whole of the Revolutionary War as a fifer, Germantown included. His son Peter served in the War of 1812." },
+    sgtfred:{ tag:"Berks County militia, 1780 and 1782", text:"A Colebrookdale tailor who served twice as a sergeant of the Berks County militia: in Capt. Henry Strouch's company of Col. Joseph Hiester's Sixth Battalion, on active duty from August 10 to September 9, 1780, and in Capt. Abraham Keefer's company mustered September 10, 1782." },
+    williamsr:{ tag:"Founding of Chatham, 1656–1712", text:"In 1656 he bought about four square miles of Monomoit from the sachem Mattaquason for a shallop, ten coats, six kettles, twelve axes, twelve hoes, twelve knives, forty shillings in wampum, a hat, and twelve shillings in coin. He had not asked Plymouth Colony's leave, and sixteen years of dispute followed before he settled it in 1672 for ninety pounds. He held church services in his own house, and his children and grandchildren saw Monomoit incorporated as Chatham on June 11, 1712." },
+    anne:{ tag:"The 1637 crossing to Salem", text:"Sailed from Norwich on April 15, 1637 with her husband, their four children, and her parents Nicholas and Bridget Busby, on either the Rose or the John and Dorothy, landing at Salem on June 20." },
+    nicholasbusby:{ tag:"The 1637 crossing to Salem", text:"Left Norwich with his wife Bridget to join his daughter's family on the 1637 crossing, one of the eight in the Nickerson party aboard the Rose or the John and Dorothy." },
+    bridgetbusby:{ tag:"The 1637 crossing to Salem", text:"Crossed from Norwich to Salem in 1637 with her husband Nicholas and her daughter Anne's family, among about a hundred passengers on the Rose or the John and Dorothy." },
+    zachary:{ tag:"Civil War", text:"Named for the general who had just been elected president. He served as a corporal in the Civil War and drew a pension from 1896, by which time he had settled in Mason County, Illinois." },
+    edwin:{ tag:"Emergency of 1863", text:"First lieutenant of Company B, 38th Pennsylvania Volunteer Militia, raised in the emergency of 1863. When the 1864 subscription to mark the immigrant John Jacob Mickley's grave fell short, he made up the difference himself and had the couple reinterred." },
+    josephj:{ tag:"Father of American numismatics", text:"He assembled the finest coin collection in America of its day and was first president of the Numismatic and Antiquarian Society of Philadelphia, founded 1857. A burglary on April 13, 1867 led him to sell most of the coins at auction that autumn; from 1869 to 1872 he toured the mints of Europe gathering specimens for the United States Mint." },
+    karl:{ tag:"Editor of Hegel's collected works", text:"A pupil of Hegel and professor at Berlin from 1829, he edited Hegel's collected works between 1832 and 1842 and founded the Berlin Philosophical Society in 1845. In 1883 he answered a letter from Minnie Mickley with the Michelet family table reaching back to 1444 — the document much of this tree still rests on." },
+    adolphmartin:{ tag:"Immigrant, 1881", text:"Came from Baden-Württemberg to the United States in 1881, married Catharine Herring in Schuylkill County in 1887, and kept house at Grier City in Rush Township." },
+    martinc:{ tag:"Immigrant, 1885", text:"Came from Denmark to the United States in 1885 and married Inger Mathilde Olsen in a Lutheran church in Chicago on November 7, 1891." },
+    ingasr:{ tag:"Emigrant from Egersund", text:"Born on Christmas Day 1868 in Egersund, a fishing and pottery town on Norway's southwest coast, she emigrated to Chicago and married Martin Christoffersen there on November 7, 1891." },
+    georgebaran:{ tag:"Immigrant, 1889", text:"Came in 1889 from the Slovak north of the Kingdom of Hungary, leaving his wife Mary and their first children to follow; the family was reunited in Bayonne by 1900, where seven more children were born." },
+    fred1920:{ tag:"World War II: Utah Beach to the Rhine", text:"310th Field Artillery Battalion, 79th Infantry Division. He heard the news of Pearl Harbor at the Majestic Theater in Tamaqua, where his future wife was an usherette, and was drafted in October 1942. The 79th landed at Utah Beach on June 12–14, 1944: Cherbourg, the Falaise pocket, a night crossing of the Seine on a catwalk with the 313th Infantry, Belgium and Holland, Hatten-Rittershoffen in January 1945, the Rhine at Remagen, the Ruhr, Würzburg, Pilsen. He recorded his war for the Library of Congress on December 3, 2002." },
+    marie:{ tag:"Pearl Harbor, December 7, 1941", text:"An usherette at the Majestic Theater in Tamaqua, managed by her aunt, she was on shift with Fred Millet the day the news of Pearl Harbor came. They married after the war and had sixty-two years together." },
+    willard:{ tag:"U.S. Navy, World War II", text:"Served in the Navy in the Second World War and was honorably discharged, then built a life in New Jersey as a master carpenter, builder, and contractor." }
+  };
+  P.forEach(p => { if (EVENTS[p.id]) p.event = EVENTS[p.id]; });
+
   const byId = Object.fromEntries(P.map(p => [p.id, p]));
   const nodes = P.map(p => Object.assign({}, p));
   const links = E.map(([s,t,type,prob]) => {
@@ -978,7 +1029,7 @@
     .attr("class", l => "edge " + l.type + (l.direct ? " direct" : "") + (l.probable ? " probable" : ""));
 
   const node = gNodes.selectAll("g.node").data(nodes).join("g")
-    .attr("class", n => "node line-" + n.line + (n.direct ? " direct" : "") + (n.probable ? " probable" : ""))
+    .attr("class", n => "node line-" + n.line + (n.direct ? " direct" : "") + (n.probable ? " probable" : "") + (n.event ? " has-event" : ""))
     .attr("tabindex", 0)
     .attr("role","button")
     .attr("aria-label", n => n.name)
@@ -987,7 +1038,8 @@
       .on("drag", (ev,d) => { d.fx=ev.x; d.fy=ev.y; })
       .on("end", (ev,d) => { if (!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
 
-  node.append("circle").attr("r", n => n.direct ? 11 : 8);
+  node.filter(n => n.event).append("circle").attr("class","ring").attr("r", n => (n.direct ? 11 : 8) + 5);
+  node.append("circle").attr("class","dot").attr("r", n => n.direct ? 11 : 8);
   node.append("text").attr("x", 15).attr("y", -1).text(n => n.short || labelOf(n));
   node.append("text").attr("class","years").attr("x", 15).attr("y", 13).text(n => yearsOf(n));
 
@@ -1057,9 +1109,10 @@
             <div><b>${nodes.length}</b><small>people on record</small></div>
             <div><b>${direct}</b><small>direct ancestors of Chris Millet</small></div>
             <div><b>${GEN_COUNT}</b><small>generations</small></div>
-            <div><b>1733</b><small>Michelets land at Philadelphia</small></div>
+            <div><b>${nodes.filter(n => n.event).length}</b><small>tied to a notable event</small></div>
           </div>
           <p>Filled circles are direct ancestors of Chris Millet; outlined circles are their siblings, cousins, and children. Solid edges are parent to child, dashed edges are marriages, and dotted edges are links the records make likely but do not yet prove.</p>
+          <p>A violet ring marks someone whose life touches a moment outside the family's own story — the 1637 crossing to Salem and the founding of Chatham, the Palatine landing of 1733, the raid of 1763, the Liberty Bell and Germantown, the Civil War, the immigrant wave of the 1880s, and Normandy to the Rhine.</p>
           <p>Click any circle to see what the records say and where each fact came from.</p>
         </div>`;
       return;
@@ -1080,6 +1133,7 @@
       <h2>${esc(p.name)}</h2>
       <p class="dates">${esc(dates)}</p>
       <div>${roles}</div>
+      ${p.event ? `<div class="event-note"><p class="eyebrow">Notable event</p><h3>${esc(p.event.tag)}</h3><p>${esc(p.event.text)}</p></div>` : ""}
       ${p.lede ? `<p class="lede">${esc(p.lede)}</p>` : ""}
       <dl>${relRows}${factRows}</dl>
       ${sources ? `<h3 class="src">Records</h3><ul class="sources">${sources}</ul>` : ""}`;
