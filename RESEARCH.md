@@ -49,12 +49,13 @@ Generation numbers count back from Chris Millet (0): 1 = parents, 2 = grandparen
 **Status:** direct ancestor of Chris Millet; link marked probable
 
 A mason (“le Masson”) of Metz recorded in 1444, the head of the genealogical table of the Michelet family of Metz that Prof. Karl Ludwig Michelet of Berlin compiled from city baptismal certificates, the researches of the Metz Protestant pastor, and family papers, and sent to Pennsylvania in 1883. Later generations of the table are borne out by the surviving Reformed registers; the earlier ones, in the words of the 1893 genealogy, are “more or less conjectural.” The same table names a Jean Michelet, butcher, invested with the Order of Saint Michael by Louis XI in 1471 and Seigneur de Beauval, and an Antoine Jacques Michelet, president of the Parlement of Rouen in 1596, bearing the same arms. The family's arms, as carried from Metz to Berlin, show a fortress tower topped by a cap of liberty with a stag leaping the moat, and the motto “War, the Chase and Liberty.”
-
+ **A caution about the table itself.** Its “first generation,” presented as the children of Jehan, runs from a knighthood in 1471 to a death in 1610 — a hundred and sixty-six years. Those eight people cannot be siblings. The top of this line is a list of notable Michelets rather than a pedigree, and the generations between Jehan and Jacquemin are not established. The eight are: Jean, *le boucher*, invested in the Order of Saint-Michel by Louis XI in 1471 and Seigneur de Beauval; Antoine Jacques, Seigneur d'Interville and président au parlement de Rouen in 1596; Anne Michelet de Beauval, who married Charles de la Ville Auffrai, baron de Paynel-Mercy, in 1615; Claude, *hoste* at Metz in 1482; Etienne *le Bolangier*, 1542; Claude *l'escripvain*, 1565; Jacquemin himself; and a sister Marguerite, wife of Claude Estienne, 1572.
 - Descendant, intermediate generations omitted: Jacques “Jacquemin” Michelet (probable)
 
 Sources:
 
 - [Genealogy of the Mickley Family of America (1893)](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 
 ### Jacques “Jacquemin” Michelet (c. 1550–1610)
 
@@ -64,7 +65,7 @@ Sources:
 **Status:** direct ancestor of Chris Millet
 
 A scrivener (escripvain) of Metz in 1576, clerk in 1579, receiver (receveur) in 1587, and from 1593 clerk to the King's treasurer; died in 1610. Twice married in the Reformed church: first to Suzanne Joly, who died in 1584, and on July 28, 1591, to Suzanne Wiriot. By his first wife he had Jacques (1576–1651, an elder of the church), Susanne, Pierre (1582–1632, a pastor), Paul (1584, deacon and farmer of the city mills, whose sons went to Norway), and Daniel; by the second, Samuel and Esther, who married David de la Cloche.
-
+ The Berlin table gives his career as a sequence of offices — *escripvain* in 1576, *clerc* in 1579, *receveur* in 1587, and *commis du trésorier du Roy*, clerk to the King's treasurer, by 1593 — and his death in 1610. It also gives him **two wives**, which most trees miss: Suzanne Joly, who died in 1584 leaving four children, and then Suzanne Wiriot, married in 1591, by whom he had Daniel, Samuel, and Esther. The American line descends from the second marriage.
 - Children (linked in tree): Daniel Michelet; Paul Michelet
 - Ancestor, intermediate generations omitted: Jehan Michelet, “le Masson” (probable)
 - Spouses: Suzanne Joly (d. 1584); Suzanne Wiriot, m. 28 Jul 1591
@@ -77,6 +78,7 @@ Sources:
 - [Metz Reformed register: baptism of Daniel Michelet, son of Jacq., 20 Sep 1592](https://www.familysearch.org/ark:/61903/1:1:2HJX-LSL)
 - [Genealogy of the Mickley Family of America (1893)](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 - [France, Protestant Church Records, 1536–1902 (FamilySearch collection incl. the Reformed registers of Metz)](https://www.familysearch.org/search/collection/1582585)
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 
 ### Daniel Michelet (1592)
 
@@ -108,7 +110,7 @@ Sources:
 **Status:** relative
 
 Baptized December 16, 1584, son of Jacquemin Michelet and Suzanne Joly; a deacon of the Reformed church and farmer of the city mills of Metz. Married Anne Pillon, daughter of Josué Pillon, receiver of the bullette tax. Two of his sons, Paul (baptized September 5, 1617) and Jacques (baptized April 7, 1619), emigrated to Norway in 1644 as officers in the Danish-Norwegian army; Paul was a lieutenant in 1644 and major by 1658, present at the siege of Trondheim, and died in 1659. Their descendants became the Norwegian Michelet family of soldiers, clergy, and jurists, among them Major General Jørgen Michelet (1742–1818) and Major General Christian Frederik Michelet (1792–1874), commandant of Fredriksten fortress; a Captain Michelet of Trondheim was corresponding with the Berlin branch in the 1880s.
-
+ The table names his wife — **Anne, daughter of Josué Pillon, receveur des deniers de la bullette** — and his position: deacon, and *fermier des moulins de la ville*, tenant of the town mills. His sons Paul and Jacques are the ones who actually crossed to Norway in 1644.
 - Parents: Jacques “Jacquemin” Michelet
 - Spouse: Anne Pillon
 - Children: Paul (1617–1659), Jacques (1619)
@@ -120,6 +122,7 @@ Sources:
 - [Wikipedia: Christian Frederik Michelet (1792–1874), Norwegian major general](https://en.wikipedia.org/wiki/Christian_Frederik_Michelet)
 - [Wikipedia: Michelet (surname), Norwegian and French bearers](https://en.wikipedia.org/wiki/Michelet)
 - [France, Protestant Church Records, 1536–1902 (FamilySearch collection incl. the Reformed registers of Metz)](https://www.familysearch.org/search/collection/1582585)
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 
 ### Jacques Michelet (1623–1685)
 
@@ -129,7 +132,7 @@ Sources:
 **Status:** direct ancestor of Chris Millet
 
 Born in Metz and baptized in its Reformed church on December 28, 1623, son of Daniel Michelet and Marie Colin. A dyer (teinturier) by trade and a deacon of the Protestant congregation. Married Anne Philpin at Metz on October 30, 1646; the family table compiled in Berlin carries an entry for an Anne, died 1681, “veuve Dubois,” which is probably how the name Du Bois came to be attached to her in some later trees. Metz had been a free city of the Holy Roman Empire until France seized it in 1552, and its large Reformed community kept its own registers from 1561 until the Revocation. Anne died in 1681. Jacques was buried on October 8, 1685, days before the Edict of Fontainebleau outlawed Protestant worship in France that same month. Of his children, Pierre became a mercer and deacon; the youngest, Louis, born when his father was fifty-two, carried the line to Zweibrücken and America.
-
+ The printed table settles the Du Bois question outright: the Anne styled *veuve Dubois*, died 1681, is entered there **as his daughter**, alongside Pierre the mercer and deacon, Jacques the dyer, and Louis — not as his wife.
 - Parents: Daniel Michelet
 - Children (linked in tree): Louis Michelet
 - Spouse: Anne Philpin (c. 1630–1681), m. 30 Oct 1646
@@ -146,6 +149,7 @@ Sources:
 - [Genealogy of the Mickley Family of America (1893)](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 - [WeRelate: Louis Michelet](https://www.werelate.org/wiki/Person:Louis_Michelet_(1))
 - [France, Protestant Church Records, 1536–1902 (FamilySearch collection incl. the Reformed registers of Metz)](https://www.familysearch.org/search/collection/1582585)
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 
 ### Louis Michelet (1675–1750)
 
@@ -170,6 +174,7 @@ Sources:
 - [Archion: Zweibrücken church books (Zentralarchiv der Evangelischen Kirche der Pfalz, Speyer)](https://www.archion.de/de/alle-archive/rheinland-pfalz/zentralarchiv-der-evangelischen-kirche-der-pfalz/zweibruecken)
 - [France, Protestant Church Records, 1536–1902 (FamilySearch collection incl. the Reformed registers of Metz)](https://www.familysearch.org/search/collection/1582585)
 - [Genealogy of the Mickley Family of America (1893), “Of the European Ancestry of the Mickleys”: the letters of Prof. Karl Ludwig Michelet of Berlin, 21 Apr and 3 Jul 1883, and the 1863 paper recording the 1869 search at Zweibrücken](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 
 ### Jean Jacques Michelet (John Jacob Mickley) (1697–1769)
 
@@ -212,6 +217,37 @@ Sources:
 
 - [Genealogy of the Mickley Family of America (1893)](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 - [FamilySearch tree: Louis Guillaume Michelet (1775–1841) of Berlin](https://www.familysearch.org/tree/person/details/LJJN-3ZK)
+
+### Maj. Paul Michelet (1617–1659)
+
+**Place:** Metz → Norway  
+**Role:** Major; to Norway, 1644  
+**Generation:** 10  
+**Status:** relative
+
+Baptised at Metz 5 September 1617, elder son of Paul Michelet the deacon and miller. He left for Norway in 1644 with his brother Jacques and took a commission there the same year, rising from lieutenant in 1644 to major in 1658; he died in 1659. He and his brother are the origin of the **Norwegian Michelets**, the army family that produced officers and generals into the nineteenth century — the branch the 1893 book describes only in passing.
+
+- Parents: Paul Michelet
+- Career: Lieutenant 1644; Major 1658
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+
+### Jacques Michelet (1619, to Norway)
+
+**Place:** Metz → Norway  
+**Role:** To Norway, 1644  
+**Generation:** 10  
+**Status:** relative
+
+Baptised at Metz 7 April 1619, younger son of Paul Michelet the deacon; emigrated to Norway with his brother Paul in 1644. The table records nothing further of him.
+
+- Parents: Paul Michelet
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 
 ### Barbara Mickley (1756–1763)
 
@@ -1812,6 +1848,106 @@ Sources:
 - [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. I (1860): Nicholas Busby of Norwich and Watertown, his offices, death, and will of 25 July 1657](https://archive.org/details/genealogicaldic01savarich)
 - [Savage, *A Genealogical Dictionary of the First Settlers of New England*, vol. II (1860): Robert Eldred of Yarmouth; Tristram Hedges of Boston; John Grout of Sudbury](https://archive.org/details/genealogicaldic02savarich)
 
+### Suzanne Wiriot
+
+**Place:** Metz  
+**Generation:** 12  
+**Status:** direct ancestor of Chris Millet
+
+Second wife of Jacquemin Michelet, married at Metz on 28 July 1591, and the ancestress of the American line: her son Daniel, baptised 1592, carries the descent. Jacquemin was a widower with four children by Suzanne Joly when he married her; by her he had Daniel (1592), Samuel (1598), and Esther (1603). Nothing of her own family has been traced.
+
+- Spouse (linked in tree): Jacques “Jacquemin” Michelet, m. 28 Jul 1591
+- Children (linked in tree): Daniel Michelet
+- Children: Daniel (1592), Samuel (1598), Esther (1603)
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+
+### Suzanne Joly
+
+**Place:** Metz  
+**Role:** First wife of Jacquemin  
+**Generation:** 12  
+**Status:** relative
+
+First wife of Jacquemin Michelet and mother of his elder children — Jacques (1576), Susanne (1579), Pierre (1582), and Paul (1584). She died in 1584. **The American line does not descend from her**, but from the second marriage; the distinction is easy to lose, because only the Berlin table records that there were two wives at all.
+
+- Spouse (linked in tree): Jacques “Jacquemin” Michelet
+- Children (linked in tree): Paul Michelet
+- Children: Jacques (1576), Susanne (1579), Pierre (1582), Paul (1584)
+- Died: 1584
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+
+### Marie Colin
+
+**Place:** Metz  
+**Generation:** 11  
+**Status:** direct ancestor of Chris Millet
+
+Married Daniel Michelet at Metz on 8 February 1615. The Berlin table names her father — **Daniel Collin, praticien du palais**, a legal practitioner at the Metz parlement — which places the Michelets among the city's Protestant office-holding families and not only its tradesmen. Her son Jacques, the dyer and deacon, carries the line.
+
+- Spouse (linked in tree): Daniel Michelet, m. 8 Feb 1615
+- Parents: Daniel Collin
+- Children (linked in tree): Jacques Michelet
+- Children: Daniel (1615), Esther (1619), Jacques (1623), Suzanne (1627)
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+
+### Daniel Collin
+
+**Place:** Metz  
+**Role:** Praticien du palais  
+**Generation:** 12  
+**Status:** relative
+
+Father of Marie Colin and a *praticien du palais* at Metz — a practitioner before the parlement, the working end of the law rather than its bench. He is known only from the description the Berlin table gives him; nothing further has been looked for.
+
+- Children (linked in tree): Marie Colin
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+
+### Anne Philpin (c. 1630–1681)
+
+**Place:** Metz  
+**Generation:** 10  
+**Status:** direct ancestor of Chris Millet
+
+Married Jacques Michelet, the dyer and deacon, at Metz on 30 October 1646, and died in 1681, four years before the Revocation closed the church she was married in. Hers is the correction that matters most here: many published trees give Jacques a wife “Anne Du Bois.” That comes from an Anne in the Berlin table styled *veuve Dubois* — and the table enters that Anne **as his daughter**, died 1681, not as his wife.
+
+- Spouse (linked in tree): Jacques Michelet, m. 30 Oct 1646
+- Children (linked in tree): Louis Michelet
+- Children: Anne (veuve Dubois), Pierre (1652), Jacques (1661), Judith, Louis (1675)
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+
+### Suzanne Mangeot (1674–bef. 1715)
+
+**Place:** Metz → Zweibrücken  
+**Role:** Kept the diary the family descent rests on  
+**Generation:** 9  
+**Status:** direct ancestor of Chris Millet
+
+Born 26 June 1674; married Louis Michelet in 1697 at Zweibrücken, across the border in the Palatine duchy, because no Protestant marriage could be solemnised in French Metz after the Revocation. **Her own diary, still kept by the Berlin branch in 1883, records that the couple stayed at Zweibrücken until their first son was born and baptised** — the single sentence on which the whole American descent turns. She and Louis declared openly for the Reformed faith at Metz in 1699, and she was dead by 1715, when Louis declared their five surviving children Protestant as a widower.
+
+- Spouse (linked in tree): Louis Michelet, m. 1697 at Zweibrücken
+- Children (linked in tree): Jean Jacques Michelet (John Jacob Mickley)
+- Children: Jean Jacques (1697), Jeanne (1699), Barbe (1702), Marie (1703), Louis (1705), Pierre (1710)
+- Born: 26 Jun 1674
+
+Sources:
+
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
+
 ### Mercy Williams Nickerson (1643–1739)
 
 **Place:** Chatham, MA  
@@ -2447,6 +2583,7 @@ These are as useful as the positive results; they say where not to look again.
 - **Martin Millot after 1830.** No Millot, Millet, or Millett household in Schuylkill County in the 1840 census index under any spelling; he may be indexed as Miller. No Find a Grave memorial for Martin or Catharine. The Martin Millett who bought a lot in Mahanoy City in the 1860s is an Irish-born man of a different family; the Martin Millot naturalized in Schuylkill County in 1856 is presumably the same immigrant.
 - **Sgt. Frederick Millet in the censuses.** No Millot/Mylot/Milot/Millet in the Berks County entries of the 1790, 1800, or 1810 census indexes; no Millot in the Brunswick Township (Orwigsburg) tax lists of 1779–1785.
 - **Frederick's origin.** No French or German baptism or immigration record found. Colebrookdale and Oley had Huguenot settlers, and Millot is common in Burgundy, Champagne, and Lorraine as well as Normandy; his origin is open.
+- **The Berlin table's first generation is not a generation.** The eight people the 1893 book prints as the children of Jehan Michelet span 1471 to 1610. They cannot be siblings, so the Michelet line above Jacquemin is a collection of notable bearers of the name, not a descent. Karl Michelet warned that anything before 1444 was conjectural; this shows the caution needs extending forward to about 1550.
 - **GG224 read: no Michelet marriage in the Sainte Croix section.** The marriage table GG224 (Mariages 1566–1729, I–Z) was opened in the archive's viewer on 7 September 2026 and is legible. It is arranged **by parish section, then alphabetically by the groom's surname**, each entry giving groom and his parents, bride and hers, the date, and the parish. In the **Sainte Croix** section the run reads MICHAUD (1696), then seven MICHEL marriages between 1655 and 1695, and the next page opens at MONTREUX and MORARD: **the sequence passes straight from MICHEL to MO- with no MICHELET**. That clears one parish of fifteen. The volume runs to 779 views and the section boundaries are not catalogued, so a complete check means finding the M pages inside each parish section in turn — St Victor's L pages sit at view 190, Sainte Croix's M at 198, its P at 400. Views 191 and similar are blank dividers.
 - **No baptism index exists at Metz for 1702–1710.** The Archives municipales de Metz catalogue was read directly on 7 September 2026. Its classification confirms the point deduced from FamilySearch: the *Registres des Protestants* run **1561–1685** and stop at the Revocation, while the Catholic *Registres des paroisses et des hôpitaux* run **1566–1793** and are online for fifteen Metz parishes — Sainte Croix, Saint Etienne, Saint Eucaire, Saint Gengoulf, Saint George, Saint Gorgon, Saint Jean, Saint Livier, Saint Marcel, Saint Martin, Saint Maximin, Sainte Ségolène, Saint Simon, Saint Simplice, Saint Victor — plus five hospitals. But the *ancien régime* decennial tables cover **marriages only**: GG223 (Mariages 1566–1729, A–H) and GG224 (Mariages 1566–1729, I–Z). Birth tables begin only with GG225, in 1730. There is therefore no name index to the baptisms of 1702–1710, and no way to find the four children except by reading the registers of the fifteen parishes for those years, without knowing which parish the family belonged to.
 - **The Metz baptisms of 1702–1710 are not in the FamilySearch Protestant collection.** Checked 7 September 2026. Individual FamilySearch record pages (`ark:` URLs) are readable without an account, but the search interface is behind a sign-in, so the collection could not be searched from here. It would not have helped: “France, Protestant Church Records, 1536–1902” (collection 1582585) is a Protestant collection whose Metz registers end with the Revocation of 1685, which is why every Metz record already cited here falls between 1576 and 1685. The four certificates Karl Michelet described are Catholic or civil records, and Metz publishes its own registers rather than leaving them to the Moselle departmental archives.
@@ -2511,6 +2648,7 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
 5. **FamilySearch checked for the Metz certificates.** Record pages are public, the search is not. The check nevertheless settled the question by another route: the Protestant collection cannot hold baptisms of 1702–1710 because Metz Protestant worship ended in 1685, so the four certificates are Catholic or civil, made while the family lived at Metz from about 1699 — and the eldest child's absence from them is a fact about residence, not about the child. Open lead 4 was rewritten to point at the Archives municipales de Metz instead of the wrong collection.
 6. **Metz municipal archives checked.** The catalogue at archives.metz.fr was browsed directly. It confirms from the archive's own classification that the Protestant registers end in 1685, fixes the Catholic series at 1566–1793 across fifteen parishes, and establishes that no baptism index exists before 1730 — the ancien régime tables are for marriages alone. Open lead 4 now records the exact path, the two cheaper approaches worth trying first, and the fact that the four certificates cannot be found from here without a parish name.
 7. **GG224 opened and read.** The Metz marriage table is browsable and legible in the archive's own viewer. Its arrangement was worked out — parish section, then alphabetical by groom — and the Sainte Croix M pages were read: MICHAUD, seven MICHELs from 1655 to 1695, then MO-, with no MICHELET. One parish of fifteen is therefore cleared. No Michelet marriage has been found at Metz, and none of this bears on the four baptisms, which remain unindexed.
+8. **The Metz table read in full.** The 1893 book prints the Berlin table itself — *La Famille Michelet de Metz, d'après des documents authentiques* — numbered through eight generations, which earlier phases had cited only at second hand. It supplies the spouses that were missing: Suzanne Wiriot and, before her, **Suzanne Joly**, a first wife of Jacquemin not previously recorded here; Marie Colin with her father **Daniel Collin, praticien du palais**; Anne Philpin; and Suzanne Mangeot, the diarist. It also names **Josué Pillon** as Paul's father-in-law, dates the **Norwegian emigration of 1644** to Paul's two sons, and settles the Du Bois confusion by entering Anne *veuve Dubois* as Jacques's daughter. Eight people were added and four existing entries rewritten. The same reading exposed the chronological impossibility of the table's first generation.
 8. **Source texts kept.** The OCR of every volume searched is now in `sources/` in the repository, with a README recording what each one settled.
 ## All sources
 
@@ -2648,6 +2786,7 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
 - [Find a Grave: Susan Mickley Moyer](https://www.findagrave.com/memorial/143592161/susan-moyer)
 - [Find a Grave: William Earl Williams (7 Nov 1899 – 23 Apr 1969), Highland Memorial Park, Allentown](https://www.findagrave.com/memorial/187215884/william_earl-williams)
 - [France, Protestant Church Records, 1536–1902 (FamilySearch collection incl. the Reformed registers of Metz)](https://www.familysearch.org/search/collection/1582585)
+- [Genealogy of the Mickley Family of America (1893), “European Genealogy — La Famille Michelet de Metz, d'après des documents authentiques”: the numbered table sent from Berlin in 1883, generations 1–8](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 - [Genealogy of the Mickley Family of America (1893), “Of the European Ancestry of the Mickleys”: the letters of Prof. Karl Ludwig Michelet of Berlin, 21 Apr and 3 Jul 1883, and the 1863 paper recording the 1869 search at Zweibrücken](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 - [Genealogy of the Mickley Family of America (1893)](https://archive.org/stream/cu31924029842865/cu31924029842865_djvu.txt)
 - [Hamburg, Berks County, newspaper death notices 1825–1850: Susanna Millot, daughter of George Millot, “cattledriver,” of Oley Twp.](https://www.familysearch.org/ark:/61903/3:1:3QS7-99FL-STYP)
