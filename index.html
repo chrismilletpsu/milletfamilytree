@@ -1048,15 +1048,15 @@
   const genY = g => top + (g - GEN_MIN) * bandH + bandH/2;
   // x anchors: Mickley/Moyer side left, Millet side right, direct line near centre
   const anchorX = (n, W) => {
-    const spouseOf = { adolphmartin:"mill", catharineherring:"mill", williamearl:"mill", evelynbeck:"mill", williamh:"mill", coradornsife:"mill", georgebaran:"nick", marybaran:"nick", josephmihm:"chr", louisamayer:"chr", jacobmayer:"chr", christinanewan:"moy", catharinakern:"moy", karen:"chr", olava:"chr", marthe:"chr", ingermarie:"chr", helen:"nick", julia:"nick", orpha:"nick", melvina:"nick", huldah:"nick", sybil:"nick", dorcas:"nick", deliverance:"nick", mercy:"nick", anne:"nick", nicholasbusby:"nick", bridgetbusby:"nick", ethel:"nick", louise:"chr", ingasr:"chr" };
+    const spouseOf = { suzannewiriot:"mick", mariecolin:"mick", danielcollin:"mick", annephilpin:"mick", suzannemangeot:"mick", annepilon:"mick", pierrephilpin:"mick", jeanwiriot:"mick", nicholasbusbyjr:"nick", johnbusby:"nick", abrahambusby:"nick", catharinebusby:"nick", sarahbusby:"nick", adolphmartin:"mill", catharineherring:"mill", williamearl:"mill", evelynbeck:"mill", williamh:"mill", coradornsife:"mill", georgebaran:"nick", marybaran:"nick", josephmihm:"chr", louisamayer:"chr", jacobmayer:"chr", christinanewan:"moy", catharinakern:"moy", karen:"chr", olava:"chr", marthe:"chr", ingermarie:"chr", helen:"nick", julia:"nick", orpha:"nick", melvina:"nick", huldah:"nick", sybil:"nick", dorcas:"nick", deliverance:"nick", mercy:"nick", anne:"nick", nicholasbusby:"nick", bridgetbusby:"nick", ethel:"nick", louise:"chr", ingasr:"chr" };
     const line = spouseOf[n.id] || n.line;
     if (line === "mick") return n.direct ? W * 0.10 : (n.gen <= 5 && ["louis1705","karl","paul1584"].includes(n.id) ? W * 0.05 : W * 0.16);
     if (line === "moy") return W * 0.26;
-    if (line === "chr") return n.direct ? W * 0.88 : W * 0.95;
-    if (line === "nick") return n.direct ? W * 0.76 : W * 0.84;
-    if (n.id === "sgtfred" || n.id === "martin") return W * 0.57;
-    if (n.id === "johnmillot" || n.id === "joseph" || n.id === "georgemilot" || n.id === "mariamilot") return W * 0.66;
-    if (n.id === "sophia" || n.id === "marylouisa" || n.id === "georgef" || n.id === "williamc") return W * 0.61;
+    if (line === "chr") return n.direct ? W * 0.91 : W * 0.97;
+    if (line === "nick") return n.direct ? W * 0.80 : W * 0.87;
+    if (n.id === "sgtfred" || n.id === "martin") return W * 0.52;
+    if (n.id === "johnmillot" || n.id === "joseph" || n.id === "georgemilot" || n.id === "mariamilot") return W * 0.60;
+    if (n.id === "sophia" || n.id === "marylouisa" || n.id === "georgef" || n.id === "williamc") return W * 0.56;
     if (n.direct) return W * 0.44;
     return W * 0.50;
   };
@@ -1074,7 +1074,7 @@
   // wide enough that fitting to the stage height also fills its width
   // give the layout more horizontal room than the stage aspect ratio alone would allow, so
   // siblings and cousins can spread instead of stacking on their line's anchor
-  const contentW = Math.max(1800, Math.round(1.05 * W * contentH / Math.max(H, 400)));
+  const contentW = Math.max(2200, Math.round(1.25 * W * contentH / Math.max(H, 400)));
 
   // bands
   for (let gi = GEN_MIN; gi <= GEN_MAX; gi++) {
@@ -1090,7 +1090,7 @@
 
   const sim = d3.forceSimulation(nodes)
     .force("link", d3.forceLink(links).id(d => d.id).distance(l => l.type==="spouse" ? Math.max(120, labelWidth(l.source.x <= l.target.x ? l.source : l.target) + 34) : 90).strength(l => l.type==="spouse" ? 1 : (l.direct ? 0.35 : 0.18)))
-    .force("x", d3.forceX(n => anchorX(n, contentW)).strength(n => n.direct ? 0.22 : 0.06))
+    .force("x", d3.forceX(n => anchorX(n, contentW)).strength(n => n.direct ? 0.30 : 0.11))
     .force("y", d3.forceY(n => genY(n.gen)).strength(1.2))
     .force("collide", d3.forceCollide(n => n.direct ? 46 : 50).strength(0.9))
     .force("labels", labelSeparation())
