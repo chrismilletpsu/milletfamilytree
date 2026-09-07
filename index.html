@@ -1674,6 +1674,36 @@
       return { k: kk, c: [(x0 + x1) / 2, (y0 + y1) / 2] };
     }
 
+    // frame exactly these points and nothing else — used for an event, where the shot is
+    // the scene rather than the family's centre of gravity
+    function cameraOnPoints(pts, dur) {
+      if (userDrove || !pts.length) return;
+      const w = stageEl.clientWidth, h = stageEl.clientHeight;
+      if (!w || !h) return;
+      const xs = pts.map(q => q[0]), ys = pts.map(q => q[1]);
+      const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+      const bw = Math.max(x1 - x0, 24), bh = Math.max(y1 - y0, 24);
+      const kk = Math.max(1, Math.min(12, Math.min((w - 240) / bw, (h - 240) / bh)));
+      const c = [(x0 + x1) / 2, (y0 + y1) / 2];
+      camK = kk; camC = c;
+      camSide = c[0] > proj([-30, 50])[0] ? "eu" : "am";
+      const tr = d3.zoomIdentity.translate(w / 2, h / 2).scale(kk).translate(-c[0], -c[1]);
+      if (document.hidden) mapSvg.call(mapZoom.transform, tr);
+      else mapSvg.transition().duration(dur == null ? 2000 : dur).ease(d3.easeCubicInOut)
+                 .call(mapZoom.transform, tr);
+    }
+
+    // the places an event is actually about
+    function eventPoints(evs, y) {
+      const ids = new Set();
+      evs.forEach(e => {
+        const named = EVENT_PLACE[e.tag];
+        if (named) named.forEach(k => ids.add(k));
+        else e.ids.forEach(id => { const l = locate(id, y); if (l) ids.add(l.place); });
+      });
+      return [...ids].filter(k => PLACES[k]).map(k => proj([PLACES[k].lon, PLACES[k].lat]));
+    }
+
     function moveCamera(y, mustSee, dur) {
       if (userDrove || mode === "all") return;
       const t2 = cameraFor(y, mustSee); if (!t2) return;
@@ -1703,11 +1733,7 @@
           }
         }
       }
-      const evs = EVENT_AT.get(to);
-      if (evs) evs.forEach(e => e.ids.forEach(id => {
-        const l = locate(id, to); if (l && PLACES[l.place]) out.push(proj([PLACES[l.place].lon, PLACES[l.place].lat]));
-      }));
-      return out;
+      return out;   // migrations only; an event frames itself through cameraOnPoints
     }
 
     function showPlace(d) {
@@ -1753,7 +1779,7 @@
         const evs = EVENT_AT.get(next);
         if (evs) {
           showEventCard(evs, next); awaitingCard = true;
-          moveCamera(next, focusPoints(next - 1, next), 1600);   // settle on the scene
+          cameraOnPoints(eventPoints(evs, next), 1800);   // settle on the scene itself
         }
       });
     }
@@ -1766,6 +1792,25 @@
       "Emigrant from Egersund": 1891, "World War II: Utah Beach to the Rhine": 1944,
       "U.S. Navy, World War II": 1943, "Berks County militia, 1780 and 1782": 1780,
       "Founding of Chatham, 1656–1712": 1656
+    };
+    // Where an event names a place, the camera goes there, rather than to wherever the
+    // people happened to be living that year. William Nickerson bought Monomoit in 1656
+    // but was still recorded at Yarmouth until 1664, and the event is about Chatham.
+    const EVENT_PLACE = {
+      "Founding of Chatham, 1656–1712": ["chatham"],
+      "Landing at Philadelphia, 1733": ["philadelphia"],
+      "The Whitehall raid, 1763": ["whitehall"],
+      "The Liberty Bell hidden from the British, 1777": ["philadelphia", "allentown"],
+      "Battle of Germantown, 1777": ["philadelphia"],
+      "Fifer through the Revolution": ["philadelphia"],
+      "Berks County militia, 1780 and 1782": ["colebrookdale"],
+      "Revocation of the Edict of Nantes, 1685": ["metz"],
+      "Editor of Hegel's collected works": ["berlin"],
+      "Father of American numismatics": ["philadelphia"],
+      "Emergency of 1863": ["mickleys"],
+      "Civil War": ["tamaqua"],
+      "Emigrant from Egersund": ["egersund"],
+      "Pearl Harbor, December 7, 1941": ["tamaqua"]
     };
     const EVENT_AT = new Map();
     (function buildEvents() {
@@ -1800,7 +1845,11 @@
       document.getElementById("ecTag").textContent = e.tag;
       document.getElementById("ecText").textContent = e.text;
       ecNext.textContent = cardIdx + 1 < cardQueue.length ? "Next" : "Continue";
-      card.removeAttribute("hidden"); requestAnimationFrame(() => card.classList.add("show"));
+      // set opacity outright as well as adding the class: the transition smooths it when
+      // frames are running, but the card must never be left invisible while the clock waits
+      card.removeAttribute("hidden"); card.style.opacity = "";
+      requestAnimationFrame(() => { card.classList.add("show"); card.style.opacity = "1"; });
+      setTimeout(() => { if (cardQueue) card.style.opacity = "1"; }, 60);
     }
     ecNext.addEventListener("click", () => {
       if (cardQueue && cardIdx + 1 < cardQueue.length) { cardIdx++; renderCard(); return; }
@@ -1808,7 +1857,8 @@
     });
 
     function hideEventCard() {
-      cardQueue = null; card.classList.remove("show"); card.setAttribute("hidden", "");
+      cardQueue = null; card.classList.remove("show");
+      card.style.opacity = ""; card.setAttribute("hidden", "");
     }
 
     playBtn.addEventListener("click", play);
