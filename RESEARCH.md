@@ -1932,6 +1932,35 @@ Sources:
 
 - [FamilySearch, France, Protestant Church Records 1536–1902: 1,073 Michelet entries, including the Metz baptisms, marriages and burials cited here](https://www.familysearch.org/search/record/results?f.collectionId=1582585&q.surname=Michelet)
 
+### Pierre Philpin
+
+**Place:** Metz  
+**Generation:** 11  
+**Status:** relative
+
+Father of Anne Philpin, named as such in the Metz register entry for her marriage to Jacques Michelet on 30 October 1646 — a parentage the Berlin table omits entirely. Nothing else of him has been traced. Two other Philpin women appear in the same registers and are likely his daughters or nieces: **Rachel**, who married Daniel Gaultier at Metz on 1 July 1674, and **Marie**, who married Josué Ladrague and had daughters Esther and Marie. The surname is rare enough in the Metz registers — twelve entries in all — that the three women are probably one family.
+
+- Children (linked in tree): Anne Philpin
+- Probable kin: Rachel Philpin, m. Daniel Gaultier 1674; Marie Philpin, m. Jos. Ladrague
+
+Sources:
+
+- [FamilySearch, France, Protestant Church Records 1536–1902: 1,073 Michelet entries, including the Metz baptisms, marriages and burials cited here](https://www.familysearch.org/search/record/results?f.collectionId=1582585&q.surname=Michelet)
+
+### Jean Wiriot
+
+**Place:** Metz  
+**Generation:** 13  
+**Status:** relative
+
+Father of Suzanne Wiriot, named in the Metz register entry for her marriage to Jacquemin Michelet on 28 July 1591. The Berlin table gives Suzanne no parentage at all, so he is known only from the register — and only from the record page itself: a surname search for Wiriot in the indexed collection returns nothing, because she is indexed as a spouse rather than a principal. Nothing further of him has been traced.
+
+- Children (linked in tree): Suzanne Wiriot
+
+Sources:
+
+- [FamilySearch, France, Protestant Church Records 1536–1902: 1,073 Michelet entries, including the Metz baptisms, marriages and burials cited here](https://www.familysearch.org/search/record/results?f.collectionId=1582585&q.surname=Michelet)
+
 ### Anne Philpin (c. 1630–1681)
 
 **Place:** Metz  
@@ -2602,8 +2631,11 @@ These are as useful as the positive results; they say where not to look again.
 - **Sgt. Frederick Millet in the censuses.** No Millot/Mylot/Milot/Millet in the Berks County entries of the 1790, 1800, or 1810 census indexes; no Millot in the Brunswick Township (Orwigsburg) tax lists of 1779–1785.
 - **Frederick's origin.** No French or German baptism or immigration record found. Colebrookdale and Oley had Huguenot settlers, and Millot is common in Burgundy, Champagne, and Lorraine as well as Normandy; his origin is open.
 - **FamilySearch's index of the Metz registers, searched 7 September 2026.** With an account, the collection returns **1,073 Michelet entries**. It confirms six of the table's untested claims and adds what the table left blank. Confirmed: Susanne's marriage to **Michel Persod**, 23 Jan 1600; Paul's marriage to **Anne Pillon**, 12 May 1613; Esther's death 8 Apr 1661; Suzanne's death 20 Feb 1668; Pierre son of Gédéon baptised 21 Dec 1657; and Susanne's baptism in January 1579, though the register gives **14 January against the table's 18th**. New spouses the table does not name: **Jacques (b. 1576) married Madeleine de St Blaise** on 3 May 1602; **Samuel (b. 1598) married Rachel Pilon**; **Gédéon married Madeleine de Milly**; **Suzanne (b. 1627) married Abraham Boucel**; and **Esther (b. 1603) was the wife of David de la Cloche**, which corrects the table's garbled “morte venue de David de la Cloche.” New dates: **Paul (b. 1584) died at Metz in April 1668**. And a child the table omits: a **Paul baptised 26 December 1670 to Jacques Michelet and Anne Philpin**, so that couple had more children than the six it lists.
+- **The three Michelet wives all have fathers in the register.** Searched 7 September 2026. Anne Philpin's father was **Pierre Philpin**; Suzanne Wiriot's was **Jean Wiriot**; and Marie Colin's was **Daniel Colin**, which confirms the Berlin table's *Daniel Collin, praticien du palais* from the record itself. The table names only the last of the three, so two of these are new. The Philpin marriage entry also indexes **seven children** of Jacques Michelet and Anne Philpin — Paul, Judith, Jacques, Pierre, Louis, Anne, and a **David** the table never mentions — against the five the table lists.
+- **A search can miss what the record holds.** Suzanne Wiriot's father is on the 1591 marriage record, but a surname search for Wiriot in the same collection returns nothing at all: she is indexed as a spouse, not a principal, so the field is invisible to that query. The lesson for this line is to open the record page rather than trust a name search, and it is the second time the index has hidden something it contains.
 - **No Michelet marriage at Metz before 1576 is indexed.** Searched 7 September 2026 across 1550–1580: the only marriage returned in range is a Michel at Sedan, a different family. Jacquemin's first marriage, to Suzanne Joly, therefore remains unevidenced outside the Berlin table — the register run may begin too late, or the entry may simply be unindexed.
 - **The FamilySearch index has gaps, so absence there proves nothing.** A search on the given name Samuel returns no Michelet at all, although the same collection demonstrably holds the baptism of 29 March 1634 to Samuel Michelet and Rachel Pilon. The failure to find the baptisms of Paul 1584, Pierre 1582, Samuel 1598 and Esther 1603 is therefore **not** evidence against them; those four are untested rather than disproved.
+- **Ancestry is the wrong tool for this line; FamilySearch is decisively better.** Checked 7 September 2026 at Chris's suggestion. Ancestry's only Moselle collection is *Moselle, France, Births, Marriages and Deaths, **1793**–1922* — it begins a hundred and eight years after the Metz Protestant registers end in 1685, and Ancestry holds no ancien régime parish or Protestant registers for Metz at all. A direct search for Anne Philpin returns hits in Eure-et-Loir, Brussels, London, Wales, Cher and the German Lutheran collections, and none at Metz. FamilySearch, by contrast, indexes the Metz Reformed registers in *France, Protestant Church Records 1536–1902*, which is where every Metz record in this file comes from. Ancestry earns its place elsewhere in the tree — the American and Norwegian material — but not here.
 - **Ancestry does not hold the Berlin French Colony registers.** Its Berlin and Prussian church collections are Lutheran — *Berlin and Brandenburg, selected Lutheran … 1758–1874*, *Kingdom of Prussia … Lutheran … 1661–1944*, *Brandenburg, Transcripts of Church Records, 1700–1874* — with civil registration only from 1874. The Huguenot colony kept its own registers and they are not there. Worse for the lead, Ancestry's Michelet hits for 1705 are the 1893 Mickley genealogy recirculating as *Family History Books* and *Public Member Stories*: the same source coming back round, not a second witness.
 - **Three more Metz entries, and a second date conflict.** A Pierre Michelet, son of Gédéon, died at Metz on 21 March 1651; a Marie Michelet, daughter of Jean, died there in 1580; and one entry is indexed as the baptism of “Jacquermin Michelet” at Metz in 1576, probably the 14 October baptism of Jacques indexed under his father's name. Against the table's Daniel (b. 1615), *morte 21 Juin 1659*, the register gives a Dan. Michelet dying at Metz on **21 February 1659** — the same day of the month, a different month, which reads as a misreading rather than a different man.
 - **Two patterns the table hides.** Two of Jacquemin's sons married two Pilons — Paul to Anne in 1613, Samuel to Rachel — and the Michelets married the de la Cloches twice in successive generations: Esther Michelet was David de la Cloche's wife, and her nephew Daniel married David's daughter Judith in 1645.
@@ -2682,6 +2714,7 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
 9. **The table scored against the registers.** Every claim the Berlin table makes that this project had already checked against the Metz Reformed registers holds to the exact day — nine entries between 1576 and 1685, plus Anne Pilon as Paul's wife. One conflict surfaced, a Jacques baptised 1657 in the register against 1661 in the table. The Protestant registers were then located, mapped as GG236–GG253, and opened: chronological, navigable by date, and written in a hand that defeats screen reading. The conclusion is that **the table is a reliable source for the Metz generations**, so the weakness in this line is not the Metz descent at all but two specific places — the impossible first generation above Jacquemin, and the unevidenced identification of Jean Jacques.
 10. **FamilySearch searched, with Chris's account.** The gated search was the bottleneck and it is now past: 1,073 Michelet entries in the Protestant collection. Six more of the table's claims confirmed, one date corrected (Susanne baptised 14 not 18 January 1579), five spouses recovered that the table never named, a death for Paul in 1668, and a seventh child for Jacques and Anne Philpin. Anne Pilon added to the tree with her marriage date and her father's office; Paul Michelet given his death year.
 11. **The remaining searches run in Chris's Chrome.** All three proposed checks were made. No Michelet marriage at Metz before 1576 is indexed, so Suzanne Joly stands on the table alone. The missing baptisms of 1582–1603 could not be found, but a control search showed the index itself is incomplete, so they are untested rather than disproved. And Ancestry turns out not to hold the Berlin French Colony registers at all — its Berlin material is Lutheran and civil, and its Michelet results are the 1893 book coming back round. Lead 4 has to go to the Berlin church archives directly.
+12. **The three Michelet wives.** Anne Philpin, Marie Colin and Suzanne Wiriot were followed into their own families. All three have fathers named on their marriage records: Pierre Philpin, Daniel Colin, and Jean Wiriot, of which the table gives only the middle one. Pierre Philpin and Jean Wiriot added to the tree; two probable Philpin sisters and a seventh Michelet child, David, recorded. Ancestry was checked against FamilySearch at Chris's suggestion and is not competitive for Metz: its Moselle coverage starts in 1793.
 12. **Source texts kept.** The OCR of every volume searched is now in `sources/` in the repository, with a README recording what each one settled.
 ## All sources
 
