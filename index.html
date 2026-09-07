@@ -252,8 +252,14 @@
   }
   .eventcard p { font-size: 13px; line-height: 1.5; color: var(--ink-2); margin: 0; }
   .eventcard .who {
-    margin-top: 8px; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--ink-3);
+    margin: 0 0 6px; font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+    color: var(--ink); line-height: 1.45;
   }
+  .eventcard button {
+    margin-top: 12px; font: inherit; font-size: 12px; padding: 5px 14px; cursor: pointer;
+    border: 1px solid var(--event); background: var(--event); color: var(--surface); border-radius: 3px;
+  }
+  .eventcard.show { pointer-events: auto; }
   .timeline {
     position: absolute; left: 14px; right: 14px; bottom: 12px; display: flex; align-items: center; gap: 10px;
     background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line);
@@ -361,9 +367,10 @@
     <div class="hint" id="hintTree">Click a person for records. Drag to pan, scroll to zoom, drag a circle to move it.</div>
     <div class="eventcard" id="eventCard" hidden>
       <p class="eyebrow" id="ecYear"></p>
+      <p class="who" id="ecWho"></p>
       <h3 id="ecTag"></h3>
       <p id="ecText"></p>
-      <p class="who" id="ecWho"></p>
+      <button id="ecNext" type="button">Continue</button>
     </div>
     <div class="timeline" id="timeline" hidden>
       <button id="playBtn" type="button" aria-label="Play">▶</button>
@@ -1636,15 +1643,14 @@
       let pts;
       if (straddles) { pts = grp.eu.concat(grp.am); camSide = null; }
       else {
-        const recent = { eu: 0, am: 0 };
-        for (const id of HAS_MAP) {
-          const g2 = GEO[id];
-          if (g2.b > y - 18 && g2.b <= y) { const l = locate(id, y); if (l) recent[side(PLACES[l.place].lon)] += 1; }
-          for (const st of g2.stops) if (st.y > y - 18 && st.y <= y) recent[side(PLACES[st.p].lon)] += 2;
-        }
-        const score = { eu: wEu + recent.eu * 3, am: wAm + recent.am * 3 };
-        let want = score.am >= score.eu ? "am" : "eu";
-        if (camSide && want !== camSide && score[want] < score[camSide] * 1.35) want = camSide;
+        // The migration only runs one way. Before it, the camera is in Europe; once half the
+        // family is across it settles in America and stays, rather than cutting back every time
+        // a Michelet generation swells in Metz. Only America emptying brings it home again.
+        let want;
+        if (!wAm) want = "eu";
+        else if (!wEu) want = "am";
+        else if (camSide === "am") want = wAm / (wAm + wEu) >= 0.3 ? "am" : "eu";
+        else want = wAm > wEu ? "am" : "eu";   // stay in Europe until America genuinely leads
         if (!grp[want].length) want = grp.eu.length ? "eu" : "am";
         camSide = want; pts = grp[want];
       }
@@ -1656,7 +1662,7 @@
       // but does not get to drag the whole shot west
       const sx = Math.sqrt(d3.sum(pts, q => q[2] * (q[0] - cx) ** 2) / tot);
       const sy = Math.sqrt(d3.sum(pts, q => q[2] * (q[1] - cy) ** 2) / tot);
-      const spread = straddles ? 2.4 : 1.9;
+      const spread = straddles ? 2.4 : (camSide === "am" ? 1.5 : 1.85);
       let x0 = cx - sx * spread, x1 = cx + sx * spread;
       let y0 = cy - sy * spread, y1 = cy + sy * spread;
       (mustSee || []).forEach(q => {
@@ -1664,7 +1670,7 @@
         y0 = Math.min(y0, q[1]); y1 = Math.max(y1, q[1]);
       });
       const bw = Math.max(x1 - x0, 26), bh = Math.max(y1 - y0, 26);
-      const kk = Math.max(1, Math.min(9, Math.min((w - 120) / bw, (h - 170) / bh)));
+      const kk = Math.max(1, Math.min(12, Math.min((w - 90) / bw, (h - 150) / bh)));
       return { k: kk, c: [(x0 + x1) / 2, (y0 + y1) / 2] };
     }
 
@@ -1673,14 +1679,14 @@
       const t2 = cameraFor(y, mustSee); if (!t2) return;
       const moved = Math.hypot(t2.c[0] - camC[0], t2.c[1] - camC[1]) * camK;
       const zoomed = Math.abs(Math.log(t2.k / camK));
-      if (moved < 55 && zoomed < 0.14) return;      // hold the shot unless it has really changed
+      if (moved < 95 && zoomed < 0.22) return;      // hold the shot unless it has really changed
       camK = t2.k; camC = t2.c;
       const w = stageEl.clientWidth, h = stageEl.clientHeight;
       const tr = d3.zoomIdentity.translate(w / 2, h / 2).scale(t2.k).translate(-t2.c[0], -t2.c[1]);
       // a transition needs animation frames, and a hidden tab gets none — apply the shot
       // outright in that case so the camera is never left behind the clock
       if (document.hidden) mapSvg.call(mapZoom.transform, tr);
-      else mapSvg.transition().duration(dur == null ? 1700 : dur).ease(d3.easeCubicInOut)
+      else mapSvg.transition().duration(dur == null ? 2400 : dur).ease(d3.easeCubicInOut)
                  .call(mapZoom.transform, tr);
     }
 
@@ -1730,24 +1736,24 @@
       mapSvg.call(mapZoom.transform, d3.zoomIdentity);   // back to the whole Atlantic
       gArcs.selectAll("*").remove(); draw();
     }
-    function stop() { if (timer) { timer.stop(); timer = null; } playBtn.textContent = "▶"; hideEventCard(); }
+    function stop() { if (timer) { timer.stop(); timer = null; } playBtn.textContent = "▶"; hideEventCard(); awaitingCard = false; }
     function play() {
       if (timer) return stop();
       userDrove = false;
       if (mode === "all" || year >= 2030) setYear(1550, false);
       moveCamera(year, [], 900);
       playBtn.textContent = "❚❚";
-      let last = 0, holdUntil = 0;
+      let last = 0;
       timer = d3.timer(el => {
-        if (el < holdUntil) return;              // dwelling on an event
+        if (awaitingCard) return;                // held on an event until the reader continues
         if (el - last < 110) return; last = el;
         const next = year + 1;
         if (next >= 2030) { setYear(2030, true); stop(); return; }
         setYear(next, true);
         const evs = EVENT_AT.get(next);
         if (evs) {
-          showEventCard(evs, next); holdUntil = el + 5000 * evs.length;
-          moveCamera(next, focusPoints(next - 1, next), 1200);   // settle on the scene
+          showEventCard(evs, next); awaitingCard = true;
+          moveCamera(next, focusPoints(next - 1, next), 1600);   // settle on the scene
         }
       });
     }
@@ -1778,29 +1784,31 @@
     })();
 
     const card = document.getElementById("eventCard");
-    let cardTimer = null;
+    const ecNext = document.getElementById("ecNext");
+    let awaitingCard = false, cardQueue = null, cardIdx = 0, cardYear = 0;
     // 1777 carries three events and 1863 two, so a year can hold more than one card;
     // show them in turn rather than dropping all but the first
-    function showEventCard(list, y) { cycleCard(list, y, 0); }
-    function cycleCard(list, y, i) {
-      const e = list[i];
-      const label = list.length > 1 ? `${y} · Notable event ${i + 1} of ${list.length}` : `${y} · Notable event`;
-      document.getElementById("ecYear").textContent = label;
+    // the clock waits on the reader, not on a stopwatch
+    function showEventCard(list, y) { cardQueue = list; cardYear = y; cardIdx = 0; renderCard(); }
+    function renderCard() {
+      const e = cardQueue[cardIdx], y = cardYear;
+      document.getElementById("ecYear").textContent =
+        cardQueue.length > 1 ? `${y} · Notable event ${cardIdx + 1} of ${cardQueue.length}` : `${y} · Notable event`;
+      const names = e.ids.map(id => byId[id] ? byId[id].name : id);
+      document.getElementById("ecWho").textContent =
+        names.length > 4 ? names.slice(0, 4).join(" · ") + ` · and ${names.length - 4} more` : names.join(" · ");
       document.getElementById("ecTag").textContent = e.tag;
       document.getElementById("ecText").textContent = e.text;
-      const names = e.ids.map(id => byId[id] ? labelOf(byId[id]) : id);
-      document.getElementById("ecWho").textContent =
-        names.length > 1 ? names.slice(0, 6).join(" · ") + (names.length > 6 ? " · …" : "") : names[0];
+      ecNext.textContent = cardIdx + 1 < cardQueue.length ? "Next" : "Continue";
       card.removeAttribute("hidden"); requestAnimationFrame(() => card.classList.add("show"));
-      clearTimeout(cardTimer);
-      cardTimer = setTimeout(() => {
-        if (i + 1 < list.length) { cycleCard(list, y, i + 1); return; }
-        card.classList.remove("show");
-        setTimeout(() => card.setAttribute("hidden", ""), 500);
-      }, 5000);
     }
+    ecNext.addEventListener("click", () => {
+      if (cardQueue && cardIdx + 1 < cardQueue.length) { cardIdx++; renderCard(); return; }
+      hideEventCard(); awaitingCard = false;
+    });
+
     function hideEventCard() {
-      clearTimeout(cardTimer); card.classList.remove("show"); card.setAttribute("hidden", "");
+      cardQueue = null; card.classList.remove("show"); card.setAttribute("hidden", "");
     }
 
     playBtn.addEventListener("click", play);
