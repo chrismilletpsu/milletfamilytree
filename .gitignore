@@ -1,1 +1,8 @@
 .DS_Store
+
+# Source texts kept locally but not committed: large OCR of volumes that were
+# searched once and whose findings are quoted in RESEARCH.md. Re-downloadable
+# from the archive.org identifiers in sources/README.md.
+sources/1790-census-pennsylvania-heads-of-families.txt
+sources/egle-1892-names-of-foreigners-oaths-1727-1775.txt
+sources/pa-archives-3rd-ser-vol18-berks-tax-lists-1897.txt
