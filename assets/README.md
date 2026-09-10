@@ -12,6 +12,33 @@ its own microfilm are not, however freely they may be viewed by a subscriber.
 
 ---
 
+## `pa-archives-5th-ser-v5/` — committed
+
+*Pennsylvania Archives*, Fifth Series, vol. 5 (1906) — the Berks County militia
+rolls. archive.org item
+[`pennsylvania-archives_1906_5_series-5`](https://archive.org/details/pennsylvania-archives_1906_5_series-5).
+Leaf index runs 1 ahead of the printed page, calibrated on leaf 254 = p. 253.
+
+| File | Printed page | What it shows |
+| --- | --- | --- |
+| `p242-strouch-company-1780-frederick-millet.jpg` | 242 | Pay roll of Capt. Henry Strouch's company, Sixth Battalion, Col. Joseph Hiester, 10 Aug – 9 Sep 1780. Sergeants: Christopher Berninger, Andrew Haas, **Frederick Millet** |
+| `detail-p242-sergeants-1780.jpg` | 242 | The officers and sergeants, enlarged |
+| `p287-keefer-company-1782-frederick-miloth.jpg` | 287 | Pay roll of Capt. Abraham Keefer's company, 1782: **Frederick Miloth, Sergt., entered Sept. 10, service 1 mo. 14 das.** |
+
+What these settled: the 1782 roll gives his term of service, which had not been
+recorded — one month and fourteen days, the same as Michael Kooser and the
+lieutenant, where the captain, the ensign, Abraham Lesher and both corporals
+served one month and twenty-three days. More importantly, the two rolls spell him
+differently. The 1782 roll has *Miloth*, as expected. **The 1780 roll has
+"Frederick Millet"** — the modern spelling, sixty years before the notes had the
+family adopting it. Caveat worth keeping: this is the 1906 printed transcription,
+not the clerk's manuscript, and a final *-ot* and *-et* are easy to confuse in an
+eighteenth-century hand, so it may be the editors' reading rather than the
+original. Either way, "Millet only after the 1840s" can no longer be asserted
+flatly, and `RESEARCH.md` has been corrected in the three places it said so.
+
+---
+
 ## `strassburger-1934-v1/` — committed
 
 Strassburger and Hinke, *Pennsylvania German Pioneers*, vol. I (the printed
