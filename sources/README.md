@@ -50,6 +50,9 @@ curl -L -o sources/<filename> https://archive.org/download/<identifier>/<identif
   Berks alone. No Millot of any spelling in Berks; a cluster of Millott and Melot
   households in Bedford County.
 
-Strassburger's *Pennsylvania German Pioneers* (1934) was also consulted and is
-deliberately **not** kept here: its copyright status is not clear enough to
-republish, and its OCR yielded nothing.
+Strassburger's *Pennsylvania German Pioneers* (1934) was also consulted and its
+OCR is deliberately **not** kept here: it yielded nothing, and a nine-hundred-page
+volume of 1934 is more than this repository should republish. The six page images
+that were actually read from it *are* committed, under `assets/strassburger-1934-v2/`,
+which is a different matter — those are cited evidence, and one of them carries
+Nicklauß Möloth's autograph.
