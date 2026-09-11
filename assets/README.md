@@ -12,6 +12,33 @@ its own microfilm are not, however freely they may be viewed by a subscriber.
 
 ---
 
+## `sogne-1838-marriage/` — committed
+
+The marriage of **Ole Andreas Olsen and Inger Marie Thorsdatter**, Søgne, Vest-Agder,
+1 May 1838. *Klokkerbok for Søgne 1821–1838*, pages 396–397, entry 6, image 159 of
+272, from the National Archives of Norway (Kristiansand) via
+[Digitalarkivet](https://www.digitalarkivet.no/en/view/327/pv00000009267859). Public
+and free.
+
+| File | What it shows |
+| --- | --- |
+| `p396-397-copulerede-1838.jpg` | The full spread, 4176 × 3072 |
+| `detail-entry6-ole-andreas-inger-marie.jpg` | Entry 6 enlarged |
+
+What it settled: Ole Andreas is entered as **“Ungkarl Ole Andreas Olsen Vesdal af
+Hitterøe Sogn 25¼”**, fixing his birth at about February 1813 and his home parish as
+Hitterø; and the two *forlovere* are **“Thor Svenumsen Hellervig og Ole Larsen
+Lindelien”**, which identifies Inger Marie's father — see `RESEARCH.md` item 25 for
+why that inference is strong but short of proof.
+
+**Fetching Digitalarkivet page images.** Its viewer is canvas-based and exposes no
+`<img>` element, but the tile requests reveal an IIIF endpoint:
+`https://nye.digitalarkivet.no/api/media-file/image/<uuid>/<region>/<size>/0/default.jpg`.
+Asking for `full/max` returns the entire page at source resolution. The uuid is the
+one in the viewer's own URL.
+
+---
+
 ## `pa-archives-5th-ser-v5/` — committed
 
 *Pennsylvania Archives*, Fifth Series, vol. 5 (1906) — the Berks County militia
