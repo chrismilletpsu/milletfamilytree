@@ -49,6 +49,7 @@ REGIONS = {
     "norway":      (1700, "Norwegian church books, free on Digitalarkivet"),
     "switzerland": (1560, "Swiss Reformed registers, many from the 1520s-1560s"),
     "metz":        (1561, "Metz Protestant registers run 1561-1685"),
+    "palatinate":  (1650, "Zweibrücken and Palatinate Reformed registers"),
 }
 
 # --------------------------------------------------------------------------
@@ -101,6 +102,8 @@ ERRANDS = {
     "berks_deeds":   (4.0, "Berks deeds 1767-1794 -- county Recorder of Deeds or browse film"),
     "berlin":        (5.0, "Archiv der Französischen Kirche zu Berlin -- by correspondence"),
     "metz_offices":  (5.0, "Metz municipal accounts and parlement rolls (liasses anciennes)"),
+    "bern_kb":       (2.0, "Canton Bern parish registers (Staatsarchiv Bern, free online)"),
+    "fs_de_index":   (1.0, "FamilySearch Germany births and baptisms index"),
 }
 
 S = lambda errand, p, r, note: (errand, p, r, note)
@@ -115,7 +118,8 @@ JOINS = {
     ("martin", "fred1820"):        (0.65, "a boy 10-14 in Martin's 1830 household, and the FamilySearch tree (negative findings)"),
     ("martinmeyer", "petermeyer"): (0.70, "Martin stood godfather to Peter's daughter; same congregation 1785 (items 28, 30)"),
     ("thorsvenumsen", "ingermarie"): (0.75, "strong but circumstantial; the Søgne registers have a 1759-1821 gap"),
-    ("ulrich", "elizbarbara"):     (0.85, "two printed statements read together, neither making the claim (item 29)"),
+    ("ulrich", "elizbarbara"):     (0.95, "stated outright by Roberts 1914 (item 34), after two printed statements read together (item 29)"),
+    ("christianmiller", "susannemiller"): (0.85, "one printed statement, Roberts 1914 (item 34)"),
 }
 
 # --------------------------------------------------------------------------
@@ -229,7 +233,7 @@ TARGETS = {
   "martinmeyer>petermeyer": dict(kind="join", region="pa_german", sources=[
       S("egypt_reg", 0.45, 1.0, "Peter's own baptism c.1752 and his brothers' 1755-70 -- the item-30 sweep extracted Peter's children, not Martin's"),
       S("anc_probate", 0.6, 1.0, "Martin's 1807 will names his sons; it is in the Northampton gap (item 33)"),
-      S("roberts_gen", 0.3, 1.0, "a Meyer family sketch in vol. II"),
+      S("roberts_gen", 0.3, 0.1, "the Meyer sketch lists Peter's ten children 1776-1793 but not his parentage (item 34)"),
       S("nham_deeds", 0.35, 0.7, "deeds of 1801-1824 on a Martin Meyer estate naming heirs; 80 hits seen, not read (item 33)"),
   ]),
   "catharinakern": dict(region="pa_german", sources=[
@@ -242,29 +246,43 @@ TARGETS = {
   ]),
   "christinanewan": dict(region="pa_german", sources=[
       S("egypt_reg", 0.35, 1.0, "'Newan' may be Neuhard/Newhard, a leading Egypt family; baptism c.1781"),
-      S("roberts_gen", 0.25, 1.0, "the Newhard family sketch"),
+      S("roberts_gen", 0.25, 0.1, "the Newhard sketch has no Christina of her generation, so 'Newan' as Newhard is unsupported (item 34)"),
       S("lehigh_ft", 0.2, 1.0, "Lehigh parish and estate images"),
       S("anc_probate", 0.15, 1.0, "her father's will"),
   ]),
-  "salomebiery": dict(region="pa_german", sources=[
-      S("egypt_reg", 0.45, 1.0, "BIERY entries are in the register; her baptism 1773; Henry Biery paid 12 pounds in 1785"),
-      S("roberts_gen", 0.35, 1.0, "a Biery family sketch in vol. II"),
-      S("anc_probate", 0.35, 1.0, "a Biery will, Northampton 1787-1839"),
-      S("lehigh_ft", 0.2, 1.0, "Lehigh images"),
-      S("mick1893", 0.1, 0.1, "already mined: 'Salome Biery', no parents"),
+  # salomebiery -- SOLVED 18 Sept 2026 by roberts_gen, the model's top errand: the Biery and
+  # Newhard sketches independently make her the eldest daughter of Henry Biery and Maria Salome
+  # Newhard, born Longswamp 30 Jan 1773 (item 34). Her frontier moves up to the four below.
+  "josephbiery": dict(region="switzerland", runway=0.8, sources=[
+      S("faust_brum", 0.35, 1.0, "a Bern emigrant of 1739, from the Oberland"),
+      S("bern_kb", 0.25, 1.0, "a Bieri baptism of 1703; the Oberland parish is not known"),
+  ]),
+  "elizabethdoll": dict(region="switzerland", runway=0.5, sources=[
+      S("faust_brum", 0.15, 1.0, "the Doll family on the Samuel, 1739"),
+      S("burgert", 0.1, 1.0, "if Palatine rather than Swiss"),
+  ]),
+  "michaelnewhard": dict(region="palatinate", sources=[
+      S("burgert", 0.35, 1.0, "Burgert's Western Palatinate covers Zweibrücken emigrants of 1737"),
+      S("fs_de_index", 0.25, 1.0, "a baptism at Zweibrücken, 9 Feb 1713"),
+      S("archion", 0.3, 1.0, "the Zweibrücken Reformed registers"),
+  ]),
+  "barbaranewhard": dict(region="pa_german", sources=[
+      S("genealogies", 0.1, 1.0, "her maiden name is recorded nowhere yet"),
+  ]),
+  "christianmiller": dict(region="switzerland", runway=0.5, sources=[
+      S("faust_brum", 0.2, 1.0, "Müller is the commonest name in the lists"),
+      S("nham_wills_a", 0.05, 1.0, "his will will not name his parents"),
   ]),
   "susannemiller": dict(region="pa_german", sources=[
-      S("egypt_reg", 0.15, 1.0, "b. 6 Nov 1743 -- Wuertz baptized only twelve children 1742-44, a quick check"),
-      S("nham_wills_a", 0.2, 1.0, "a Miller father's will before 1787; the name is very common"),
-      S("anc_probate", 0.15, 1.0, "or after 1787"),
-      S("roberts_gen", 0.1, 1.0, "vol. II"),
-      S("mick1893", 0.1, 0.1, "already mined"),
+      S("nham_wills_a", 0.35, 1.0, "Christian Miller of Lynn -- then Northampton County -- would name his wife in a will before 1787"),
+      S("anc_probate", 0.2, 1.0, "or after 1787"),
+      S("roberts_gen", 0.15, 0.2, "Mickley and Lynn Miller sketches read: father named, mother not (item 34)"),
   ]),
   "petermeyer": dict(region="pa_german", sources=[
       S("egypt_reg", 0.1, 1.0, "his baptism names his mother Magdalena, rarely her maiden name"),
   ]),
   "martinmeyer": dict(region="pa_german", runway=0.5, sources=[
-      S("roberts_gen", 0.15, 1.0, "a Meyer sketch may name the immigrant"),
+      S("roberts_gen", 0.15, 0.1, "the Meyer sketch names no immigrant (item 34)"),
       S("anc_probate", 0.05, 1.0, "his will will not name his parents"),
   ]),
   "elizbarbara": dict(region="switzerland", sources=[
@@ -310,15 +328,15 @@ TARGETS = {
   "dorcas": dict(region="new_england", sources=[
       S("ma_vr", 0.6, 1.0, "Chatham vital records; the Covells are well documented"),
       S("otis", 0.2, 1.0, "Barnstable families"),
-      S("savage", 0.15, 1.0, "b. 1714, too late for Savage, but her grandfather may be there"),
+      S("savage", 0.15, 0.1, "Savage's only Covells are of Marblehead and Malden (item 34)"),
   ]),
   "deliverance": dict(region="new_england", sources=[
       S("otis", 0.6, 1.0, "Otis covers the Lombards of Barnstable"),
-      S("savage", 0.4, 1.0, "Savage's Lombard entry"),
+      S("savage", 0.4, 0.2, "the Lombard entries list no Deliverance; the Chatham branch is not in Savage (item 34)"),
       S("ma_vr", 0.3, 1.0, "Chatham and Barnstable records"),
   ]),
   "mercy": dict(region="new_england", sources=[
-      S("savage", 0.5, 1.0, "the Nickerson or Williams entry may name her father"),
+      S("savage", 0.5, 0.15, "the Nickerson entry stops at the 1637 family; no Williams entry names her (item 34)"),
       S("ma_vr", 0.3, 1.0, "1668 marriage"),
   ]),
   "williamsr": dict(region="england", sources=[
