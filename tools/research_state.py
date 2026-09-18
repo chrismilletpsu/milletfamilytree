@@ -150,7 +150,7 @@ TARGETS = {
   "adolphmartin": dict(region="baden", runway=0.5, sources=[
       S("pa_death", 0.5, 0.05, "read: certificate 61560 says 'No History' for both parents (item 35)"),
       S("hamburg", 0.35, 0.2, "no Adolph Martin leaving Hamburg c.1881; Baden emigrants usually sailed from Bremen, Le Havre or Antwerp (item 40)"),
-      S("newspapers_com", 0.3, 1.0, "his June 1934 obituary is indexed on Newspapers.com; GenealogyBank had no match (item 40)"),
+      S("newspapers_com", 0.3, 1.0, "his June 1934 obituary is indexed on Newspapers.com; GenealogyBank holds no Schuylkill paper for 1934, so it cannot be there (item 42)"),
       S("natz", 0.3, 1.0, "Schuylkill naturalization gives the birthplace"),
       S("pa_marr", 0.3, 1.0, "1887 licence"),
   ]),

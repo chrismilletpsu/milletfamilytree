@@ -3016,6 +3016,8 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
     - **Tree:** Sophia renamed *Sophia M. Ripko Williams*; Paul Pipko corrected to **Paul Ripko** (c. 1882); **Celia Ripko** (c. 1883) added as Sophia's mother. The Elkton licence browse the user approved is no longer needed for her parents and was not done.
     - **Calibration.** The variant step carried p ≈ 0.33 in the model and it hit. Of the name-risk misses in item 39, this one is now closed.
 
+42. **GenealogyBank cannot hold Adolph Martin's obituary (18 September 2026).** A search for Adolph Martin in Pennsylvania papers of 11–25 June 1934 returns nothing, with or without "Grier". **Control:** the same dates with the surname Martin alone return plenty, and the publication-place facet shows what GenealogyBank has for Pennsylvania that fortnight — **Chester, Erie, Harrisburg, Pittsburgh, Pottstown, Reading and Washington; no Pottsville, Tamaqua or Shenandoah paper**. The obituary indexed on Newspapers.com (item 40) was in a Schuylkill paper GenealogyBank does not carry, so its absence here is a coverage fact, not a negative. The route to Adolph Martin's birthplace remains that obituary, on Newspapers.com.
+
 ## All sources
 
 - [*Heads of Families at the First Census … 1790: Pennsylvania*](https://archive.org/details/headsoffamiliesa08unit)
