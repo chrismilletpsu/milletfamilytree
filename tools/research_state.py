@@ -51,6 +51,7 @@ REGIONS = {
     "metz":        (1561, "Metz Protestant registers run 1561-1685"),
     "palatinate":  (1650, "Zweibrücken and Palatinate Reformed registers"),
     "wales":       (1700, "Welsh parish registers and the UK censuses of 1841-1881"),
+    "poland":      (1780, "Polish Catholic registers, indexed by Geneteka"),
 }
 
 # --------------------------------------------------------------------------
@@ -125,6 +126,7 @@ JOINS = {
     ("lydiacastle", "orpha"):      (0.80, "same census match (item 35)"),
     ("nicholasmihm", "josephmihm"):   (0.85, "1880 census, Jersey City, right age; his son was Joseph Nicholas (item 35)"),
     ("catharinemihm", "josephmihm"):  (0.85, "same census match (item 35)"),
+    ("sophiapipko", "marie"):      (0.92, "exact-date match: the 1930 licence dates the former wife's death 7 Oct 1926; her certificate, wife of William Williams, illness contracted at Tamaqua (item 37)"),
     ("johnnorris", "sybil"):       (0.80, "Fairfield birth and baptism of 1740/41: name, year and county agree (item 36)"),
     ("experiencenorris", "sybil"): (0.80, "same (item 36)"),
 }
@@ -137,13 +139,7 @@ JOINS = {
 # --------------------------------------------------------------------------
 TARGETS = {
   # ---- near the present --------------------------------------------------
-  "marie": dict(region="pa_modern", sources=[
-      S("pa_marr", 0.6, 0.5, "searched: the one Schuylkill William Williams of his age m. 24 Nov 1921 is Mary Gaul's son; the index carries mothers' names unreliably, so absence is inconclusive (item 36)"),
-      S("pa_marr", 0.35, 1.0, "his 1930 licence to marry Evelyn Beck asks when and how a former marriage ended"),
-      S("census", 0.4, 1.0, "1920 census, Gilberton or Tamaqua, gives the wife's name and age"),
-      S("newspapers", 0.25, 1.0, "1922 Tamaqua birth notice; a death or divorce before 1930"),
-      S("ss_apps", 0.55, 0.1, "tried: her Social Security record names Evelyn Beck, the stepmother"),
-  ]),
+  # marie -- SOLVED 18 Sept 2026: the 1930 licence gave 7 Oct 1926; death certificate 99811 is Sophia (Pipko) Williams (item 37)
   # catharineherring -- SOLVED 18 Sept 2026: death certificate 52665 names Israel Herring and Emma Bankus (item 35)
   # coradornsife -- SOLVED 18 Sept 2026: death certificate 104425 names Levi Dornsife and Kathryn Broscious; identity by the 1916 birth certificate and her husband's certificate (item 35)
   # williamh -- SOLVED 18 Sept 2026: death certificate 67643 names Wm. H. Williams and Ellen Shillington, both born in Wales (item 35)
@@ -200,11 +196,7 @@ TARGETS = {
       S("census", 0.4, 1.0, "a Bankus household, Schuylkill, 1850-1860"),
       S("pa_death", 0.4, 1.0, "if she died after 1906"),
   ]),
-  "levidornsife": dict(region="pa_german", sources=[
-      S("pa_death", 0.55, 0.2, "no certificate under Dornsife; probably died before 1906 (item 36)"),
-      S("census", 0.5, 1.0, "Ancestry suggests a 'Levi Dornseif' in 1850 -- as a boy of 13 he would be in his parents' household; not yet opened (item 36)"),
-      S("genealogies", 0.25, 1.0, "the Dornsife family is well written up"),
-  ]),
+  # levidornsife -- SOLVED 18 Sept 2026: 1850 census (Coal Twp.) and death certificate 117569, indexed 'Sarnsife' (item 37)
   "kathrynbroscious": dict(region="pa_german", sources=[
       S("pa_death", 0.5, 1.0, "if she died after 1906"),
       S("census", 0.4, 1.0, "a Broscious household"),
@@ -231,6 +223,21 @@ TARGETS = {
       S("nj_vitals", 0.2, 1.0, "her death record gives her maiden name"),
   ]),
 
+  "sophiapipko": dict(region="poland", sources=[
+      S("census", 0.5, 1.0, "the 1910 and 1920 Pipko households, Shenandoah, give her mother's name"),
+      S("ss_apps", 0.2, 1.0, "a sibling's application would name both parents"),
+  ]),
+  "paulpipko": dict(region="poland", runway=0.5, sources=[
+      S("natz", 0.35, 1.0, "naturalization gives the village"),
+      S("census", 0.15, 1.0, "the census gives only 'Poland' or 'Austria'"),
+  ]),
+  "henrydornsife": dict(region="pa_german", sources=[
+      S("genealogies", 0.3, 1.0, "the Dornsife family of Lehigh and Northumberland is written up"),
+      S("findagrave", 0.2, 1.0, "Coal Township or Lehigh burials"),
+  ]),
+  "elizabethforscholdt": dict(region="pa_german", sources=[
+      S("genealogies", 0.15, 1.0, "the surname as written is unusual; a Forscht or Forsholt family of Lehigh"),
+  ]),
   "johnnorris": dict(region="new_england", sources=[
       S("ct_barbour", 0.4, 1.0, "John Norris's own birth or marriage, Fairfield County"),
       S("genealogies", 0.25, 1.0, "a Norris genealogy of Fairfield"),
