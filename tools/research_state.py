@@ -229,14 +229,14 @@ TARGETS = {
       S("nj_vitals", 0.2, 1.0, "her death record gives her maiden name"),
   ]),
 
-  "sophiapipko": dict(region="poland", sources=[
-      S("census", 0.5, 0.35, "not found as Pipko in 1910 or 1920, nor Paul Pipko anywhere in Pennsylvania; the spelling is suspect (item 39)"),
-      S("md_marr", 0.3, 0.8, "no William Williams-Sophia marriage 1919-23 in the FamilySearch or Ancestry indexes for Maryland or Pennsylvania; Elkton's licences need browsing (item 40)"),
-      S("ss_apps", 0.2, 1.0, "a sibling's application would name both parents"),
-  ]),
+  # sophiapipko -- SOLVED 18 Sept 2026 by the variant step: 1920 census, 'Sophie Ripko', father Paul, mother Celia, Tamaqua (item 41)
   "paulpipko": dict(region="poland", runway=0.5, sources=[
-      S("natz", 0.35, 1.0, "naturalization gives the village"),
-      S("census", 0.15, 1.0, "the census gives only 'Poland' or 'Austria'"),
+      S("natz", 0.4, 1.0, "he owned his house by 1920; a naturalization would give the Galician village"),
+      S("census", 0.15, 1.0, "1910 and 1930 censuses give arrival year, not the village"),
+  ]),
+  "celiaripko": dict(region="poland", runway=0.5, sources=[
+      S("pa_death", 0.4, 1.0, "her death certificate, if after 1906 in Pennsylvania, gives her maiden name and parents"),
+      S("ss_apps", 0.25, 1.0, "a child's application gives her maiden name"),
   ]),
   "henrydornsife": dict(region="pa_german", sources=[
       S("genealogies", 0.3, 1.0, "the Dornsife family of Lehigh and Northumberland is written up"),
@@ -496,8 +496,8 @@ NAME_RISK = {
 }
 # Where the research log gives reason to set it higher or lower.
 NAME_RISK_OVERRIDE = {
-    "sophiapipko": 0.65,       # "Pipko" found nowhere in Pennsylvania; the spelling is suspect (item 39)
-    "paulpipko": 0.65,
+    "paulpipko": 0.35,         # the family is Ripko; 'Pipko' was the certificate's slip (item 41)
+    "celiaripko": 0.35,
     "emmabankus": 0.50,        # not in 1850 under Bankus, soundex included (item 39)
     "kathrynbroscious": 0.45,  # Lydia Broscious not found in 1850 (item 39)
     "israelherring": 0.20,     # found readily; the name is stable
