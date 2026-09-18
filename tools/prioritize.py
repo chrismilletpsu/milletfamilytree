@@ -24,6 +24,9 @@ the tree carries as probable. Each target has a value, in "ancestor units":
 Each target lists sources, each with a chance p of answering and a residual r
 of that chance still unspent after the searching already done. Then
 
+  name risk     for name-indexed sources, a share rho of p is reachable only by a
+                spelling-variant search (its own step, at 1.5x the cost); an exact-name
+                negative does not spend it. rho defaults by region, overridden per person
   census rule   a census source's p is scaled by min(1, (birth year - 1825) / 15), floor 0.15,
                 because only someone still a child in 1850 appears in a census with parents
   chance left   P = 1 - prod(1 - p * r)
@@ -122,6 +125,25 @@ def census_factor(year):
     Learned the hard way: see RESEARCH.md item 36."""
     return max(0.15, min(1.0, (year - 1825) / 15))
 
+def name_risk(key, region):
+    return RS.NAME_RISK_OVERRIDE.get(key, RS.NAME_RISK.get(region, 0.25))
+
+def expand_sources(sources, rho):
+    """Split each name-indexed source into what an exact-name search can find,
+    p*(1-rho), and what only a spelling-variant search can, p*rho. A negative
+    recorded against the exact search leaves the variant part unspent unless the
+    note says variants or soundex were already tried."""
+    out = []
+    for (e, p_, r, note) in sources:
+        if e in RS.INDEXED and rho > 0:
+            out.append((e, p_ * (1 - rho), r, note))
+            tried = any(w in note.lower() for w in ("soundex", "variant", "sound-alike"))
+            out.append(("variant:" + e, p_ * rho, 0.5 if tried else 1.0,
+                        "search spelling variants and sound-alikes" + (" (partly done)" if tried else "")))
+        else:
+            out.append((e, p_, r, note))
+    return out
+
 def default_region(p):
     place = p["place"]
     for key, region in (("Norway", "norway"), ("Metz", "metz"), ("England", "england"),
@@ -165,7 +187,9 @@ def score(people, edges, prm=P, noise=None):
         sources = spec["sources"] if spec else [("__default", 0.3, 1.0, "uncurated: a standard record search")]
         cf = census_factor(year_of(p))
         sources = [(e, min(nz(p_) * (cf if e == "census" else 1.0), 0.95), r, note) for (e, p_, r, note) in sources]
-        targets.append(dict(key=pid, kind="parents", person=p, gen=p["gen"] + 1, V=V, m=m, base=base,
+        rho = name_risk(pid, region)
+        sources = expand_sources(sources, rho)
+        targets.append(dict(key=pid, kind="parents", rho=rho, person=p, gen=p["gen"] + 1, V=V, m=m, base=base,
                             region=(spec or {}).get("branch", region),
                             known=known, runway=R, direct=p["direct"], curated=bool(spec),
                             conf=conf.get(pid, 1.0), sources=sources))
@@ -185,13 +209,19 @@ def score(people, edges, prm=P, noise=None):
         V = conf.get(b, 1.0) * (1 - c) * (mass + hope)
         spec = RS.TARGETS.get(key, {"sources": []})
         srcs = [(e, min(nz(p_), 0.95), r, note) for (e, p_, r, note) in spec["sources"]]
-        targets.append(dict(key=key, kind="join", person=people[a], child=people[b], gen=people[a]["gen"],
+        srcs = expand_sources(srcs, name_risk(a, spec.get("region", "pa_german")))
+        targets.append(dict(key=key, kind="join", rho=name_risk(a, spec.get("region", "pa_german")),
+                            person=people[a], child=people[b], gen=people[a]["gen"],
                             region=spec.get("region", "pa_german"),
                             V=V, c=c, why=why, above=len(above), hope=hope, direct=True, curated=key in RS.TARGETS,
                             conf=conf.get(b, 1.0), sources=srcs))
 
     errands = dict(RS.ERRANDS)
     errands["__default"] = (1.5, "Standard record search (uncurated default)")
+    for e in list(RS.INDEXED):
+        if e in RS.ERRANDS:
+            c, lab = RS.ERRANDS[e]
+            errands["variant:" + e] = (c * RS.VARIANT_COST, lab.split(" (")[0].split(" --")[0] + " -- with spelling variants")
     for t in targets:
         prior = 1 - math.prod(1 - s[1] for s in t["sources"]) if t["sources"] else 0.0
         left = 1 - math.prod(1 - s[1] * s[2] for s in t["sources"]) if t["sources"] else 0.0
@@ -366,13 +396,13 @@ def report(people, edges):
     say("")
     say("**Top 10** is the share of the robustness draws in which the target stays in the top ten.")
     say("")
-    say("| # | Target | Gen | Value | Chance left | Wall | Best next step | Score | Top 10 |")
-    say("|---:|---|---:|---:|---:|---:|---|---:|---:|")
+    say("| # | Target | Gen | Value | Chance left | Wall | Name risk | Best next step | Score | Top 10 |")
+    say("|---:|---|---:|---:|---:|---:|---:|---|---:|---:|")
     for i, t in enumerate(direct_t, 1):
         step = t["steps"][0] if t["steps"] else None
         nxt = f"{errands[step[1]][1].split(' (')[0].split(' --')[0]} — {step[4].replace(' -- ', ' — ')}" if step else "—"
         flag = "" if t["curated"] else " *(uncurated)*"
-        say(f"| {i} | {label(t)}{flag} | {t['gen']} | {t['V']:.3f} | {t['P']:.0%} | {t['wall']:.0%} | {nxt} | {t['score']:.3f} | {stable[t['key']]:.0%} |")
+        say(f"| {i} | {label(t)}{flag} | {t['gen']} | {t['V']:.3f} | {t['P']:.0%} | {t['wall']:.0%} | {t.get('rho', 0):.0%} | {nxt} | {t['score']:.3f} | {stable[t['key']]:.0%} |")
     say("")
 
     say("## Walls — where the searching is done and the door is shut")

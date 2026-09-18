@@ -107,7 +107,8 @@ ERRANDS = {
     "bern_kb":       (2.0, "Canton Bern parish registers (Staatsarchiv Bern, free online)"),
     "fs_de_index":   (1.0, "FamilySearch Germany births and baptisms index"),
     "digitalark_img":(2.5, "Digitalarkivet scanned church books, read by eye (baptisms not transcribed for the parish)"),
-    "md_marr":       (1.5, "Maryland marriage licences, Cecil County (Elkton), where underage Pennsylvania couples went"),
+    "md_marr":       (2.5, "Maryland marriage licences, Cecil County (Elkton), where underage Pennsylvania couples went -- not indexed online; browse the licence dockets"),
+    "newspapers_com":(3.0, "Newspapers.com (not held) -- obituaries indexed on Ancestry, text behind a separate subscription"),
 }
 
 S = lambda errand, p, r, note: (errand, p, r, note)
@@ -148,7 +149,8 @@ TARGETS = {
   # williamh -- SOLVED 18 Sept 2026: death certificate 67643 names Wm. H. Williams and Ellen Shillington, both born in Wales (item 35)
   "adolphmartin": dict(region="baden", runway=0.5, sources=[
       S("pa_death", 0.5, 0.05, "read: certificate 61560 says 'No History' for both parents (item 35)"),
-      S("hamburg", 0.35, 1.0, "1881 arrival gives the home town"),
+      S("hamburg", 0.35, 0.2, "no Adolph Martin leaving Hamburg c.1881; Baden emigrants usually sailed from Bremen, Le Havre or Antwerp (item 40)"),
+      S("newspapers_com", 0.3, 1.0, "his June 1934 obituary is indexed on Newspapers.com; GenealogyBank had no match (item 40)"),
       S("natz", 0.3, 1.0, "Schuylkill naturalization gives the birthplace"),
       S("pa_marr", 0.3, 1.0, "1887 licence"),
   ]),
@@ -229,7 +231,7 @@ TARGETS = {
 
   "sophiapipko": dict(region="poland", sources=[
       S("census", 0.5, 0.35, "not found as Pipko in 1910 or 1920, nor Paul Pipko anywhere in Pennsylvania; the spelling is suspect (item 39)"),
-      S("md_marr", 0.3, 1.0, "a marriage at 14-15 in 1920-21 may have been at Elkton, Maryland; the licence names her parents"),
+      S("md_marr", 0.3, 0.8, "no William Williams-Sophia marriage 1919-23 in the FamilySearch or Ancestry indexes for Maryland or Pennsylvania; Elkton's licences need browsing (item 40)"),
       S("ss_apps", 0.2, 1.0, "a sibling's application would name both parents"),
   ]),
   "paulpipko": dict(region="poland", runway=0.5, sources=[
@@ -466,4 +468,39 @@ SHARED = {
     "nham_wills_a", "nham_deeds", "wright_berks", "longswamp_lu", "burgert",
     "archion", "bayonne", "fhc_zion", "fhc_jordan", "berks_deeds", "stjohns_conf",
     "norwich", "metz_offices",
+}
+
+# --------------------------------------------------------------------------
+# Name risk (added 18 Sept 2026, item 40). Every miss in round four had one
+# cause: the record exists but is not indexed under the name searched for --
+# a misspelled surname (Pipko), variant spellings (Bankus, Broscious), an index
+# clerk's reading (Levi Dornsife as "Sarnsife"). For errands that are searched
+# by name, a share rho of each source's chance can only be reached by a
+# spelling-variant search; an exact-name negative does not spend that share.
+# --------------------------------------------------------------------------
+INDEXED = {
+    "census", "pa_death", "pa_marr", "ss_apps", "nj_vitals", "ny_vitals",
+    "ct_barbour", "ma_vr", "eng_parish", "metz_ft", "digitalark", "dk_emig",
+    "findagrave", "natz", "hamburg", "fs_de_index", "md_marr", "anc_probate",
+    "berks_ft", "lehigh_ft", "nham_wills_a", "nham_deeds", "newspapers",
+}
+VARIANT_COST = 1.5   # a variant search costs this multiple of the exact one
+
+# Default name risk by the parents' region: how often a name is indexed under a
+# spelling other than the one the family used.
+NAME_RISK = {
+    "pa_german": 0.30, "pa_modern": 0.20, "switzerland": 0.30, "palatinate": 0.30,
+    "us_wales": 0.15, "wales": 0.15, "us_de_unk": 0.35, "slovakia": 0.50,
+    "poland": 0.50, "baden": 0.30, "denmark": 0.30, "norway": 0.30,
+    "ny_dutch": 0.25, "new_england": 0.15, "england": 0.15, "metz": 0.20,
+}
+# Where the research log gives reason to set it higher or lower.
+NAME_RISK_OVERRIDE = {
+    "sophiapipko": 0.65,       # "Pipko" found nowhere in Pennsylvania; the spelling is suspect (item 39)
+    "paulpipko": 0.65,
+    "emmabankus": 0.50,        # not in 1850 under Bankus, soundex included (item 39)
+    "kathrynbroscious": 0.45,  # Lydia Broscious not found in 1850 (item 39)
+    "israelherring": 0.20,     # found readily; the name is stable
+    "melvina": 0.45,           # not in 1850/1860 under Baumes (item 35)
+    "adolphmartin": 0.35,      # Martin is common; the German home is the problem, not the spelling
 }
