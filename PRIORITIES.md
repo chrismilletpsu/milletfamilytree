@@ -1,6 +1,6 @@
 # Research priorities
 
-*Generated 2026-09-18 by `tools/prioritize.py` from `index.html` and `tools/research_state.py`. Re-run it after any change to the tree or to the research log; edit the state file to record a new search.*
+*Generated 2026-09-18 by `tools/prioritize.py` from `data.js` and `tools/research_state.py`. Re-run it after any change to the tree or to the research log; edit the state file to record a new search.*
 
 ## Headline
 

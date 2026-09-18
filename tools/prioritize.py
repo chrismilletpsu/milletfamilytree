@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Rank the open research questions in the Millet family tree.
 
-Reads the tree (index.html) and the curated research state
+Reads the tree (data.js) and the curated research state
 (tools/research_state.py), scores every gap, and writes PRIORITIES.md.
 
     python3 tools/prioritize.py            # write PRIORITIES.md and print the top of it
@@ -60,7 +60,7 @@ def load_tree(path):
         people[pid] = dict(id=pid, name=f("name"), short=f("short") or f("name"), b=f("b"),
                            gen=int(g.group(1)) if g else None, place=f("place"),
                            direct="direct:true" in head, probable="probable:true" in head)
-    etxt = re.search(r"const E\s*=\s*\[(.*?)\n  \];", t, re.S).group(1)
+    etxt = re.search(r"const E\s*=\s*\[(.*?)\n\s*\];", t, re.S).group(1)
     edges = re.findall(r'\["([a-zA-Z0-9_]+)","([a-zA-Z0-9_]+)","(\w+)"', etxt)
     return people, edges
 
@@ -328,7 +328,7 @@ def report(people, edges):
     today = datetime.date.today().isoformat()
     say("# Research priorities")
     say("")
-    say(f"*Generated {today} by `tools/prioritize.py` from `index.html` and `tools/research_state.py`. "
+    say(f"*Generated {today} by `tools/prioritize.py` from `data.js` and `tools/research_state.py`. "
         "Re-run it after any change to the tree or to the research log; edit the state file to record a new search.*")
     say("")
     direct_t = sorted([t for t in targets if t["direct"]], key=lambda t: -t["score"])
@@ -486,7 +486,7 @@ def report(people, edges):
     return "\n".join(L) + "\n", targets, ranked, errands, problems
 
 def main():
-    people, edges = load_tree(os.path.join(ROOT, "index.html"))
+    people, edges = load_tree(os.path.join(ROOT, "data.js"))
     text, targets, ranked, errands, problems = report(people, edges)
     if "--stdout" in sys.argv:
         print(text)
