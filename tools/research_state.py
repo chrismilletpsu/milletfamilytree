@@ -50,6 +50,7 @@ REGIONS = {
     "switzerland": (1560, "Swiss Reformed registers, many from the 1520s-1560s"),
     "metz":        (1561, "Metz Protestant registers run 1561-1685"),
     "palatinate":  (1650, "Zweibrücken and Palatinate Reformed registers"),
+    "wales":       (1700, "Welsh parish registers and the UK censuses of 1841-1881"),
 }
 
 # --------------------------------------------------------------------------
@@ -120,6 +121,10 @@ JOINS = {
     ("thorsvenumsen", "ingermarie"): (0.75, "strong but circumstantial; the Søgne registers have a 1759-1821 gap"),
     ("ulrich", "elizbarbara"):     (0.95, "stated outright by Roberts 1914 (item 34), after two printed statements read together (item 29)"),
     ("christianmiller", "susannemiller"): (0.85, "one printed statement, Roberts 1914 (item 34)"),
+    ("johncastle", "orpha"):       (0.80, "1880 census match: a rare name, right age, adjoining township (item 35)"),
+    ("lydiacastle", "orpha"):      (0.80, "same census match (item 35)"),
+    ("nicholasmihm", "josephmihm"):   (0.85, "1880 census, Jersey City, right age; his son was Joseph Nicholas (item 35)"),
+    ("catharinemihm", "josephmihm"):  (0.85, "same census match (item 35)"),
 }
 
 # --------------------------------------------------------------------------
@@ -131,44 +136,26 @@ JOINS = {
 TARGETS = {
   # ---- near the present --------------------------------------------------
   "marie": dict(region="pa_modern", sources=[
-      S("pa_marr", 0.6, 1.0, "William Earl Williams's first marriage, Schuylkill, c.1920-21; the licence names the bride"),
+      S("pa_marr", 0.6, 1.0, "William Earl Williams's first marriage, Schuylkill, c.1920-21; FamilySearch's county marriages cover Schuylkill, Ancestry's collection 61381 does not (item 35)"),
       S("census", 0.4, 1.0, "1920 census, Gilberton or Tamaqua, gives the wife's name and age"),
       S("newspapers", 0.25, 1.0, "1922 Tamaqua birth notice; a death or divorce before 1930"),
       S("ss_apps", 0.55, 0.1, "tried: her Social Security record names Evelyn Beck, the stepmother"),
   ]),
-  "catharineherring": dict(region="pa_modern", sources=[
-      S("pa_death", 0.7, 1.0, "died 1934 -- the certificate names her parents"),
-      S("census", 0.45, 1.0, "1870 and 1880 Herring households near Tamaqua"),
-      S("pa_marr", 0.35, 1.0, "1887 licence to Adolph Martin"),
-  ]),
-  "coradornsife": dict(region="pa_german", branch="pa_modern", sources=[
-      S("pa_death", 0.75, 1.0, "alive 1930, so a Pennsylvania death certificate naming her parents is likely"),
-      S("census", 0.5, 1.0, "1880 Dornsife households, Schuylkill and Northumberland"),
-  ]),
-  "williamh": dict(region="us_wales", sources=[
-      S("pa_death", 0.7, 1.0, "alive 1930; his certificate names his Welsh-born parents"),
-      S("census", 0.5, 1.0, "1870 and 1880 Williams households, Mahanoy valley"),
-  ]),
+  # catharineherring -- SOLVED 18 Sept 2026: death certificate 52665 names Israel Herring and Emma Bankus (item 35)
+  # coradornsife -- SOLVED 18 Sept 2026: death certificate 104425 names Levi Dornsife and Kathryn Broscious; identity by the 1916 birth certificate and her husband's certificate (item 35)
+  # williamh -- SOLVED 18 Sept 2026: death certificate 67643 names Wm. H. Williams and Ellen Shillington, both born in Wales (item 35)
   "adolphmartin": dict(region="baden", runway=0.5, sources=[
-      S("pa_death", 0.5, 1.0, "if he died in Pennsylvania after 1906; the tree's Casper and Magdalena are unsourced"),
+      S("pa_death", 0.5, 0.05, "read: certificate 61560 says 'No History' for both parents (item 35)"),
       S("hamburg", 0.35, 1.0, "1881 arrival gives the home town"),
       S("natz", 0.3, 1.0, "Schuylkill naturalization gives the birthplace"),
       S("pa_marr", 0.3, 1.0, "1887 licence"),
   ]),
-  "josephmihm": dict(region="us_de_unk", sources=[
-      S("census", 0.55, 1.0, "1870 and 1880 Mihm household in New York"),
-      S("ny_vitals", 0.5, 1.0, "NYC birth of 1867 names both parents"),
-      S("nj_vitals", 0.45, 1.0, "1888 marriage record names parents"),
-  ]),
+  # josephmihm -- SOLVED 18 Sept 2026: 1880 census, Jersey City: Nicholas and Catharine Mihm -- probable, 0.85 (item 35)
   "louisamayer": dict(region="us_de_unk", sources=[
       S("census", 0.6, 1.0, "1880 Jacob Mayer household names his wife"),
       S("nj_vitals", 0.45, 1.0, "1888 marriage record names her mother"),
   ]),
-  "orpha": dict(region="ny_dutch", sources=[
-      S("census", 0.5, 1.0, "1880 Castle or Caswell household, Coeymans"),
-      S("ny_vitals", 0.5, 1.0, "New York marriage certificate names her parents"),
-      S("nj_vitals", 0.25, 1.0, "death after 1940 in New Jersey"),
-  ]),
+  # orpha -- SOLVED 18 Sept 2026: 1880 census, Westerlo: John and Lydia Castle -- probable, 0.8 (item 35)
   "georgebaran": dict(region="slovakia", runway=0.5, sources=[
       S("natz", 0.35, 1.0, "a post-1906 naturalization gives the village"),
       S("bayonne", 0.35, 1.0, "the children's baptisms name the parents' origin"),
@@ -185,7 +172,7 @@ TARGETS = {
       S("hamburg", 0.1, 1.0, "arrival before 1860"),
   ]),
   "melvina": dict(region="ny_dutch", sources=[
-      S("census", 0.55, 1.0, "1850 Baumes household, Albany County"),
+      S("census", 0.55, 0.5, "not in the 1850 or 1860 New York indexes as Baumes, soundex included; may be indexed under a variant (item 35)"),
       S("findagrave", 0.3, 1.0, "died 1898, Albany County"),
   ]),
   "hansjacob": dict(region="denmark", runway=0.8, sources=[
@@ -198,6 +185,46 @@ TARGETS = {
   "huldah": dict(region="ny_dutch", sources=[
       S("genealogies", 0.35, 1.0, "a Meech family genealogy"),
       S("findagrave", 0.2, 1.0, "died 1860"),
+  ]),
+
+  # ---- frontier opened by the near-present sweep (item 35) ----------------
+  "israelherring": dict(region="pa_german", sources=[
+      S("census", 0.45, 1.0, "1850-1870 Herring households near Tamaqua"),
+      S("pa_death", 0.4, 1.0, "if he died after 1906"),
+  ]),
+  "emmabankus": dict(region="pa_german", sources=[
+      S("census", 0.4, 1.0, "a Bankus household, Schuylkill, 1850-1860"),
+      S("pa_death", 0.4, 1.0, "if she died after 1906"),
+  ]),
+  "levidornsife": dict(region="pa_german", sources=[
+      S("pa_death", 0.55, 1.0, "if he died after 1906"),
+      S("census", 0.45, 1.0, "1850-1860 Dornsife households, Northumberland"),
+      S("genealogies", 0.25, 1.0, "the Dornsife family is well written up"),
+  ]),
+  "kathrynbroscious": dict(region="pa_german", sources=[
+      S("pa_death", 0.5, 1.0, "if she died after 1906"),
+      S("census", 0.4, 1.0, "a Broscious household"),
+  ]),
+  "wmhwilliams": dict(region="wales", runway=0.5, sources=[
+      S("pa_death", 0.4, 1.0, "his own certificate, if he died after 1906, would name his Welsh parents"),
+      S("natz", 0.2, 1.0, "naturalization gives the Welsh parish, rarely"),
+  ]),
+  "ellenshillington": dict(region="wales", runway=0.5, sources=[
+      S("pa_death", 0.35, 1.0, "if she died after 1906"),
+  ]),
+  "johncastle": dict(region="ny_dutch", sources=[
+      S("census", 0.45, 1.0, "1850 Castle household, Albany County"),
+      S("findagrave", 0.2, 1.0, "Westerlo burials"),
+  ]),
+  "lydiacastle": dict(region="ny_dutch", sources=[
+      S("ny_vitals", 0.15, 1.0, "her maiden name, from a child's record"),
+  ]),
+  "nicholasmihm": dict(region="us_de_unk", sources=[
+      S("natz", 0.3, 1.0, "naturalization gives the German home"),
+      S("nj_vitals", 0.25, 1.0, "his death record, Jersey City"),
+  ]),
+  "catharinemihm": dict(region="us_de_unk", sources=[
+      S("nj_vitals", 0.2, 1.0, "her death record gives her maiden name"),
   ]),
 
   # ---- the Millet line ---------------------------------------------------
@@ -231,7 +258,7 @@ TARGETS = {
 
   # ---- Moyer, Kern and Mickley -------------------------------------------
   "martinmeyer>petermeyer": dict(kind="join", region="pa_german", sources=[
-      S("egypt_reg", 0.45, 1.0, "Peter's own baptism c.1752 and his brothers' 1755-70 -- the item-30 sweep extracted Peter's children, not Martin's"),
+      S("egypt_reg", 0.45, 0.1, "read 1734-c.1774: one Meyer baptism only, 26 June 1757, sponsor Elisabeth Mickli; no Peter c.1752 (item 35)"),
       S("anc_probate", 0.6, 1.0, "Martin's 1807 will names his sons; it is in the Northampton gap (item 33)"),
       S("roberts_gen", 0.3, 0.1, "the Meyer sketch lists Peter's ten children 1776-1793 but not his parentage (item 34)"),
       S("nham_deeds", 0.35, 0.7, "deeds of 1801-1824 on a Martin Meyer estate naming heirs; 80 hits seen, not read (item 33)"),
@@ -245,7 +272,7 @@ TARGETS = {
       S("nham_wills_a", 0.1, 1.0, "the elder George Kern's will, if before 1787 -- 'George Kern' not yet searched"),
   ]),
   "christinanewan": dict(region="pa_german", sources=[
-      S("egypt_reg", 0.35, 1.0, "'Newan' may be Neuhard/Newhard, a leading Egypt family; baptism c.1781"),
+      S("egypt_reg", 0.35, 1.0, "baptism c.1781; pages not yet read -- HathiTrust blocked the IP mid-pass (item 35)"),
       S("roberts_gen", 0.25, 0.1, "the Newhard sketch has no Christina of her generation, so 'Newan' as Newhard is unsupported (item 34)"),
       S("lehigh_ft", 0.2, 1.0, "Lehigh parish and estate images"),
       S("anc_probate", 0.15, 1.0, "her father's will"),
@@ -279,7 +306,7 @@ TARGETS = {
       S("roberts_gen", 0.15, 0.2, "Mickley and Lynn Miller sketches read: father named, mother not (item 34)"),
   ]),
   "petermeyer": dict(region="pa_german", sources=[
-      S("egypt_reg", 0.1, 1.0, "his baptism names his mother Magdalena, rarely her maiden name"),
+      S("egypt_reg", 0.1, 0.1, "his baptism is not in the register (item 35)"),
   ]),
   "martinmeyer": dict(region="pa_german", runway=0.5, sources=[
       S("roberts_gen", 0.15, 0.1, "the Meyer sketch names no immigrant (item 34)"),

@@ -4,16 +4,16 @@
 
 ## Headline
 
-- **8 of the ten highest-priority targets have never been searched** — no search against them is recorded in RESEARCH.md. The cheapest gains in the tree are untouched.
-- **60% of the research effort spent so far** (measured as evidence consumed by searches that came back empty) has gone to the Pennsylvania German and Metz branches, which now hold **19% of the expected gain left**.
+- **7 of the ten highest-priority targets have never been searched** — no search against them is recorded in RESEARCH.md. The cheapest gains in the tree are untouched.
+- **56% of the research effort spent so far** (measured as evidence consumed by searches that came back empty) has gone to the Pennsylvania German and Metz branches, which now hold **36% of the expected gain left**.
 - **Best single errand:** Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies (archive.org).
-- **Best single target:** Parents of Orpha Castle Nickerson — 1880 Castle or Caswell household, Coeymans.
+- **Best single target:** Other parent of Marie Violet Williams Millet — William Earl Williams's first marriage, Schuylkill, c.1920-21; FamilySearch's county marriages cover Schuylkill, Ancestry's collection 61381 does not (item 35).
 
 ## The tree at a glance
 
-- **158 people**, of whom **85 are direct ancestors** of Chris.
-- **85 parent-slots are open** on the direct line, spread across **48 people**.
-- **8 joins are carried as probable.** Summed over every direct ancestor, the tree currently holds about **6.2 ancestors in expectation that are not really ancestors** — the cost of those joins, and the case for proving them before building on top of them.
+- **168 people**, of whom **95 are direct ancestors** of Chris.
+- **95 parent-slots are open** on the direct line, spread across **53 people**.
+- **12 joins are carried as probable.** Summed over every direct ancestor, the tree currently holds about **6.9 ancestors in expectation that are not really ancestors** — the cost of those joins, and the case for proving them before building on top of them.
 
 Pedigree completeness by generation (a generation has 2^g slots). The last column discounts each ancestor by the confidence of the joins beneath them.
 
@@ -23,7 +23,7 @@ Pedigree completeness by generation (a generation has 2^g slots). The last colum
 | 2 | 4 | 4 | 100% | 100% |
 | 3 | 8 | 7 | 88% | 88% |
 | 4 | 16 | 14 | 88% | 88% |
-| 5 | 32 | 10 | 31% | 30% |
+| 5 | 32 | 20 | 62% | 59% |
 | 6 | 64 | 11 | 17% | 16% |
 | 7 | 128 | 9 | 7% | 7% |
 | 8 | 256 | 10 | 4% | 4% |
@@ -40,20 +40,20 @@ Ranked by **expected ancestor units per unit of effort**. An errand that is one 
 | # | Errand | Sitting | Effort | Expected gain | Score | Top 5 | Serves |
 |---:|---|---|---:|---:|---:|---:|---|
 | 1 | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies (archive.org) | one | 1 | 1.206 | **1.206** | 100% | Parents of Joseph Biery; Parents of Ulrich Burkhalter; Parents of Christian Miller; Other parent of Elizabeth Barbara Burkhalter; +2 more |
-| 2 | Pennsylvania death certificates 1906-1970 (Ancestry) -- name both parents | 4 searches | 6 | 5.715 | **0.952** | 94% | Parents of Cora Dornsife; Parents of William H. Williams; Parents of Catharine Herring; Parents of Adolph Martin |
-| 3 | US federal censuses 1850-1940 (FamilySearch / Ancestry) | 9 searches | 9 | 7.622 | **0.847** | 88% | Parents of Orpha Castle Nickerson; Parents of William H. Williams; Parents of Cora Dornsife; Parents of Melvina Baumes Nickerson; +5 more |
-| 4 | Barbour Collection of Connecticut vital records | 1 search | 1 | 0.802 | **0.802** | 58% | Parents of Sybil Norris Nickerson |
-| 5 | Pennsylvania county marriage licences 1885-1950 (FamilySearch) | 3 searches | 3 | 2.292 | **0.764** | 66% | Other parent of Marie Violet Williams Millet; Parents of Catharine Herring; Parents of Adolph Martin |
-| 6 | Otis, Genealogical Notes of Barnstable Families (archive.org) | one | 1 | 0.709 | **0.709** | 43% | Parents of Deliverance Lombard Nickerson; Parents of Dorcas Covel Nickerson |
-| 7 | New York State and NYC marriage, birth and death indexes and certificates | 2 searches | 3 | 1.983 | **0.661** | 34% | Parents of Orpha Castle Nickerson; Parents of Joseph Mihm |
-| 8 | Northampton Will Books 1752-1787 (FamilySearch full text, Northampton place filter) | one | 1 | 0.510 | **0.510** | 5% | Other parent of Elizabeth Barbara Burkhalter; Other parent of Susanne Miller; Parents of Catharina Kern Meyer; Parents of Christian Miller; +2 more |
-| 9 | Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI (HathiTrust mdp.35112103983625, per-page OCR) | one | 1 | 0.451 | **0.451** | 5% | Parents of Christina Newan Meyer; Prove Martin Meyer Sr. → Peter Meyer Sr.; Other parent of Peter Meyer Sr.; Parents of Catharina Kern Meyer |
-| 10 | Find a Grave and published cemetery transcriptions | 2 searches | 2 | 0.872 | **0.436** | 4% | Parents of Melvina Baumes Nickerson; Parents of Huldah Meech Nickerson |
-| 11 | Danish Emigration Archives database and Danish Family Search censuses | 2 searches | 3 | 1.262 | **0.421** | 2% | Parents of Hans Jacob Christoffersen; Parents of Karen Christoffersen |
-| 12 | Bayonne Slovak Catholic parish registers | one | 3 | 1.222 | **0.407** | 1% | Parents of George Baran; Parents of Mary Baran |
-| 13 | New Jersey birth, marriage and death records | 5 searches | 7.5 | 2.671 | **0.356** | 0% | Parents of Joseph Mihm; Parents of Orpha Castle Nickerson; Parents of George Baran; Other parent of Louisa Mayer; +1 more |
-| 14 | Massachusetts town vital records (Chatham, Harwich) | 3 searches | 3 | 1.049 | **0.350** | 0% | Parents of Dorcas Covel Nickerson; Parents of Deliverance Lombard Nickerson; Parents of Mercy Williams Nickerson |
-| 15 | Naturalization records (county and federal) | 3 searches | 4.5 | 1.489 | **0.331** | 0% | Parents of George Baran; Parents of Adolph Martin; Parents of Jacob Mayer |
+| 2 | Barbour Collection of Connecticut vital records | 1 search | 1 | 0.802 | **0.802** | 84% | Parents of Sybil Norris Nickerson |
+| 3 | Pennsylvania county marriage licences 1885-1950 (FamilySearch) | 2 searches | 2 | 1.547 | **0.773** | 90% | Other parent of Marie Violet Williams Millet; Parents of Adolph Martin |
+| 4 | Otis, Genealogical Notes of Barnstable Families (archive.org) | one | 1 | 0.709 | **0.709** | 86% | Parents of Deliverance Lombard Nickerson; Parents of Dorcas Covel Nickerson |
+| 5 | US federal censuses 1850-1940 (FamilySearch / Ancestry) | 9 searches | 9 | 5.271 | **0.586** | 68% | Parents of Israel Herring; Parents of Levi Dornsife; Parents of John Castle; Parents of Emma Bankus; +5 more |
+| 6 | Northampton Will Books 1752-1787 (FamilySearch full text, Northampton place filter) | one | 1 | 0.510 | **0.510** | 30% | Other parent of Elizabeth Barbara Burkhalter; Other parent of Susanne Miller; Parents of Catharina Kern Meyer; Parents of Christian Miller; +2 more |
+| 7 | Danish Emigration Archives database and Danish Family Search censuses | 2 searches | 3 | 1.262 | **0.421** | 14% | Parents of Hans Jacob Christoffersen; Parents of Karen Christoffersen |
+| 8 | Bayonne Slovak Catholic parish registers | one | 3 | 1.222 | **0.407** | 12% | Parents of George Baran; Parents of Mary Baran |
+| 9 | Pennsylvania death certificates 1906-1970 (Ancestry) -- name both parents | 7 searches | 10.5 | 4.176 | **0.398** | 2% | Parents of Levi Dornsife; Parents of Kathryn Broscious; Parents of Israel Herring; Parents of Emma Bankus; +3 more |
+| 10 | Find a Grave and published cemetery transcriptions | 3 searches | 3 | 1.171 | **0.390** | 4% | Parents of Melvina Baumes Nickerson; Parents of Huldah Meech Nickerson; Parents of John Castle |
+| 11 | Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI (HathiTrust mdp.35112103983625, per-page OCR) | one | 1 | 0.379 | **0.379** | 8% | Parents of Christina Newan Meyer; Parents of Catharina Kern Meyer; Prove Martin Meyer Sr. → Peter Meyer Sr.; Other parent of Peter Meyer Sr. |
+| 12 | Massachusetts town vital records (Chatham, Harwich) | 3 searches | 3 | 1.049 | **0.350** | 1% | Parents of Dorcas Covel Nickerson; Parents of Deliverance Lombard Nickerson; Parents of Mercy Williams Nickerson |
+| 13 | Naturalization records (county and federal) | 5 searches | 7.5 | 2.037 | **0.272** | 0% | Parents of George Baran; Parents of Adolph Martin; Parents of Wm. H. Williams (b. Wales); Parents of Nicholas Mihm; +1 more |
+| 14 | GenealogyBank newspapers | 1 search | 1.5 | 0.390 | **0.260** | 1% | Other parent of Marie Violet Williams Millet |
+| 15 | Hamburg passenger lists 1850-1934 (Ancestry) -- give the home town | 3 searches | 4.5 | 1.082 | **0.240** | 0% | Parents of Adolph Martin; Parents of George Baran; Parents of Jacob Mayer |
 
 ## Targets, ranked
 
@@ -63,67 +63,79 @@ Ranked by **expected ancestor units per unit of effort**. An errand that is one 
 
 | # | Target | Gen | Value | Chance left | Wall | Best next step | Score | Top 10 |
 |---:|---|---:|---:|---:|---:|---|---:|---:|
-| 1 | Parents of Orpha Castle Nickerson | 5 | 2.256 | 81% | 0% | US federal censuses 1850-1940 — 1880 Castle or Caswell household, Coeymans | 1.128 | 97% |
-| 2 | Parents of William H. Williams | 5 | 2.242 | 85% | 0% | US federal censuses 1850-1940 — 1870 and 1880 Williams households, Mahanoy valley | 1.121 | 100% |
-| 3 | Parents of Cora Dornsife | 5 | 2.186 | 88% | 0% | Pennsylvania death certificates 1906-1970 — alive 1930, so a Pennsylvania death certificate naming her parents is likely | 1.093 | 100% |
-| 4 | Parents of Melvina Baumes Nickerson | 6 | 1.895 | 68% | 0% | US federal censuses 1850-1940 — 1850 Baumes household, Albany County | 1.042 | 92% |
-| 5 | Parents of Catharine Herring | 5 | 2.128 | 89% | 0% | Pennsylvania death certificates 1906-1970 — died 1934 — the certificate names her parents | 0.993 | 99% |
-| 6 | Parents of Joseph Mihm | 5 | 1.710 | 88% | 0% | US federal censuses 1850-1940 — 1870 and 1880 Mihm household in New York | 0.940 | 93% |
-| 7 | Other parent of Marie Violet Williams Millet | 3 | 1.561 | 83% | 28% | Pennsylvania county marriage licences 1885-1950 — William Earl Williams's first marriage, Schuylkill, c.1920-21; the licence names the bride | 0.937 | 92% |
-| 8 | Parents of Sybil Norris Nickerson | 8 | 1.337 | 72% | 0% | Barbour Collection of Connecticut vital records — b. 1740; Ridgefield or Norwalk births | 0.802 | 72% |
-| 9 | Parents of Adolph Martin | 5 | 2.034 | 84% | 0% | Pennsylvania death certificates 1906-1970 — if he died in Pennsylvania after 1906; the tree's Casper and Magdalena are unsourced | 0.678 | 79% |
-| 10 | Parents of Dorcas Covel Nickerson | 9 | 1.086 | 68% | 14% | Massachusetts town vital records — Chatham vital records; the Covells are well documented | 0.652 | 45% |
-| 11 | Parents of Marthe Olsdatter | 7 | 1.523 | 60% | 0% | Digitalarkivet church books and censuses — her own baptism c.1820, Eigersund; not yet looked for (lead 21) | 0.609 | 39% |
-| 12 | Other parent of Louisa Mayer | 5 | 0.884 | 78% | 0% | US federal censuses 1850-1940 — 1880 Jacob Mayer household names his wife | 0.530 | 23% |
-| 13 | Parents of Deliverance Lombard Nickerson | 10 | 0.820 | 74% | 25% | Otis, Genealogical Notes of Barnstable Families — Otis covers the Lombards of Barnstable | 0.492 | 15% |
-| 14 | Parents of Hans Jacob Christoffersen | 6 | 1.856 | 42% | 16% | Danish Emigration Archives database and Danish Family Search censuses — the 1885 emigration entry gives Martin's parish; the site was unreachable before (lead 22) | 0.445 | 11% |
-| 15 | Parents of George Baran | 5 | 1.876 | 75% | 0% | Naturalization records — a post-1906 naturalization gives the village | 0.438 | 14% |
-| 16 | Parents of Karen Christoffersen | 6 | 1.856 | 32% | 20% | Danish Emigration Archives database and Danish Family Search censuses — same route; her maiden name comes from Martin's baptism | 0.396 | 9% |
-| 17 | Parents of Joseph Biery | 9 | 1.101 | 51% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — a Bern emigrant of 1739, from the Oberland | 0.385 | 7% |
-| 18 | Parents of Mary Baran | 5 | 1.885 | 61% | 0% | US Social Security Applications and Claims Index — the children's applications give her maiden name, then the village | 0.377 | 7% |
-| 19 | Parents of Huldah Meech Nickerson | 7 | 1.517 | 48% | 0% | Published family genealogies — a Meech family genealogy | 0.354 | 2% |
-| 20 | Parents of Christina Newan Meyer | 7 | 1.006 | 57% | 24% | Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI — 'Newan' may be Neuhard/Newhard, a leading Egypt family; baptism c.1781 | 0.352 | 3% |
-| 21 | Parents of Ulrich Burkhalter | 10 | 0.869 | 38% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — gives the home parish; Burkhalter is a Bernese name | 0.304 | 1% |
-| 22 | Parents of Thor Svenumsen | 8 | 0.745 | 55% | 0% | Digitalarkivet church books and censuses — b. 1777 per the 1801 census; a Holum baptism would name the father Svenum | 0.273 | 0% |
-| 23 | Parents of Ole Andreas Olsen | 7 | 1.500 | 28% | 58% | Digitalarkivet church books and censuses — his confirmation c.1828, and the Flekkefjord registers, untried | 0.250 | 0% |
-| 24 | Other parent of Elizabeth Barbara Burkhalter | 9 | 0.580 | 58% | 0% | Northampton Will Books 1752-1787 — Ulrich died 1762 in what was by then Northampton; his will names his wife | 0.232 | 0% |
-| 25 | Parents of Michael Newhard | 9 | 0.866 | 66% | 0% | FamilySearch Germany births and baptisms index — a baptism at Zweibrücken, 9 Feb 1713 | 0.216 | 0% |
-| 26 | Parents of Ole Olsen | 7 | 1.397 | 20% | 20% | Digitalarkivet church books and censuses — first identify which Ole Olsen of Egersund, a gardmann in 1863 (lead 21) | 0.186 | 0% |
-| 27 | Parents of Suzanne Mangeot | 10 | 0.921 | 59% | 32% | Metz Protestant registers GG236-GG253, read page by page — 1674 baptism in GG248-GG253, read by eye | 0.184 | 0% |
-| 28 | Parents of Christian Miller | 9 | 0.889 | 24% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — Müller is the commonest name in the lists | 0.178 | 0% |
-| 29 | Parents of William Nickerson | 12 | 0.536 | 51% | 0% | England births, christenings and marriages indexes — a Norwich baptism of 1603-04 | 0.161 | 0% |
-| 30 | Parents of Elizabeth Doll | 9 | 1.046 | 24% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — the Doll family on the Samuel, 1739 | 0.157 | 0% |
-| 31 | Parents of Mercy Williams Nickerson | 11 | 0.504 | 35% | 53% | Massachusetts town vital records — 1668 marriage | 0.151 | 0% |
-| 32 | Parents of Catharina Kern Meyer | 8 | 0.641 | 68% | 52% | Ancestry, Pennsylvania Wills and Probate 1683-1993 — Georg Jacob Kern's will, Northampton 1787-1839 (item 33) | 0.150 | 0% |
-| 33 | Parents of Jacob Mayer | 6 | 0.887 | 32% | 0% | Naturalization records — naturalization, New York | 0.148 | 0% |
-| 34 | Other parent of Frederick Millet | 5 | 0.947 | 62% | 7% | Zion — his baptism c.1820 names his mother; Ancestry does not hold the register (lead 12) | 0.118 | 0% |
-| 35 | Other parent of Susanne Miller | 8 | 0.321 | 50% | 17% | Northampton Will Books 1752-1787 — Christian Miller of Lynn — then Northampton County — would name his wife in a will before 1787 | 0.112 | 0% |
-| 36 | Prove Martin Millot → Frederick Millet | 5 | 0.602 | 69% | 32% | Zion — the baptism is the one record that proves or breaks it (lead 12) | 0.083 | 0% |
-| 37 | Parents of Nicholas Busby | 13 | 0.384 | 44% | 0% | England births, christenings and marriages indexes — a baptism c.1587 | 0.077 | 0% |
-| 38 | Parents of Bridget Busby | 13 | 0.369 | 20% | 0% | England births, christenings and marriages indexes — the Busby marriage c.1605-15 gives her surname first | 0.074 | 0% |
-| 39 | Other parent of Martin Millot | 6 | 0.427 | 49% | 0% | F. Edward Wright, Berks County Church Records of the 18th Century — his baptism c.1789-91 at Hill Church names his mother (lead 14) | 0.057 | 0% |
-| 40 | Prove Sgt. Frederick Millet → Martin Millot | 6 | 0.314 | 70% | 17% | F. Edward Wright, Berks County Church Records of the 18th Century — Martin's baptism at Hill Church names his father; Ancestry indexes only the 1805 confirmations (leads 3, 14) | 0.052 | 0% |
-| 41 | Prove Martin Meyer Sr. → Peter Meyer Sr. | 8 | 0.107 | 84% | 22% | Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI — Peter's own baptism c.1752 and his brothers' 1755-70 — the item-30 sweep extracted Peter's children, not Martin's | 0.048 | 0% |
-| 42 | Parents of Sgt. Frederick Millet | 7 | 0.258 | 49% | 16% | Berks and Philadelphia estates and Orphans' Court — estates 1750-1785 for a Möloth; the Millot sweeps may not have tried that spelling (lead 4) | 0.046 | 0% |
-| 43 | Prove Louis Michelet → John Jacob Mickley Sr. | 9 | 1.392 | 31% | 22% | Burgert, Western Palatinate emigrants; Hacker, Auswanderungen — a Mückli among Palatine emigrants | 0.046 | 0% |
-| 44 | Other parent of Inger Marie Thorsdatter | 7 | 0.752 | 7% | 50% | Digitalarkivet church books and censuses — Søgne registers missing 1759-1821; her mother would need Thor's marriage | 0.038 | 0% |
-| 45 | Parents of Mary Barbara Newhard | 9 | 0.545 | 10% | 0% | Published family genealogies — her maiden name is recorded nowhere yet | 0.036 | 0% |
-| 46 | Other parent of Peter Meyer Sr. | 8 | 0.321 | 10% | 0% | Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI — his baptism names his mother Magdalena, rarely her maiden name | 0.032 | 0% |
-| 47 | Prove Thor Svenumsen → Inger Marie Thorsdatter | 7 | 0.231 | 27% | 42% | Digitalarkivet church books and censuses — Ole Thorsen's own baptism and confirmation would name his father; untried | 0.031 | 0% |
-| 48 | Other parent of Anne Philpin | 11 | 0.163 | 43% | 20% | FamilySearch index of the Metz Protestant registers — her father Pierre is known; her baptism c.1630 would name her mother | 0.029 | 0% |
-| 49 | Other parent of Marie Colin | 12 | 0.147 | 28% | 25% | FamilySearch index of the Metz Protestant registers — father Daniel Collin known; baptism c.1595 | 0.022 | 0% |
-| 50 | Prove Ulrich Burkhalter → Elizabeth Barbara Burkhalter | 9 | 0.031 | 59% | 0% | Northampton Will Books 1752-1787 — Ulrich's 1762 will would name his daughter | 0.014 | 0% |
-| 51 | Parents of Martin Meyer Sr. | 9 | 0.381 | 6% | 68% | Ancestry, Pennsylvania Wills and Probate 1683-1993 — his will will not name his parents | 0.013 | 0% |
-| 52 | Other parent of Suzanne Wiriot | 13 | 0.099 | 18% | 24% | FamilySearch index of the Metz Protestant registers — father Jean Wiriot known; the 1591 marriage names only him | 0.009 | 0% |
-| 53 | Parents of Jacquemin Michelet | 13 | 0.142 | 15% | 0% | Metz municipal accounts and parlement rolls — his offices of 1587 and 1593 (lead 8) | 0.003 | 0% |
-| 54 | Prove Jehan Michelet → Jacquemin Michelet | 13 | 0.059 | 5% | 0% | Metz municipal accounts and parlement rolls — no record route is known | 0.001 | 0% |
-| 55 | Parents of Jehan Michelet | 14 | 0.024 | 2% | 0% | Metz municipal accounts and parlement rolls — fl. 1444; nothing to search | 0.000 | 0% |
-| 56 | Prove Christian Miller → Susanne Miller *(uncurated)* | 8 | 0.086 | 0% | 0% | — | 0.000 | 0% |
+| 1 | Other parent of Marie Violet Williams Millet | 3 | 1.561 | 83% | 28% | Pennsylvania county marriage licences 1885-1950 — William Earl Williams's first marriage, Schuylkill, c.1920-21; FamilySearch's county marriages cover Schuylkill, Ancestry's collection 61381 does not (item 35) | 0.937 | 96% |
+| 2 | Parents of Sybil Norris Nickerson | 8 | 1.337 | 72% | 0% | Barbour Collection of Connecticut vital records — b. 1740; Ridgefield or Norwalk births | 0.802 | 82% |
+| 3 | Parents of Israel Herring | 6 | 1.610 | 67% | 0% | US federal censuses 1850-1940 — 1850-1870 Herring households near Tamaqua | 0.724 | 74% |
+| 4 | Parents of Levi Dornsife | 6 | 1.610 | 81% | 0% | US federal censuses 1850-1940 — 1850-1860 Dornsife households, Northumberland | 0.724 | 86% |
+| 5 | Parents of John Castle | 6 | 1.497 | 56% | 0% | US federal censuses 1850-1940 — 1850 Castle household, Albany County | 0.673 | 64% |
+| 6 | Parents of Dorcas Covel Nickerson | 9 | 1.086 | 68% | 14% | Massachusetts town vital records — Chatham vital records; the Covells are well documented | 0.652 | 64% |
+| 7 | Parents of Emma Bankus | 6 | 1.610 | 64% | 0% | US federal censuses 1850-1940 — a Bankus household, Schuylkill, 1850-1860 | 0.644 | 68% |
+| 8 | Parents of Kathryn Broscious | 6 | 1.610 | 70% | 0% | US federal censuses 1850-1940 — a Broscious household | 0.644 | 77% |
+| 9 | Parents of Adolph Martin | 5 | 2.034 | 69% | 33% | Pennsylvania county marriage licences 1885-1950 — 1887 licence | 0.610 | 72% |
+| 10 | Parents of Marthe Olsdatter | 7 | 1.523 | 60% | 0% | Digitalarkivet church books and censuses — her own baptism c.1820, Eigersund; not yet looked for (lead 21) | 0.609 | 52% |
+| 11 | Parents of Melvina Baumes Nickerson | 6 | 1.895 | 49% | 32% | Find a Grave and published cemetery transcriptions — died 1898, Albany County | 0.569 | 65% |
+| 12 | Other parent of Louisa Mayer | 5 | 0.884 | 78% | 0% | US federal censuses 1850-1940 — 1880 Jacob Mayer household names his wife | 0.530 | 33% |
+| 13 | Parents of Deliverance Lombard Nickerson | 10 | 0.820 | 74% | 25% | Otis, Genealogical Notes of Barnstable Families — Otis covers the Lombards of Barnstable | 0.492 | 32% |
+| 14 | Parents of Hans Jacob Christoffersen | 6 | 1.856 | 42% | 16% | Danish Emigration Archives database and Danish Family Search censuses — the 1885 emigration entry gives Martin's parish; the site was unreachable before (lead 22) | 0.445 | 21% |
+| 15 | Parents of George Baran | 5 | 1.876 | 75% | 0% | Naturalization records — a post-1906 naturalization gives the village | 0.438 | 27% |
+| 16 | Parents of Wm. H. Williams (b. Wales) | 6 | 1.530 | 52% | 0% | Pennsylvania death certificates 1906-1970 — his own certificate, if he died after 1906, would name his Welsh parents | 0.408 | 15% |
+| 17 | Parents of Karen Christoffersen | 6 | 1.856 | 32% | 20% | Danish Emigration Archives database and Danish Family Search censuses — same route; her maiden name comes from Martin's baptism | 0.396 | 18% |
+| 18 | Parents of Joseph Biery | 9 | 1.101 | 51% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — a Bern emigrant of 1739, from the Oberland | 0.385 | 13% |
+| 19 | Parents of Mary Baran | 5 | 1.885 | 61% | 0% | US Social Security Applications and Claims Index — the children's applications give her maiden name, then the village | 0.377 | 14% |
+| 20 | Parents of Ellen Shillington | 6 | 1.530 | 35% | 0% | Pennsylvania death certificates 1906-1970 — if she died after 1906 | 0.357 | 6% |
+| 21 | Parents of Huldah Meech Nickerson | 7 | 1.517 | 48% | 0% | Published family genealogies — a Meech family genealogy | 0.354 | 11% |
+| 22 | Parents of Christina Newan Meyer | 7 | 1.006 | 57% | 24% | Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI — baptism c.1781; pages not yet read — HathiTrust blocked the IP mid-pass (item 35) | 0.352 | 7% |
+| 23 | Parents of Ulrich Burkhalter | 10 | 0.869 | 38% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — gives the home parish; Burkhalter is a Bernese name | 0.304 | 4% |
+| 24 | Parents of Thor Svenumsen | 8 | 0.745 | 55% | 0% | Digitalarkivet church books and censuses — b. 1777 per the 1801 census; a Holum baptism would name the father Svenum | 0.273 | 0% |
+| 25 | Parents of Ole Andreas Olsen | 7 | 1.500 | 28% | 58% | Digitalarkivet church books and censuses — his confirmation c.1828, and the Flekkefjord registers, untried | 0.250 | 1% |
+| 26 | Other parent of Elizabeth Barbara Burkhalter | 9 | 0.580 | 58% | 0% | Northampton Will Books 1752-1787 — Ulrich died 1762 in what was by then Northampton; his will names his wife | 0.232 | 0% |
+| 27 | Parents of Michael Newhard | 9 | 0.866 | 66% | 0% | FamilySearch Germany births and baptisms index — a baptism at Zweibrücken, 9 Feb 1713 | 0.216 | 1% |
+| 28 | Parents of Ole Olsen | 7 | 1.397 | 20% | 20% | Digitalarkivet church books and censuses — first identify which Ole Olsen of Egersund, a gardmann in 1863 (lead 21) | 0.186 | 0% |
+| 29 | Parents of Suzanne Mangeot | 10 | 0.921 | 59% | 32% | Metz Protestant registers GG236-GG253, read page by page — 1674 baptism in GG248-GG253, read by eye | 0.184 | 0% |
+| 30 | Parents of Christian Miller | 9 | 0.889 | 24% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — Müller is the commonest name in the lists | 0.178 | 0% |
+| 31 | Parents of Nicholas Mihm | 6 | 0.808 | 48% | 0% | Naturalization records — naturalization gives the German home | 0.162 | 0% |
+| 32 | Parents of William Nickerson | 12 | 0.536 | 51% | 0% | England births, christenings and marriages indexes — a Norwich baptism of 1603-04 | 0.161 | 0% |
+| 33 | Parents of Elizabeth Doll | 9 | 1.046 | 24% | 0% | Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies — the Doll family on the Samuel, 1739 | 0.157 | 0% |
+| 34 | Parents of Mercy Williams Nickerson | 11 | 0.504 | 35% | 53% | Massachusetts town vital records — 1668 marriage | 0.151 | 0% |
+| 35 | Parents of Lydia Castle | 6 | 1.500 | 15% | 0% | New York State and NYC marriage, birth and death indexes and certificates — her maiden name, from a child's record | 0.150 | 0% |
+| 36 | Parents of Catharina Kern Meyer | 8 | 0.641 | 68% | 52% | Ancestry, Pennsylvania Wills and Probate 1683-1993 — Georg Jacob Kern's will, Northampton 1787-1839 (item 33) | 0.150 | 0% |
+| 37 | Parents of Jacob Mayer | 6 | 0.887 | 32% | 0% | Naturalization records — naturalization, New York | 0.148 | 0% |
+| 38 | Other parent of Frederick Millet | 5 | 0.947 | 62% | 7% | Zion — his baptism c.1820 names his mother; Ancestry does not hold the register (lead 12) | 0.118 | 0% |
+| 39 | Other parent of Susanne Miller | 8 | 0.321 | 50% | 17% | Northampton Will Books 1752-1787 — Christian Miller of Lynn — then Northampton County — would name his wife in a will before 1787 | 0.112 | 0% |
+| 40 | Parents of Catharine Mihm | 6 | 0.754 | 20% | 0% | New Jersey birth, marriage and death records — her death record gives her maiden name | 0.101 | 0% |
+| 41 | Prove Martin Millot → Frederick Millet | 5 | 0.602 | 69% | 32% | Zion — the baptism is the one record that proves or breaks it (lead 12) | 0.083 | 0% |
+| 42 | Parents of Nicholas Busby | 13 | 0.384 | 44% | 0% | England births, christenings and marriages indexes — a baptism c.1587 | 0.077 | 0% |
+| 43 | Parents of Bridget Busby | 13 | 0.369 | 20% | 0% | England births, christenings and marriages indexes — the Busby marriage c.1605-15 gives her surname first | 0.074 | 0% |
+| 44 | Other parent of Martin Millot | 6 | 0.427 | 49% | 0% | F. Edward Wright, Berks County Church Records of the 18th Century — his baptism c.1789-91 at Hill Church names his mother (lead 14) | 0.057 | 0% |
+| 45 | Prove Sgt. Frederick Millet → Martin Millot | 6 | 0.314 | 70% | 17% | F. Edward Wright, Berks County Church Records of the 18th Century — Martin's baptism at Hill Church names his father; Ancestry indexes only the 1805 confirmations (leads 3, 14) | 0.052 | 0% |
+| 46 | Parents of Sgt. Frederick Millet | 7 | 0.258 | 49% | 16% | Berks and Philadelphia estates and Orphans' Court — estates 1750-1785 for a Möloth; the Millot sweeps may not have tried that spelling (lead 4) | 0.046 | 0% |
+| 47 | Prove Louis Michelet → John Jacob Mickley Sr. | 9 | 1.392 | 31% | 22% | Burgert, Western Palatinate emigrants; Hacker, Auswanderungen — a Mückli among Palatine emigrants | 0.046 | 0% |
+| 48 | Prove Martin Meyer Sr. → Peter Meyer Sr. | 8 | 0.107 | 72% | 46% | Ancestry, Pennsylvania Wills and Probate 1683-1993 — Martin's 1807 will names his sons; it is in the Northampton gap (item 33) | 0.043 | 0% |
+| 49 | Other parent of Inger Marie Thorsdatter | 7 | 0.752 | 7% | 50% | Digitalarkivet church books and censuses — Søgne registers missing 1759-1821; her mother would need Thor's marriage | 0.038 | 0% |
+| 50 | Parents of Mary Barbara Newhard | 9 | 0.545 | 10% | 0% | Published family genealogies — her maiden name is recorded nowhere yet | 0.036 | 0% |
+| 51 | Prove Thor Svenumsen → Inger Marie Thorsdatter | 7 | 0.231 | 27% | 42% | Digitalarkivet church books and censuses — Ole Thorsen's own baptism and confirmation would name his father; untried | 0.031 | 0% |
+| 52 | Other parent of Anne Philpin | 11 | 0.163 | 43% | 20% | FamilySearch index of the Metz Protestant registers — her father Pierre is known; her baptism c.1630 would name her mother | 0.029 | 0% |
+| 53 | Other parent of Marie Colin | 12 | 0.147 | 28% | 25% | FamilySearch index of the Metz Protestant registers — father Daniel Collin known; baptism c.1595 | 0.022 | 0% |
+| 54 | Prove Ulrich Burkhalter → Elizabeth Barbara Burkhalter | 9 | 0.031 | 59% | 0% | Northampton Will Books 1752-1787 — Ulrich's 1762 will would name his daughter | 0.014 | 0% |
+| 55 | Parents of Martin Meyer Sr. | 9 | 0.381 | 6% | 68% | Ancestry, Pennsylvania Wills and Probate 1683-1993 — his will will not name his parents | 0.013 | 0% |
+| 56 | Other parent of Suzanne Wiriot | 13 | 0.099 | 18% | 24% | FamilySearch index of the Metz Protestant registers — father Jean Wiriot known; the 1591 marriage names only him | 0.009 | 0% |
+| 57 | Other parent of Peter Meyer Sr. | 8 | 0.321 | 1% | 90% | Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI — his baptism is not in the register (item 35) | 0.003 | 0% |
+| 58 | Parents of Jacquemin Michelet | 13 | 0.142 | 15% | 0% | Metz municipal accounts and parlement rolls — his offices of 1587 and 1593 (lead 8) | 0.003 | 0% |
+| 59 | Prove Jehan Michelet → Jacquemin Michelet | 13 | 0.059 | 5% | 0% | Metz municipal accounts and parlement rolls — no record route is known | 0.001 | 0% |
+| 60 | Parents of Jehan Michelet | 14 | 0.024 | 2% | 0% | Metz municipal accounts and parlement rolls — fl. 1444; nothing to search | 0.000 | 0% |
+| 61 | Prove Christian Miller → Susanne Miller *(uncurated)* | 8 | 0.086 | 0% | 0% | — | 0.000 | 0% |
+| 62 | Prove John Castle → Orpha Castle Nickerson *(uncurated)* | 5 | 0.314 | 0% | 0% | — | 0.000 | 0% |
+| 63 | Prove Lydia Castle → Orpha Castle Nickerson *(uncurated)* | 5 | 0.161 | 0% | 0% | — | 0.000 | 0% |
+| 64 | Prove Nicholas Mihm → Joseph Mihm *(uncurated)* | 5 | 0.146 | 0% | 0% | — | 0.000 | 0% |
+| 65 | Prove Catharine Mihm → Joseph Mihm *(uncurated)* | 5 | 0.105 | 0% | 0% | — | 0.000 | 0% |
 
 ## Walls — where the searching is done and the door is shut
 
 Targets where at least 40% of the evidence has been spent on searches that came back empty. The model already deprioritises these; they are listed so the reason is visible, and so the one door still open is named.
 
+- **Other parent of Peter Meyer Sr.** — 90% of the evidence spent; **1% chance left**.
+  - spent: Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI — his baptism is not in the register (item 35)
+  - nothing untried is listed
 - **Parents of Martin Meyer Sr.** — 68% of the evidence spent; **6% chance left**.
   - spent: Roberts, History of Lehigh County — the Meyer sketch names no immigrant (item 34)
   - still open: Ancestry, Pennsylvania Wills and Probate 1683-1993 — his will will not name his parents
@@ -141,6 +153,11 @@ Targets where at least 40% of the evidence has been spent on searches that came 
 - **Other parent of Inger Marie Thorsdatter** — 50% of the evidence spent; **7% chance left**.
   - spent: Digitalarkivet church books and censuses — Søgne registers missing 1759-1821; her mother would need Thor's marriage
   - nothing untried is listed
+- **Prove Martin Meyer Sr. → Peter Meyer Sr.** — 46% of the evidence spent; **72% chance left**.
+  - spent: Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI — read 1734-c.1774: one Meyer baptism only, 26 June 1757, sponsor Elisabeth Mickli; no Peter c.1752 (item 35)
+  - spent: Roberts, History of Lehigh County — the Meyer sketch lists Peter's ten children 1776-1793 but not his parentage (item 34)
+  - spent: Northampton Deed Books 1797-1835 — deeds of 1801-1824 on a Martin Meyer estate naming heirs; 80 hits seen, not read (item 33)
+  - still open: Ancestry, Pennsylvania Wills and Probate 1683-1993 — Martin's 1807 will names his sons; it is in the Northampton gap (item 33)
 - **Prove Thor Svenumsen → Inger Marie Thorsdatter** — 42% of the evidence spent; **27% chance left**.
   - spent: Digitalarkivet church books and censuses — the 1838 marriage forlovere and the 1865 census, already used
   - still open: Digitalarkivet church books and censuses — Ole Thorsen's own baptism and confirmation would name his father; untried
@@ -149,7 +166,7 @@ Targets where at least 40% of the evidence has been spent on searches that came 
 
 Not walls — nothing has been spent on these — but no listed source gives better than a one-in-five chance. They are where the records simply stop.
 
-Parents of Ole Olsen (20%); Parents of Bridget Busby (20%); Other parent of Suzanne Wiriot (18%); Parents of Jacquemin Michelet (15%); Parents of Mary Barbara Newhard (10%); Other parent of Peter Meyer Sr. (10%); Prove Jehan Michelet → Jacquemin Michelet (5%); Parents of Jehan Michelet (2%); Prove Christian Miller → Susanne Miller (0%).
+Parents of Ole Olsen (20%); Parents of Catharine Mihm (20%); Parents of Bridget Busby (20%); Other parent of Suzanne Wiriot (18%); Parents of Lydia Castle (15%); Parents of Jacquemin Michelet (15%); Parents of Mary Barbara Newhard (10%); Prove Jehan Michelet → Jacquemin Michelet (5%); Parents of Jehan Michelet (2%); Prove Christian Miller → Susanne Miller (0%); Prove John Castle → Orpha Castle Nickerson (0%); Prove Lydia Castle → Orpha Castle Nickerson (0%); Prove Nicholas Mihm → Joseph Mihm (0%); Prove Catharine Mihm → Joseph Mihm (0%).
 
 ## Where the effort has gone, and where the value is
 
@@ -157,14 +174,15 @@ Per branch of the tree: the value still open, the evidence already spent on sear
 
 | Branch | Open targets | Value open | Evidence spent | Expected gain left | Best score |
 |---|---:|---:|---:|---:|---:|
-| Schuylkill County 1850-1930: Williams, Dornsife, Herring, Martin | 5 | 10.15 | 0.50 | 8.72 | 1.121 |
-| Pennsylvania German: Millet, Moyer, Kern, Mickley, Burkhalter | 19 | 10.47 | 2.67 | 4.63 | 0.385 |
-| New York: Castle, Baumes, Meech | 3 | 5.67 | 0.00 | 3.86 | 1.128 |
+| Pennsylvania German: Millet, Moyer, Kern, Mickley, Burkhalter | 27 | 17.63 | 3.17 | 9.14 | 0.724 |
 | New England and Norwich: Nickerson, Busby | 7 | 5.04 | 0.88 | 3.01 | 0.802 |
+| New York: Castle, Baumes, Meech | 4 | 6.41 | 0.28 | 2.72 | 0.673 |
+| Schuylkill County 1850-1930: Williams, Dornsife, Herring, Martin | 2 | 3.59 | 0.97 | 2.70 | 0.937 |
 | Bayonne: the Barans | 2 | 3.76 | 0.00 | 2.55 | 0.438 |
-| Jersey City: Mihm, Mayer | 3 | 3.48 | 0.00 | 2.48 | 0.940 |
 | Norway: Egersund and Søgne | 6 | 6.15 | 0.74 | 2.15 | 0.609 |
+| Jersey City: Mihm, Mayer | 4 | 3.33 | 0.00 | 1.51 | 0.530 |
 | Denmark: the Christoffersens | 2 | 3.71 | 0.17 | 1.38 | 0.445 |
+| wales | 2 | 3.06 | 0.00 | 1.33 | 0.408 |
 | Metz: the Michelets | 8 | 2.95 | 0.71 | 1.12 | 0.184 |
 | palatinate | 1 | 0.87 | 0.00 | 0.57 | 0.216 |
 
@@ -174,15 +192,15 @@ Two checks, because the probabilities are judgement. **Structural parameters**: 
 
 | decay | continuation | Spearman ρ | Top-10 kept |
 |---:|---:|---:|---:|
-| 0.7 | 0.4 | 0.969 | 8/10 |
-| 0.7 | 0.55 | 0.974 | 9/10 |
-| 0.7 | 0.7 | 0.978 | 9/10 |
+| 0.7 | 0.4 | 0.967 | 7/10 |
+| 0.7 | 0.55 | 0.972 | 8/10 |
+| 0.7 | 0.7 | 0.977 | 8/10 |
 | 0.85 | 0.4 | 0.996 | 10/10 |
 | 0.85 | 0.55 (baseline) | 1.000 | 10/10 |
-| 0.85 | 0.7 | 0.999 | 10/10 |
-| 0.95 | 0.4 | 0.983 | 8/10 |
-| 0.95 | 0.55 | 0.986 | 8/10 |
-| 0.95 | 0.7 | 0.986 | 9/10 |
+| 0.85 | 0.7 | 0.998 | 9/10 |
+| 0.95 | 0.4 | 0.982 | 9/10 |
+| 0.95 | 0.55 | 0.985 | 9/10 |
+| 0.95 | 0.7 | 0.984 | 8/10 |
 
 **Judged probabilities**: every p was multiplied by an independent lognormal factor (σ = 0.35, roughly ±40%) over 400 draws. The *Top 10* and *Top 5* columns above report the result. A target at 90% or more is in the top ten whatever reasonable view one takes of the odds; one near 50% sits on the boundary and depends on the judgement.
 
