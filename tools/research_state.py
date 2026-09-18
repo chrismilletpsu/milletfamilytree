@@ -198,12 +198,14 @@ TARGETS = {
       S("anc_probate", 0.2, 1.0, "Ancestry suggests a Pennsylvania will or probate for an Israel Herring; which one is unchecked"),
   ]),
   "emmabankus": dict(region="pa_german", sources=[
+      S("pa_death", 0.4, 0.4, "no certificate as Emma Herring, born c.1835, husband Israel; probably died before 1906 (item 43)"),
       S("census", 0.4, 0.4, "no Emma Bankus in Schuylkill in 1850, soundex included; the name may be Banks or Bangus (item 39)"),
       S("pa_death", 0.4, 1.0, "if she died after 1906"),
   ]),
   # levidornsife -- SOLVED 18 Sept 2026: 1850 census (Coal Twp.) and death certificate 117569, indexed 'Sarnsife' (item 37)
   "kathrynbroscious": dict(region="pa_german", sources=[
       S("census", 0.4, 0.5, "her name settled as Lydia (1870, 1880); an 1850 search for Lydia Broscious returned nothing (item 39)"),
+      S("pa_death", 0.5, 0.5, "alive Dec 1908 by Levi's certificate, yet no certificate found under Dornsife or with a husband Levi; misindexed, or remarried (item 43)"),
       S("pa_death", 0.5, 1.0, "if she died after 1906"),
       S("census", 0.4, 1.0, "a Broscious household"),
   ]),
@@ -230,13 +232,17 @@ TARGETS = {
   ]),
 
   # sophiapipko -- SOLVED 18 Sept 2026 by the variant step: 1920 census, 'Sophie Ripko', father Paul, mother Celia, Tamaqua (item 41)
-  "paulpipko": dict(region="poland", runway=0.5, sources=[
-      S("natz", 0.4, 1.0, "he owned his house by 1920; a naturalization would give the Galician village"),
-      S("census", 0.15, 1.0, "1910 and 1930 censuses give arrival year, not the village"),
+  # paulpipko -- SOLVED 18 Sept 2026: death certificate 62646 names John and Mary Ripko (item 43)
+  "johnripko": dict(region="poland", runway=0.5, sources=[
+      S("natz", 0.3, 1.0, "Paul's naturalization would give the Galician village, and then the parish books"),
   ]),
-  "celiaripko": dict(region="poland", runway=0.5, sources=[
-      S("pa_death", 0.4, 1.0, "her death certificate, if after 1906 in Pennsylvania, gives her maiden name and parents"),
-      S("ss_apps", 0.25, 1.0, "a child's application gives her maiden name"),
+  "maryripko": dict(region="poland", runway=0.5, sources=[
+      S("natz", 0.15, 1.0, "her maiden name comes only from the village register"),
+  ]),
+  # celiaripko -- SOLVED 18 Sept 2026: death certificate 6156, Cecelia Polash, father John Polash (item 43)
+  "johnpolash": dict(region="poland", runway=0.5, sources=[
+      S("ss_apps", 0.15, 1.0, "a child's application may repeat the grandparents' names"),
+      S("natz", 0.2, 1.0, "Paul or Cecelia's naturalization gives the home village"),
   ]),
   "henrydornsife": dict(region="pa_german", sources=[
       S("genealogies", 0.3, 1.0, "the Dornsife family of Lehigh and Northumberland is written up"),
@@ -496,8 +502,7 @@ NAME_RISK = {
 }
 # Where the research log gives reason to set it higher or lower.
 NAME_RISK_OVERRIDE = {
-    "paulpipko": 0.35,         # the family is Ripko; 'Pipko' was the certificate's slip (item 41)
-    "celiaripko": 0.35,
+    "johnripko": 0.35, "maryripko": 0.35, "johnpolash": 0.45,
     "emmabankus": 0.50,        # not in 1850 under Bankus, soundex included (item 39)
     "kathrynbroscious": 0.45,  # Lydia Broscious not found in 1850 (item 39)
     "israelherring": 0.20,     # found readily; the name is stable

@@ -3018,6 +3018,13 @@ Records were located through FamilySearch (indexed records, the shared tree, ful
 
 42. **GenealogyBank cannot hold Adolph Martin's obituary (18 September 2026).** A search for Adolph Martin in Pennsylvania papers of 11–25 June 1934 returns nothing, with or without "Grier". **Control:** the same dates with the surname Martin alone return plenty, and the publication-place facet shows what GenealogyBank has for Pennsylvania that fortnight — **Chester, Erie, Harrisburg, Pittsburgh, Pottstown, Reading and Washington; no Pottsville, Tamaqua or Shenandoah paper**. The obituary indexed on Newspapers.com (item 40) was in a Schuylkill paper GenealogyBank does not carry, so its absence here is a coverage fact, not a negative. The route to Adolph Martin's birthplace remains that obituary, on Newspapers.com.
 
+43. **The Ripkos one generation further, and two negatives (18 September 2026).**
+    - **Paul Ripko's parents.** Pennsylvania death certificate **62646**: **Paul J. Ripko**, born in **Austria 29 June 1881**, died at **Coaldale** (the next town to Tamaqua) **24 July 1954**, aged 73; **father John Ripko, mother Mary Ripko**. Rare surname, right age, right place, widowed since 1947.
+    - **Celia Ripko's maiden name.** Certificate **6156**: **Mrs. Cecelia Ripko, née Polash**, born **20 March 1883**, died at **Tamaqua 27 January 1947**, aged 63; **father John Polash**; mother not named; husband Paul. Her birthplace is given as **Germany**, where the 1920 census has **Austria** — possibly Prussian rather than Austrian Poland. The conflict is recorded, not resolved.
+    - **Three direct ancestors added**: John Ripko, Mary Ripko, John Polash. None has a village yet; the next record is **Paul's naturalization**, since he owned his house by 1920 and was likely naturalized, which would give the Galician village and open the Polish parish books (Geneteka).
+    - **Negatives.** **Lydia (Broscious) Dornsife** was alive in December 1908 — Levi's certificate calls him married — yet no Pennsylvania death certificate is found for her under Dornsife or with a husband Levi. Either it is misindexed, as Levi's own was ("Sarnsife"), or she remarried. A Lydia Byerly, born June 1838, died at Pottsville in 1921 with no relatives indexed; she is noted, not assumed. **Emma (Bankus) Herring** has no certificate as the wife of Israel Herring, and probably died before 1906.
+    - **Newspapers.com** (for Adolph Martin's obituary) needs a subscription or a free trial, which means creating an account with payment details — something for the user to do, not the assistant.
+
 ## All sources
 
 - [*Heads of Families at the First Census … 1790: Pennsylvania*](https://archive.org/details/headsoffamiliesa08unit)
