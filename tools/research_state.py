@@ -106,6 +106,8 @@ ERRANDS = {
     "metz_offices":  (5.0, "Metz municipal accounts and parlement rolls (liasses anciennes)"),
     "bern_kb":       (2.0, "Canton Bern parish registers (Staatsarchiv Bern, free online)"),
     "fs_de_index":   (1.0, "FamilySearch Germany births and baptisms index"),
+    "digitalark_img":(2.5, "Digitalarkivet scanned church books, read by eye (baptisms not transcribed for the parish)"),
+    "md_marr":       (1.5, "Maryland marriage licences, Cecil County (Elkton), where underage Pennsylvania couples went"),
 }
 
 S = lambda errand, p, r, note: (errand, p, r, note)
@@ -126,6 +128,7 @@ JOINS = {
     ("lydiacastle", "orpha"):      (0.80, "same census match (item 35)"),
     ("nicholasmihm", "josephmihm"):   (0.85, "1880 census, Jersey City, right age; his son was Joseph Nicholas (item 35)"),
     ("catharinemihm", "josephmihm"):  (0.85, "same census match (item 35)"),
+    ("barbaraburkhalter", "elizbarbara"): (0.80, "the 1754 deed makes her Peter's mother; Elizabeth Barbara carries her name (item 39)"),
     ("sophiapipko", "marie"):      (0.92, "exact-date match: the 1930 licence dates the former wife's death 7 Oct 1926; her certificate, wife of William Williams, illness contracted at Tamaqua (item 37)"),
     ("johnnorris", "sybil"):       (0.80, "Fairfield birth and baptism of 1740/41: name, year and county agree (item 36)"),
     ("experiencenorris", "sybil"): (0.80, "same (item 36)"),
@@ -193,11 +196,12 @@ TARGETS = {
       S("anc_probate", 0.2, 1.0, "Ancestry suggests a Pennsylvania will or probate for an Israel Herring; which one is unchecked"),
   ]),
   "emmabankus": dict(region="pa_german", sources=[
-      S("census", 0.4, 1.0, "a Bankus household, Schuylkill, 1850-1860"),
+      S("census", 0.4, 0.4, "no Emma Bankus in Schuylkill in 1850, soundex included; the name may be Banks or Bangus (item 39)"),
       S("pa_death", 0.4, 1.0, "if she died after 1906"),
   ]),
   # levidornsife -- SOLVED 18 Sept 2026: 1850 census (Coal Twp.) and death certificate 117569, indexed 'Sarnsife' (item 37)
   "kathrynbroscious": dict(region="pa_german", sources=[
+      S("census", 0.4, 0.5, "her name settled as Lydia (1870, 1880); an 1850 search for Lydia Broscious returned nothing (item 39)"),
       S("pa_death", 0.5, 1.0, "if she died after 1906"),
       S("census", 0.4, 1.0, "a Broscious household"),
   ]),
@@ -224,7 +228,8 @@ TARGETS = {
   ]),
 
   "sophiapipko": dict(region="poland", sources=[
-      S("census", 0.5, 1.0, "the 1910 and 1920 Pipko households, Shenandoah, give her mother's name"),
+      S("census", 0.5, 0.35, "not found as Pipko in 1910 or 1920, nor Paul Pipko anywhere in Pennsylvania; the spelling is suspect (item 39)"),
+      S("md_marr", 0.3, 1.0, "a marriage at 14-15 in 1920-21 may have been at Elkton, Maryland; the licence names her parents"),
       S("ss_apps", 0.2, 1.0, "a sibling's application would name both parents"),
   ]),
   "paulpipko": dict(region="poland", runway=0.5, sources=[
@@ -312,6 +317,10 @@ TARGETS = {
       S("fs_de_index", 0.25, 1.0, "a baptism at Zweibrücken, 9 Feb 1713"),
       S("archion", 0.3, 1.0, "the Zweibrücken Reformed registers"),
   ]),
+  "barbaraburkhalter": dict(region="switzerland", runway=0.5, sources=[
+      S("faust_brum", 0.1, 0.2, "the Bern lists have no Ulrich (item 38)"),
+      S("bern_kb", 0.15, 1.0, "an Emmental marriage of Ulrich and Barbara c.1715, parish unknown"),
+  ]),
   "barbaranewhard": dict(region="pa_german", sources=[
       S("genealogies", 0.1, 1.0, "her maiden name is recorded nowhere yet"),
   ]),
@@ -332,7 +341,7 @@ TARGETS = {
       S("anc_probate", 0.05, 1.0, "his will will not name his parents"),
   ]),
   "elizbarbara": dict(region="switzerland", sources=[
-      S("nham_wills_a", 0.4, 1.0, "Ulrich died 1762 in what was by then Northampton; his will names his wife"),
+      S("nham_wills_a", 0.4, 0.0, "SOLVED by a deed instead: the 1754 deed of gift names 'Barbara his wife' (item 39)"),
       S("faust_brum", 0.3, 0.2, "no Ulrich in the Bern lists (item 38)"),
   ]),
   "ulrich>elizbarbara": dict(kind="join", region="switzerland", sources=[
@@ -346,7 +355,8 @@ TARGETS = {
 
   # ---- Norway ------------------------------------------------------------
   "marthe": dict(region="norway", sources=[
-      S("digitalark", 0.6, 1.0, "her own baptism c.1820, Eigersund; not yet looked for (lead 21)"),
+      S("digitalark", 0.6, 0.15, "searched: Eigersund baptisms c.1820 are not transcribed -- church-book hits (0), census hits only (item 39)"),
+      S("digitalark_img", 0.5, 1.0, "read the scanned Eigersund ministerialbok for 1819-1821 by eye"),
   ]),
   "oleolsen": dict(region="norway", sources=[
       S("digitalark", 0.25, 0.8, "first identify which Ole Olsen of Egersund, a gardmann in 1863 (lead 21)"),
