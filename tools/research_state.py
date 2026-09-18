@@ -67,7 +67,7 @@ ERRANDS = {
     "mick1893":      (0.5, "1893 Mickley genealogy -- local OCR, grep"),
     "egypt_reg":     (1.0, "Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI (HathiTrust mdp.35112103983625, per-page OCR)"),
     "otis":          (1.0, "Otis, Genealogical Notes of Barnstable Families (archive.org)"),
-    "faust_brum":    (1.5, "Faust & Brumbaugh vol. II (1925), Bern and Basel lists -- HathiTrust; vol. I (Zurich, archive.org) read 18 Sept 2026 with no hits, a coverage mismatch"),
+    "faust_brum":    (1.5, "Faust & Brumbaugh, Lists of Swiss Emigrants: vol. I (Zurich, archive.org) and vol. II (Bern, Basel; HathiTrust coo.31924092921273) both searched 18 Sept 2026"),
     "nham_wills_a":  (1.0, "Northampton Will Books 1752-1787 (FamilySearch full text, Northampton place filter)"),
     "nham_deeds":    (1.5, "Northampton Deed Books 1797-1835 (FamilySearch full text)"),
     "lehigh_ft":     (1.5, "Lehigh parish, estate and Orphans' Court images (FamilySearch full text, Lehigh filter)"),
@@ -291,7 +291,7 @@ TARGETS = {
       S("nham_wills_a", 0.1, 1.0, "the elder George Kern's will, if before 1787 -- 'George Kern' not yet searched"),
   ]),
   "christinanewan": dict(region="pa_german", sources=[
-      S("egypt_reg", 0.35, 1.0, "baptism c.1781; pages not yet read -- HathiTrust blocked the IP mid-pass (item 35)"),
+      S("egypt_reg", 0.35, 0.1, "1778-1784 read with a control: no Christina baptized; the looser search finds Christoph, Christian and a Christina sponsor (item 38)"),
       S("roberts_gen", 0.25, 0.1, "the Newhard sketch has no Christina of her generation, so 'Newan' as Newhard is unsupported (item 34)"),
       S("lehigh_ft", 0.2, 1.0, "Lehigh parish and estate images"),
       S("anc_probate", 0.15, 1.0, "her father's will"),
@@ -300,7 +300,7 @@ TARGETS = {
   # Newhard sketches independently make her the eldest daughter of Henry Biery and Maria Salome
   # Newhard, born Longswamp 30 Jan 1773 (item 34). Her frontier moves up to the four below.
   "josephbiery": dict(region="switzerland", runway=0.8, sources=[
-      S("faust_brum", 0.35, 1.0, "a Bern emigrant of 1739, from the Oberland"),
+      S("faust_brum", 0.35, 0.2, "vol. II searched for Bieri and Biery: nothing; the lists are only those the Bernese authorities recorded (item 38)"),
       S("bern_kb", 0.25, 1.0, "a Bieri baptism of 1703; the Oberland parish is not known"),
   ]),
   "elizabethdoll": dict(region="switzerland", runway=0.5, sources=[
@@ -333,14 +333,14 @@ TARGETS = {
   ]),
   "elizbarbara": dict(region="switzerland", sources=[
       S("nham_wills_a", 0.4, 1.0, "Ulrich died 1762 in what was by then Northampton; his will names his wife"),
-      S("faust_brum", 0.3, 1.0, "Swiss emigrant lists name wives"),
+      S("faust_brum", 0.3, 0.2, "no Ulrich in the Bern lists (item 38)"),
   ]),
   "ulrich>elizbarbara": dict(kind="join", region="switzerland", sources=[
       S("nham_wills_a", 0.45, 1.0, "Ulrich's 1762 will would name his daughter"),
-      S("faust_brum", 0.25, 1.0, "family lists at emigration"),
+      S("faust_brum", 0.25, 0.2, "no Ulrich in the Bern lists (item 38)"),
   ]),
   "ulrich": dict(region="switzerland", runway=0.8, sources=[
-      S("faust_brum", 0.35, 1.0, "gives the home parish; Burkhalter is a Bernese name"),
+      S("faust_brum", 0.35, 0.2, "vol. II: Burkhalters of the Emmental (a Michael of Lutzelfluh, to Carolina 1735) but no Ulrich (item 38)"),
       S("nham_wills_a", 0.05, 1.0, "his will will not name his parents"),
   ]),
 
@@ -370,7 +370,8 @@ TARGETS = {
   # sybil -- SOLVED 18 Sept 2026 (probable): Barbour and a church abstract give John and Experience Norris of Fairfield (item 36)
   "dorcas": dict(region="new_england", sources=[
       S("ma_vr", 0.6, 0.5, "no Dorcas Covel born near 1714 (theirs are 1747-55); the 1729 marriage is not indexed (item 36)"),
-      S("genealogies", 0.4, 1.0, "a Basset genealogy of Chatham: Otis prints Mary (Crowell) Basset's 1742 will naming 'Dorcas Nickerson and Hannah Covell' (item 36)"),
+      S("genealogies", 0.4, 0.3, "Basset lead weakened: Stephen and Thomas Jr. Nickerson of Chatham also had wives named Dorcas, so the 1742 will cannot be tied to her (item 38)"),
+      S("ma_vr", 0.2, 0.2, "the printed Chatham records (Mayflower Descendant) hold no marriage or births for James and Dorcas (item 38)"),
       S("otis", 0.2, 0.3, "read: produced the Basset lead, not a Covel parentage (item 36)"),
       S("savage", 0.15, 0.1, "Savage's only Covells are of Marblehead and Malden (item 34)"),
   ]),
