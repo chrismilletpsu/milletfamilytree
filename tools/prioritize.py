@@ -24,6 +24,8 @@ the tree carries as probable. Each target has a value, in "ancestor units":
 Each target lists sources, each with a chance p of answering and a residual r
 of that chance still unspent after the searching already done. Then
 
+  census rule   a census source's p is scaled by min(1, (birth year - 1825) / 15), floor 0.15,
+                because only someone still a child in 1850 appears in a census with parents
   chance left   P = 1 - prod(1 - p * r)
   wall          W = sum(p * (1 - r)) / sum(p)   share of the evidence already spent
   step score      = V * p * r / cost        expected ancestor units per unit of effort
@@ -113,6 +115,13 @@ def runway_yield(year, region, factor=1.0, prm=P):
     q = prm["continuation"]
     return (1 - q ** (R + 1)) / (1 - q), R
 
+def census_factor(year):
+    """The 1850 census is the first to list everyone in a household, so it shows a
+    person living with their parents only if they were still a child in 1850. For
+    someone born before about 1830 the census cannot name their parents at all.
+    Learned the hard way: see RESEARCH.md item 36."""
+    return max(0.15, min(1.0, (year - 1825) / 15))
+
 def default_region(p):
     place = p["place"]
     for key, region in (("Norway", "norway"), ("Metz", "metz"), ("England", "england"),
@@ -154,7 +163,8 @@ def score(people, edges, prm=P, noise=None):
         else:
             V = prm["collateral"] * base
         sources = spec["sources"] if spec else [("__default", 0.3, 1.0, "uncurated: a standard record search")]
-        sources = [(e, min(nz(p_), 0.95), r, note) for (e, p_, r, note) in sources]
+        cf = census_factor(year_of(p))
+        sources = [(e, min(nz(p_) * (cf if e == "census" else 1.0), 0.95), r, note) for (e, p_, r, note) in sources]
         targets.append(dict(key=pid, kind="parents", person=p, gen=p["gen"] + 1, V=V, m=m, base=base,
                             region=(spec or {}).get("branch", region),
                             known=known, runway=R, direct=p["direct"], curated=bool(spec),

@@ -66,7 +66,7 @@ ERRANDS = {
     "mick1893":      (0.5, "1893 Mickley genealogy -- local OCR, grep"),
     "egypt_reg":     (1.0, "Printed Egypt Reformed register, Pa. Archives 6th ser. vol. VI (HathiTrust mdp.35112103983625, per-page OCR)"),
     "otis":          (1.0, "Otis, Genealogical Notes of Barnstable Families (archive.org)"),
-    "faust_brum":    (1.0, "Faust & Brumbaugh, Lists of Swiss Emigrants to the American Colonies (archive.org)"),
+    "faust_brum":    (1.5, "Faust & Brumbaugh vol. II (1925), Bern and Basel lists -- HathiTrust; vol. I (Zurich, archive.org) read 18 Sept 2026 with no hits, a coverage mismatch"),
     "nham_wills_a":  (1.0, "Northampton Will Books 1752-1787 (FamilySearch full text, Northampton place filter)"),
     "nham_deeds":    (1.5, "Northampton Deed Books 1797-1835 (FamilySearch full text)"),
     "lehigh_ft":     (1.5, "Lehigh parish, estate and Orphans' Court images (FamilySearch full text, Lehigh filter)"),
@@ -125,6 +125,8 @@ JOINS = {
     ("lydiacastle", "orpha"):      (0.80, "same census match (item 35)"),
     ("nicholasmihm", "josephmihm"):   (0.85, "1880 census, Jersey City, right age; his son was Joseph Nicholas (item 35)"),
     ("catharinemihm", "josephmihm"):  (0.85, "same census match (item 35)"),
+    ("johnnorris", "sybil"):       (0.80, "Fairfield birth and baptism of 1740/41: name, year and county agree (item 36)"),
+    ("experiencenorris", "sybil"): (0.80, "same (item 36)"),
 }
 
 # --------------------------------------------------------------------------
@@ -136,7 +138,8 @@ JOINS = {
 TARGETS = {
   # ---- near the present --------------------------------------------------
   "marie": dict(region="pa_modern", sources=[
-      S("pa_marr", 0.6, 1.0, "William Earl Williams's first marriage, Schuylkill, c.1920-21; FamilySearch's county marriages cover Schuylkill, Ancestry's collection 61381 does not (item 35)"),
+      S("pa_marr", 0.6, 0.5, "searched: the one Schuylkill William Williams of his age m. 24 Nov 1921 is Mary Gaul's son; the index carries mothers' names unreliably, so absence is inconclusive (item 36)"),
+      S("pa_marr", 0.35, 1.0, "his 1930 licence to marry Evelyn Beck asks when and how a former marriage ended"),
       S("census", 0.4, 1.0, "1920 census, Gilberton or Tamaqua, gives the wife's name and age"),
       S("newspapers", 0.25, 1.0, "1922 Tamaqua birth notice; a death or divorce before 1930"),
       S("ss_apps", 0.55, 0.1, "tried: her Social Security record names Evelyn Beck, the stepmother"),
@@ -189,16 +192,17 @@ TARGETS = {
 
   # ---- frontier opened by the near-present sweep (item 35) ----------------
   "israelherring": dict(region="pa_german", sources=[
-      S("census", 0.45, 1.0, "1850-1870 Herring households near Tamaqua"),
-      S("pa_death", 0.4, 1.0, "if he died after 1906"),
+      S("census", 0.45, 0.5, "1870 household found (Ryan Twp.); in 1850 he heads his own household with a Caroline -- parents not shown (item 36)"),
+      S("pa_death", 0.4, 0.2, "the only Israel Herring certificate is Israel P. of Somerset County, a different man (item 36)"),
+      S("anc_probate", 0.2, 1.0, "Ancestry suggests a Pennsylvania will or probate for an Israel Herring; which one is unchecked"),
   ]),
   "emmabankus": dict(region="pa_german", sources=[
       S("census", 0.4, 1.0, "a Bankus household, Schuylkill, 1850-1860"),
       S("pa_death", 0.4, 1.0, "if she died after 1906"),
   ]),
   "levidornsife": dict(region="pa_german", sources=[
-      S("pa_death", 0.55, 1.0, "if he died after 1906"),
-      S("census", 0.45, 1.0, "1850-1860 Dornsife households, Northumberland"),
+      S("pa_death", 0.55, 0.2, "no certificate under Dornsife; probably died before 1906 (item 36)"),
+      S("census", 0.5, 1.0, "Ancestry suggests a 'Levi Dornseif' in 1850 -- as a boy of 13 he would be in his parents' household; not yet opened (item 36)"),
       S("genealogies", 0.25, 1.0, "the Dornsife family is well written up"),
   ]),
   "kathrynbroscious": dict(region="pa_german", sources=[
@@ -213,7 +217,7 @@ TARGETS = {
       S("pa_death", 0.35, 1.0, "if she died after 1906"),
   ]),
   "johncastle": dict(region="ny_dutch", sources=[
-      S("census", 0.45, 1.0, "1850 Castle household, Albany County"),
+      S("census", 0.45, 0.6, "no John Castle in Albany Co. in 1850; one of the right age at Kinderhook, Columbia Co., unconfirmed (item 36)"),
       S("findagrave", 0.2, 1.0, "Westerlo burials"),
   ]),
   "lydiacastle": dict(region="ny_dutch", sources=[
@@ -225,6 +229,14 @@ TARGETS = {
   ]),
   "catharinemihm": dict(region="us_de_unk", sources=[
       S("nj_vitals", 0.2, 1.0, "her death record gives her maiden name"),
+  ]),
+
+  "johnnorris": dict(region="new_england", sources=[
+      S("ct_barbour", 0.4, 1.0, "John Norris's own birth or marriage, Fairfield County"),
+      S("genealogies", 0.25, 1.0, "a Norris genealogy of Fairfield"),
+  ]),
+  "experiencenorris": dict(region="new_england", sources=[
+      S("ct_barbour", 0.35, 1.0, "the Norris marriage gives her surname"),
   ]),
 
   # ---- the Millet line ---------------------------------------------------
@@ -348,17 +360,15 @@ TARGETS = {
   ]),
 
   # ---- New England -------------------------------------------------------
-  "sybil": dict(region="new_england", sources=[
-      S("ct_barbour", 0.6, 1.0, "b. 1740; Ridgefield or Norwalk births"),
-      S("genealogies", 0.3, 1.0, "a Norris genealogy"),
-  ]),
+  # sybil -- SOLVED 18 Sept 2026 (probable): Barbour and a church abstract give John and Experience Norris of Fairfield (item 36)
   "dorcas": dict(region="new_england", sources=[
-      S("ma_vr", 0.6, 1.0, "Chatham vital records; the Covells are well documented"),
-      S("otis", 0.2, 1.0, "Barnstable families"),
+      S("ma_vr", 0.6, 0.5, "no Dorcas Covel born near 1714 (theirs are 1747-55); the 1729 marriage is not indexed (item 36)"),
+      S("genealogies", 0.4, 1.0, "a Basset genealogy of Chatham: Otis prints Mary (Crowell) Basset's 1742 will naming 'Dorcas Nickerson and Hannah Covell' (item 36)"),
+      S("otis", 0.2, 0.3, "read: produced the Basset lead, not a Covel parentage (item 36)"),
       S("savage", 0.15, 0.1, "Savage's only Covells are of Marblehead and Malden (item 34)"),
   ]),
   "deliverance": dict(region="new_england", sources=[
-      S("otis", 0.6, 1.0, "Otis covers the Lombards of Barnstable"),
+      S("otis", 0.6, 0.15, "read: no Lombard Deliverance; its Deliverances are Hamblens, Childses, Joneses (item 36)"),
       S("savage", 0.4, 0.2, "the Lombard entries list no Deliverance; the Chatham branch is not in Savage (item 34)"),
       S("ma_vr", 0.3, 1.0, "Chatham and Barnstable records"),
   ]),
