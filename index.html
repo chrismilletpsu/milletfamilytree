@@ -231,7 +231,7 @@
   .placedot { cursor: pointer; }
   .placedot circle.halo { fill: var(--ink); opacity: 0.06; }
   .placedot circle.core { stroke: var(--surface); stroke-width: 1.2; }
-  .placedot text { font-family: "IBM Plex Sans", sans-serif; font-size: 10px; fill: var(--ink-2);
+  .placedot text, .labelmeasure text { font-family: "IBM Plex Sans", sans-serif; font-size: 10px; fill: var(--ink-2);
     paint-order: stroke; stroke: var(--ground); stroke-width: 3px; stroke-linejoin: round; }
   .placedot.sel circle.core { stroke: var(--focus); stroke-width: 2.5; }
   .flight { fill: none; stroke: var(--focus); stroke-width: 1.6; }
@@ -309,7 +309,13 @@
   .node text.years { font-family: "IBM Plex Mono", monospace; font-size: 10px; fill: var(--ink-2); }
   .node.direct text { font-weight: 600; }
   .node.selected circle.dot { stroke: var(--focus); stroke-width: 4; }
-  .node.dim, .edge.dim { opacity: 0.18; }
+  /* Dim by fading each shape's paint, not the whole group: group opacity makes Safari draw
+     every dimmed person into a layer of its own, on every frame of a pan or zoom. Set on the
+     group, the two properties are inherited by its shapes; a rule like ".node.dim > *" would
+     do the same but makes every move of a person restyle all its children. */
+  .node.dim { fill-opacity: 0.18; stroke-opacity: 0.18; }
+  .edge.dim { stroke-opacity: 0.099; }          /* 0.55 x 0.18, as the group opacity gave */
+  .edge.direct.dim { stroke-opacity: 0.171; }   /* 0.95 x 0.18 */
   .node.hidden, .edge.hidden { display: none; }
   .node.hit circle.dot { stroke: var(--focus); stroke-width: 3.5; }
   .node circle.ring { fill: none; stroke: var(--event); stroke-width: 2.25; }
@@ -441,6 +447,7 @@
 
   nodes.forEach(n => { n.x = anchorX(n, contentW) + (Math.random()-0.5)*40; n.y = genY(n.gen); });
 
+  const LABEL_W = new Map();
   const sim = d3.forceSimulation(nodes)
     .force("link", d3.forceLink(links).id(d => d.id).distance(l => l.type==="spouse" ? Math.max(120, labelWidth(l.source.x <= l.target.x ? l.source : l.target) + 34) : 90).strength(l => l.type==="spouse" ? 1 : (l.direct ? 0.35 : 0.18)))
     .force("x", d3.forceX(n => anchorX(n, contentW)).strength(n => n.direct ? 0.30 : 0.11))
@@ -451,14 +458,27 @@
 
   // Labels hang to the right of each circle, so two nodes in the same generation band need
   // horizontal clearance equal to the left node's label width; circles alone under-estimate it.
-  function labelWidth(n) { return 18 + (n.direct ? 7.2 : 6.6) * Math.max((n.short || labelOf(n)).length, yearsOf(n).length * 0.9); }
+  // A label never changes, so each width is worked out once (cached in LABEL_W, declared
+  // above the simulation because the link force asks for widths as soon as it is created).
+  function labelWidth(n) {
+    let w = LABEL_W.get(n.id);
+    if (w === undefined) {
+      w = 18 + (n.direct ? 7.2 : 6.6) * Math.max((n.short || labelOf(n)).length, yearsOf(n).length * 0.9);
+      LABEL_W.set(n.id, w);
+    }
+    return w;
+  }
+  // Only nodes within 44px of each other vertically can collide. Sorting by height and
+  // comparing each node with those just below it finds exactly those pairs, without
+  // comparing everyone with everyone (which grows with the square of the tree).
   function labelSeparation() {
-    let ns = [];
+    let byY = [];
     function force(alpha) {
-      for (let i = 0; i < ns.length; i++) {
-        for (let j = i + 1; j < ns.length; j++) {
-          const a = ns[i], b = ns[j];
-          if (Math.abs(a.y - b.y) > 44) continue;
+      byY.sort((a, b) => a.y - b.y);
+      for (let i = 0; i < byY.length; i++) {
+        const a = byY[i];
+        for (let j = i + 1; j < byY.length && byY[j].y - a.y <= 44; j++) {
+          const b = byY[j];
           const left = a.x <= b.x ? a : b, right = left === a ? b : a;
           const need = labelWidth(left) + 14;
           const dx = right.x - left.x;
@@ -469,7 +489,7 @@
         }
       }
     }
-    force.initialize = (nodes) => { ns = nodes; };
+    force.initialize = (nodes) => { byY = nodes.slice(); };
     return force;
   }
 
@@ -679,12 +699,13 @@
   if (window.ResizeObserver) new ResizeObserver(refitIfPending).observe(stage);
 
   renderPanel(null);
-  // settle the layout off-screen, then let it breathe just slightly so it reads as live
+  // settle the layout off-screen and draw it once. The simulation runs again only when
+  // someone drags a person or switches to the direct line: animating every frame costs
+  // a full redraw of the tree, which is what makes Safari lag.
   sim.stop();
   for (let i = 0; i < 400; i++) sim.tick();
   link.attr("d", pathFor);
   node.attr("transform", n => `translate(${n.x},${n.y})`);
-  sim.alpha(0.06).restart();
   setTimeout(() => fit(false), 30);
 
   // ---------- Map view: rendering, time, and movement ----------
@@ -778,11 +799,27 @@
          .attr("tabindex", 0).attr("role", "button")
          .attr("aria-label", d => `${d.name}, ${d.n} ${d.n === 1 ? "person" : "people"}`);
       all.select("circle.core").attr("fill", d => dominantColour(d.list));
-      all.select("text").text(d => d.n > 1 ? `${d.name} · ${d.n}` : d.name);
+      all.select("text").text(labelText);
       all.on("click", (ev, d) => { selected = d.key; showPlace(d); draw(); });
 
       scaleMarks();
       if (animateFrom != null) flights(animateFrom, year);
+    }
+
+    const labelText = d => d.n > 1 ? `${d.name} · ${d.n}` : d.name;
+    // Each label's on-screen width, measured once per distinct text at its on-screen size.
+    // Measuring inside the zoom loop forced a full page layout for every label on every
+    // frame of a zoom. New texts (the counts change with the year) are measured together,
+    // in one layout; the cache is dropped when a web font arrives and changes the widths.
+    const measurer = mapSvg.append("g").attr("class", "labelmeasure").attr("aria-hidden", "true")
+      .style("visibility", "hidden");
+    const textWidth = new Map();
+    if (document.fonts) document.fonts.addEventListener("loadingdone", () => textWidth.clear());
+    function measureLabels(texts) {
+      const todo = [...new Set(texts)].filter(t => !textWidth.has(t));
+      if (!todo.length) return;
+      measurer.selectAll("text").data(todo).join("text").style("font-size", "10.5px").text(t => t)
+        .each(function (t) { const w = this.getComputedTextLength(); if (w > 0) textWidth.set(t, w); });   // 0 = not laid out yet
     }
 
     // keep marks a constant size on screen, and only label what there is room for:
@@ -802,6 +839,7 @@
         if (d.key === selected) g.select("circle.core").style("stroke-width", (2.6 * s) + "px");
         marks.push({ d, g, r });
       });
+      measureLabels(marks.map(m => labelText(m.d)));
       // biggest places get first claim on the label space; the rest give way rather than overlap
       marks.sort((a, b) => (b.d.key === selected) - (a.d.key === selected) || b.d.n - a.d.n);
       marks.forEach(({ d, g, r }) => {
@@ -811,8 +849,8 @@
           .style("stroke-width", (2.6 * s) + "px");
         const wanted = d.n >= 3 || k > 2.2 || d.key === selected;
         if (!wanted) { txt.attr("display", "none"); return; }
-        // measure in screen pixels, where the crowding actually happens
-        const len = (txt.node().getComputedTextLength() || 40) * k;
+        // in screen pixels, where the crowding actually happens
+        const len = textWidth.get(labelText(d)) || 40;
         const bx = (d.x + r + 5 * s) * k, by = d.y * k;
         const box = [bx, by - 7, bx + len, by + 7];
         const hit = boxes.some(o => !(box[2] < o[0] || box[0] > o[2] || box[3] < o[1] || box[1] > o[3]));
