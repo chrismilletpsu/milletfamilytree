@@ -576,6 +576,9 @@
   }
 
   function esc(s) { return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+  // Card prose may use <b> and <i> for emphasis and titles; everything else stays text.
+  // tools/check.js makes sure those tags are balanced, so none can run on past its paragraph.
+  function rich(s) { return esc(s).replace(/&lt;(\/?)(b|i)&gt;/g, "<$1$2>"); }
 
   function renderPanel(p) {
     if (!p) {
@@ -600,7 +603,7 @@
     const rel = relations(p);
     const chips = (ids) => ids.map(id => `<button class="chip" data-id="${id}" type="button">${esc(labelOf(byId[id]))}</button>`).join("");
     const relRows = Object.entries(rel).filter(([,v]) => v.length).map(([k,v]) => `<dt>${k}</dt><dd><div class="rel">${chips(v)}</div></dd>`).join("");
-    const factRows = Object.entries(p.facts || {}).map(([k,v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+    const factRows = Object.entries(p.facts || {}).map(([k,v]) => `<dt>${esc(k)}</dt><dd>${rich(v)}</dd>`).join("");
     const roles = [
       p.direct ? `<span class="role direct">Direct ancestor</span>` : "",
       p.probable ? `<span class="role probable">Probable link</span>` : "",
@@ -613,8 +616,8 @@
       <h2>${esc(p.name)}</h2>
       <p class="dates">${esc(dates)}</p>
       <div>${roles}</div>
-      ${p.event ? `<div class="event-note"><p class="eyebrow">Notable event</p><h3>${esc(p.event.tag)}</h3><p>${esc(p.event.text)}</p></div>` : ""}
-      ${p.lede ? `<p class="lede">${esc(p.lede)}</p>` : ""}
+      ${p.event ? `<div class="event-note"><p class="eyebrow">Notable event</p><h3>${esc(p.event.tag)}</h3><p>${rich(p.event.text)}</p></div>` : ""}
+      ${p.lede ? `<p class="lede">${rich(p.lede)}</p>` : ""}
       <dl>${relRows}${factRows}</dl>
       ${sources ? `<h3 class="src">Records</h3><ul class="sources">${sources}</ul>` : ""}`;
     panel.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => focusOn(b.dataset.id)));

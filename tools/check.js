@@ -36,6 +36,19 @@ P.forEach((p, i) => {
   if (!Number.isInteger(p.gen)) err(`${who}: gen is not an integer`);
   else if (!(p.gen in GEN_LABELS)) err(`${who}: gen ${p.gen} has no entry in GEN_LABELS`);
   if (!LINES.has(p.line)) err(`${who}: unknown line "${p.line}"`);
+  // Card prose may carry <b> and <i> (rendered as emphasis); any other tag would show as
+  // text, and an unclosed one would run on through the rest of the card.
+  for (const [field, text] of [["lede", p.lede], ...Object.entries(p.facts || {}).map(([k, v]) => [`facts.${k}`, v])]) {
+    if (!text) continue;
+    const other = text.match(/<(?!\/?(b|i)>)[a-z\/][^>]*>/gi);
+    if (other) err(`${who}: ${field} has tags other than <b>/<i>: ${other.join(" ")}`);
+    const open = [];
+    for (const m of text.matchAll(/<(\/?)(b|i)>/g)) {
+      if (!m[1]) open.push(m[2]);
+      else if (open.pop() !== m[2]) { err(`${who}: ${field} has a stray </${m[2]}>`); break; }
+    }
+    if (open.length) err(`${who}: ${field} leaves <${open.join(">, <")}> unclosed`);
+  }
   (p.sources || []).forEach((s, j) => {
     if (!Array.isArray(s) || typeof s[0] !== "string" || typeof s[1] !== "string")
       err(`${who}: sources[${j}] is undefined (misspelled S key?)`);
@@ -69,6 +82,7 @@ const tags = new Set();
 for (const [id, e] of Object.entries(EVENTS)) {
   if (!ids.has(id)) err(`EVENTS.${id}: no such person`);
   if (!e.tag || !e.text) err(`EVENTS.${id}: needs tag and text`);
+  else if (/<(?!\/?(b|i)>)[a-z\/][^>]*>/i.test(e.text)) err(`EVENTS.${id}: text has tags other than <b>/<i>`);
   tags.add(e.tag);
   if (!EVENT_YEAR[e.tag] && !/\b1[5-9]\d\d\b/.test(e.tag)) err(`EVENTS.${id}: tag "${e.tag}" has no year and no EVENT_YEAR entry`);
 }
