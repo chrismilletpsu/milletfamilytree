@@ -399,6 +399,7 @@
 
   const byId = Object.fromEntries(P.map(p => [p.id, p]));
   const nodes = P.map(p => Object.assign({}, p));
+  const nodeById = Object.fromEntries(nodes.map(n => [n.id, n]));   // the laid-out copies, with x and y
   const links = E.map(([s,t,type,prob]) => {
     const direct = byId[s].direct && byId[t].direct && type !== "sibling";
     return { source:s, target:t, type, probable:!!prob, direct };
@@ -626,7 +627,7 @@
 
   function focusOn(id) {
     select(id);
-    const n = byId[id];
+    const n = nodeById[id];   // not byId: the raw records have no position, which made this NaN
     const t = d3.zoomTransform(svg.node());
     const target = d3.zoomIdentity.translate(W/2 - n.x * t.k, H/2 - n.y * t.k).scale(t.k);
     svg.transition().duration(500).call(zoom.transform, target);
