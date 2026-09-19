@@ -614,17 +614,19 @@
       const direct = nodes.filter(n => n.direct).length;
       panel.innerHTML = `
         <div class="empty">
-          <p class="eyebrow">Four lines, one family</p>
-          <h2>From Metz, Norwich, and Denmark to Tamaqua and Highland Park</h2>
-          <p class="lede">The Michelet family left Metz as Huguenots, became the Mickleys of Lehigh County, and hid the Liberty Bell in 1777. Their line reaches the Millets through Susanna Mickley’s daughter Catharine, who married Frederick Millet of Orwigsburg in Tamaqua about 1862. On Christine Nickerson’s side, the Nickersons run back through Bayonne, the Hudson Valley, and Ridgefield to William Nickerson, who founded Chatham on Cape Cod in the 1660s; the Christoffersens came from Denmark, and the Olsens from Egersund in Norway, to Chicago in the 1880s.</p>
+          <p class="eyebrow">Five lines, one family</p>
+          <h2>From Metz, Bern, Norwich, and Egersund to Tamaqua and Highland Park</h2>
+          <p class="lede">Fifteen generations, from a mason first recorded at Metz in 1444 to the children of Chris Millet. The Michelets left Metz as Huguenots, landed at Philadelphia in 1733, became the Mickleys of Lehigh County, and hid the Liberty Bell in 1777. Their line reaches the Millets through Susanna Mickley’s daughter Catharine, who married Frederick Millet of Orwigsburg in Tamaqua about 1862.</p>
           <div class="stat">
             <div><b>${nodes.length}</b><small>people on record</small></div>
             <div><b>${direct}</b><small>direct ancestors of Chris Millet</small></div>
             <div><b>${GEN_COUNT}</b><small>generations</small></div>
             <div><b>${nodes.filter(n => n.event).length}</b><small>tied to a notable event</small></div>
           </div>
+          <p>Around that spine stand the families who married into it. Palatines and Swiss came ashore at Philadelphia in 1733, 1737 and 1739 — the Burkhalters from Switzerland, the Newhards from Zweibrücken, the Kerns, and Joseph Biery from the Oberland of Canton Bern — and farmed the Lehigh frontier through the raids of the 1750s and 1763. In the Schuylkill coal towns a century later came Welsh miners at Gilberton, the Dornsifes and Herrings, Adolph Martin from Baden-Württemberg in 1881, and the Ripkos and Polashes from Austrian Poland, whose daughter Sophia was the mother Marie Millet lost at four.</p>
+          <p>On Christine Nickerson’s side, the Nickersons run back through Bayonne, Coeymans, and Ridgefield to William Nickerson, who sailed from Norwich in 1637 and founded Chatham on Cape Cod. The Barans came from the Slovak north of Hungary in 1889; Martin Christoffersen came from Denmark in 1885 and married Inger Mathilde Olsen of Egersund in Chicago in 1891.</p>
           <p>Filled circles are direct ancestors of Chris Millet; outlined circles are their siblings, cousins, and children. Solid edges are parent to child, dashed edges are marriages, and dotted edges are links the records make likely but do not yet prove.</p>
-          <p>A violet ring marks someone whose life touches a moment outside the family's own story — the 1637 crossing to Salem and the founding of Chatham, the Palatine landing of 1733, the raid of 1763, the Liberty Bell and Germantown, the Civil War, the immigrant wave of the 1880s, and Normandy to the Rhine.</p>
+          <p>A violet ring marks someone whose life touches a moment outside the family's own story — the Revocation of the Edict of Nantes, the 1637 crossing to New England and the founding of Chatham, the Palatine landings of 1733, 1737 and 1739, the French and Indian War and the raid of 1763, the Pennsylvania convention of 1776, the Liberty Bell and Germantown, the Civil War, the immigrant wave of the 1880s, Pearl Harbor, and Normandy to the Rhine.</p>
           <p>Click any circle to see what the records say and where each fact came from.</p>
         </div>`;
       return;
