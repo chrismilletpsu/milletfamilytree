@@ -279,6 +279,14 @@
   svg { width: 100%; height: 100%; display: block; cursor: grab; }
   [hidden] { display: none !important; }
   svg:active { cursor: grabbing; }
+  #treeWrap, #treeMove { width: 100%; height: 100%; }
+  /* The tree sits in its own compositor layer (#treeMove), so a pan or zoom can move it as a
+     finished picture instead of repainting it every frame. The layer is a plain div: moving
+     the <svg> itself makes browsers lay the SVG out again on every step. overflow: visible
+     lets the picture hold the drawing beyond the stage edge (the stage clips it), so panning
+     doesn't expose a blank margin. */
+  #treeMove { transform-origin: 0 0; will-change: transform; }
+  #svg { overflow: visible; }
   .band-label {
     font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: var(--ink-3); letter-spacing: 0.06em;
   }
@@ -368,7 +376,7 @@
   <aside id="panel"></aside>
 
   <div class="stage">
-    <svg id="svg" role="img" aria-label="Family network diagram"></svg>
+    <div id="treeWrap"><div id="treeMove"><svg id="svg" role="img" aria-label="Family network diagram"></svg></div></div>
     <svg id="map" role="img" aria-label="Migration map" hidden></svg>
     <div class="hint" id="hintTree">Click a person for records. Drag to pan, scroll to zoom, drag a circle to move it.</div>
     <div class="eventcard" id="eventCard" hidden>
@@ -422,13 +430,33 @@
   };
 
   const svg = d3.select("#svg");
+  const wrap = d3.select("#treeWrap");   // pan and zoom listen here: an element that never moves
+  const mover = d3.select("#treeMove");  // and this carries the picture during a gesture
   const stage = document.querySelector(".stage");
   let W = stage.clientWidth, H = stage.clientHeight;
   const g = svg.append("g");
   const gBands = g.append("g"), gLinks = g.append("g"), gNodes = g.append("g");
 
-  const zoom = d3.zoom().scaleExtent([0.35, 2.5]).on("zoom", ev => g.attr("transform", ev.transform));
-  svg.call(zoom);
+  // Pan and zoom move a snapshot. While a gesture runs, the finished drawing is shifted and
+  // scaled as one picture (a CSS transform on a div, which the browser composites without
+  // repainting), and it is redrawn sharp at the new position only when the gesture ends.
+  // Redrawing the whole tree on every frame is what made Safari lag. The listener sits on the
+  // wrapper, which never moves, so pointer positions aren't thrown off by the moving picture.
+  let gestureFrom = null;   // the transform the drawing was last painted at
+  const zoom = d3.zoom().scaleExtent([0.35, 2.5])
+    .on("start", ev => { gestureFrom = ev.transform; })
+    .on("zoom", ev => {
+      const t = ev.transform, t0 = gestureFrom;
+      if (!t0) { g.attr("transform", t); return; }
+      const r = t.k / t0.k;   // maps the picture painted at t0 onto where t puts it
+      mover.style("transform", `translate(${t.x - r * t0.x}px,${t.y - r * t0.y}px) scale(${r})`);
+    })
+    .on("end", ev => {
+      gestureFrom = null;
+      mover.style("transform", null);
+      g.attr("transform", ev.transform);
+    });
+  wrap.call(zoom);
 
   const contentH = top + GEN_COUNT * bandH + margin;
   // wide enough that fitting to the stage height also fills its width
@@ -628,9 +656,9 @@
   function focusOn(id) {
     select(id);
     const n = nodeById[id];   // not byId: the raw records have no position, which made this NaN
-    const t = d3.zoomTransform(svg.node());
+    const t = d3.zoomTransform(wrap.node());
     const target = d3.zoomIdentity.translate(W/2 - n.x * t.k, H/2 - n.y * t.k).scale(t.k);
-    svg.transition().duration(500).call(zoom.transform, target);
+    wrap.transition().duration(500).call(zoom.transform, target);
   }
 
   // direct-only filter
@@ -692,8 +720,8 @@
     // Only the reader's own "Reset view" animates. An automatic fit applies at once: a
     // transition needs animation frames, and a stage that is collapsed or a tab that is
     // not being drawn may not be getting any, which would leave the fit silently unapplied.
-    if (animate) svg.transition().duration(500).call(zoom.transform, t);
-    else svg.call(zoom.transform, t);
+    if (animate) wrap.transition().duration(500).call(zoom.transform, t);
+    else wrap.call(zoom.transform, t);
   }
 
   // Run only a deferred fit, never a fresh one: an ordinary resize must not throw away
@@ -1144,7 +1172,7 @@
       const isMap = v === "map";
       // SVG elements do not implement the HTML `hidden` property, so set the attribute directly
       const show = (el, on) => on ? el.removeAttribute("hidden") : el.setAttribute("hidden", "");
-      show(document.getElementById("svg"), !isMap);
+      show(document.getElementById("treeWrap"), !isMap);
       show(document.getElementById("map"), isMap);
       show(tl, isMap); show(hintTree, !isMap);
       btnMap.classList.toggle("on", isMap); btnTree.classList.toggle("on", !isMap);
