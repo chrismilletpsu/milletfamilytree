@@ -405,3 +405,11 @@ still at home at 15; emigrated 1908). **Conflict**: the 1957 W.Va. register name
 Johnson (informant G. R. Maxwell, M.D., not family). Not joined; noted on the cards as probable.
 Next: the Norra Lundby birth register (C:), Nov 1885, and the Norra Lundby moving-out register
 (utflyttningslängd) for 1907–1908, which would record Mårten Johannes leaving for America.
+- **Proved**: FamilySearch, Sweden household examination books, Norra Lundby AI:12: Mårten Johannes,
+  **born 10 Nov 1885** in Lundby — the exact date on Martin John Renstrom's 1942 draft card, which
+  names Norra Lundby — son of **Johan Gustaf Johansson Ask** (b. 20 Aug 1840, Bolum) and **Maja Lisa
+  Larsdotter** (b. 8 June 1840, Skarke; d. 16 June 1919). Seven sons. The "Louise Johnson" of the 1957
+  W.Va. register (doctor informant) is treated as an error. John Renstrom and Louise Johnson on the
+  page are now these two, with the U.S. names kept as notes.
+- Their 1840 baptisms (Bolum; Skarke) are not in the FamilySearch baptism index; the parish birth
+  registers would give Johan Gustaf's father (a Johan) and Maja Lisa's father (a Lars).
