@@ -28,7 +28,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 D3_URL = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
 LIVE_URL = "https://millet-family-tree.onrender.com/clemmer/"
-W, H = 2200, 1300
+W, H = 3000, 1500
 
 # Runs once the page has laid itself out: give the tree a viewBox, so the captured drawing
 # scales to whatever width the viewer has instead of being cropped to this window.

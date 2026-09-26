@@ -452,13 +452,15 @@
   // wide enough that fitting to the stage height also fills its width
   // give the layout more horizontal room than the stage aspect ratio alone would allow, so
   // siblings and cousins can spread instead of stacking on their line's anchor
-  const contentW = Math.max(2200, Math.round(1.25 * W * contentH / Math.max(H, 400)));
+  // and at least enough for the most crowded generation to sit side by side, labels and all
+  const perBand = d3.max(d3.rollups(nodes, v => v.length, n => n.gen), d => d[1]) || 0;
+  const contentW = Math.max(2200, perBand * 120, Math.round(1.25 * W * contentH / Math.max(H, 400)));
 
   // bands
   for (let gi = GEN_MIN; gi <= GEN_MAX; gi++) {
     const y0 = top + (gi - GEN_MIN) * bandH;
-    if ((gi - GEN_MIN) % 2 === 0) gBands.append("rect").attr("class","band").attr("x",-2000).attr("y",y0).attr("width",6000).attr("height",bandH);
-    gBands.append("line").attr("class","band-line").attr("x1",-2000).attr("x2",6000).attr("y1",y0).attr("y2",y0);
+    if ((gi - GEN_MIN) % 2 === 0) gBands.append("rect").attr("class","band").attr("x",-2000).attr("y",y0).attr("width",contentW+4000).attr("height",bandH);
+    gBands.append("line").attr("class","band-line").attr("x1",-2000).attr("x2",contentW+2000).attr("y1",y0).attr("y2",y0);
     const [t, sub] = GEN_LABELS[gi] || ["", ""];
     gBands.append("text").attr("class","band-title").attr("x",14).attr("y",y0+18).text(t);
     gBands.append("text").attr("class","band-label").attr("x",14).attr("y",y0+34).text(sub);
