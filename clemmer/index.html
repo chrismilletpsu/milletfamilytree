@@ -404,7 +404,9 @@
   });
 
   // ---------- Layout ----------
-  const bandH = 118, top = 40, margin = 40;
+  // Each generation band holds up to three rows: the direct line in the middle, brothers
+  // and sisters alternating above and below it, so a large family grows down, not across.
+  const bandH = 190, top = 40, margin = 40, LANE = 56;
   const GENS = Object.keys(GEN_LABELS).map(Number);
   const GEN_MIN = Math.min(...GENS), GEN_MAX = Math.max(...GENS), GEN_COUNT = GEN_MAX - GEN_MIN + 1;
   const genY = g => top + (g - GEN_MIN) * bandH + bandH/2;
@@ -453,8 +455,19 @@
   // give the layout more horizontal room than the stage aspect ratio alone would allow, so
   // siblings and cousins can spread instead of stacking on their line's anchor
   // and at least enough for the most crowded generation to sit side by side, labels and all
-  const perBand = d3.max(d3.rollups(nodes, v => v.length, n => n.gen), d => d[1]) || 0;
-  const contentW = Math.max(2200, perBand * 120, Math.round(1.25 * W * contentH / Math.max(H, 400)));
+  // Rows within a band: the direct line and anyone without siblings keeps the middle row;
+  // the rest, taken left to right in their column order, alternate above, below and middle.
+  const LANES = [-LANE, LANE, 0];
+  d3.groups(nodes, n => n.gen).forEach(([, ns]) => {
+    ns.filter(n => !n.direct)
+      .sort((a, b) => anchorX(a, 1) - anchorX(b, 1))
+      .forEach((n, i) => { n.lane = LANES[i % 3]; });
+  });
+  nodes.forEach(n => { if (n.lane === undefined) n.lane = 0; });
+  const rowY = n => genY(n.gen) + n.lane;
+  // wide enough for the busiest row, labels and all
+  const perRow = d3.max(d3.rollups(nodes, v => v.length, n => n.gen + ":" + n.lane), d => d[1]) || 0;
+  const contentW = Math.max(2200, perRow * 130, Math.round(0.9 * W * contentH / Math.max(H, 400)));
 
   // bands
   for (let gi = GEN_MIN; gi <= GEN_MAX; gi++) {
@@ -466,19 +479,19 @@
     gBands.append("text").attr("class","band-label").attr("x",14).attr("y",y0+34).text(sub);
   }
 
-  nodes.forEach(n => { n.x = anchorX(n, contentW) + (Math.random()-0.5)*40; n.y = genY(n.gen); });
+  nodes.forEach(n => { n.x = anchorX(n, contentW) + (Math.random()-0.5)*40; n.y = rowY(n); });
 
   const LABEL_W = new Map();
   const sim = d3.forceSimulation(nodes)
     .force("link", d3.forceLink(links).id(d => d.id).distance(l => l.type==="spouse" ? Math.max(120, labelWidth(l.source.x <= l.target.x ? l.source : l.target) + 34) : 90).strength(l => l.type==="spouse" ? 1 : (l.direct ? 0.35 : 0.18)))
     .force("x", d3.forceX(n => anchorX(n, contentW)).strength(n => n.direct ? 0.30 : 0.11))
-    .force("y", d3.forceY(n => genY(n.gen)).strength(1.2))
+    .force("y", d3.forceY(rowY).strength(1.2))
     .force("collide", d3.forceCollide(n => n.direct ? 46 : 50).strength(0.9))
     .force("labels", labelSeparation())
     // a crowded generation must spread sideways, never spill into the band above or below,
     // where a sibling would read as a parent or a child
     .force("band", () => nodes.forEach(n => {
-      const y0 = genY(n.gen), lim = bandH * 0.3;
+      const y0 = rowY(n), lim = 14;
       if (n.y < y0 - lim) { n.y = y0 - lim; n.vy = 0; }
       else if (n.y > y0 + lim) { n.y = y0 + lim; n.vy = 0; }
     }))
@@ -708,7 +721,8 @@
     if (!measure()) { pendingFit = true; return; }
     // fit to the people actually drawn (plus their labels), not the whole canvas
     const shown = nodes.filter(n => !(directOnly.checked && !n.direct));
-    const x0 = d3.min(shown, n => n.x) - 24, x1 = d3.max(shown, n => n.x + labelWidth(n)) + 12;
+    // start at the band titles (drawn at x = 14) so the generation names stay in view
+    const x0 = Math.min(0, d3.min(shown, n => n.x) - 24), x1 = d3.max(shown, n => n.x + labelWidth(n)) + 12;
     const y0 = d3.min(shown, n => n.y) - bandH * 0.6, y1 = d3.max(shown, n => n.y) + bandH * 0.6;
     if (![x0, x1, y0, y1].every(Number.isFinite)) { pendingFit = true; return; }
     pendingFit = false;
