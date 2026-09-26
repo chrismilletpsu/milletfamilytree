@@ -162,3 +162,15 @@ April and Bill are living, and appear on the page with names and links only.
 
 - Bill Clemmer is living: his card stays name and links only, and his birth date stays off the page.
 - Neil Dunham goes on the tree, as Margaret's son and Bill's half-brother.
+
+## Notable events
+
+The rule: a moment a stranger would recognise without knowing the family, and only where a record
+puts this person in it. Checked after every research round.
+
+- Henry H. Wilkins — the Civil War (Co. C, 3rd W.Va. Infantry / 6th W.Va. Cavalry; pension card,
+  Wiley's roster).
+- William Bryan Clemmer — the Great Depression and the WPA (employer "W.P.A." on his 1940 draft card).
+- Considered and left out: West Virginia's statehood in 1863, because no record yet puts a family
+  member in Preston County that year; the 1940 draft registration itself, which every man of age
+  made; and the tuberculosis and diabetes deaths, which are the family's own story.

@@ -210,11 +210,18 @@ const E = [
 ];
 
 // ---------- Notable events ----------
-// Only moments a stranger would recognise without knowing the family.
+// Only moments a stranger would recognise without knowing the family, and only where a
+// record puts this person in them (not where it merely could have).
 const EVENTS = {
+  henrywilkins: { tag:"The Civil War, 1861–1865",
+    text:"Henry served for the Union in Company C of the 3rd West Virginia Infantry, a Preston County company raised in 1861, which was remounted as the 6th West Virginia Cavalry in 1864. His stepfather, John H. Blaney, served in the same company. Henry drew an invalid pension for his service from 1889, and his widow Mary drew it after him." },
+  wbclemmer: { tag:"The Great Depression and the WPA, 1940",
+    text:"When he registered for the draft in October 1940, William, 32, gave his employer as the W.P.A., the Works Progress Administration, the New Deal's programme of public-works jobs for the unemployed, working at Smithfield R.D. 3. By 1950 he was running a coal mine of his own." },
 };
 const EVENT_YEAR = {};   // tag → year, for a tag with no year in it
-const EVENT_PLACE = {};  // tag → [place keys] the map flies to
+const EVENT_PLACE = {    // tag → [place keys] the map flies to
+  "The Great Depression and the WPA, 1940": ["smithfield"],
+};
 
 // ---------- Generations ----------
 // 0 is the family today; parents 1, grandparents 2, and so on back. Provisional until the
