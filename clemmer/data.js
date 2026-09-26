@@ -37,6 +37,7 @@ const LINES = {
 const FS = "https://www.familysearch.org/ark:/61903/1:1:";
 const S = {
   family: ["Family knowledge: April Millet (née Clemmer), 2026", ""],
+  familyChris: ["Family knowledge: Chris Millet, 2026", ""],
   cen1910: ["1910 census, Springhill Twp., Fayette Co., Pa., sheet 6A: A. H. Clemmer, 30, with wife Eliza, 26, son Wm, 2, and daughter Grace", FS + "MG3H-Y2D"],
   cen1920: ["1920 census, Fayette Co., Pa., ED 93, sheet 19B: Amadee G. Clemmer, 39, wife Elizabeth, and children Irene V., William B. (11), Grace E. and Bruce S.", FS + "MFRT-JGS"],
   cen1930dun: ["1930 census, Georges Twp., Fayette Co., Pa.: Martin Dunham, 66, wife Emma, 49, daughter Margaret B., and eight other children", FS + "XHS1-TWF"],
@@ -103,6 +104,12 @@ const P = [
   { id:"april", name:"April Millet", short:"April Millet", gen:0, line:"clem", direct:true,
     lede:"Born April Clemmer, daughter of Bill Clemmer.",
     sources:[S.family] },
+  { id:"gaiclemmer", name:"Gai Clemmer", short:"Gai Clemmer", gen:0, line:"clem",
+    lede:"Daughter of Bill Clemmer and sister of April and Shai.",
+    sources:[S.familyChris] },
+  { id:"shaimcgowan", name:"Shai McGowan", short:"Shai McGowan", gen:0, line:"clem",
+    lede:"Daughter of Bill Clemmer and sister of April and Gai.",
+    sources:[S.familyChris] },
   { id:"billjr", name:"William “Bill” Clemmer", short:"Bill Clemmer", gen:1, line:"clem", direct:true,
     lede:"William Clemmer Jr., the son of William Bryan Clemmer and Margaret Belle Dunham.",
     sources:[S.family, S.cen1950jr] },
@@ -383,6 +390,7 @@ const P = [
 // grand (a generation is missing between)
 const E = [
   ["billjr","april","parent"],
+  ["billjr","gaiclemmer","parent"], ["billjr","shaimcgowan","parent"],
   ["wbclemmer","mbdunham","spouse"],
   ["wbclemmer","billjr","parent"], ["mbdunham","billjr","parent"],
   ["mbdunham","neildunham","parent"],
@@ -555,6 +563,7 @@ const LAYOUT_X = {       // person id → fixed column, a fraction of the width
   charlesmiller:0.79, frankmiller:0.90, pearlmiller:0.92, samuelmiller:0.94, ewingmiller:0.96,
   carriemiller:0.97, archiemiller:0.98, lawrencemiller:0.99,
   frankclemmer:0.16,
+  gaiclemmer:0.32, shaimcgowan:0.44,
 };
 
 // ---------- Map ----------

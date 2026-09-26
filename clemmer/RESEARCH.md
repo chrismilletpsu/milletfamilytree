@@ -291,3 +291,10 @@ Jennie Sisler in the 1850–1870 censuses; the Sisler and Derry families.
 
 Images: `assets/ancestry/1917-death-cert-117667-william-g-miller.jpg` (Ancestry record 1423256) and
 `assets/ancestry/1937-death-cert-96781-ida-emme-miller.jpg` (Ancestry record 3105368).
+
+## 26 Sep 2026 — April's sisters
+
+Chris added April's sisters, Gai Clemmer and Shai McGowan, both living. They are on the page with
+names and links only, like April and Bill: their places of residence, which Chris gave, are kept
+off the public page, and no biographical search was made on them. Anything they choose to share
+can be added at their word.
