@@ -30,6 +30,12 @@ Archives. Downloaded with Chris's subscription.
 - `ancestry/1943-death-cert-72324-martin-dunham.jpg` — Martin Dunham, d. 26 Aug 1943, Springhill
   Twp. Ancestry record 4646075, image 42342_2321306652_0786-01938.
 
+- `ancestry/1913-death-cert-81393-henry-h-wilkins.jpg` — Henry H. Wilkins, d. 1 July 1913,
+  Springhill Twp. (indexed by Ancestry under Cambria Co. in error). Ancestry record 2347693, image
+  41381_2421406272_0630-02828.
+- `ancestry/1927-death-cert-42451-mary-c-wilkins.jpg` — Mary C. Wilkins, d. 17 Apr 1927, Springhill
+  Twp. Ancestry record 4400094, image 42342_645856_0555-00483.
+
 From *Pennsylvania, U.S., Marriages, 1852–1968*, Ancestry.com, imaging FamilySearch's films of the
 Fayette County Orphans' Court marriage license dockets.
 

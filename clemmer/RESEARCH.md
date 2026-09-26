@@ -111,3 +111,50 @@ April and Bill are living, and appear on the page with names and links only.
   1910 as well).
 - Godfrey Rumble and Rebecca Varner: the 1850–1860 censuses, Fayette Co.
 - Henry H. and Mary C. Wilkins: Monongalia Co., W.Va., before 1884; their marriage.
+
+## 26 Sep 2026 — third pass
+
+### Found
+
+- **Henry H. Wilkins (1841–1913)**, PA death certificate 81393. It names his mother as "Lisa
+  Blaney" and no father; the informant was his son Harry. The 1850 and 1860 censuses of Preston
+  Co., Va., show Henry, 11 and then 18, in the household of John H. Blaney and his wife Eliza,
+  34 and then 45, with Hannah, William and Eliza J. Wilkins. So Eliza was a Wilkins widow who
+  remarried Blaney by about 1847. Henry served in Co. C, 3rd W.Va. Infantry (later 6th W.Va.
+  Cavalry), per Wiley's 1882 roster and the pension index card. The certificate records his death
+  as a suicide; that is stated plainly on his card, as it is 113 years ago, but say if the family
+  would rather it came off.
+- **Mary C. Wilkins (1845–1927)**, PA death certificate 42451: born Masontown, Preston Co.,
+  W.Va. It gives her parents as "Jack Wilkins" and Elizabeth. The informant was her son, and
+  Wilkins is probably her married name misapplied, so no parents are added for her yet.
+- **Pension index card** (FamilySearch QJD5-W5RH): Henry's invalid pension, certificate 534,192
+  (1889), and **Mary's widow's pension, certificate 777,604 (1913)**. A widow's file had to prove
+  the marriage, so it should give its date and place and Mary's maiden name. **Order it from the
+  National Archives** (NATF 85, Civil War pension, "full file"); Fold3 may already have it imaged.
+- **County histories** (archive.org, see `sources/README.md`): Jasper Clemmer, Springhill school
+  director in 1846 — an adult when Andrew's son Jasper was 6, so possibly Andrew's father or
+  brother. L. B. Clemmer (Lebbeus) held a Springhill office in 1880.
+
+### Ruled out
+
+- Godfrey Rumble of Moundsville, Marshall Co. (b. 1805, d. 1853): in 1850 his wife is Anne,
+  and no Caroline is in the house. He is not Caroline's father. A Godfrey Rumble heads
+  households in Springhill in 1820, 1830 (two of that name) and 1840; that fits, but those
+  censuses name only heads, so it stays a lead.
+
+### Negatives
+
+- PA death certificates (Ancestry), 1906–1972: no John Dunham, Rebecca (Dewalt) Dunham, William
+  G. Miller or Ida Miller dying in Fayette Co. that matches. They probably died before 1906.
+- WV Vital Research Records marriages: no Henry Wilkins marriage in any county. Preston Co.'s
+  indexed marriages begin in 1866–1869, and Monongalia has no Wilkins grooms, so the marriage
+  (about 1862–1866) is probably in a gap in coverage.
+- Caroline Rumble, born about 1841: not found under Rumble in the 1850 or 1860 census, nor by
+  given name and a father named Godfrey in Fayette.
+
+### Leads not yet followed
+
+- Fayette Co. marriages: Elizabeth Dunham, 23, daughter of John and Rebecca, married Samuel T.
+  Hugh on 20 Apr 1886; John Dunham, 29, son of John and Rebecca, married Lucinda Dukate on 2 Dec
+  1889. They are possibly Martin's siblings, but other Dunham couples named John and Rebecca were
+  in the county. Not joined.
