@@ -298,3 +298,31 @@ Chris added April's sisters, Gai Clemmer and Shai McGowan, both living. They are
 names and links only, like April and Bill: their places of residence, which Chris gave, are kept
 off the public page, and no biographical search was made on them. Anything they choose to share
 can be added at their word.
+
+## 26 Sep 2026 — April's mother's line (Clark and Renstrom)
+
+From Chris: April's mother was Verna Louise Clark, who died in 2003; her parents Robert Burdel
+Clark and Svea Elizabeth Renstrom ("Oil City, PA").
+
+- **Verna Louise Clark (1948–2003)**: NUMIDENT names her parents Robert B. Clark and Svea E. Renstrom
+  (indexed "Suea E. Renstrum"); born 1 Mar 1948 at Morgantown, W.Va.; SSDI death 25 Jan 2003 as
+  Verna L. Clemmer.
+- **Robert Burdell Clark (1916–1976)**: PA birth certificate 194192, Roulette, Potter Co. (the index
+  entry has no given name); parents **Albert Clark, born East Titusville, and Mayme Beebe, born
+  Bridgeton, N.J.** 1920 census with a sister Katherine D. 1940 draft card at Point Marion. Buried
+  Evergreen, Point Marion.
+- **Svea Elizabeth Renstrom (1916–2007)**: PA birth certificate 207824, Fayette City; parents Martin
+  Renstrom (born Sweden) and **Garnet Smith, born California, Pa.**; the fifth child, all living.
+- **Martin John Renstrom (1885–1957)**: born 10 Nov 1885 at **Norra Lundby, Sweden** (1942 draft
+  card, Ancestry); arrived New York 1908 (immigration index, from Dunkirk, N.Y., naturalization
+  notices — so he may have lived in Chautauqua Co., N.Y., first); in Fayette Co. by 1910;
+  Monongalia Co., W.Va., death register names his parents **John Renstrom and Louise Johnson**.
+  Notable event added: the great Swedish emigration, 1908.
+- Siblings added: Katherine D. Clark; Sarah Louesia, John T., Garnet Christina, Charles M. and Betty
+  Renstrom.
+
+Not yet found: where "Oil City" fits. Albert Clark's birthplace, East Titusville, is 15 miles from
+Oil City, so the Clarks were oil-country people; Svea herself was born at Fayette City. Albert's
+and Mayme's deaths, and Garnett Smith's parents, are the next searches, and Norra Lundby's
+household examination rolls (Swedish church books, on ArkivDigital or Riksarkivet) for
+Johan Renström's family around 1885.

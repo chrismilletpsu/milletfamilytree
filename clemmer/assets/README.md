@@ -41,6 +41,13 @@ Archives. Downloaded with Chris's subscription.
 - `ancestry/1937-death-cert-96781-ida-emme-miller.jpg` — Ida Catheryn Miller, d. 17 Oct 1937,
   Georges Twp. Ancestry record 3105368, image 42342_2421406271_0898-02198.
 
+- `ancestry/1916-birth-cert-194192-robert-burdell-clark.jpg` — Pennsylvania birth certificate 194192,
+  son of Albert Clark and Mayme Beebe, 8 Nov 1916, Roulette, Potter Co. Ancestry *Pennsylvania, U.S.,
+  Birth Certificates, 1906–1917*, record 36024601, image 60484_78164b65_2387-00197.
+- `ancestry/1916-birth-cert-207824-svea-elizabeth-renstrom.jpg` — Pennsylvania birth certificate
+  207824, Svea Elizabeth Renstrom, 1 Dec 1916, Fayette City. Ancestry record 36201003, image
+  60484_78164b65_2479-00160.
+
 From *Pennsylvania, U.S., Marriages, 1852–1968*, Ancestry.com, imaging FamilySearch's films of the
 Fayette County Orphans' Court marriage license dockets.
 
@@ -71,3 +78,7 @@ Fayette County Orphans' Court marriage license dockets.
   Court, Estate of Michael Clemmer, dec'd, No. 16 June Court 1868, auditor's report, pp. 289–290.
   FamilySearch film 007820333, images 165–166 (catalogued with "Marriages and deaths, 1852–1855";
   found by full-text search). <https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSSH-KGYC>
+
+- `wvculture/1957-monongalia-death-martin-john-renstrom.jpg` — Monongalia Co., W.Va., register and
+  index of deaths, pp. 30–31: Martin John Renstrom, 23 Nov 1957. West Virginia Archives & History,
+  Vital Research Records, record 4724927 (film 840905, frame 00211).
