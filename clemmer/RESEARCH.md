@@ -360,3 +360,11 @@ Johan Renström's family around 1885.
 Next on these lines: Phillip Miller and Elizabeth Victor in the 1830–1850 censuses; Bazil Derry in
 Maryland; William Emme's father (the family arrived in 1835, so an Emme head of household in
 Fayette or nearby in 1840).
+
+- **Jacob Clemmer (b. c. 1766)**: 1850 census, Springhill, dwelling 257 — Jacob, 84, with
+  "Christian" [Christina], 82, born Germany, in the house of Joseph and Barbary Gans. Added as
+  Andrew's **probable** father: the shared-tree lead (Jacob Clemmer 1766–1865, with a daughter
+  Barbara b. 1793, who fits Barbary Gans), Andrew's son Jacob, and Amadee's middle name Gans
+  (WWI draft, "Amedie Gans Clemmer"). The shared tree names Jacob's wife Anna Susanna Blosser
+  (1774–1854); the 1850 census shows a Christina, born Germany, which does not fit, so no mother
+  is added. Needed: Jacob's estate (he died after 1850) naming his heirs.

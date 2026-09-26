@@ -103,6 +103,8 @@ const S = {
   cen1870emme: ["1870 census, Georges Twp., Fayette Co., Pa.: William Emme, 39, born Germany, Lavina, 33, and children Mary (15), C. L. (13, female), James (10), P. R. (9), Sam (8), William (4), E. P. (3) and N. L. (infant)", FS + "MZG5-38D"],
   cen1900emme: ["1900 census, Georges Twp., Fayette Co., Pa.: William Emme, born Aug 1831 in Germany, immigrated 1835, married 47 years; Levina, 64; Oliver V. (19) and Lilly May (19)", FS + "M3S2-F87"],
   marr1890emme: ["Fayette Co., Pa., marriage license, 31 Mar 1890: Samuel Emme, born 1864, son of William Emme and Lavina", FS + "VF3N-K3S"],
+  cen1850jacob: ["1850 census, Springhill Twp., Fayette Co., Pa., dwelling 257: Jacob Clemmer (indexed Clemmen), 84, born Pa., and “Christian” [Christina] Clemmer, 82, born Germany, living with Joseph Gance [Gans], 58, and Barbary, 57, and their sons Uriah, Joseph, Jacob and Ephraim", FS + "M4HD-TSP"],
+  censusheads: ["1820–1840 censuses, Springhill Twp., Fayette Co., Pa. (heads of household only): Clemmers named John and Lewis (1820); Gasper, Jacob and Lewis (1830); Andrew, Jacob and Joseph (1840)", FS + "XHYK-LVB"],
   fagElizabeth: ["Find a Grave memorial 39473359: Elizabeth Wilkins Clemmer, 1884–1931", "https://www.findagrave.com/memorial/39473359/elizabeth-clemmer"],
   cen1880: ["1880 census, Springhill Twp., Fayette Co., Pa., ED 56: Lebous Clemmer, 49, wife Caroline, 39, and children Jasper (17), Elle M. (14), Oney A. (10), Joseph (7), Oliver S. (3) and Amada (3 months)", FS + "MWF8-YP5"],
   dcLebbeus: ["Pennsylvania death certificate 15443 (1909): Libbens [Lebbeus] Bigelow Clemmer, born 15 Jan 1832 in Pennsylvania, died 23 Feb 1909 at Springhill Twp., aged 77, married, a brick molder, of chronic Bright's disease; father Andrew Clemmer (born Pa.), mother Moriah Halphin (born W.Va.); informant Frank Clemmer, Cheat Haven, Pa.; buried Mt. Moriah Cemetery 25 Feb 1909", "https://www.ancestry.com/search/collections/5164/records/2560967"],
@@ -570,6 +572,11 @@ const P = [
   { id:"lillyemme", name:"Lilly May Emme", short:"Lilly May Emme", b:"c. 1881", gen:4, line:"dun", lineLabel:"Emme line", place:"Georges Twp., Fayette Co., Pa.",
     lede:"Child of William and Levina Emme, in their Georges Township household in the 1870 or 1900 census.",
     sources:[S.cen1900emme] },
+  { id:"jacobclemmersr", name:"Jacob Clemmer", short:"Jacob Clemmer (b. 1766)", b:"1766", gen:6, line:"clem", direct:true, probable:true,
+    place:"Springhill Twp., Fayette Co., Pa.",
+    lede:"Born in Pennsylvania about 1766, Jacob Clemmer was a head of household in Springhill Township in 1830 and 1840, alongside Andrew. In 1850, aged 84, he was living there with Christina Clemmer, 82, born in Germany, in the household of Joseph and Barbara Gans. He is carried as Andrew's probable father: other researchers make Andrew his son, Andrew named a son Jacob, and Andrew's grandson Amadee bore the middle name Gans. No record read here yet names Andrew as Jacob's son; an estate or deed would settle it.",
+    facts:{ Born:"About 1766, Pennsylvania (84 in 1850)" },
+    sources:[S.censusheads, S.cen1850jacob] },
 ];
 
 // ---------- Relationships ----------
@@ -616,6 +623,7 @@ const E = [
   ["andrewclemmer","frankclemmer","parent"], ["moriahhalphin","frankclemmer","parent"],
   ["lebius","amadee","parent"], ["carolinerumble","amadee","parent"],
   ["andrewclemmer","moriahhalphin","spouse"],
+  ["jacobclemmersr","andrewclemmer","parent",true],
   ["godfreyrumble","rebeccavarner","spouse"],
   ["godfreyrumble","carolinerumble","parent"], ["rebeccavarner","carolinerumble","parent"],
   ["henrywilkins","marycwilkins","spouse"],
@@ -810,6 +818,7 @@ const LAYOUT_X = {       // person id → fixed column, a fraction of the width
   phillipmiller:0.62, elizabethvictor:0.66, bazilderry:0.72, maryderry:0.75,
   johnfmiller:0.60, elizabethmiller:0.61, sarahmiller:0.62, carriemillersr:0.63, alicemiller:0.64, ewingmillersr:0.645, marymiller:0.65,
   maryemme:0.74, jamesemme:0.75, samuelemme:0.76, williamgemme:0.77, oliveremme:0.78, lillyemme:0.79,
+  jacobclemmersr:0.12,
 };
 
 // ---------- Map ----------
@@ -925,6 +934,7 @@ const GEO = {
   bazilderry: { b:1800, bEst:1, d:1860, dEst:1, stops:[ {p:"smithfield", y:1850, e:0} ] },
   sevinaderry: { b:1836, bEst:0, d:1927, dEst:0, stops:[ {p:"smithfield", y:1836, e:1} ] },
   wmemme: { b:1831, bEst:0, d:1900, dEst:1, stops:[ {p:"smithfield", y:1835, e:1} ] },
+  jacobclemmersr: { b:1766, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1830, e:1} ] },
 };
 // The map's opening frame, [[west, south], [east, north]] in degrees: southwestern
 // Pennsylvania and the West Virginia line, until the records reach further.
