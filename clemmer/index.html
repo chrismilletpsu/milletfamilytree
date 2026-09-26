@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clemmer Family Tree</title>
+<script>
+  // This page lives in a folder and loads data.js and land.js by relative path. Opened as
+  // /clemmer (no trailing slash), those paths resolve to the site root and would load the
+  // Millet tree's files instead, so add the slash before anything else loads.
+  if (/^https?:$/.test(location.protocol) && !/\/$|\.html?$/.test(location.pathname))
+    location.replace(location.pathname + "/" + location.search + location.hash);
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
@@ -359,6 +366,9 @@
 <script src="land.js"></script>
 <script>
 (function () {
+  // Leaving for the address with a trailing slash (see the head), or handed the wrong data:
+  // draw nothing rather than a broken tree.
+  if (typeof SITE === "undefined" || typeof LINES === "undefined") return;
   // The tree itself (SITE, LINES, S, P, E, EVENTS, EVENT_YEAR, EVENT_PLACE, GEN_LABELS,
   // LAYOUT_LINE, LAYOUT_X, PLACES, GEO, MAP_FRAME) comes from data.js, and the basemap
   // (LAND, GEOLABELS) from land.js, both loaded above. Nothing about a particular family
