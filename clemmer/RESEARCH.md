@@ -326,3 +326,19 @@ Oil City, so the Clarks were oil-country people; Svea herself was born at Fayett
 and Mayme's deaths, and Garnett Smith's parents, are the next searches, and Norra Lundby's
 household examination rolls (Swedish church books, on ArkivDigital or Riksarkivet) for
 Johan Renström's family around 1885.
+
+- **Albert Robert Clark**: PA delayed birth record — born 8 Oct 1894, East Titusville, Crawford Co.,
+  parents **Frederick Clark and Anna Henrietta Friske**. 1900 census, Cherrytree Twp., Venango Co.
+  (near Oil City): "Farry" Clark, 62, and Anna, 41, both born Germany, with Emma and Angie (born
+  Germany) and William V., Albert R., Frank and George R. (born Pa.) — the family emigrated about
+  1885–1891. WWI draft, Potter Co. This is very likely the "Oil City" connection Chris mentioned.
+- **Garnett Elizabeth Smith**: married Martin Renstrom at Charleroi 6 Nov 1909 (Washington Co.
+  license 18741 — the docket should name her father); 1900 census, Washington Twp., Fayette, with
+  her mother **Sarah Smith**, 41, and siblings Glenn, Herbert, Jessie; father not in the house.
+- Mayme Beebe (b. c. 1896, Bridgeton, N.J.): no marriage to Albert Clark found in the FamilySearch
+  index; a NUMIDENT "Mayme Beebe" born 1895 in Wisconsin is a different woman.
+- Martin Renstrom in Sweden: the FamilySearch and Ancestry indexes of Swedish household books do
+  not bring up a Martin born 10 Nov 1885 at Norra Lundby under Renström or a patronymic. The Norra
+  Lundby birth register (Skaraborg) for 1885 needs to be read directly — ArkivDigital or
+  Riksarkivet (free), not yet searched. A Martin Renstrøm, born 1885 in Sweden, in the 1900 census
+  of Nedre Eiker, Norway, with a Viktor Renstrøm, is probably someone else.
