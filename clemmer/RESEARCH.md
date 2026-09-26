@@ -387,3 +387,7 @@ Fayette or nearby in 1840).
   No heirs named on this page. Probably Caroline's father (Nicholson adjoins Springhill; Caroline was
   17 then). Next: the partition or distribution of this estate, which would list the children —
   full-text search "Nimrod Rumble" and the Orphans' Court volumes for 1859–1862.
+- "Nimrod Rumble" full text: Fayette administrators' accounts 1850–1860 (only as a creditor in the
+  John Franks estate, 1865), Nicholson Twp. tax lists 1847–1860, deeds 1863–1866, bonds 1834–1852.
+  The distribution of Godfrey's estate has not turned up yet; the Nicholson tax lists and the
+  1863–1866 deeds (a sale by heirs?) are the next pages to read.
