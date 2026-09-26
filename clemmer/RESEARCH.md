@@ -381,3 +381,9 @@ Fayette or nearby in 1840).
 - Mayme Beebe: no Mary/Mayme Beebe of the right age in the 1900–1910 Bridgeton households indexed.
   Candidates: the families of Charles H. and Nettie, Eva A., George W. Next: the Clark–Beebe marriage
   (probably 1915–16, Potter or McKean Co.), not yet indexed.
+
+- **Godfrey Rumble's estate**, Fayette Orphans' Court, December Court 1858: Godfrey Rumble, late of
+  Nicholson Twp., died intestate; administrators William P. Griffin and Nimrod Rumble; 120 acres.
+  No heirs named on this page. Probably Caroline's father (Nicholson adjoins Springhill; Caroline was
+  17 then). Next: the partition or distribution of this estate, which would list the children —
+  full-text search "Nimrod Rumble" and the Orphans' Court volumes for 1859–1862.

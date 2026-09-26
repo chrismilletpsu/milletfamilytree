@@ -93,3 +93,7 @@ Fayette County Orphans' Court marriage license dockets.
 - `wvculture/1957-monongalia-death-martin-john-renstrom.jpg` — Monongalia Co., W.Va., register and
   index of deaths, pp. 30–31: Martin John Renstrom, 23 Nov 1957. West Virginia Archives & History,
   Vital Research Records, record 4724927 (film 840905, frame 00211).
+- `familysearch/fayette-orphans-court-1858-godfrey-rumble-estate.jpg` — Orphans' Court, December Court
+  1858, pp. 473–474: estate of Godfrey Rumble, late of Nicholson Twp. FamilySearch "Orphans' Court
+  records 1844–1860 vol 4–5", image 562 (found by full-text search).
+  <https://www.familysearch.org/ark:/61903/3:1:3QS7-L99B-17BQ>
