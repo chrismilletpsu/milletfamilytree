@@ -36,6 +36,11 @@ Archives. Downloaded with Chris's subscription.
 - `ancestry/1927-death-cert-42451-mary-c-wilkins.jpg` — Mary C. Wilkins, d. 17 Apr 1927, Springhill
   Twp. Ancestry record 4400094, image 42342_645856_0555-00483.
 
+- `ancestry/1917-death-cert-117667-william-g-miller.jpg` — William Gabriel Miller, d. 4 Nov 1917,
+  Georges Twp. Ancestry record 1423256, image 41381_645856_0520-00008.
+- `ancestry/1937-death-cert-96781-ida-emme-miller.jpg` — Ida Catheryn Miller, d. 17 Oct 1937,
+  Georges Twp. Ancestry record 3105368, image 42342_2421406271_0898-02198.
+
 From *Pennsylvania, U.S., Marriages, 1852–1968*, Ancestry.com, imaging FamilySearch's films of the
 Fayette County Orphans' Court marriage license dockets.
 

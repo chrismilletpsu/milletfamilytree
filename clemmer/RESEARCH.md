@@ -269,3 +269,25 @@ Notable event added: Michael Clemmer, the Battle of Cold Harbor, 1864.
 - A FamilySearch download was not triggered by a mis-aimed click, and the file then moved was the
   newest image already in ~/Downloads, which was one of Chris's own. It was put back unchanged.
   Downloads are now only ever moved by their exact expected filename.
+
+## 26 Sep 2026 — sixth pass: the Millers and the Emmes
+
+- **William Gabriel Miller (1855–1917)**, PA death certificate 117667: a miner; parents **Victor
+  Miller and Jennie Sisler**, both born Pa.; buried Sisler Cemetery. (The lead came from
+  FamilySearch's shared tree, "William Gabriel Miller 1855–1917"; the certificate confirms it.)
+- **Ida Catheryn (Emme) Miller (1857–1937)**, PA death certificate 96781: parents **Wm Emme, born
+  Germany**, and **Sevina Derry**, born Fayette Co. William Emme is the first immigrant found on
+  either side. The shared tree gives the Millers' marriage as 6 Dec 1877, Fayette Co.; not yet seen
+  in a record here.
+- **1900 census, Smithfield**: William G., 45, "Emma K." (Ida; the index mis-reads her name), 43,
+  and eight children, Charley to Lawrence E. All eight added as Emma Miller's siblings.
+- Rumble: a **Rebecca Rumble, 67, born Delaware**, was living in Springhill in 1870 with a Lucinda
+  Maser, 38. She could be Caroline's mother, Rebecca Varner, widowed, but nothing yet joins them;
+  noted, not added. No Rumble household with Godfrey and Rebecca turns up in the 1850 or 1860
+  index; the family is probably mis-spelled there.
+
+Next: William Emme's arrival (naturalization, the 1860–1880 censuses in Fayette); Victor Miller and
+Jennie Sisler in the 1850–1870 censuses; the Sisler and Derry families.
+
+Images: `assets/ancestry/1917-death-cert-117667-william-g-miller.jpg` (Ancestry record 1423256) and
+`assets/ancestry/1937-death-cert-96781-ida-emme-miller.jpg` (Ancestry record 3105368).
