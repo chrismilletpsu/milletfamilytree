@@ -70,3 +70,44 @@ April and Bill are living, and appear on the page with names and links only.
   check; she may be indexed under a mangled name).
 - Find a Grave raises a Cloudflare "verify you are human" check on most memorial pages. Chris
   cleared it for memorial 144874872; other memorials were read through the indexes instead.
+
+## 26 Sep 2026 — second pass, both sides
+
+### Found
+
+- **Andrew Clemmer's household, 1850**, Springhill Twp., dwelling 235: Andrew, 40, Maria, 38,
+  and nine children, including Lebbens, 18, and "Gasper", 9, who is the Jasper (1840–1922) whose
+  death certificate names Andrew and Mariah as his parents. In 1880 Andrew, 69, is a laborer in
+  Nicholas Ganow's household in Springhill. FamilySearch's shared tree calls him "Andrew Blosser
+  Clemmer, 1810–1887" (tree person 2S4K-ZSG). That is a lead only: nothing read here yet gives
+  the middle name or the death date.
+- **Caroline Rumble's parents.** Her PA death certificate, 114721 (d. 24 Dec 1909), names
+  Godfrey Rumble and Rebecca Varner; the informant was her son Jasper Clemmer Sr. of Cheat Haven.
+- **Elizabeth Wilkins's parents.** Fayette Co. marriage license docket 44, p. 47, license 19339,
+  4 Sep 1907: Eliza Wilkins, 24, born Morgantown, W.Va., daughter of Harry and Mary. The 1900
+  census, Springhill Twp., has Eliza E. Wilkens, born Sept 1884 in W.Va., with Henry H. (b. Dec
+  1843, W.Va.) and Mary C. (b. July 1844, W.Va.). The name, month, year, state and township all
+  agree, and Harry is the usual nickname for Henry, so the join is carried as proven. The same
+  license names Amadee's parents as "Leebbius and Caroline Clemmer": a third independent source.
+- **Martin Dunham's parents.** His PA death certificate, 72324 (d. 26 Aug 1943), names John Dunham
+  and Rebecca Dewalt, both born in Fayette Co.; his 1899 license names John and Rebecca.
+- **Emma Miller's parents.** Her PA death certificate, 26280 (d. 15 Mar 1942), names Wm Miller and
+  "Ida Emme" (the index reads "Ian Emme"); the 1899 license names Wm. G. and Ida.
+
+### Negatives
+
+- Elizabeth (Wilkins) Clemmer's death, 2 Apr 1931 by her grave. Ancestry PA death certificates:
+  every woman indexed as dying on 2 Apr 1931 (168, all counties) was read; none died in Fayette Co.
+  at her age. West Virginia Vital Research Records deaths: no *Clemmer* in any county in 1931.
+  Monongalia Clemmer deaths do show up for other years, so the search works. Next: try 1930–1932,
+  and her name spelled Clemer or Klemmer.
+
+### Next
+
+- Andrew Clemmer: the 1840 and 1860–1870 censuses; where he was born; whether "Blosser" is real,
+  and if so, the Rockingham Co., Va., Blossers and Clemmers are the obvious place to look.
+- John Dunham and Rebecca Dewalt: the 1870 census, Springhill or Georges Twp.
+- William G. Miller and Ida "Emme": the 1880 census (Emma born Jan 1881, so try 1900 and
+  1910 as well).
+- Godfrey Rumble and Rebecca Varner: the 1850–1860 censuses, Fayette Co.
+- Henry H. and Mary C. Wilkins: Monongalia Co., W.Va., before 1884; their marriage.

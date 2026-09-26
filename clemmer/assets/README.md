@@ -23,6 +23,23 @@ Archives. Downloaded with Chris's subscription.
   Clemmer, d. 23 Feb 1909, Springhill Twp. Ancestry record 2560967, image
   41381_2421406272_0615-01935.
 
+- `ancestry/1909-death-cert-114721-caroline-rumble-clemmer.jpg` — Caroline Clemmer, d. 24 Dec 1909,
+  Springhill Twp. Ancestry record 281182, image 41381_1220705043_0567-03079.
+- `ancestry/1942-death-cert-26280-emma-miller-dunham.jpg` — Mrs. Emma Dunham, d. 15 Mar 1942,
+  Georges Twp. Ancestry record 3877890, image 42342_1220705235_0667-03368.
+- `ancestry/1943-death-cert-72324-martin-dunham.jpg` — Martin Dunham, d. 26 Aug 1943, Springhill
+  Twp. Ancestry record 4646075, image 42342_2321306652_0786-01938.
+
+From *Pennsylvania, U.S., Marriages, 1852–1968*, Ancestry.com, imaging FamilySearch's films of the
+Fayette County Orphans' Court marriage license dockets.
+
+- `ancestry/1907-fayette-marriage-docket-44-47-clemmer-wilkins.jpg` — docket 44, pp. 46–47; license
+  19339, Amedee Clemmer and Eliza Wilkins, 4 Sep 1907 (the right-hand page). Ancestry record
+  2789906, image TH-1-159316-174407-61 (FamilySearch film 1318046).
+- `ancestry/fayette-marriage-license-index-w-clemmer-wilkins-1907.jpg` — the county's index to
+  marriage license dockets, women's side, W: "Wilkins, Eliza — Clemmer, Amedee, Sept 4 1907, book
+  44 p. 47". Ancestry record 2772771, image TH-1-159316-159856-28 (film 1318028).
+
 ## Find a Grave (contributors' photographs)
 
 - `findagrave/fag-144874872-wbclemmer-headstone.jpg` — headstone of William Clemmer Sr.,
