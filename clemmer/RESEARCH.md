@@ -30,9 +30,8 @@ April and Bill are living, and appear on the page with names and links only.
   make the match; it is not carried as probable.
 - **Thomas / Neil.** The 1940 census's "Thomas Clemmer, 6" is Margaret's son Thomas Neil Dunham
   (1935–2021). He is Neil T. Dunham, 14, in 1950, and Find a Grave links him to William. His 2021
-  obituary names his mother, William, and Bernard, William, Phyllis and Jacqueline. **Not on the
-  page yet**: he was born before the marriage and died recently, so whether and how to show him is
-  the family's call.
+  obituary names his mother, William, and Bernard, William, Phyllis and Jacqueline. Added to the
+  page on 26 Sep 2026 at Chris's word, as Margaret's son and Bill's half-brother.
 - **Amadee H. Clemmer (1880–1921).** His PA death certificate, 49787, is saved in
   `assets/ancestry/`. It names his parents as **Lebius Clemmer and Caroline Rumble**. The date of
   death conflicts: the certificate says 4 May 1921, Find a Grave 11 Apr 1921. The certificate is
@@ -158,3 +157,8 @@ April and Bill are living, and appear on the page with names and links only.
   Hugh on 20 Apr 1886; John Dunham, 29, son of John and Rebecca, married Lucinda Dukate on 2 Dec
   1889. They are possibly Martin's siblings, but other Dunham couples named John and Rebecca were
   in the county. Not joined.
+
+## 26 Sep 2026 — decisions from Chris
+
+- Bill Clemmer is living: his card stays name and links only, and his birth date stays off the page.
+- Neil Dunham goes on the tree, as Margaret's son and Bill's half-brother.

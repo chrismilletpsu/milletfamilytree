@@ -47,6 +47,7 @@ const S = {
   marr1938: ["Monongalia Co., W.Va., marriage license, pp. 432–433: William Bryan Clemmer, 29, born Point Marion, son of Amadee Clemmer and Elizabeth Wilkins, and Margaret Belle Dunham, 21, born 22 Mar 1916 at Smithfield, Pa., daughter of Martin Dunham and Emma Miller; applied 29 Sep, married at Morgantown 14 Oct 1938 by Bernard Gibbs, M.E. minister", "https://archive.wvculture.org/vrr/va_mcdetail.aspx?Id=11349379"],
   ssdiWm: ["Social Security Death Index: William Clemmer, born 27 June 1908, died May 1982, last residence Point Marion", FS + "J2SJ-MP8"],
   fagWm: ["Find a Grave memorial 144874872: William Bryan Clemmer Sr., born 27 June 1908 at Springhill, died May 1982 at Point Marion, buried Evergreen Memorial Park, Point Marion; headstone “William Clemmer, Sr., 1908–1982”; links his half-son Thomas Neil Dunham (1935–2021)", "https://www.findagrave.com/memorial/144874872/william-bryan-clemmer"],
+  fagNeil: ["Find a Grave memorial 226100459: Thomas Neil Dunham, 1935–2021", "https://www.findagrave.com/memorial/226100459/thomas_neil-dunham"],
   fagElizabeth: ["Find a Grave memorial 39473359: Elizabeth Wilkins Clemmer, 1884–1931", "https://www.findagrave.com/memorial/39473359/elizabeth-clemmer"],
   cen1880: ["1880 census, Springhill Twp., Fayette Co., Pa., ED 56: Lebous Clemmer, 49, wife Caroline, 39, and children Jasper (17), Elle M. (14), Oney A. (10), Joseph (7), Oliver S. (3) and Amada (3 months)", FS + "MWF8-YP5"],
   dcLebbeus: ["Pennsylvania death certificate 15443 (1909): Libbens [Lebbeus] Bigelow Clemmer, born 15 Jan 1832 in Pennsylvania, died 23 Feb 1909 at Springhill Twp., aged 77, married, a brick molder, of chronic Bright's disease; father Andrew Clemmer (born Pa.), mother Moriah Halphin (born W.Va.); informant Frank Clemmer, Cheat Haven, Pa.; buried Mt. Moriah Cemetery 25 Feb 1909", "https://www.ancestry.com/search/collections/5164/records/2560967"],
@@ -84,10 +85,15 @@ const P = [
   { id:"billjr", name:"William “Bill” Clemmer", short:"Bill Clemmer", gen:1, line:"clem", direct:true,
     lede:"William Clemmer Jr., the son of William Bryan Clemmer and Margaret Belle Dunham.",
     sources:[S.family, S.cen1950jr] },
+  { id:"neildunham", name:"Thomas Neil Dunham", short:"Neil Dunham", b:"1935", d:"2021", gen:1, line:"dun", lineLabel:"Dunham line",
+    place:"Fayette Co., Pa. → Mountain Lake Park, Md.",
+    lede:"Margaret Belle Dunham's son, born in Fayette County on 12 April 1935, three years before her marriage to William Bryan Clemmer. He grew up in their house in Springhill Township: the 1940 census counts him as Thomas Clemmer, 6, and the 1950 census as Neil T. Dunham, 14, alongside his half-sisters and half-brothers. He died at Mountain Lake Park, Maryland, on 23 April 2021, aged 86; his obituary names his mother and his brothers and sisters Bernard, William, Phyllis and Jacqueline.",
+    facts:{ Born:"12 Apr 1935, Fayette Co., Pa.", Died:"23 Apr 2021, Mountain Lake Park, Md." },
+    sources:[S.cen1940, S.cen1950, S.obitNeil, S.fagWm, S.fagNeil] },
   { id:"wbclemmer", name:"William Bryan Clemmer", short:"William B. Clemmer", b:"1908", d:"1982", gen:2, line:"clem", direct:true,
     place:"Point Marion → Springhill Twp., Fayette Co., Pa.", role:"Coal-mine operator",
     lede:"Born at Point Marion on 27 June 1908, William was twelve when his father died of tuberculosis in 1921. He married Margaret Belle Dunham at Morgantown, across the state line, on 14 October 1938; he was 29 and she 21. In 1940 he was working for the WPA and living just outside Point Marion; by 1950 he was running a coal mine in Springhill Township, with five children in the house. He died in May 1982 and is buried beside Margaret in Evergreen Memorial Park at Point Marion, under a flat stone that reads William Clemmer, Sr.",
-    facts:{ Born:"27 June 1908; Point Marion by his marriage license, Springhill by his memorial", Married:"14 Oct 1938, Morgantown, W.Va.", Died:"May 1982 (Social Security Death Index)", Burial:"Evergreen Memorial Park, Point Marion", Household:"The son Thomas, 6, in the 1940 census is Margaret's son Thomas Neil Dunham (1935–2021), counted under the Clemmer name; he is Neil T. Dunham in 1950." },
+    facts:{ Born:"27 June 1908; Point Marion by his marriage license, Springhill by his memorial", Married:"14 Oct 1938, Morgantown, W.Va.", Died:"May 1982 (Social Security Death Index)", Burial:"Evergreen Memorial Park, Point Marion", Household:"The son Thomas, 6, in the 1940 census is Margaret's son Thomas Neil Dunham (1935–2021), counted under the Clemmer name; he is Neil T. Dunham in 1950, and William's memorial links him as a son." },
     sources:[S.cen1910, S.cen1920, S.marr1938, S.cen1940, S.draft1940, S.cen1950, S.ssdiWm, S.fagWm, S.numident] },
   { id:"mbdunham", name:"Margaret Belle Dunham", short:"Margaret Belle Dunham", b:"1916", d:"1979", gen:2, line:"dun", direct:true,
     place:"Smithfield → Springhill Twp., Fayette Co., Pa.",
@@ -182,6 +188,8 @@ const E = [
   ["billjr","april","parent"],
   ["wbclemmer","mbdunham","spouse"],
   ["wbclemmer","billjr","parent"], ["mbdunham","billjr","parent"],
+  ["mbdunham","neildunham","parent"],
+  ["neildunham","billjr","sibling"],
   ["amadee","elizwilkins","spouse"],
   ["amadee","wbclemmer","parent"], ["elizwilkins","wbclemmer","parent"],
   ["martindunham","emmamiller","spouse"],
@@ -231,6 +239,7 @@ const LAYOUT_X = {       // person id → fixed column, a fraction of the width;
   // Dunham side, right
   johndunham:0.61, rebeccadewalt:0.68, wmgmiller:0.77, idaemme:0.85,
   martindunham:0.64, emmamiller:0.82,
+  neildunham:0.66,
 };
 
 // ---------- Map ----------
@@ -242,10 +251,12 @@ const PLACES = {
   smithfield: { n:"Smithfield, Fayette Co., PA", lat:39.8012, lon:-79.8084 },
   cheathaven: { n:"Cheat Haven, Fayette Co., PA", lat:39.7195, lon:-79.8540 },
   morgantown: { n:"Morgantown, Monongalia Co., WV", lat:39.6295, lon:-79.9559 },
+  mtlakepark: { n:"Mountain Lake Park, Garrett Co., MD", lat:39.3987, lon:-79.3817 },
   masontownwv: { n:"Masontown, Preston Co., WV", lat:39.5498, lon:-79.7959 },
 };
 const GEO = {
   wbclemmer: { b:1908, bEst:0, d:1982, dEst:0, stops:[ {p:"pointmarion", y:1908, e:0}, {p:"springhill", y:1910, e:0}, {p:"pointmarion", y:1982, e:1} ] },
+  neildunham: { b:1935, bEst:0, d:2021, dEst:0, stops:[ {p:"springhill", y:1935, e:1}, {p:"mtlakepark", y:2021, e:1} ] },
   mbdunham: { b:1916, bEst:0, d:1979, dEst:0, stops:[ {p:"smithfield", y:1916, e:0}, {p:"springhill", y:1938, e:1}, {p:"pointmarion", y:1979, e:1} ] },
   amadee: { b:1880, bEst:0, d:1921, dEst:0, stops:[ {p:"springhill", y:1880, e:0}, {p:"cheathaven", y:1907, e:0}, {p:"springhill", y:1910, e:0} ] },
   elizwilkins: { b:1884, bEst:0, d:1931, dEst:0, stops:[ {p:"morgantown", y:1884, e:0}, {p:"springhill", y:1900, e:0} ] },
