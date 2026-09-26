@@ -391,3 +391,17 @@ Fayette or nearby in 1840).
   John Franks estate, 1865), Nicholson Twp. tax lists 1847–1860, deeds 1863–1866, bonds 1834–1852.
   The distribution of Godfrey's estate has not turned up yet; the Nicholson tax lists and the
   1863–1866 deeds (a sale by heirs?) are the next pages to read.
+
+## 26 Sep 2026 — Sweden (Riksarkivet censuses)
+
+Chris cleared the Riksarkivet check. Folkräkningar 1890 and 1900, births 1885 in a "Lundby"
+parish with a name like Mårten/Martin: the only boy is **Mårten Johannes**, born 1885, Norra Lundby.
+- 1890, Amundtorp: son of Johan Gustaf Ask (b. 1840 Bolum, soldier) and Maja Stina Larsdotter
+  (b. 1840 Norra Lundby); brothers August (1875), Gustaf Viktor (1878), Frans Oscar (1880).
+- 1900, Smedstorp: Johan Gustaf Johansson Ask (gratialist), Maja Lisa Larsson (b. 1840 Varnhem),
+  Mårten Johannes.
+Probably Martin John Renstrom (Martin John = Mårten Johannes; father John; born 1885 Norra Lundby;
+still at home at 15; emigrated 1908). **Conflict**: the 1957 W.Va. register names the mother Louise
+Johnson (informant G. R. Maxwell, M.D., not family). Not joined; noted on the cards as probable.
+Next: the Norra Lundby birth register (C:), Nov 1885, and the Norra Lundby moving-out register
+(utflyttningslängd) for 1907–1908, which would record Mårten Johannes leaving for America.
