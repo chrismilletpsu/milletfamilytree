@@ -48,6 +48,11 @@ Archives. Downloaded with Chris's subscription.
   207824, Svea Elizabeth Renstrom, 1 Dec 1916, Fayette City. Ancestry record 36201003, image
   60484_78164b65_2479-00160.
 
+- `ancestry/1911-death-cert-45120-victor-miller.jpg` — Victor Miller, d. 22 May 1911, Fairchance.
+  Ancestry record 302319, image 41381_2421401696_0863-00242.
+- `ancestry/1927-death-cert-104813-levina-derry-emme.jpg` — Levina Emme, d. 14 Nov 1927, Georges Twp.
+  Ancestry record 4857272, image 42342_2421406274_0874-03026.
+
 From *Pennsylvania, U.S., Marriages, 1852–1968*, Ancestry.com, imaging FamilySearch's films of the
 Fayette County Orphans' Court marriage license dockets.
 

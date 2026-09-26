@@ -342,3 +342,21 @@ Johan Renström's family around 1885.
   Lundby birth register (Skaraborg) for 1885 needs to be read directly — ArkivDigital or
   Riksarkivet (free), not yet searched. A Martin Renstrøm, born 1885 in Sweden, in the 1900 census
   of Nedre Eiker, Norway, with a Viktor Renstrøm, is probably someone else.
+
+## 26 Sep 2026 — the Millers, Emmes and Derrys, a generation further
+
+- **Victor Miller (1828–1911)**, PA death certificate 45120: parents **Phillip Miller and Elizabeth
+  Victor**. Confirmed as William Gabriel's father by the 1860 census (Victor, 30, Jane, 23, Wm, 5)
+  and 1870 (William, 14); the grandchildren's names Carrie and Ewing repeat his children's.
+  Seven of William's brothers and sisters added from 1860–1870.
+- **William Emme**: 1900 census — born Aug 1831 in Germany, **immigrated 1835**, married 47 years.
+  1870 household with nine children; "C. L.", a girl of 13, fits Ida (b. Dec 1857) but the index
+  abbreviates her, so Ida's link rests on her death certificate. A William Emme Civil War pension
+  (widow Tabitha, 10th U.S. Infantry band) is a different man.
+- **Levina Derry (1836–1927)**, PA death certificate 104813: father **Bazil Derry**; mother "don't
+  know". 1850 census, Georges Twp.: Bazil Derry, 50, and Mary, 57, both born Maryland, with
+  Charity P. and Lavina. Mary carried as probable mother.
+
+Next on these lines: Phillip Miller and Elizabeth Victor in the 1830–1850 censuses; Bazil Derry in
+Maryland; William Emme's father (the family arrived in 1835, so an Emme head of household in
+Fayette or nearby in 1840).
