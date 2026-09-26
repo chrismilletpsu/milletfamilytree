@@ -40,3 +40,17 @@ script. It exits non-zero on any of these.
 - A link the records make likely but do not prove is marked `probable`.
 - Living people appear with a name and their links only: no dates, no places, no map stops.
 - Searches that found nothing are logged in `RESEARCH.md` with the source and its coverage.
+
+## Sending a preview
+
+Chat file viewers show an HTML file as a static snapshot with scripts switched off, and this
+page draws everything with script, so sending `index.html` shows an empty tree. Build a preview
+instead:
+
+```
+python3 tools/preview.py /path/to/outdir
+```
+
+It lays the page out in headless Chrome, saves the finished drawing as plain HTML and SVG with
+every script removed, then photographs that file with scripts blocked. It exits non-zero unless
+every person is in the picture. Send both `clemmer-preview.html` and `clemmer-preview.png`.

@@ -5,3 +5,4 @@ launch.json
 # Large OCR of searched volumes: kept locally, re-downloadable (see sources/README.md).
 sources/*.txt
 
+tools/.cache/
