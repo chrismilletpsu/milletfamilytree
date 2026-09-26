@@ -174,3 +174,31 @@ puts this person in it. Checked after every research round.
 - Considered and left out: West Virginia's statehood in 1863, because no record yet puts a family
   member in Preston County that year; the 1940 draft registration itself, which every man of age
   made; and the tuberculosis and diabetes deaths, which are the family's own story.
+
+## 26 Sep 2026 — siblings
+
+Chris asked for every sibling the records give, not only the direct line. Added 39 people, each
+tied to both parents and cited to the household census that names them:
+
+- Bill's brothers and sisters (1950 census; Neil's obituary): Phyllis and Jacqueline, possibly
+  living, so names only; Bernard Dale (1946–2003).
+- William's (1920 census; Find a Grave): Grace Yvonne (Nigro), Irene E. (DiPietro), Bruce Sterling.
+- Margaret's (1930 census): Paul, Herbert, Clarence, Eleanore C., Harry S., Franklin W., Edith, Pearl.
+  A Joe Dunham of Fairchance was the informant on both parents' certificates, and is probably
+  another son; not added until a record says so.
+- Amadee's (1880 census): Jasper E. (1862–1931, certificate), Elle M., Iona Alice (Molesy),
+  Joseph (1872–1959, certificate naming "L. B."), Oliver S. A Frank Clemmer of Cheat Haven was the
+  informant for Lebbeus in 1909, and is probably a son born after 1880; not added.
+- Elizabeth's (1900 census): Minerva (Swearingen), Melenda, Harvey (1878–1937, certificate naming
+  Henry H. and Mary), Maggie, Chas. A "Harry Wilkins" was the informant for Henry in 1913; not added.
+- Lebbeus's (1850 census): Jacob, Delila, Jasper (1840–1922, certificate naming Andrew and Mariah),
+  Michael, Minerva, Margaret, Barbary A.
+- Henry Wilkins's (1850 and 1860 censuses): Hannah, William, Eliza J.; and his half-brothers and
+  half-sisters Isaac J., Joanna, Jonathan and Phebe E. Blaney, with their father John H. Blaney.
+
+Unchecked: Ella M. Molsey (1865–1913, Greene Co.) may be Elle M., since Iona also married a
+Molesy, but the certificate's father ("Elie") doesn't fit. Oliver Clemmer (d. 1951, Monongalia)
+may be Oliver S.
+
+Notable events: none of the new people yet has a record placing them in one. Andrew's sons
+Jacob, Jasper and Michael were of age for the Civil War; their service is still to be checked.
