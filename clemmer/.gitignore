@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+launch.json
+
+# Large OCR of searched volumes: kept locally, re-downloadable (see sources/README.md).
+sources/*.txt
+
+# Subscription page images: kept locally but not republished (see assets/README.md).
