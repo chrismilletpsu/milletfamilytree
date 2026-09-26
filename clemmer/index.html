@@ -473,6 +473,13 @@
     .force("y", d3.forceY(n => genY(n.gen)).strength(1.2))
     .force("collide", d3.forceCollide(n => n.direct ? 46 : 50).strength(0.9))
     .force("labels", labelSeparation())
+    // a crowded generation must spread sideways, never spill into the band above or below,
+    // where a sibling would read as a parent or a child
+    .force("band", () => nodes.forEach(n => {
+      const y0 = genY(n.gen), lim = bandH * 0.3;
+      if (n.y < y0 - lim) { n.y = y0 - lim; n.vy = 0; }
+      else if (n.y > y0 + lim) { n.y = y0 + lim; n.vy = 0; }
+    }))
     .alphaDecay(0.03);
 
   // Labels hang to the right of each circle, so two nodes in the same generation band need

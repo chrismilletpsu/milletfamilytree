@@ -57,6 +57,11 @@ const S = {
   dcJasperE: ["Pennsylvania death certificate index (Ancestry): Jasper E. Clemmer, born 29 Nov 1862, died 26 Dec 1931 at Springhill Twp.; parents Lebby and Caroline; spouse Delia", "https://www.ancestry.com/search/collections/5164/records/4903016"],
   dcJoseph: ["Pennsylvania death certificate index (Ancestry): Joseph Clemmer, born 4 Sep 1872, died 8 Aug 1959 at Uniontown; father L. B. Clemmer, mother given as Stella Dunn", "https://www.ancestry.com/search/collections/5164/records/6239553"],
   dcHarvey: ["Pennsylvania death certificate index (Ancestry): Harvey Wilkins, born 12 Dec 1878, died 18 July 1937 at Uniontown; parents Henry H. and Mary Wilkins; spouse Cora", "https://www.ancestry.com/search/collections/5164/records/3109615"],
+  pensionMichael: ["Civil War pension index card: Michael Clemmer, Co. K, 116th Pa. Infantry; father's pension claimed by Andrew Clemmer, filed May 1887 (application 354,265, certificate 243,706), from Pennsylvania", FS + "KD5Q-8CN"],
+  regMichael: ["Pennsylvania register of military volunteers, p. 534, entry 23: Michael Clemmer, enlisted at Uniontown 31 Mar 1864 for three years, Co. K, 116th Regiment (age given as 28)", FS + "4LY7-72ZM"],
+  fagMichael: ["Find a Grave index: Michael Clemmer, born 8 May 1842, died 3 June 1864, buried Cold Harbor National Cemetery, Mechanicsville, Va.", FS + "QVVN-9KDF"],
+  estateMichael: ["Fayette Co. Orphans' Court, Estate of Michael Clemmer, dec'd, No. 16 June Court 1868, auditor's report (A. E. Willson), pp. 289–290: Michael died intestate, unmarried and without issue; William Parshall appeared for Andrew Clemmer, father of the decedent, and Daniel Kaine for Mrs. Delilah Crow, his sister and daughter-in-law of Hon. Alexander Crow, who claimed the bounty money Michael left with the judge on going into the army; the balance of $236.25 distributed to Andrew Clemmer, father", "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSSH-KGYC"],
+  nelsonK116: ["Nelson's Biographical Dictionary of Fayette County (1900), p. 198: roster of Co. K, 116th Pa. Infantry, a Fayette County company, including Michael Clemmer", "https://archive.org/details/nelsonsbiographi01shep"],
   fagElizabeth: ["Find a Grave memorial 39473359: Elizabeth Wilkins Clemmer, 1884–1931", "https://www.findagrave.com/memorial/39473359/elizabeth-clemmer"],
   cen1880: ["1880 census, Springhill Twp., Fayette Co., Pa., ED 56: Lebous Clemmer, 49, wife Caroline, 39, and children Jasper (17), Elle M. (14), Oney A. (10), Joseph (7), Oliver S. (3) and Amada (3 months)", FS + "MWF8-YP5"],
   dcLebbeus: ["Pennsylvania death certificate 15443 (1909): Libbens [Lebbeus] Bigelow Clemmer, born 15 Jan 1832 in Pennsylvania, died 23 Feb 1909 at Springhill Twp., aged 77, married, a brick molder, of chronic Bright's disease; father Andrew Clemmer (born Pa.), mother Moriah Halphin (born W.Va.); informant Frank Clemmer, Cheat Haven, Pa.; buried Mt. Moriah Cemetery 25 Feb 1909", "https://www.ancestry.com/search/collections/5164/records/2560967"],
@@ -180,9 +185,9 @@ const P = [
     sources:[S.dcCaroline] },
   { id:"andrewclemmer", name:"Andrew Clemmer", short:"Andrew Clemmer", b:"c. 1810", gen:5, line:"clem", direct:true,
     place:"Springhill Twp., Fayette Co., Pa.", role:"Laborer",
-    lede:"Born in Pennsylvania about 1810, Andrew was 40 in 1850 and living in Springhill Township with his wife Maria and nine children, from Lebbeus, 18, to Barbary A., 2. In 1880 he was 69, still in Springhill, working as a laborer and living in Nicholas Ganow's household. Where he came from is the next question. Other researchers call him Andrew Blosser Clemmer, 1810–1887; no record here says so yet.",
+    lede:"Born in Pennsylvania about 1810, Andrew was 40 in 1850 and living in Springhill Township with his wife Maria and nine children, from Lebbeus, 18, to Barbary A., 2. In 1868–69 he claimed his son Michael's estate in the Orphans' Court and received it over the claim of his daughter Delilah; in 1880 he was 69, still in Springhill, working as a laborer and living in Nicholas Ganow's household; and in 1887 he applied for a father's pension for Michael. Where he came from is the next question: Clemmers were heads of household in Springhill in 1820 (John, Lewis) and 1830 (Gasper, Jacob, Lewis), and a Jasper Clemmer was a school director there in 1846. Other researchers call him Andrew Blosser Clemmer, 1810–1887; no record here says so yet.",
     facts:{ Children:"Lebbeus, Jacob, Delila, Jasper, Michael, Minerva, Margaret, Barbary A. (1850 census)" },
-    sources:[S.cen1850, S.cen1880andrew, S.dcLebbeus] },
+    sources:[S.cen1850, S.estateMichael, S.cen1880andrew, S.pensionMichael, S.dcLebbeus] },
   { id:"moriahhalphin", name:"Moriah Halphin", short:"Moriah Halphin", gen:5, line:"clem", lineLabel:"Halphin line", direct:true,
     place:"West Virginia",
     b:"c. 1812",
@@ -263,15 +268,16 @@ const P = [
   { id:"jacobclemmer", name:"Jacob Clemmer", short:"Jacob Clemmer", b:"c. 1835", gen:4, line:"clem", place:"Springhill Twp., Fayette Co., Pa.",
     lede:"Son of Andrew and Maria Clemmer, 15 in the 1850 census.",
     sources:[S.cen1850] },
-  { id:"delilaclemmer", name:"Delila Clemmer", short:"Delila Clemmer", b:"c. 1838", gen:4, line:"clem", place:"Springhill Twp., Fayette Co., Pa.",
-    lede:"Daughter of Andrew and Maria Clemmer, 12 in the 1850 census.",
-    sources:[S.cen1850] },
+  { id:"delilaclemmer", name:"Delilah Clemmer Crow", short:"Delilah Clemmer", b:"c. 1838", gen:4, line:"clem", place:"Springhill Twp., Fayette Co., Pa.",
+    lede:"Daughter of Andrew and Maria Clemmer, 12 in the 1850 census. She married a son of Judge Alexander Crow. Her brother Michael left his army bounty money with the judge for her in 1864; in 1869 the Orphans' Court ruled that it had to go to their father instead.",
+    sources:[S.cen1850, S.estateMichael] },
   { id:"jasperclemmer1840", name:"Jasper Clemmer", short:"Jasper Clemmer", b:"1840", d:"1922", gen:4, line:"clem", place:"Springhill Twp., Fayette Co., Pa.",
     lede:"Son of Andrew and Maria Clemmer, “Gasper”, 9, in the 1850 census. His death certificate names his parents as Andrew and Mariah; he died in Springhill Township in 1922.",
     sources:[S.cen1850, S.dcJasper1840] },
-  { id:"michaelclemmer", name:"Michael Clemmer", short:"Michael Clemmer", b:"c. 1843", gen:4, line:"clem", place:"Springhill Twp., Fayette Co., Pa.",
-    lede:"Son of Andrew and Maria Clemmer, 7 in the 1850 census.",
-    sources:[S.cen1850] },
+  { id:"michaelclemmer", name:"Michael Clemmer", short:"Michael Clemmer", b:"1842", d:"1864", gen:4, line:"clem", place:"Springhill Twp., Fayette Co., Pa. → Cold Harbor, Va.", role:"Union soldier",
+    lede:"Son of Andrew and Maria Clemmer, 7 in the 1850 census. He enlisted at Uniontown on 31 March 1864 in Company K of the 116th Pennsylvania, a Fayette County company, and was killed at Cold Harbor on 3 June 1864, aged 22; he is buried in the national cemetery there. Before he left he gave his bounty money to Judge Alexander Crow to keep, to go to his sister Delilah if he did not come back. In 1869 the Orphans' Court found it had to go to his father instead, though, as the auditor wrote, Michael had wanted very strongly that she should have it and, for good reasons, that his father should not. Andrew later drew a father's pension for him.",
+    facts:{ Born:"8 May 1842 (grave); 7 in 1850; the enlistment register's 28 is an error", Service:"Co. K, 116th Pa. Infantry, from 31 Mar 1864", Died:"3 June 1864, Cold Harbor, Va." },
+    sources:[S.cen1850, S.regMichael, S.nelsonK116, S.fagMichael, S.estateMichael, S.pensionMichael] },
   { id:"minervaclemmer", name:"Minerva Clemmer", short:"Minerva Clemmer", b:"c. 1844", gen:4, line:"clem", place:"Springhill Twp., Fayette Co., Pa.",
     lede:"Daughter of Andrew and Maria Clemmer, 6 in the 1850 census.",
     sources:[S.cen1850] },
@@ -415,12 +421,15 @@ const E = [
 const EVENTS = {
   henrywilkins: { tag:"The Civil War, 1861–1865",
     text:"Henry served for the Union in Company C of the 3rd West Virginia Infantry, a Preston County company raised in 1861, which was remounted as the 6th West Virginia Cavalry in 1864. His stepfather, John H. Blaney, served in the same company. Henry drew an invalid pension for his service from 1889, and his widow Mary drew it after him." },
+  michaelclemmer: { tag:"The Battle of Cold Harbor, 1864",
+    text:"Michael enlisted in March 1864 in Company K of the 116th Pennsylvania, a regiment of the Irish Brigade in Grant's Overland Campaign. He was killed on 3 June 1864 in the great frontal assault at Cold Harbor, Virginia, where the Union lost thousands of men in less than an hour, and is buried in Cold Harbor National Cemetery." },
   wbclemmer: { tag:"The Great Depression and the WPA, 1940",
     text:"When he registered for the draft in October 1940, William, 32, gave his employer as the W.P.A., the Works Progress Administration, the New Deal's programme of public-works jobs for the unemployed, working at Smithfield R.D. 3. By 1950 he was running a coal mine of his own." },
 };
 const EVENT_YEAR = {};   // tag → year, for a tag with no year in it
 const EVENT_PLACE = {    // tag → [place keys] the map flies to
   "The Great Depression and the WPA, 1940": ["smithfield"],
+  "The Battle of Cold Harbor, 1864": ["coldharbor"],
 };
 
 // ---------- Generations ----------
@@ -472,6 +481,7 @@ const PLACES = {
   smithfield: { n:"Smithfield, Fayette Co., PA", lat:39.8012, lon:-79.8084 },
   cheathaven: { n:"Cheat Haven, Fayette Co., PA", lat:39.7195, lon:-79.8540 },
   morgantown: { n:"Morgantown, Monongalia Co., WV", lat:39.6295, lon:-79.9559 },
+  coldharbor: { n:"Cold Harbor, Hanover Co., VA", lat:37.5871, lon:-77.2861 },
   mtlakepark: { n:"Mountain Lake Park, Garrett Co., MD", lat:39.3987, lon:-79.3817 },
   masontownwv: { n:"Masontown, Preston Co., WV", lat:39.5498, lon:-79.7959 },
 };
@@ -514,7 +524,7 @@ const GEO = {
   chaswilkins: { b:1891, bEst:0, d:1900, dEst:1, stops:[ {p:"springhill", y:1891, e:1} ] },
   jacobclemmer: { b:1835, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1835, e:1} ] },
   delilaclemmer: { b:1838, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1838, e:1} ] },
-  michaelclemmer: { b:1843, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1843, e:1} ] },
+  michaelclemmer: { b:1842, bEst:0, d:1864, dEst:0, stops:[ {p:"springhill", y:1842, e:1}, {p:"coldharbor", y:1864, e:0} ] },
   minervaclemmer: { b:1844, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1844, e:1} ] },
   margaretclemmer: { b:1845, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1845, e:1} ] },
   barbaryclemmer: { b:1848, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1848, e:1} ] },
@@ -530,7 +540,7 @@ const GEO = {
 };
 // The map's opening frame, [[west, south], [east, north]] in degrees: southwestern
 // Pennsylvania and the West Virginia line, until the records reach further.
-const MAP_FRAME = [[-81.5, 38.6], [-78.2, 41.0]];
+const MAP_FRAME = [[-81.5, 37.3], [-76.9, 41.0]];
 
 if (typeof module !== "undefined") module.exports = {
   SITE, LINES, S, P, E, EVENTS, EVENT_YEAR, EVENT_PLACE, GEN_LABELS, LAYOUT_LINE, LAYOUT_X,

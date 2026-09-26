@@ -59,3 +59,10 @@ Fayette County Orphans' Court marriage license dockets.
   from the memorial).
 
 <https://www.findagrave.com/memorial/144874872/william-bryan-clemmer>
+
+## FamilySearch (Fayette County court records, digitised by FamilySearch)
+
+- `familysearch/fayette-orphans-court-michael-clemmer-estate-audit.jpg` and `…-p2.jpg` — Orphans'
+  Court, Estate of Michael Clemmer, dec'd, No. 16 June Court 1868, auditor's report, pp. 289–290.
+  FamilySearch film 007820333, images 165–166 (catalogued with "Marriages and deaths, 1852–1855";
+  found by full-text search). <https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSSH-KGYC>

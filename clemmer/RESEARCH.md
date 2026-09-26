@@ -202,3 +202,29 @@ may be Oliver S.
 
 Notable events: none of the new people yet has a record placing them in one. Andrew's sons
 Jacob, Jasper and Michael were of age for the Civil War; their service is still to be checked.
+
+## 26 Sep 2026 — fourth pass: Michael Clemmer and Andrew
+
+- **Pension index card** (FamilySearch KD5Q-8CN): Michael Clemmer, Co. K, 116th Pa. Infantry; a
+  *father's* pension, claimed by Andrew Clemmer in May 1887, certificate 243,706. A father's claim
+  means the son died in or of the service and the father said he had depended on him. **Andrew's
+  father's-pension file is a National Archives order worth making**: it would carry Andrew's own
+  affidavits, his age, and probably proof of his marriage to Maria.
+- Michael enlisted at Uniontown on 31 Mar 1864 (PA register of volunteers; its age of 28 is
+  wrong), was killed at Cold Harbor on 3 June 1864 (Find a Grave: born 8 May 1842; Cold Harbor
+  National Cemetery). Co. K of the 116th was a Fayette County company (Nelson 1900, p. 198). The
+  Bates roster has him in Co. K; its remarks column could not be matched to names reliably in the
+  OCR, so it is not cited for his fate.
+- **Orphans' Court, Estate of Michael Clemmer** (found by FamilySearch full-text search, "Andrew
+  Clemmer" in Fayette Co.): the auditor's report of 1869 names Andrew as the father and Mrs.
+  Delilah Crow as the sister, daughter-in-law of Hon. Alexander Crow. Michael died unmarried and
+  intestate; the $236.25 went to Andrew, against Michael's wish that Delilah have it. The report
+  says Michael "for good reasons" did not want his father to have it; what those reasons were is
+  not stated.
+- Full-text search is the way further back on Andrew: "Clemmer" in Fayette Co. gives 87 pages,
+  including Springhill tax lists from 1816, deeds from 1796 and Orphans' Court records from 1784.
+  Clemmer heads of household in Springhill: 1820 John, Lewis; 1830 Gasper, Jacob, Lewis; 1840
+  Andrew, Jacob, Joseph. Next: read the 1816–1840 Springhill tax lists and any Clemmer estate
+  before 1850 for a list of heirs that includes Andrew.
+
+Notable event added: Michael Clemmer, the Battle of Cold Harbor, 1864.
