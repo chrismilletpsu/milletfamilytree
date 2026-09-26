@@ -618,7 +618,8 @@
       p.role ? `<span class="role">${esc(p.role)}</span>` : ""
     ].join("");
     const dates = [yearsOf(p), p.place].filter(Boolean).join(" · ");
-    const sources = (p.sources || []).map(([t,u]) => `<li><a href="${u}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join("");
+    // a source with no link (family knowledge, a paper in someone's keeping) is shown as text
+    const sources = (p.sources || []).map(([t,u]) => u ? `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a></li>` : `<li>${esc(t)}</li>`).join("");
     panel.innerHTML = `
       <p class="eyebrow ${LINES[p.line] ? p.line : ""}">${esc(p.lineLabel || lineName(p.line))}</p>
       <h2>${esc(p.name)}</h2>
