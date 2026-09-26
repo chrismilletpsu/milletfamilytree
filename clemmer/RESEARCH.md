@@ -368,3 +368,16 @@ Fayette or nearby in 1840).
   (WWI draft, "Amedie Gans Clemmer"). The shared tree names Jacob's wife Anna Susanna Blosser
   (1774–1854); the 1850 census shows a Christina, born Germany, which does not fit, so no mother
   is added. Needed: Jacob's estate (he died after 1850) naming his heirs.
+
+## 26 Sep 2026 — Clark, Smith and Beebe follow-ups
+
+- Emma (Clark) Staub, PA death certificate 73100 (1958): born 9 Nov 1884 in Germany; father "Perry
+  Clark", mother Henrietta Friske. Confirms the German family; no town given.
+- Washington Co. marriage docket 18741 (1909): no parents on this form; Garnet E. Smith "of
+  Gillespie", 23.
+- Garnett (Smith) Renstrom: SSDI, born 16 Dec 1884, died Jan 1978, W.Va.; BillionGraves, buried at
+  Freeport, Washington Twp., Fayette. Her death certificate is under West Virginia's 50-year
+  closure; an obituary (1978, Morgantown or Uniontown papers) would name her parents.
+- Mayme Beebe: no Mary/Mayme Beebe of the right age in the 1900–1910 Bridgeton households indexed.
+  Candidates: the families of Charles H. and Nettie, Eva A., George W. Next: the Clark–Beebe marriage
+  (probably 1915–16, Potter or McKean Co.), not yet indexed.

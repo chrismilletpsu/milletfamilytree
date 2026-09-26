@@ -53,12 +53,18 @@ Archives. Downloaded with Chris's subscription.
 - `ancestry/1927-death-cert-104813-levina-derry-emme.jpg` — Levina Emme, d. 14 Nov 1927, Georges Twp.
   Ancestry record 4857272, image 42342_2421406274_0874-03026.
 
+- `ancestry/1958-death-cert-73100-emma-clark-staub.jpg` — Emma Staub, d. 20 Aug 1958, Titusville.
+  Ancestry record 6453365, image 42410_3421606191_1017-01896.
+
 From *Pennsylvania, U.S., Marriages, 1852–1968*, Ancestry.com, imaging FamilySearch's films of the
 Fayette County Orphans' Court marriage license dockets.
 
 - `ancestry/1907-fayette-marriage-docket-44-47-clemmer-wilkins.jpg` — docket 44, pp. 46–47; license
   19339, Amedee Clemmer and Eliza Wilkins, 4 Sep 1907 (the right-hand page). Ancestry record
   2789906, image TH-1-159316-174407-61 (FamilySearch film 1318046).
+- `ancestry/1909-washington-marriage-docket-renstrom-smith.jpg` — Washington Co. marriage license
+  docket, p. 611, license 18741, Renstrom and Smith, 6 Nov 1909 (upper right). Ancestry record
+  2849048, image TH-1-159316-187061-72.
 - `ancestry/fayette-marriage-license-index-w-clemmer-wilkins-1907.jpg` — the county's index to
   marriage license dockets, women's side, W: "Wilkins, Eliza — Clemmer, Amedee, Sept 4 1907, book
   44 p. 47". Ancestry record 2772771, image TH-1-159316-159856-28 (film 1318028).
