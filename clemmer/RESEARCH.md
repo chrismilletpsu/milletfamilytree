@@ -228,3 +228,44 @@ Jacob, Jasper and Michael were of age for the Civil War; their service is still 
   before 1850 for a list of heirs that includes Andrew.
 
 Notable event added: Michael Clemmer, the Battle of Cold Harbor, 1864.
+
+## 26 Sep 2026 — fifth pass
+
+### Found
+
+- **Frank P. Clemmer (1853–1934)**, PA death certificate index: parents Andrew and Mariah. A son
+  born after the 1850 census, and very probably the "Frank Clemmer, Cheat Haven" who was the
+  informant for Lebbeus in 1909 — so that informant was Lebbeus's brother, not a son as guessed
+  in the second pass.
+- **John and Rebecca Dunham**, 1860 census, Springhill Twp.: Jno, 30, Rebecca, 26, Jno, 1. The
+  son is the John Dunham, 29, "son of John and Rebecca", married 1889. Added as Martin's probable
+  brother (same parents' names, same township; no record names both sons together).
+- **1850 census, Springhill Twp.:** John Dunham, 19, born Va., in the household of Martin Dunham, 47,
+  born N.J., and Elizabeth, 45, born Va. Added as John's probable parents (the census states no
+  relationships; the grandson Martin's name fits). John's birthplace conflicts: Va. in 1850, Pa.
+  in 1860, Fayette Co. on Martin's certificate.
+
+### Leads from other researchers' trees (FamilySearch Family Tree), not yet proven
+
+- Andrew Clemmer: parents **Jacob Clemmer (1766–1865) and Anna Susanna Blosser (1774–1854)**,
+  brothers Joseph, John S., Lewis and Jasper (1801–1885) — consistent with the Springhill census
+  heads of 1820–1840 and the adult Jasper of 1836 and 1846, but no record here yet names Andrew
+  as Jacob's son. The tree also gives Andrew a death date of 4 May 1887 with no source, which
+  looks like the filing date of his pension claim; and it gives Michael as 1843–1846, which is
+  wrong (he was killed in 1864). It lists further children of Andrew and Maria: Ephraim, Andrew
+  Jr. (1835–1862), Flora (1850), Rebecca (1855–1889). Flora fits the Flora Ganow, 29, with whom
+  Andrew lived in 1880; not yet added.
+- John Dunham: "John William Dunham", born 1831 in Virginia; Rebecca "DeVault", 1834–1899.
+
+### Negatives and dead ends
+
+- Fayette full-text: "Jasper Clemmer" in an 1863 estate account (a creditor, paid $5); Jasper
+  Clemmer of Springhill buying an heir's share of William P. Molisee's land, June Court 1836; a
+  deed hit for Jacob Clemmer (1845–1855 deeds) that did not concern the family on the pages read.
+- The Andrew Clemmer household of 1860 did not come up in the FamilySearch index by name.
+
+### Process note
+
+- A FamilySearch download was not triggered by a mis-aimed click, and the file then moved was the
+  newest image already in ~/Downloads, which was one of Chris's own. It was put back unchanged.
+  Downloads are now only ever moved by their exact expected filename.
