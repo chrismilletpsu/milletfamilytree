@@ -450,3 +450,17 @@ Next: the Norra Lundby birth register (C:), Nov 1885, and the Norra Lundby movin
   Next: the Väring birth registers for 1770 and 1775 (Kjerstin's and Petter's parents); the Väring
   household book of c. 1800 for Petter's patronymic; where the family went in 1812. Maria
   Andersdotter's birth (1803, probably Ryd) and the Bolum household book for Johannes Ahn are still open.
+- **Petter Husar's baptism.** Väring C:2 (SE/GLA/13637/C/2), 1775, p. 36, image 26 (found through
+  Riksarkivet's "Register till skannade kyrkböcker", which points each parish-year to its image):
+  **Petter, b. 4 Apr, bapt. 5 Apr 1775**, son of **Lars Andersson** and **Maria Persdotter** (surname
+  corrected by the clerk), 31, farmers at a farm read as Ängbytorp. Matches the household book's
+  "Wäring 4/4 1775" exactly. Petter Husar was born Petter Larsson.
+- **Kjerstin Andersdotter not found.** The household book clearly gives "Wäring 10/10 1770", but the
+  Väring birth list for 1770 (p. 31, image 23; a compact father-and-child list before 1774) has no
+  Kjerstin near that date. Kjerstins born in Väring to an Anders: 12 Dec 1769 (Anders Olofsson,
+  ?Gillobby), 14 Jan 1770 (Anders Andersson), 11 July 1770 (Anders Jonsson), 18 Aug 1771 (Anders
+  Andersson). None matched without more evidence; she may have been born in a neighbouring parish.
+- Siblings of Petter: the 1767–1774 lists have several fathers named Lars Andersson (e.g. 1767
+  "torp. Lars Andersson", 1768 "Lars Andersson vid Wäring"), but the compact lists don't give the
+  mother or enough of the farm name to tie them to Petter's parents. Not added. The Väring household
+  book of the 1770s–80s would settle it.

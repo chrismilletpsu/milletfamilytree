@@ -120,6 +120,7 @@ const S = {
   husHagen: ["Varnhem household examination book, SE/GLA/13612/A I/6 (1836–1846), p. 94, image 60: the croft Hagen: crofter Lars Pettersson, born in the parish 1806; wife Maria Andersdotter, born 1803 [birthplace abbreviated, possibly Ryd]; children Lars Johan 1832, Anna Stina 1834, Anders Petter 1837, Maria Lisa 8 June 1840, Gustaf 31 Dec 1843", "https://sok.riksarkivet.se/bildvisning/C0053244_00060"],
   bapLars1806: ["Varnhem parish birth and baptism book, SE/GLA/13612/C/2 (1758–1836), 1806, p. 291, image 157: Lars, born 25 Oct, baptised 27 Oct 1806, son of Petter Husar and Kjerstin Andersdotter, 36, soldier's family at Öfverbo, Varnhem", "https://sok.riksarkivet.se/bildvisning/C0053255_00157"],
   husHusar: ["Varnhem household examination book, SE/GLA/13612/A I/4 (1800–1815), Holltorp rote (formerly Överbo), p. 35, image 31: soldier Petter Husar, born at Väring 4 Apr 1775; wife Kjerstin Andersdotter, born at Väring 10 Oct 1770; moved in from Väring 1803, left the parish 1812; children Cajsa 13 Oct 1804 (died 1811), Lars 25 Oct 1806, Anders, Cajsa 24 Aug 1811", "https://sok.riksarkivet.se/bildvisning/C0053242_00031"],
+  bapPetter1775: ["Väring parish birth and baptism book, SE/GLA/13637/C/2, 1775, p. 36, image 26: Petter, born 4 Apr, baptised 5 Apr 1775, son of Lars Andersson and Maria Persdotter, 31, farmers (bondefolk) at a farm read as Ängbytorp; godparents Maria Jonsdotter, Stina Svensdotter, Jonas Andersson, Eric Andersson and the farmhand Carl Persson", "https://sok.riksarkivet.se/bildvisning/C0053441_00026"],
   bapMajaLisa: ["Varnhem parish birth and baptism book, SE/GLA/13612/C/3 (1837–1849), 1840, image 22: Maria Lisa, born 8 June, baptised 9 June 1840, daughter of Lars Pettersson and Maria Andersdotter, 37, crofters under Solberga, Varnhem", "https://sok.riksarkivet.se/bildvisning/C0053256_00022"],
   fagElizabeth: ["Find a Grave memorial 39473359: Elizabeth Wilkins Clemmer, 1884–1931", "https://www.findagrave.com/memorial/39473359/elizabeth-clemmer"],
   cen1880: ["1880 census, Springhill Twp., Fayette Co., Pa., ED 56: Lebous Clemmer, 49, wife Caroline, 39, and children Jasper (17), Elle M. (14), Oney A. (10), Joseph (7), Oliver S. (3) and Amada (3 months)", FS + "MWF8-YP5"],
@@ -649,9 +650,17 @@ const P = [
   // Lars Pettersson's parents and sisters
   { id:"petterhusar", name:"Petter Husar", short:"Petter Husar", b:"1775", gen:6, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
     place:"Väring → Varnhem, Skaraborg, Sweden", role:"Soldier",
-    lede:"Father of Lars Pettersson. A soldier, born at Väring in Skaraborg on 4 April 1775, who served under the soldier's name Husar (hussar), a name that belonged to his croft rather than his family. He and his wife Kjerstin moved from Väring to Varnhem parish in 1803 and lived on the soldier's croft in Öfverbo (later Holltorp) district, where Lars was born in 1806. The family left the parish in 1812. His own patronymic is not given in the records read so far.",
-    facts:{ Born:"4 Apr 1775, Väring, Skaraborg", Occupation:"Soldier (Husar)" },
-    sources:[S.husHusar, S.bapLars1806] },
+    lede:"Father of Lars Pettersson. Born Petter Larsson at Väring in Skaraborg on 4 April 1775, the son of the farmer Lars Andersson and Maria Persdotter, he became a soldier and served under the soldier's name Husar (hussar), a name that belonged to his croft rather than his family. He and his wife Kjerstin moved from Väring to Varnhem parish in 1803 and lived on the soldier's croft in Öfverbo (later Holltorp) district, where Lars was born in 1806. The family left the parish in 1812.",
+    facts:{ Born:"4 Apr 1775, Väring, Skaraborg (as Petter Larsson)", Occupation:"Soldier (Husar)" },
+    sources:[S.bapPetter1775, S.husHusar, S.bapLars1806] },
+  { id:"larsandersson", name:"Lars Andersson", short:"Lars Andersson", b:"c. 1740s", gen:7, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
+    place:"Väring, Skaraborg, Sweden", role:"Farmer",
+    lede:"Father of the soldier Petter Husar, named on Petter's baptism at Väring on 5 April 1775 as a farmer (bonde) at a farm whose name reads as Ängbytorp; the son, by his patronymic, of an Anders.",
+    sources:[S.bapPetter1775] },
+  { id:"mariapersdotter", name:"Maria Persdotter", short:"Maria Persdotter", b:"c. 1744", gen:7, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
+    place:"Väring, Skaraborg, Sweden",
+    lede:"Mother of Petter Husar, aged 31 at his baptism at Väring in April 1775, so born about 1744; the daughter, by her patronymic, of a Per. The clerk first wrote another surname and corrected it to Persdotter.",
+    sources:[S.bapPetter1775] },
   { id:"kjerstinandersdotter", name:"Kjerstin Andersdotter", short:"Kjerstin Andersdotter", b:"1770", gen:6, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
     place:"Väring → Varnhem, Skaraborg, Sweden",
     lede:"Mother of Lars Pettersson, born at Väring on 10 October 1770 and aged 36 at his baptism in October 1806; the daughter, by her patronymic, of an Anders. With her husband, the soldier Petter Husar, she came to Varnhem from Väring in 1803.",
@@ -704,6 +713,8 @@ const E = [
   ["larspettersson","anderspetterlarsson","parent"], ["mariaandersdotter","anderspetterlarsson","parent"],
   ["larspettersson","gustaflarsson","parent"], ["mariaandersdotter","gustaflarsson","parent"],
   ["petterhusar","kjerstinandersdotter","spouse"],
+  ["larsandersson","mariapersdotter","spouse"],
+  ["larsandersson","petterhusar","parent"], ["mariapersdotter","petterhusar","parent"],
   ["petterhusar","larspettersson","parent"], ["kjerstinandersdotter","larspettersson","parent"],
   ["petterhusar","cajsapettersdotter1804","parent"], ["kjerstinandersdotter","cajsapettersdotter1804","parent"],
   ["petterhusar","cajsapettersdotter1811","parent"], ["kjerstinandersdotter","cajsapettersdotter1811","parent"],
@@ -878,6 +889,7 @@ const GEN_LABELS = {
   4: ["2× great-grandparents", "b. 1830s–40s"],
   5: ["3× great-grandparents", "b. c. 1810s–30s"],
   6: ["4× great-grandparents", "b. c. 1760s–1800s"],
+  7: ["5× great-grandparents", "b. c. 1740s"],
 };
 
 // ---------- Layout hints ----------
@@ -928,7 +940,7 @@ const LAYOUT_X = {       // person id → fixed column, a fraction of the width
   johannesahn:0.915, ingajonsdotter:0.93, larspettersson:0.95, mariaandersdotter:0.965,
   cajsapettersdotter1804:0.94, cajsapettersdotter1811:0.975,
   larsjohanlarsson:0.965, annastinalarsdotter:0.97, anderspetterlarsson:0.975, gustaflarsson:0.98,
-  petterhusar:0.945, kjerstinandersdotter:0.96,
+  petterhusar:0.945, kjerstinandersdotter:0.96, larsandersson:0.94, mariapersdotter:0.955,
 };
 
 // ---------- Map ----------

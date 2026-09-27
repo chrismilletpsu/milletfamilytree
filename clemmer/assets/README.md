@@ -115,3 +115,6 @@ Fayette County Orphans' Court marriage license dockets.
 - `riksarkivet/1800-15-varnhem-household-petter-husar.jpg` — Varnhems kyrkoarkiv, Husförhörslängder,
   SE/GLA/13612/A I/4 (1800–1815), image 31, pp. 34–35: soldier Petter Husar's household.
   <https://sok.riksarkivet.se/bildvisning/C0053242_00031>
+- `riksarkivet/1775-varing-birth-petter-larsson.jpg` — Värings kyrkoarkiv, Födelse- och dopböcker,
+  SE/GLA/13637/C/2, image 26, pp. 36–37: Petter, 4 Apr 1775, son of Lars Andersson and Maria Persdotter.
+  <https://sok.riksarkivet.se/bildvisning/C0053441_00026>
