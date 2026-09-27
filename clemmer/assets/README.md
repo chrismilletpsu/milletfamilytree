@@ -68,6 +68,11 @@ Fayette County Orphans' Court marriage license dockets.
 - `ancestry/fayette-marriage-license-index-w-clemmer-wilkins-1907.jpg` — the county's index to
   marriage license dockets, women's side, W: "Wilkins, Eliza — Clemmer, Amedee, Sept 4 1907, book
   44 p. 47". Ancestry record 2772771, image TH-1-159316-159856-28 (film 1318028).
+- `ancestry/1950-pa-wwii-compensation-robert-burdell-clark.jpg` — Pennsylvania, U.S., Veteran
+  Compensation Application Files, WWII, 1950–1966 (Pennsylvania Historical and Museum Commission,
+  RG 19, series 19.92), via Ancestry: Robert Burdell Clark. <https://www.ancestry.com/search/collections/3147/records/926667>
+- `ancestry/1950-pa-wwii-compensation-frank-victor-dunham.jpg` — same collection: Frank V. Dunham.
+  <https://www.ancestry.com/search/collections/3147/records/781933>
 
 ## Find a Grave (contributors' photographs)
 
@@ -80,6 +85,9 @@ Fayette County Orphans' Court marriage license dockets.
 - `findagrave/fag-144874752-mbdunham-headstone.jpg` — headstone of Margaret Clemmer, 1916–1979,
   Evergreen Memorial Park, Point Marion. Memorial 144874752 (photographer's credit not yet read
   from the memorial).
+- `findagrave/fag-96857377-robert-burdell-clark-headstone.jpg` — Find a Grave memorial 96857377,
+  photo added by Ancestor Searcher: Robert Burdell Clark's government headstone, "1st Lt, US Army,
+  World War II". <https://www.findagrave.com/memorial/96857377>
 
 <https://www.findagrave.com/memorial/144874872/william-bryan-clemmer>
 

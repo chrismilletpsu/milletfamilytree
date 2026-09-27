@@ -482,3 +482,28 @@ Next: the Norra Lundby birth register (C:), Nov 1885, and the Norra Lundby movin
   filed under another parish's archive; Gudhem has no register entries either. Next: find the archive
   that holds Segerstad (Skaraborg) births for 1816, then Jonas Christoffersson's and Maria Jonsdotter's
   births (c. 1790–91) from the Bolum household books of 1817–31 (A I:2, C0049743).
+
+## Notable events review (27 Sep 2026)
+Checked every man of service age against WWI/WWII and later records.
+- **Robert Burdell Clark (1916–1976), WWII — added as an event.** Find a Grave 96857377: stone
+  "1st Lt, US Army, World War II", plot Little Arlington (veterans' section), Evergreen Memorial
+  Park. Headstone application: serials 33 691 407 and O-788 543; enlisted 20 July 1943, enlisted
+  service ended 27 Oct 1944. BIRLS: discharged 21 July 1946. PA WWII compensation file (image saved):
+  domestic 20 July 1943–20 May 1945, foreign 21 May 1945–26 May 1946, separated Camp Atterbury, Ind.
+  FamilySearch enlistment record KMV9-QDP (serial 33691407) matches.
+- **Frank Victor Dunham (1919–2010), WWII — added as an event.** Margaret Belle's brother; the tree's
+  "Franklin W." (1930 index) is Franklin V. in 1920 (MX9R-FC2) and Frank Victor on his draft card
+  (Q2Q2-VTRZ; b. 9 June 1919, Haydentown). PA compensation file (image saved): entered 27 May 1943
+  at Greensburg (the enlistment index says 20 May), foreign service 12 Sept 1944–11 Feb 1946,
+  separated at Indiantown Gap Feb 1946. Buried Mount Moriah Baptist Cemetery, Smithfield (BillionGraves).
+- **John H. Blaney** added to the existing Civil War event (same company as Henry Wilkins).
+- **Thomas Neil Dunham (1935–2021)**: Find a Grave flags him a veteran; a tribute says Army Corps of
+  Engineers, sergeant. Dates unknown, probably peacetime service; noted on his card, not an event.
+- Negative: no PA WWII compensation file or BIRLS entry found for Bruce S. Clemmer, William B.
+  Clemmer, Charles M. or John T. Renstrom, or the other Dunham sons (Paul, Herbert, Clarence, Harry);
+  none for Bernard D. Clemmer in BIRLS.
+- **Petter Husar and the Finnish War (1808–09)**: the Varnhem 1800–1815 book's "soldiers in the
+  field" list (p. 92) names three other men, not Petter. Not added; the Skaraborg Regiment's rolls
+  (generalmönsterrullor) for 1808–09 would settle whether he served.
+- **Frederick Clark and oil**: the 1900 census index gives no occupation (arrival 1890); an event
+  for the oil region would need his occupation from the census image or a directory. Not added.
