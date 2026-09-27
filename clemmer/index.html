@@ -495,7 +495,9 @@
       if (n.y < y0 - lim) { n.y = y0 - lim; n.vy = 0; }
       else if (n.y > y0 + lim) { n.y = y0 + lim; n.vy = 0; }
     }))
-    .alphaDecay(0.03);
+    .alphaDecay(0.03)
+    // heavy friction: nodes glide to rest instead of overshooting and bouncing back
+    .velocityDecay(0.72);
 
   // Labels hang to the right of each circle, so two nodes in the same generation band need
   // horizontal clearance equal to the left node's label width; circles alone under-estimate it.
@@ -543,7 +545,7 @@
     .attr("role","button")
     .attr("aria-label", n => n.name)
     .call(d3.drag()
-      .on("start", (ev,d) => { if (!ev.active) sim.alphaTarget(0.12).restart(); d.fx=d.x; d.fy=d.y; })
+      .on("start", (ev,d) => { if (glide) { glide.stop(); glide = null; } if (!ev.active) sim.alphaTarget(0.04).restart(); d.fx=d.x; d.fy=d.y; })
       .on("drag", (ev,d) => { d.fx=ev.x; d.fy=ev.y; })
       .on("end", (ev,d) => { if (!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
 
@@ -580,6 +582,27 @@
     link.attr("d", pathFor);
     node.attr("transform", n => `translate(${n.x},${n.y})`);
   });
+
+  // Rearrange without the springs: work out the new resting layout off-screen, then glide
+  // every person there once, in a straight line, with no overshoot.
+  let glide = null;
+  function settleSmoothly(ms = 650) {
+    if (glide) glide.stop();
+    sim.stop();
+    const from = nodes.map(n => [n.x, n.y]);
+    sim.alpha(0.5);
+    for (let i = 0; i < 300; i++) sim.tick();
+    sim.alpha(0);
+    const to = nodes.map(n => [n.x, n.y]);
+    nodes.forEach(n => { n.vx = 0; n.vy = 0; });
+    glide = d3.timer(el => {
+      const k = d3.easeCubicInOut(Math.min(1, el / ms));
+      nodes.forEach((n, i) => { n.x = from[i][0] + (to[i][0] - from[i][0]) * k; n.y = from[i][1] + (to[i][1] - from[i][1]) * k; });
+      link.attr("d", pathFor);
+      node.attr("transform", n => `translate(${n.x},${n.y})`);
+      if (k >= 1) { glide.stop(); glide = null; }
+    });
+  }
 
   // ---------- Interaction ----------
   const panel = document.getElementById("panel");
@@ -680,7 +703,7 @@
     node.classed("hidden", n => on && !n.direct);
     link.classed("hidden", l => on && !(l.source.direct && l.target.direct && l.type !== "sibling"));
     sim.force("collide", d3.forceCollide(n => on ? 44 : (n.direct ? 52 : 60)).strength(0.95));
-    sim.alpha(0.3).restart();
+    settleSmoothly();
   });
 
   // search
