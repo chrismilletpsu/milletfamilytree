@@ -101,7 +101,7 @@ Fayette County Orphans' Court marriage license dockets.
 ## Riksarkivet (Swedish National Archives, free digital images)
 
 - `riksarkivet/1840-bolum-birth-johan-gustaf-ask.jpg` — Broddetorps kyrkoarkiv, Födelse- och dopböcker,
-  SE/GLA/13062/C/4 (1830–1861), image 41: Bolum births 1840, Johan Gustaf, 20 Aug.
+  SE/GLA/13062/C/4 (1830–1861), image 41: Bolum births 1840, Johan Gustaf, 20 Aug., son of the soldier Johannes Rehn.
   <https://sok.riksarkivet.se/bildvisning/C0049755_00041>
 - `riksarkivet/1840-varnhem-birth-maria-lisa-larsdotter.jpg` — Varnhems kyrkoarkiv, Födelse- och
   dopböcker, SE/GLA/13612/C/3 (1837–1849), image 22: Maria Lisa, 8 June 1840.
@@ -118,3 +118,9 @@ Fayette County Orphans' Court marriage license dockets.
 - `riksarkivet/1775-varing-birth-petter-larsson.jpg` — Värings kyrkoarkiv, Födelse- och dopböcker,
   SE/GLA/13637/C/2, image 26, pp. 36–37: Petter, 4 Apr 1775, son of Lars Andersson and Maria Persdotter.
   <https://sok.riksarkivet.se/bildvisning/C0053441_00026>
+- `riksarkivet/1832-45-bolum-household-vastorp-soldier-johannes-rehn.jpg` — Broddetorps kyrkoarkiv,
+  Husförhörslängder, SE/GLA/13062/A I/3 (1832–1845), image 152, pp. 278–279: Västorp soldier's croft
+  No. 339, Johannes Rehn's household. <https://sok.riksarkivet.se/bildvisning/C0049744_00152>
+- `riksarkivet/1818-bolum-birth-inga-jonsdotter.jpg` — Broddetorps kyrkoarkiv, Födelse- och
+  dopböcker, SE/GLA/13062/C/3 (1761–1829), image 155, pp. 292–293: Inga, 23 July 1818.
+  <https://sok.riksarkivet.se/bildvisning/C0049754_00155>

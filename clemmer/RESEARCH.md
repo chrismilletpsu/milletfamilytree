@@ -464,3 +464,21 @@ Next: the Norra Lundby birth register (C:), Nov 1885, and the Norra Lundby movin
   "torp. Lars Andersson", 1768 "Lars Andersson vid Wäring"), but the compact lists don't give the
   mother or enough of the farm name to tie them to Petter's parents. Not added. The Väring household
   book of the 1770s–80s would settle it.
+- **Correction: "Johannes Ahn" was Johannes Rehn, soldier for Västorp** (not "Wartorp"). Broddetorp
+  A I:3 (1832–1845; typed place index at image 10, Bolum pp. 158–439), Munkgård rote:
+  - p. 272, image 149, Västorp farm: maid Inga Jonsdotter, b. 23 July 1818 in the parish, in 1836 from
+    Säckesten, out 1838 to Varnhem.
+  - p. 278, image 152, Västorp soldier's croft No. 339: serving soldier **Johannes Rehn, b. 3 Sep 1816,
+    Segerstad**, in 1838 from Gudhem; wife **Inga Jonsdotter, b. 23 July 1818**, in 1839 from Varnhem;
+    sons Johan Gustaf (20 Aug 1840) and **Sven (4 July 1843)**. Lodgers Erik Olofsson (b. 21 Oct 1776,
+    Segerstad, d. 16 Nov 1839) and Greta Svensdotter (b. 12 July 1758, Gudhem), no stated relation.
+    The croft's previous soldier, Olof Rehn (b. 1806), drowned in Lake Hornborga on 23 Apr 1837.
+    Re-reading the 1840 baptism confirms "Johannes Rehn … Soldat för Wästorp".
+- **Inga's baptism.** Broddetorp C:3 (1761–1829), 1818, p. 292, image 155 (via the Riksarkivet
+  register): **Inga, b. 23 July, bapt. 24 July 1818**, daughter of **Jonas Christoffersson** and
+  **Maria Jonsdotter**, 27, lodgers under Sörgården, Bolumstorp; godfather Johannes Christoffersson.
+- Johannes Rehn's baptism, Segerstad, 3 Sep 1816: the Riksarkivet register's three "Segerstad" hits
+  are the Kalmar and Värmland parishes, not Skaraborg's. Skaraborg's Segerstad (Falköping) may be
+  filed under another parish's archive; Gudhem has no register entries either. Next: find the archive
+  that holds Segerstad (Skaraborg) births for 1816, then Jonas Christoffersson's and Maria Jonsdotter's
+  births (c. 1790–91) from the Bolum household books of 1817–31 (A I:2, C0049743).
