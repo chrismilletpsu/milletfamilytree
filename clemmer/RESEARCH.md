@@ -427,3 +427,26 @@ Next: the Norra Lundby birth register (C:), Nov 1885, and the Norra Lundby movin
   1840 baptism places the family on a croft (torp) under Solberga, probably listed on its own page;
   the register's "Kåpen"-like croft name was not found. Unresolved; the reading of the croft name in
   the baptism entry needs a second look. Not joined.
+- **Resolved: the Hagen croft.** Varnhem A I:6 (1836–1846), p. 94, image 60, the croft **Hagen**:
+  crofter Lars Pettersson, b. 1806 in the parish (day faint, month 10); wife Maria Andersdotter,
+  b. 1803 (birthplace abbreviated, probably Ryd); children Lars Johan (1832), Anna Stina (1834),
+  Anders Petter (1837), **Maria Lisa (8 June 1840)**, Gustaf (31 Dec 1843). Pages 90–93 are the
+  Solberga main farm and "Torpet vid Gården"; the "Lars Pehrson b. 1813" there is a farmhand, not ours.
+  The images download directly from `lbiiif.riksarkivet.se/v2/arkis!<bildid>/…` with a sok.riksarkivet.se
+  referer, which made page-by-page reading practical.
+- FamilySearch's Sweden baptism index has Lars Pettersson + Maria Andersdotter couples in Beateberg
+  and Ransberg (children 1831–1839), but the timing (a child in June 1839 at Ransberg) rules them out;
+  Varnhem's own baptisms are not in the index. The Riksarkivet census search has no Lars Pettersson
+  b. c. 1806 in Varnhem in 1880 (probably dead by then).
+- **Lars's baptism.** Varnhem C:2 (1758–1836), 1806, p. 291, image 157: **Lars, b. 25 Oct, bapt.
+  27 Oct 1806**, son of **Petter Husar** and **Kjerstin Andersdotter**, 36, soldier's family at
+  Öfverbo. The only other Lars born to a Petter in the pastorate that year (27 Nov, Lundby) died
+  within a day.
+- **Confirmed** in Varnhem A I:4 (1800–1815; typed place index at image 10), Holltorp rote (formerly
+  Överbo), p. 35, image 31: Sold. **Petter Husar**, b. Väring 4 Apr 1775; wife **Kjerstin
+  Andersdotter**, b. Väring 10 Oct 1770; moved in from Väring 1803, out 1812; children Cajsa
+  (13 Oct 1804, d. 1811), **Lars (25 Oct 1806)**, Anders (no date), Cajsa (24 Aug 1811).
+  Husar is the soldier's name; Petter's patronymic is not given.
+  Next: the Väring birth registers for 1770 and 1775 (Kjerstin's and Petter's parents); the Väring
+  household book of c. 1800 for Petter's patronymic; where the family went in 1812. Maria
+  Andersdotter's birth (1803, probably Ryd) and the Bolum household book for Johannes Ahn are still open.

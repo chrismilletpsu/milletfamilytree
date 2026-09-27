@@ -106,3 +106,12 @@ Fayette County Orphans' Court marriage license dockets.
 - `riksarkivet/1840-varnhem-birth-maria-lisa-larsdotter.jpg` — Varnhems kyrkoarkiv, Födelse- och
   dopböcker, SE/GLA/13612/C/3 (1837–1849), image 22: Maria Lisa, 8 June 1840.
   <https://sok.riksarkivet.se/bildvisning/C0053256_00022>
+- `riksarkivet/1836-46-varnhem-household-hagen-lars-pettersson.jpg` — Varnhems kyrkoarkiv,
+  Husförhörslängder, SE/GLA/13612/A I/6 (1836–1846), image 60, p. 94: the croft Hagen, Lars
+  Pettersson's household. <https://sok.riksarkivet.se/bildvisning/C0053244_00060>
+- `riksarkivet/1806-varnhem-birth-lars-son-of-petter-husar.jpg` — Varnhems kyrkoarkiv, Födelse- och
+  dopböcker, SE/GLA/13612/C/2 (1758–1836), image 157, pp. 291–292: Lars, 25 Oct 1806, son of Petter
+  Husar and Kjerstin Andersdotter. <https://sok.riksarkivet.se/bildvisning/C0053255_00157>
+- `riksarkivet/1800-15-varnhem-household-petter-husar.jpg` — Varnhems kyrkoarkiv, Husförhörslängder,
+  SE/GLA/13612/A I/4 (1800–1815), image 31, pp. 34–35: soldier Petter Husar's household.
+  <https://sok.riksarkivet.se/bildvisning/C0053242_00031>
