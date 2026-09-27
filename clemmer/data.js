@@ -116,6 +116,8 @@ const S = {
   husAsk: ["Sweden, household examination book, Norra Lundby AI:12 (1880–1894), Amundtorp rote: Mårten Johannes, born 10 Nov 1885 in Lundby, child of Johan Gustaf Johansson Ask, born 20 Aug 1840 in Bolum, and Maja Lisa Larsdotter, born 8 June 1840 in Skarke; brothers Karl Fredrik, Wilhelm Henrik, August, Frans Oskar, Johan Alfred and Gustaf Viktor", FS + "QL53-244N"],
   husAsk1872: ["Sweden, household examination book, Norra Lundby (1872–1880): Johan Gustaf Johansson Ask, born 20 Aug 1840 in Bolum, wife Maja Lisa Larsdotter, and children Johan Alfrid, Carl Fredrik, Gustaf Viktor, Wilhelm Henrik, Frans Oskar and August", FS + "QL53-B88J"],
   burMajaLisa: ["Sweden, burials index: Maja Lisa Ask, née Larsdotter, born 8 June 1840, died 16 June 1919, Skaraborg; wife of Johan Gustaf Ask", FS + "F2MS-QWB"],
+  bapJohanGustaf: ["Broddetorp parish birth and baptism book, SE/GLA/13062/C/4 (1830–1861), Bolum 1840, image 41: Johan Gustaf, born and baptised 20 Aug 1840, son of Johannes Ahn [Ahn/Ehn, soldier's name], soldier for Wartorp, and Inga Jonsdotter, 22; godparents Petter Andersson and Inga Jonsdotter", "https://sok.riksarkivet.se/bildvisning/C0049755_00041"],
+  bapMajaLisa: ["Varnhem parish birth and baptism book, SE/GLA/13612/C/3 (1837–1849), 1840, image 22: Maria Lisa, born 8 June, baptised 9 June 1840, daughter of Lars Pettersson and Maria Andersdotter, 37, crofters under Solberga, Varnhem", "https://sok.riksarkivet.se/bildvisning/C0053256_00022"],
   fagElizabeth: ["Find a Grave memorial 39473359: Elizabeth Wilkins Clemmer, 1884–1931", "https://www.findagrave.com/memorial/39473359/elizabeth-clemmer"],
   cen1880: ["1880 census, Springhill Twp., Fayette Co., Pa., ED 56: Lebous Clemmer, 49, wife Caroline, 39, and children Jasper (17), Elle M. (14), Oney A. (10), Joseph (7), Oliver S. (3) and Amada (3 months)", FS + "MWF8-YP5"],
   dcLebbeus: ["Pennsylvania death certificate 15443 (1909): Libbens [Lebbeus] Bigelow Clemmer, born 15 Jan 1832 in Pennsylvania, died 23 Feb 1909 at Springhill Twp., aged 77, married, a brick molder, of chronic Bright's disease; father Andrew Clemmer (born Pa.), mother Moriah Halphin (born W.Va.); informant Frank Clemmer, Cheat Haven, Pa.; buried Mt. Moriah Cemetery 25 Feb 1909", "https://www.ancestry.com/search/collections/5164/records/2560967"],
@@ -498,14 +500,14 @@ const P = [
     sources:[S.cen1900smith] },
   { id:"johnrenstrom", name:"Johan Gustaf Johansson Ask", short:"Johan Gustaf Ask", b:"1840", gen:4, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
     place:"Bolum → Norra Lundby, Skaraborg, Sweden", role:"Soldier",
-    lede:"Martin Renstrom's father, “John Renstrom” in the 1957 West Virginia death register. Born at Bolum in Skaraborg on 20 August 1840, Johan Gustaf Johansson — son, by his patronymic, of a Johan — served as a soldier under the name Ask, the name the army gave to the holder of his soldier's croft. With his wife Maja Lisa Larsdotter he raised seven sons at Amundtorp in Norra Lundby parish, the youngest Mårten Johannes, born 10 November 1885, the date Martin gave on his draft card. In 1900 he was a pensioned soldier at Smedstorp. Renström was the surname Martin took for himself.",
+    lede:"Martin Renstrom's father, “John Renstrom” in the 1957 West Virginia death register. Born at Bolum in Skaraborg on 20 August 1840, Johan Gustaf Johansson — son of the soldier Johannes Ahn and Inga Jonsdotter — served as a soldier under the name Ask, the name the army gave to the holder of his soldier's croft. With his wife Maja Lisa Larsdotter he raised seven sons at Amundtorp in Norra Lundby parish, the youngest Mårten Johannes, born 10 November 1885, the date Martin gave on his draft card. In 1900 he was a pensioned soldier at Smedstorp. Renström was the surname Martin took for himself.",
     facts:{ Born:"20 Aug 1840, Bolum, Skaraborg", Occupation:"Soldier (Ask); pensioner (gratialist) by 1900" },
-    sources:[S.husAsk1872, S.husAsk, S.sw1890ask, S.sw1900ask, S.dcMartinR] },
+    sources:[S.bapJohanGustaf, S.husAsk1872, S.husAsk, S.sw1890ask, S.sw1900ask, S.dcMartinR] },
   { id:"louisejohnson", name:"Maja Lisa Larsdotter", short:"Maja Lisa Larsdotter", b:"1840", d:"1919", gen:4, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
     place:"Skarke → Norra Lundby, Skaraborg, Sweden",
-    lede:"Martin Renstrom's mother. Born at Skarke in Skaraborg on 8 June 1840, the daughter of a Lars, she married the soldier Johan Gustaf Ask and bore seven sons at Amundtorp in Norra Lundby between about 1865 and 1885. She died on 16 June 1919. The 1957 West Virginia death register, filled in by a doctor, gives Martin's mother as “Louise Johnson”: a guess at her name, not a record of it.",
+    lede:"Martin Renstrom's mother. Born at Skarke in Skaraborg on 8 June 1840, the daughter of the crofter Lars Pettersson and Maria Andersdotter, she married the soldier Johan Gustaf Ask and bore seven sons at Amundtorp in Norra Lundby between about 1865 and 1885. She died on 16 June 1919. The 1957 West Virginia death register, filled in by a doctor, gives Martin's mother as “Louise Johnson”: a guess at her name, not a record of it.",
     facts:{ Born:"8 June 1840, Skarke", Died:"16 June 1919, Skaraborg", "In U.S. records":"“Louise Johnson” (1957 death register)" },
-    sources:[S.husAsk1872, S.husAsk, S.sw1890ask, S.sw1900ask, S.burMajaLisa, S.dcMartinR] },
+    sources:[S.bapMajaLisa, S.husAsk1872, S.husAsk, S.sw1890ask, S.sw1900ask, S.burMajaLisa, S.dcMartinR] },
   { id:"katherineclark", name:"Katherine D. Clark", short:"Katherine Clark", b:"c. 1918", gen:2, line:"clark", place:"Fayette Co., Pa.",
     lede:"Daughter of Albert R. and Lue (Mayme) Clark, a year and seven months old in the 1920 census.",
     sources:[S.cen1920clark] },
@@ -610,6 +612,22 @@ const P = [
   { id:"johanalfredask", name:"Johan Alfred Ask", short:"Johan Alfred Ask", gen:3, line:"clark", lineLabel:"Renstrom line (Ask)", place:"Norra Lundby, Skaraborg, Sweden",
     lede:"Brother of Martin Renstrom, son of Johan Gustaf Ask and Maja Lisa Larsdotter, born at Norra Lundby. The household books index the sons under their mother's patronymic.",
     sources:[S.husAsk1872, S.husAsk] },
+  { id:"johannesahn", name:"Johannes Ahn", short:"Johannes Ahn", b:"c. 1815", gen:5, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
+    place:"Wartorp, Bolum, Skaraborg, Sweden", role:"Soldier",
+    lede:"Father of Johan Gustaf, named on his son's baptism in Bolum on 20 August 1840 as Johannes Ahn, soldier for Wartorp: Ahn (possibly Ehn) was the soldier's name that went with the croft, not a family surname. His son took the patronymic Johansson. The reading of the name is from the handwriting and should be checked against the Bolum household book.",
+    sources:[S.bapJohanGustaf] },
+  { id:"ingajonsdotter", name:"Inga Jonsdotter", short:"Inga Jonsdotter", b:"c. 1818", gen:5, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
+    place:"Bolum, Skaraborg, Sweden",
+    lede:"Mother of Johan Gustaf, aged 22 at his baptism at Bolum on 20 August 1840; the daughter, by her patronymic, of a Jon.",
+    sources:[S.bapJohanGustaf] },
+  { id:"larspettersson", name:"Lars Pettersson", short:"Lars Pettersson", b:"c. 1803", gen:5, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
+    place:"Solberga, Varnhem, Skaraborg, Sweden", role:"Crofter",
+    lede:"Father of Maja Lisa (Maria Lisa), named on her baptism at Varnhem on 9 June 1840, a crofter under Solberga; the son, by his patronymic, of a Petter. His daughter's patronymic, Larsdotter, fits.",
+    sources:[S.bapMajaLisa] },
+  { id:"mariaandersdotter", name:"Maria Andersdotter", short:"Maria Andersdotter", b:"c. 1803", gen:5, line:"clark", lineLabel:"Renstrom line (Ask)", direct:true,
+    place:"Solberga, Varnhem, Skaraborg, Sweden",
+    lede:"Mother of Maja Lisa, aged 37 at her baptism at Varnhem in June 1840; the daughter of an Anders.",
+    sources:[S.bapMajaLisa] },
 ];
 
 // ---------- Relationships ----------
@@ -642,6 +660,10 @@ const E = [
   ["frederickclark","albertclark","parent"], ["annafriske","albertclark","parent"],
   ["sarahsmith","garnetsmith","parent"],
   ["johnrenstrom","louisejohnson","spouse"],
+  ["johannesahn","ingajonsdotter","spouse"],
+  ["johannesahn","johnrenstrom","parent"], ["ingajonsdotter","johnrenstrom","parent"],
+  ["larspettersson","mariaandersdotter","spouse"],
+  ["larspettersson","louisejohnson","parent"], ["mariaandersdotter","louisejohnson","parent"],
   ["johnrenstrom","augustask","parent"], ["louisejohnson","augustask","parent"],
   ["johnrenstrom","gustafviktorask","parent"], ["louisejohnson","gustafviktorask","parent"],
   ["johnrenstrom","fransoskarask","parent"], ["louisejohnson","fransoskarask","parent"],
@@ -860,6 +882,7 @@ const LAYOUT_X = {       // person id → fixed column, a fraction of the width
   maryemme:0.74, jamesemme:0.75, samuelemme:0.76, williamgemme:0.77, oliveremme:0.78, lillyemme:0.79,
   jacobclemmersr:0.12,
   augustask:0.905, gustafviktorask:0.91, fransoskarask:0.915, karlfredrikask:0.935, wilhelmhenrikask:0.94, johanalfredask:0.945,
+  johannesahn:0.915, ingajonsdotter:0.93, larspettersson:0.95, mariaandersdotter:0.965,
 };
 
 // ---------- Map ----------
@@ -883,6 +906,8 @@ const PLACES = {
   bridgeton: { n:"Bridgeton, NJ", lat:39.4273, lon:-75.2341 },
   coldharbor: { n:"Cold Harbor, Hanover Co., VA", lat:37.5871, lon:-77.2861 },
   mtlakepark: { n:"Mountain Lake Park, Garrett Co., MD", lat:39.3987, lon:-79.3817 },
+  bolum: { n:"Bolum, Skaraborg, Sweden", lat:58.1990, lon:13.6630 },
+  varnhem: { n:"Varnhem, Skaraborg, Sweden", lat:58.3833, lon:13.6500 },
   masontownwv: { n:"Masontown, Preston Co., WV", lat:39.5498, lon:-79.7959 },
 };
 const GEO = {
@@ -976,6 +1001,10 @@ const GEO = {
   sevinaderry: { b:1836, bEst:0, d:1927, dEst:0, stops:[ {p:"smithfield", y:1836, e:1} ] },
   wmemme: { b:1831, bEst:0, d:1900, dEst:1, stops:[ {p:"smithfield", y:1835, e:1} ] },
   jacobclemmersr: { b:1766, bEst:1, d:1850, dEst:1, stops:[ {p:"springhill", y:1830, e:1} ] },
+  johnrenstrom: { b:1840, bEst:0, d:1910, dEst:1, stops:[ {p:"bolum", y:1840, e:0}, {p:"norralundby", y:1870, e:1} ] },
+  louisejohnson: { b:1840, bEst:0, d:1919, dEst:0, stops:[ {p:"varnhem", y:1840, e:0}, {p:"norralundby", y:1870, e:1} ] },
+  johannesahn: { b:1815, bEst:1, d:1860, dEst:1, stops:[ {p:"bolum", y:1840, e:0} ] },
+  larspettersson: { b:1803, bEst:1, d:1860, dEst:1, stops:[ {p:"varnhem", y:1840, e:0} ] },
 };
 // The map's opening frame, [[west, south], [east, north]] in degrees: southwestern
 // Pennsylvania and the West Virginia line, until the records reach further.

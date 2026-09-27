@@ -413,3 +413,17 @@ Next: the Norra Lundby birth register (C:), Nov 1885, and the Norra Lundby movin
   page are now these two, with the U.S. names kept as notes.
 - Their 1840 baptisms (Bolum; Skarke) are not in the FamilySearch baptism index; the parish birth
   registers would give Johan Gustaf's father (a Johan) and Maja Lisa's father (a Lars).
+
+- **Baptisms read in the Riksarkivet images** (Chris cleared the site's check):
+  - Johan Gustaf, b. 20 Aug 1840, Bolum (Broddetorp C:4, image 41): father **Johannes Ahn**, soldier
+    for Wartorp; mother **Inga Jonsdotter**, 22. The surname reading (Ahn / Ehn) needs confirming in
+    the Bolum household book (AI) for 1840.
+  - Maria Lisa, b. 8 June 1840, Varnhem (C:3, image 22): **Lars Pettersson and Maria Andersdotter**,
+    37, crofters under Solberga.
+  Next generation: the Bolum and Varnhem household books (husförhörslängder) of the 1840s give each
+  parent's birth date and parish, then their own baptisms.
+- Varnhem household book A I:6 (1836–1846), register: Solberga p. 90 (image 57). The main-farm list
+  includes a "Lars Pehrson" born 1813 (parish unclear), but no Maria Andersdotter on that page. The
+  1840 baptism places the family on a croft (torp) under Solberga, probably listed on its own page;
+  the register's "Kåpen"-like croft name was not found. Unresolved; the reading of the croft name in
+  the baptism entry needs a second look. Not joined.

@@ -97,3 +97,12 @@ Fayette County Orphans' Court marriage license dockets.
   1858, pp. 473–474: estate of Godfrey Rumble, late of Nicholson Twp. FamilySearch "Orphans' Court
   records 1844–1860 vol 4–5", image 562 (found by full-text search).
   <https://www.familysearch.org/ark:/61903/3:1:3QS7-L99B-17BQ>
+
+## Riksarkivet (Swedish National Archives, free digital images)
+
+- `riksarkivet/1840-bolum-birth-johan-gustaf-ask.jpg` — Broddetorps kyrkoarkiv, Födelse- och dopböcker,
+  SE/GLA/13062/C/4 (1830–1861), image 41: Bolum births 1840, Johan Gustaf, 20 Aug.
+  <https://sok.riksarkivet.se/bildvisning/C0049755_00041>
+- `riksarkivet/1840-varnhem-birth-maria-lisa-larsdotter.jpg` — Varnhems kyrkoarkiv, Födelse- och
+  dopböcker, SE/GLA/13612/C/3 (1837–1849), image 22: Maria Lisa, 8 June 1840.
+  <https://sok.riksarkivet.se/bildvisning/C0053256_00022>
